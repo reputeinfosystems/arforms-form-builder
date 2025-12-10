@@ -134,10 +134,9 @@ class arflitesettingcontroller {
 		add_submenu_page( 'ARForms-Lite', 'ARForms Lite | ' . __( 'Growth Plugins', 'arforms-form-builder' ), __( 'Growth Plugins', 'arforms-form-builder' ), 'arfchangesettings', 'ARF-Growth-Tools' , array( $this, 'arfliteroute' ) );
 
 		$arf_current_date = current_time('timestamp', true );
-		$arf_sale_start_time = '1732064400';
-		$arf_sale_end_time = '1733270399';
+		$arf_sale_start_time = '1763510400';
+		$arf_sale_end_time = '1764720000';
 
-		//$arf_upgrade_link_text = __( 'Upgrade To Premium', 'arforms-form-builder' );
 
 		if( $arf_current_date >= $arf_sale_start_time && $arf_current_date <= $arf_sale_end_time ){
 			add_submenu_page( 'ARForms-Lite', 'ARForms Lite | ' . __( 'Black Friday Sale', 'arforms-form-builder' ), __( 'Black Friday Sale', 'arforms-form-builder' ), 'arfchangesettings', 'ARForms-Lite&amp;upgrade-to-pro=yes' , array( $this, 'arfliteroute' ) );

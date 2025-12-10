@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ARForms Form Builder v1.7.7\n"
+"Project-Id-Version: ARForms Form Builder v1.7.8\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-09-22 12:08:36+0000\n"
+"PO-Revision-Date: 2025-11-18 08:44:31+0000\n"
 "Last-Translator: admin <admin@gmail.com>\n"
 "Language-Team: Turkish\n"
 "MIME-Version: 1.0\n"
@@ -45,7 +45,7 @@ msgstr "%2$s üzerinden gönderilen %1$s Formu"
 msgid "%s Submit and%s Deactivate"
 msgstr "%s Gönder ve %s Devre Dışı Bırak"
 
-#: core/views/arflite_settings_form.php:806
+#: core/views/arflite_settings_form.php:812
 #@ arforms-form-builder
 msgid "( Not recommended - If you have any js/css loading issue in your theme, only in that case you should enable this settings )"
 msgstr "(Önerilmez - Temanızda herhangi bir js / css yükleme sorununuz varsa, yalnızca bu durumda bu ayarları etkinleştirmeniz gerekir)"
@@ -325,12 +325,12 @@ msgstr "Hesap Kimliği"
 msgid "Action"
 msgstr "Aksiyon"
 
-#: core/controllers/arflitesettingcontroller.php:565
+#: core/controllers/arflitesettingcontroller.php:564
 #@ arforms-form-builder
 msgid "Activated"
 msgstr "Aktif"
 
-#: core/controllers/arflitesettingcontroller.php:552
+#: core/controllers/arflitesettingcontroller.php:551
 #@ arforms-form-builder
 msgid "Active"
 msgstr "Aktif"
@@ -431,7 +431,7 @@ msgstr "Zamanlayıcı Ekle"
 msgid "Add to page"
 msgstr "Sayfaya ekle"
 
-#: core/controllers/arflitesettingcontroller.php:488
+#: core/controllers/arflitesettingcontroller.php:487
 #: core/views/arflite_view_addons.php:7
 #@ arforms-form-builder
 msgid "Add-On listing is currently unavailable. Please try again later."
@@ -515,7 +515,7 @@ msgstr "Gönderim Sonrası İzleme Komut Dosyası"
 msgid "Age Group"
 msgstr "Yaş grubu"
 
-#: core/views/arflite_settings_form.php:672
+#: core/views/arflite_settings_form.php:678
 #@ arforms-form-builder
 msgid "Ajax based submission"
 msgstr "Ajax tabanlı gönderim"
@@ -854,12 +854,12 @@ msgstr "Avustralya"
 msgid "Austria"
 msgstr "Avusturya"
 
-#: core/views/arflite_settings_form.php:479
+#: core/views/arflite_settings_form.php:482
 #@ arforms-form-builder
 msgid "Authentication"
 msgstr "Kimlik Doğrulama"
 
-#: core/views/arflite_settings_form.php:398
+#: core/views/arflite_settings_form.php:400
 #@ arforms-form-builder
 msgid "Authentication Token"
 msgstr "Kimlik Doğrulama Jetonu"
@@ -874,7 +874,7 @@ msgstr "Yetki Kodu"
 msgid "Authorize"
 msgstr "Yetki vermek"
 
-#: core/views/arflite_settings_form.php:387
+#: core/views/arflite_settings_form.php:389
 #@ arforms-form-builder
 msgid "Authorized redirect URI"
 msgstr "Yetkili yönlendirme URI'si"
@@ -1031,7 +1031,7 @@ msgid "Bhutan"
 msgstr "Butan"
 
 #: core/classes/class.arforms_form_builder.php:1803
-#: core/controllers/arflitesettingcontroller.php:143
+#: core/controllers/arflitesettingcontroller.php:142
 #@ arforms-form-builder
 msgid "Black Friday Sale"
 msgstr "Kara Cuma İndirimi"
@@ -1490,7 +1490,7 @@ msgstr "Form başlığını girmek için burayı tıklayın"
 #: core/controllers/arfliteformcontroller.php:840
 #: core/controllers/arflitemaincontroller.php:2323
 #: core/controllers/arfliterecordcontroller.php:2475
-#: core/views/arflite_settings_form.php:392
+#: core/views/arflite_settings_form.php:394
 #@ arforms-form-builder
 msgid "Click to Copy"
 msgstr "Kopyalamak için tıklayın"
@@ -1540,12 +1540,12 @@ msgstr "Zorunlu alan olarak işaretlemek için tıklayın"
 msgid "Click to mark as not compulsory field"
 msgstr "Zorunlu alan olarak işaretlemek için tıklayın"
 
-#: core/views/arflite_settings_form.php:372
+#: core/views/arflite_settings_form.php:374
 #@ arforms-form-builder
 msgid "Client ID"
 msgstr "Müşteri Kimliği"
 
-#: core/views/arflite_settings_form.php:379
+#: core/views/arflite_settings_form.php:381
 #@ arforms-form-builder
 msgid "Client Secret"
 msgstr "Müşteri Sırrı"
@@ -1719,7 +1719,7 @@ msgstr "Cook Adaları"
 msgid "copied"
 msgstr "kopyalanan"
 
-#: core/views/arflite_settings_form.php:392
+#: core/views/arflite_settings_form.php:394
 #@ arforms-form-builder
 msgid "Copied to Clipboard"
 msgstr "Panoya kopyalandı"
@@ -1925,13 +1925,13 @@ msgid "days"
 msgstr "günler"
 
 #: core/controllers/arfliteprocontroller.php:301
-#: core/controllers/arflitesettingcontroller.php:563
+#: core/controllers/arflitesettingcontroller.php:562
 #: core/views/arflite_view_addons.php:92
 #@ arforms-form-builder
 msgid "Deactivate"
 msgstr "Devre dışı bırakmak"
 
-#: core/controllers/arflitesettingcontroller.php:563
+#: core/controllers/arflitesettingcontroller.php:562
 #@ arforms-form-builder
 msgid "Deactivated"
 msgstr "Devre dışı bırakıldı"
@@ -1994,8 +1994,8 @@ msgstr "Varsayılan değer"
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:224
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:421
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:673
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1398
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1611
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1393
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1598
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:4
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:144
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:4
@@ -2049,7 +2049,7 @@ msgstr "Danimarka"
 msgid "Disable"
 msgstr "Devre Dışı"
 
-#: core/views/arflite_settings_form.php:643
+#: core/views/arflite_settings_form.php:649
 #@ arforms-form-builder
 msgid "Disable built-in Anti-spam feature in signup forms"
 msgstr "Kayıt formlarında yerleşik Anti-spam özelliğini devre dışı bırak"
@@ -2231,7 +2231,7 @@ msgstr "E-posta eki:"
 msgid "Email Elements"
 msgstr "E-posta Elemanları"
 
-#: core/views/arflite_settings_form.php:329
+#: core/views/arflite_settings_form.php:331
 #@ arforms-form-builder
 msgid "Email Format"
 msgstr "E-posta Formatı"
@@ -2247,7 +2247,7 @@ msgstr "e-posta geçersiz"
 msgid "Email Marketing Tools"
 msgstr "E-posta Pazarlama Araçları"
 
-#: core/controllers/arflitesettingcontroller.php:274
+#: core/controllers/arflitesettingcontroller.php:273
 #@ arforms-form-builder
 msgid "Email Marketing Tools setting saved successfully."
 msgstr "E-posta Pazarlama Araçları ayarı başarıyla kaydedildi."
@@ -2274,7 +2274,7 @@ msgid "Embedded tags for youtube, map etc are supported."
 msgstr "Youtube, harita vb. İçin gömülü etiketler desteklenir."
 
 #: core/controllers/arflitemaincontroller.php:2388
-#: core/views/arflite_settings_form.php:817
+#: core/views/arflite_settings_form.php:823
 #@ arforms-form-builder
 msgid "Enable"
 msgstr "etkinleştirme"
@@ -2294,7 +2294,7 @@ msgstr "Salt Okunur'u Etkinleştir"
 msgid "Enable Running Total"
 msgstr "Koşu Toplamını Etkinleştir"
 
-#: core/views/arflite_settings_form.php:489
+#: core/views/arflite_settings_form.php:492
 #@ arforms-form-builder
 msgid "Enable SMTP authentication"
 msgstr "SMTP kimlik doğrulamasını etkinleştir"
@@ -2852,7 +2852,7 @@ msgstr "Form Girişleri Verileri"
 msgid "Form Entry"
 msgstr "Form Girişi"
 
-#: core/views/arflite_settings_form.php:767
+#: core/views/arflite_settings_form.php:773
 #@ arforms-form-builder
 msgid "Form Global CSS"
 msgstr "Global CSS Oluştur"
@@ -2915,7 +2915,7 @@ msgstr "Form Ayarları"
 msgid "Form submission action"
 msgstr "Form gönderme işlemi"
 
-#: core/views/arflite_settings_form.php:658
+#: core/views/arflite_settings_form.php:664
 #@ arforms-form-builder
 msgid "Form Submission Method"
 msgstr "Form Gönderme Yöntemi"
@@ -3093,7 +3093,7 @@ msgid "General Options"
 msgstr "Genel seçenekler"
 
 #: core/classes/class.arforms_general_settings.php:270
-#: core/controllers/arflitesettingcontroller.php:272
+#: core/controllers/arflitesettingcontroller.php:271
 #@ arforms-form-builder
 msgid "General setting saved successfully."
 msgstr "Genel ayar başarıyla kaydedildi."
@@ -3142,7 +3142,7 @@ msgstr "Almanya"
 msgid "Get Authorization Code"
 msgstr "Onay Kodu Al"
 
-#: core/controllers/arflitesettingcontroller.php:561
+#: core/controllers/arflitesettingcontroller.php:560
 #@ arforms-form-builder
 msgid "Get It"
 msgstr "Anla"
@@ -3183,7 +3183,7 @@ msgstr "Git"
 msgid "Google Fonts"
 msgstr "Google Yazı Tipleri"
 
-#: core/views/arflite_settings_form.php:320
+#: core/views/arflite_settings_form.php:322
 #@ arforms-form-builder
 msgid "Google/Gmail API"
 msgstr "Google/Gmail API'si"
@@ -3334,7 +3334,7 @@ msgstr "Etiketi Gizle"
 msgid "Hide Required Indicator"
 msgstr "Gerekli Göstergeyi Gizle"
 
-#: core/views/arflite_settings_form.php:710
+#: core/views/arflite_settings_form.php:716
 #@ arforms-form-builder
 msgid "Hide success message after"
 msgstr "Şu tarihten sonra başarı mesajını gizle"
@@ -3405,7 +3405,7 @@ msgstr "Saat"
 
 #: core/controllers/arflitemaincontroller.php:2303
 #: core/helpers/arflitefieldhelper.php:461
-#: core/views/arflite_settings_form.php:343
+#: core/views/arflite_settings_form.php:345
 #@ arforms-form-builder
 msgid "HTML"
 msgstr "HTML"
@@ -3637,13 +3637,13 @@ msgstr "Yazı Tipi Ayarlarını Girin"
 msgid "Input Style"
 msgstr "Giriş Stili"
 
-#: core/controllers/arflitesettingcontroller.php:558
+#: core/controllers/arflitesettingcontroller.php:557
 #: core/views/arflite_view_samples.php:41
 #@ arforms-form-builder
 msgid "Install"
 msgstr "Yüklemek"
 
-#: core/controllers/arflitesettingcontroller.php:558
+#: core/controllers/arflitesettingcontroller.php:557
 #@ arforms-form-builder
 msgid "Installed"
 msgstr "Kurulmuş"
@@ -4014,12 +4014,12 @@ msgstr "Litvanya"
 msgid "Lithuanian"
 msgstr "Litvanyalı"
 
-#: core/views/arflite_settings_form.php:811
+#: core/views/arflite_settings_form.php:817
 #@ arforms-form-builder
 msgid "Load JS & CSS"
 msgstr "JS ve CSS yükle"
 
-#: core/views/arflite_settings_form.php:801
+#: core/views/arflite_settings_form.php:807
 #@ arforms-form-builder
 msgid "Load JS & CSS in all pages"
 msgstr "Tüm sayfalara JS ve CSS yükleyin"
@@ -4226,8 +4226,8 @@ msgstr "Mayotte"
 #: core/models/arflitetemplate.php:426
 #: core/models/arflitetemplate.php:430
 #: core/views/arflite_edit.php:4331
-#: core/views/arflite_settings_form.php:459
-#: core/views/arflite_settings_form.php:616
+#: core/views/arflite_settings_form.php:462
+#: core/views/arflite_settings_form.php:621
 #@ arforms-form-builder
 msgid "Message"
 msgstr "İleti"
@@ -4626,9 +4626,9 @@ msgstr "Hiçbir eşleşen kayıt bulunamadı"
 msgid "No one! You do not have permission"
 msgstr "Hiç kimse! Izniniz yok"
 
-#: core/controllers/arflitesettingcontroller.php:586
-#: core/controllers/arflitesettingcontroller.php:725
-#: core/controllers/arflitesettingcontroller.php:831
+#: core/controllers/arflitesettingcontroller.php:585
+#: core/controllers/arflitesettingcontroller.php:724
+#: core/controllers/arflitesettingcontroller.php:830
 #@ arforms-form-builder
 msgid "No plugin specified."
 msgstr "Eklenti belirtilmedi."
@@ -4639,7 +4639,7 @@ msgid "No, Maybe later"
 msgstr "Hayır, belki sonra"
 
 #: core/views/arflite_field_option_popup.php:826
-#: core/views/arflite_settings_form.php:536
+#: core/views/arflite_settings_form.php:539
 #@ arforms-form-builder
 msgid "None"
 msgstr "Yok"
@@ -4654,7 +4654,7 @@ msgstr "Norfolk Adası"
 msgid "normal"
 msgstr "normal"
 
-#: core/views/arflite_settings_form.php:686
+#: core/views/arflite_settings_form.php:692
 #@ arforms-form-builder
 msgid "Normal submission"
 msgstr "Normal başvuru"
@@ -4725,7 +4725,7 @@ msgstr "Doğrulanmadı"
 msgid "Note"
 msgstr "Not"
 
-#: core/views/arflite_settings_form.php:720
+#: core/views/arflite_settings_form.php:726
 #@ arforms-form-builder
 msgid "Note : 0 ( zero ) means it will never hide success message"
 msgstr "Not: 0 (sıfır), başarı mesajını asla gizlemeyeceği anlamına gelir"
@@ -4738,7 +4738,7 @@ msgstr "Not: 0 (sıfır), başarı mesajını asla gizlemeyeceği anlamına geli
 msgid "Note: Set your custom html content"
 msgstr "Not: Özel html içeriğinizi ayarlayın"
 
-#: core/views/arflite_settings_form.php:367
+#: core/views/arflite_settings_form.php:369
 #@ arforms-form-builder
 msgid "Note: The Gmail mailer works well for sites that send low numbers of emails. However, Gmail's API has rate limitations and a number of additional restrictions that can lead to challenges during setup. If you expect to send a high volume of emails, or if you find that your web host is not compatible with the Gmail API restrictions, then we recommend considering a different mailer option."
 msgstr "Not: Gmail postası, az sayıda e-posta gönderen siteler için iyi çalışır. Ancak Gmail'in API'sinde hız sınırlamaları ve kurulum sırasında zorluklara yol açabilecek bir dizi ek kısıtlama vardır. Çok sayıda e-posta göndermeyi düşünüyorsanız veya web barındırıcınızın Gmail API kısıtlamalarıyla uyumlu olmadığını düşünüyorsanız farklı bir posta seçeneği düşünmenizi öneririz."
@@ -4956,7 +4956,7 @@ msgstr "Diğer Alanlar"
 msgid "Other Options"
 msgstr "Diğer seçenekler"
 
-#: core/views/arflite_settings_form.php:637
+#: core/views/arflite_settings_form.php:643
 #@ arforms-form-builder
 msgid "Other Settings"
 msgstr "Diğer ayarlar"
@@ -5104,7 +5104,7 @@ msgstr "Telefon numarası"
 msgid "PHP Function"
 msgstr "PHP İşlevi"
 
-#: core/views/arflite_settings_form.php:305
+#: core/views/arflite_settings_form.php:307
 #@ arforms-form-builder
 msgid "PHP Mailer"
 msgstr "PHP Posta Gönderici"
@@ -5124,7 +5124,7 @@ msgstr "Yer Tutucu Opaklığı"
 msgid "Placeholder Text"
 msgstr "Yer Tutucu Metni"
 
-#: core/views/arflite_settings_form.php:357
+#: core/views/arflite_settings_form.php:359
 #@ arforms-form-builder
 msgid "Plain Text"
 msgstr "Düz Metin"
@@ -5140,12 +5140,12 @@ msgstr "Lütfen bir veya daha fazla kural ekleyin"
 msgid "Please do needful"
 msgstr "Lütfen gerek"
 
-#: core/views/arflite_settings_form.php:375
+#: core/views/arflite_settings_form.php:377
 #@ arforms-form-builder
 msgid "Please Enter Client ID"
 msgstr "Lütfen Müşteri Kimliğini Girin"
 
-#: core/views/arflite_settings_form.php:382
+#: core/views/arflite_settings_form.php:384
 #@ arforms-form-builder
 msgid "Please Enter Client Secret"
 msgstr "Lütfen Müşteri Sırrını Girin"
@@ -5272,14 +5272,14 @@ msgid "Please select one or more record."
 msgstr "Lütfen bir veya daha fazla kayıt seçin."
 
 #: core/controllers/arfliterecordcontroller.php:1718
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1541
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1528
 #@ arforms-form-builder
 msgid "Please select one or more records"
 msgstr "Lütfen bir veya daha fazla kayıt seçin"
 
 #: core/controllers/arfliteformcontroller.php:217
 #: core/controllers/arfliterecordcontroller.php:809
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1298
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1293
 #@ arforms-form-builder
 msgid "Please select one or more records."
 msgstr "Lütfen bir veya daha fazla kayıt seçin."
@@ -5551,10 +5551,10 @@ msgstr "Kayıt silinemedi"
 #: core/controllers/arfliteformcontroller.php:772
 #: core/controllers/arfliteformcontroller.php:7181
 #: core/controllers/arfliterecordcontroller.php:3230
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1164
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1312
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1437
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1555
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1168
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1307
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1432
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1542
 #@ arforms-form-builder
 msgid "Record is deleted successfully."
 msgstr "Kayıt başarıyla silindi."
@@ -5617,7 +5617,7 @@ msgstr "tekrarlayıcı"
 msgid "Reply to E-mail"
 msgstr "E-postaya cevap ver"
 
-#: core/views/arflite_settings_form.php:256
+#: core/views/arflite_settings_form.php:257
 #@ arforms-form-builder
 msgid "Reply to Email"
 msgstr "E-postaya cevap ver"
@@ -5812,7 +5812,7 @@ msgstr "Suudi Arabistan"
 msgid "Save"
 msgstr "Kayıt etmek"
 
-#: core/views/arflite_settings_form.php:869
+#: core/views/arflite_settings_form.php:875
 #@ arforms-form-builder
 msgid "Save Changes"
 msgstr "Değişiklikleri Kaydet"
@@ -5864,7 +5864,7 @@ msgstr "ikinci"
 
 #: core/helpers/arflitemainhelper.php:1116
 #: core/helpers/arflitemainhelper.php:1137
-#: core/views/arflite_settings_form.php:719
+#: core/views/arflite_settings_form.php:725
 #@ arforms-form-builder
 msgid "seconds"
 msgstr "saniye"
@@ -5918,7 +5918,7 @@ msgstr "Sayfaya eklemek için bir form seçin"
 msgid "Select atleast one flag"
 msgstr "En az bir bayrak seçin"
 
-#: core/views/arflite_settings_form.php:728
+#: core/views/arflite_settings_form.php:734
 #@ arforms-form-builder
 msgid "Select character sets for google fonts"
 msgstr "Google fontları için karakter kümeleri seçme"
@@ -5936,13 +5936,13 @@ msgstr "Tarih seç"
 #: core/views/arflite_field_type_conversion.php:51
 #: core/views/arflite_field_type_conversion.php:57
 #: core/views/arflite_field_type_conversion.php:90
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1997
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1999
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2038
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2040
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2098
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2099
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2126
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1984
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1986
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2025
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2027
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2085
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2086
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2113
 #@ arforms-form-builder
 msgid "Select Field"
 msgstr "Alan Seçin"
@@ -6019,7 +6019,7 @@ msgstr "Form gönderildikten sonra kullanıcılara otomatik yanıt gönderin."
 msgid "Send anonymous"
 msgstr "İsimsiz gönder"
 
-#: core/views/arflite_settings_form.php:264
+#: core/views/arflite_settings_form.php:266
 #@ arforms-form-builder
 msgid "Send Email SMTP"
 msgstr "E-posta Gönder SMTP"
@@ -6034,14 +6034,14 @@ msgstr "Form Verilerini dahili olarak Özel URL'ye gönderme"
 msgid "Send form data to redirected page/post"
 msgstr "Form verilerini yeniden yönlendirilen sayfaya / gönderiye gönderme"
 
-#: core/views/arflite_settings_form.php:436
-#: core/views/arflite_settings_form.php:594
+#: core/views/arflite_settings_form.php:438
+#: core/views/arflite_settings_form.php:597
 #@ arforms-form-builder
 msgid "Send Test E-mail"
 msgstr "Test E-postası Gönder"
 
-#: core/views/arflite_settings_form.php:473
-#: core/views/arflite_settings_form.php:630
+#: core/views/arflite_settings_form.php:476
+#: core/views/arflite_settings_form.php:636
 #@ arforms-form-builder
 msgid "Send test mail"
 msgstr "Test postası gönder"
@@ -6143,7 +6143,7 @@ msgstr "Set Değeri"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: core/controllers/arflitesettingcontroller.php:276
+#: core/controllers/arflitesettingcontroller.php:275
 #@ arforms-form-builder
 msgid "Settings Saved."
 msgstr "Ayarlar kaydedildi."
@@ -6317,27 +6317,27 @@ msgstr "Sloven"
 msgid "Smiley"
 msgstr "Smiley"
 
-#: core/views/arflite_settings_form.php:523
+#: core/views/arflite_settings_form.php:526
 #@ arforms-form-builder
 msgid "SMTP Encryption"
 msgstr "SMTP Şifrelemesi"
 
-#: core/views/arflite_settings_form.php:495
+#: core/views/arflite_settings_form.php:498
 #@ arforms-form-builder
 msgid "SMTP Host"
 msgstr "SMTP Ana Bilgisayarı"
 
-#: core/views/arflite_settings_form.php:516
+#: core/views/arflite_settings_form.php:519
 #@ arforms-form-builder
 msgid "SMTP Password"
 msgstr "SMTP Parolası"
 
-#: core/views/arflite_settings_form.php:502
+#: core/views/arflite_settings_form.php:505
 #@ arforms-form-builder
 msgid "SMTP Port"
 msgstr "SMTP Bağlantı Noktası"
 
-#: core/views/arflite_settings_form.php:291
+#: core/views/arflite_settings_form.php:293
 #@ arforms-form-builder
 msgid "SMTP Server"
 msgstr "SMTP sunucusu"
@@ -6347,7 +6347,7 @@ msgstr "SMTP sunucusu"
 msgid "SMTP Test E-Mail"
 msgstr "SMTP Test E-postası"
 
-#: core/views/arflite_settings_form.php:509
+#: core/views/arflite_settings_form.php:512
 #@ arforms-form-builder
 msgid "SMTP Username"
 msgstr "SMTP Kullanıcı Adı"
@@ -6394,7 +6394,7 @@ msgstr "Maalesef, güvenlik nedeniyle bu dosya türüne izin verilmiyor"
 
 #: core/controllers/arflitemaincontroller.php:439
 #: core/controllers/arflitemaincontroller.php:2979
-#: core/controllers/arflitesettingcontroller.php:608
+#: core/controllers/arflitesettingcontroller.php:607
 #@ arforms-form-builder
 msgid "Sorry, you are not allowed to install plugins on this site."
 msgstr "Üzgünüz, bu siteye eklenti kurmanıza izin verilmiyor."
@@ -6405,7 +6405,7 @@ msgid "Sorry, You are not an authorized person to perform this action."
 msgstr "Üzgünüz, bu işlemi yapmaya yetkili bir kişi değilsiniz"
 
 #: core/controllers/arfliteformcontroller.php:744
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3208
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3195
 #@ arforms-form-builder
 msgid "Sorry, you do not have enough permission to perform this action"
 msgstr "Maalesef, bu işlemi gerçekleştirmek için yeterli izniniz yok"
@@ -6426,8 +6426,10 @@ msgstr "Maalesef, bu işlemi gerçekleştirmek için yeterli izniniz yok"
 #: core/controllers/arfliterecordcontroller.php:3187
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:118
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:264
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1111
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1429
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1115
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1206
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1424
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1475
 #@ arforms-form-builder
 msgid "Sorry, you do not have permission to perform this action"
 msgstr "Maalesef, bu işlemi gerçekleştirme izniniz yok"
@@ -6440,7 +6442,7 @@ msgid "Sorry, you don't have permission to perform this action."
 msgstr "Maalesef, bu işlemi gerçekleştirme izniniz yok."
 
 #: core/controllers/arfliteformcontroller.php:700
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3224
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3211
 #@ arforms-form-builder
 msgid "Sorry, your request could not be processed due to security reason"
 msgstr "Maalesef, güvenlik nedeniyle isteğiniz işlenemedi"
@@ -6538,7 +6540,7 @@ msgstr "Sr"
 msgid "Sri Lanka"
 msgstr "Sri Lanka"
 
-#: core/views/arflite_settings_form.php:550
+#: core/views/arflite_settings_form.php:553
 #@ arforms-form-builder
 msgid "SSL"
 msgstr "SSL"
@@ -6795,12 +6797,12 @@ msgstr "Telefon Ülke Kodu"
 msgid "Telugu"
 msgstr "Telugu"
 
-#: core/views/arflite_settings_form.php:473
+#: core/views/arflite_settings_form.php:476
 #@ arforms-form-builder
 msgid "Test e-mail works only after configure Gmail API settings"
 msgstr "Test e-postası yalnızca Gmail API ayarları yapılandırıldıktan sonra çalışır"
 
-#: core/views/arflite_settings_form.php:630
+#: core/views/arflite_settings_form.php:636
 #@ arforms-form-builder
 msgid "Test e-mail works only after configure SMTP server settings"
 msgstr "Test e-postası yalnızca SMTP sunucusu ayarlarını yapılandırdıktan sonra çalışır"
@@ -7001,7 +7003,9 @@ msgstr "Bu alan boş bırakılamaz"
 #: core/views/arflite_settings_form.php:226
 #: core/views/arflite_settings_form.php:242
 #: core/views/arflite_settings_form.php:251
-#: core/views/arflite_settings_form.php:260
+#: core/views/arflite_settings_form.php:261
+#: core/views/arflite_settings_form.php:613
+#: core/views/arflite_settings_form.php:626
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:249
 #: integrations/Hcaptcha/core/classes/class.arforms-hcaptcha.php:431
 #: integrations/Payments/PayPal/core/edit_3.0.php:251
@@ -7163,7 +7167,7 @@ msgstr "Başlık"
 msgid "Title Alignment"
 msgstr "Başlık Hizalama"
 
-#: core/views/arflite_settings_form.php:564
+#: core/views/arflite_settings_form.php:567
 #@ arforms-form-builder
 msgid "TLS"
 msgstr "TLS"
@@ -7171,8 +7175,8 @@ msgstr "TLS"
 #: core/views/arf_debug_log.php:129
 #: core/views/arf_view_records.php:391
 #: core/views/arflite_field_option_popup.php:629
-#: core/views/arflite_settings_form.php:447
-#: core/views/arflite_settings_form.php:605
+#: core/views/arflite_settings_form.php:449
+#: core/views/arflite_settings_form.php:608
 #: core/views/arforms_import_export_form.php:150
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:100
 #@ arforms-form-builder
@@ -7352,7 +7356,7 @@ msgstr "Ukrayna"
 msgid "Ukrainian"
 msgstr "Ukrayna"
 
-#: core/controllers/arflitesettingcontroller.php:661
+#: core/controllers/arflitesettingcontroller.php:660
 #@ arforms-form-builder
 msgid "Unable to connect to the filesystem. Please confirm your credentials."
 msgstr "Dosya sistemine bağlanılamıyor. Lütfen kimlik bilgilerinizi onaylayın."
@@ -7414,7 +7418,7 @@ msgstr "ARForms Veritabanını Güncelle"
 
 #: core/classes/class.arforms_form_builder.php:1805
 #: core/controllers/arfliteformcontroller.php:134
-#: core/controllers/arflitesettingcontroller.php:145
+#: core/controllers/arflitesettingcontroller.php:144
 #@ arforms-form-builder
 msgid "Upgrade To Premium"
 msgstr "Premiuma yükselt"
@@ -7750,7 +7754,7 @@ msgstr "Pencere Opaklığı"
 msgid "With what plugin or theme is incompatible?"
 msgstr "Hangi eklenti veya tema ile uyumsuz?"
 
-#: core/views/arflite_settings_form.php:277
+#: core/views/arflite_settings_form.php:279
 #@ arforms-form-builder
 msgid "WordPress Server"
 msgstr "WordPress Sunucusu"
@@ -7823,9 +7827,9 @@ msgstr "EVET"
 #: core/views/arflite_field_values_popup.php:141
 #: core/views/arflite_field_values_popup.php:157
 #: core/views/arflite_field_values_popup.php:174
-#: core/views/arflite_settings_form.php:653
-#: core/views/arflite_settings_form.php:704
-#: core/views/arflite_settings_form.php:790
+#: core/views/arflite_settings_form.php:659
+#: core/views/arflite_settings_form.php:710
+#: core/views/arflite_settings_form.php:796
 #: core/widgets/arflitewidgetform.php:59
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:324
 #: integrations/Payments/PayPal/core/edit_3.0.php:381
@@ -7850,7 +7854,7 @@ msgstr "Web sitenizde ARForms Premium eklentisini kullanıyorsunuz ve bu, ARForm
 msgid "You have already submitted this form before. You are not allowed to submit this form again."
 msgstr "Bu formu daha önce göndermiştiniz. Bu formu tekrar göndermenize izin verilmiyor."
 
-#: core/controllers/arflitesettingcontroller.php:280
+#: core/controllers/arflitesettingcontroller.php:279
 #@ arforms-form-builder
 msgid "You have made below required fields which may not supported by system."
 msgstr "Aşağıda sistem tarafından desteklenmeyen zorunlu alanları yaptınız."
@@ -7875,18 +7879,18 @@ msgstr "Formülünüz geçerli"
 msgid "Your submission was successfully saved."
 msgstr "Gönderiminiz başarıyla kaydedildi."
 
-#: core/views/arflite_settings_form.php:441
+#: core/views/arflite_settings_form.php:443
 #@ arforms-form-builder
 msgid "Your test mail is not sent for some reason, Please check your Gmail setting"
 msgstr "Test postanız bazı nedenlerden dolayı gönderilemedi. Lütfen Gmail ayarlarınızı kontrol edin."
 
-#: core/views/arflite_settings_form.php:599
+#: core/views/arflite_settings_form.php:602
 #@ arforms-form-builder
 msgid "Your test mail is not sent for some reason, Please check your SMTP setting"
 msgstr "Test postanız herhangi bir nedenle gönderilmedi, Lütfen SMTP ayarınızı kontrol edin"
 
-#: core/views/arflite_settings_form.php:440
-#: core/views/arflite_settings_form.php:598
+#: core/views/arflite_settings_form.php:442
+#: core/views/arflite_settings_form.php:601
 #@ arforms-form-builder
 msgid "Your test mail is successfully sent"
 msgstr "Test postanız başarıyla gönderildi"
@@ -7996,12 +8000,12 @@ msgstr "göndermek"
 msgid "Invalid reCaptcha. Please try again."
 msgstr "Geçersiz reCaptcha. Lütfen tekrar deneyin."
 
-#: core/controllers/arflitesettingcontroller.php:704
+#: core/controllers/arflitesettingcontroller.php:703
 #@ arforms-form-builder
 msgid "Sorry! you do not have permission to activate the add-on"
 msgstr "Üzgünüm! eklentiyi etkinleştirme izniniz yok"
 
-#: core/controllers/arflitesettingcontroller.php:812
+#: core/controllers/arflitesettingcontroller.php:811
 #@ arforms-form-builder
 msgid "Sorry! you do not have permission to deactivate the add-on"
 msgstr "Üzgünüm! eklentiyi devre dışı bırakma izniniz yok"
@@ -8029,7 +8033,7 @@ msgstr "E-posta Bildirimi Hata Ayıklama Günlüğü"
 
 #: core/views/arf_debug_log.php:43
 #: core/views/arf_debug_log.php:86
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:755
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:759
 #@ arforms-form-builder
 msgid "Download Logs"
 msgstr "Günlükleri İndir"
@@ -8096,12 +8100,12 @@ msgstr "Hata Ayıklama Günlüğü Başarıyla İndirildi."
 msgid "We're sorry. Form is not submitted successfully."
 msgstr "Üzgünüz. Form başarıyla gönderilemedi."
 
-#: core/views/arflite_settings_form.php:452
+#: core/views/arflite_settings_form.php:454
 #@ arforms-form-builder
 msgid "Please Enter To Email"
 msgstr "Lütfen E-postaya Girin"
 
-#: core/views/arflite_settings_form.php:464
+#: core/views/arflite_settings_form.php:467
 #@ arforms-form-builder
 msgid "Please Enter Message"
 msgstr "Lütfen Mesajınızı Giriniz"
@@ -8150,28 +8154,28 @@ msgid "Settings saved successfully"
 msgstr "Ayarlar başarıyla kaydedildi"
 
 #: core/views/arf_debug_log.php:41
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:754
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:758
 #@ arforms-form-builder
 msgid "View Logs"
 msgstr "Günlükleri Görüntüle"
 
 #: core/views/arf_debug_log.php:44
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:756
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:760
 #@ arforms-form-builder
 msgid "Clear Logs"
 msgstr "Günlükleri Temizle"
 
-#: core/views/arflite_settings_form.php:778
+#: core/views/arflite_settings_form.php:784
 #@ arforms-form-builder
 msgid "Help us improve ARForms by sending anonymous usage stats"
 msgstr "Anonim kullanım istatistikleri göndererek ARForms'u geliştirmemize yardımcı olun"
 
-#: core/views/arflite_settings_form.php:413
+#: core/views/arflite_settings_form.php:415
 #@ arforms-form-builder
 msgid "Disconnect"
 msgstr "Bağlantıyı kes"
 
-#: core/views/arflite_settings_form.php:416
+#: core/views/arflite_settings_form.php:418
 #@ arforms-form-builder
 msgid "Connect"
 msgstr "Bağlamak"
@@ -8199,9 +8203,9 @@ msgstr "Akordeon"
 msgid "Sorry, your request cannot be processed due to security reason."
 msgstr "Üzgünüz, güvenlik nedeniyle isteğiniz işleme alınamıyor."
 
-#: core/controllers/arflitesettingcontroller.php:598
-#: core/controllers/arflitesettingcontroller.php:736
-#: core/controllers/arflitesettingcontroller.php:842
+#: core/controllers/arflitesettingcontroller.php:597
+#: core/controllers/arflitesettingcontroller.php:735
+#: core/controllers/arflitesettingcontroller.php:841
 #@ arforms-form-builder
 msgid "You cannot install this Plugin as your are not using ARForms"
 msgstr "ARForms kullanmadığınız için bu Eklentiyi yükleyemezsiniz"
@@ -8281,7 +8285,7 @@ msgstr "Girişler Başarıyla okundu."
 msgid "Entries Unread successfully."
 msgstr "Girişler başarıyla okunmadı."
 
-#: core/controllers/arflitesettingcontroller.php:569
+#: core/controllers/arflitesettingcontroller.php:568
 #@ arforms-form-builder
 msgid "Upgade to Pro"
 msgstr "Pro'ya yükseltin"
@@ -8475,7 +8479,7 @@ msgstr "Boş Form Gönderim Kısıtlama Mesajı"
 msgid "Message will be displayed when form is submitted without filling up any of its fields."
 msgstr "Formdaki alanlardan hiçbiri doldurulmadan gönderildiğinde mesaj gösterilecektir."
 
-#: core/views/arflite_settings_form.php:693
+#: core/views/arflite_settings_form.php:699
 #@ arforms-form-builder
 msgid "Disable IP logging"
 msgstr "IP kaydını devre dışı bırak"
@@ -8535,14 +8539,14 @@ msgid "Enable reCaptcha"
 msgstr "reCaptcha'yı etkinleştir"
 
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:219
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1607
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1594
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:140
 #@ arforms-form-builder
 msgid "Edit Configuration"
 msgstr "Yapılandırmayı Düzenle"
 
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:221
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1609
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1596
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:83
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:142
 #@ arforms-form-builder
@@ -8550,7 +8554,7 @@ msgid "Transactions"
 msgstr "İşlemler"
 
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:419
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1396
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1391
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:222
 #@ arforms-form-builder
 msgid "View Entry"
@@ -8579,53 +8583,53 @@ msgstr "Bu yapılandırmayı %s silmek istediğinizden emin misiniz?"
 msgid "Are you sure you want to %s delete this transaction?"
 msgstr "Bu işlemi %s silmek istediğinizden emin misiniz?"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:886
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:890
 #@ arforms-form-builder
 msgid "Click here to continue"
 msgstr "Devam etmek için buraya tıklayın"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1043
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1047
 #@ arforms-form-builder
 msgid "Payment Details"
 msgstr "Ödeme Detayları"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1045
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1049
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:151
 #@ arforms-form-builder
 msgid "Transaction ID"
 msgstr "İşlem Kimliği"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1047
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1051
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:152
 #@ arforms-form-builder
 msgid "Payment Status"
 msgstr "Ödeme Durumu"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1050
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1054
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:84
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:153
 #@ arforms-form-builder
 msgid "Total Amount"
 msgstr "Toplam Tutar"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1057
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1061
 #@ arforms-form-builder
 msgid "Payment at"
 msgstr "Ödeme"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1059
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1063
 #: integrations/Payments/PayPal/core/edit_3.0.php:606
 #: integrations/Payments/PayPal/core/edit_3.0.php:645
 #@ arforms-form-builder
 msgid "Payer email"
 msgstr "Ödeyen e-postası"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1061
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1065
 #@ arforms-form-builder
 msgid "Payer name"
 msgstr "Ödeyen adı"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1385
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1380
 #: integrations/Payments/PayPal/core/edit_3.0.php:460
 #: integrations/Payments/PayPal/core/edit_3.0.php:473
 #: integrations/Payments/PayPal/core/export_data.php:63
@@ -8634,7 +8638,7 @@ msgstr "Ödeyen adı"
 msgid "Donations"
 msgstr "Bağışlar"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1387
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1382
 #: integrations/Payments/PayPal/core/edit_3.0.php:452
 #: integrations/Payments/PayPal/core/edit_3.0.php:472
 #: integrations/Payments/PayPal/core/export_data.php:63
@@ -8643,98 +8647,98 @@ msgstr "Bağışlar"
 msgid "Product / Service"
 msgstr "Ürün / Hizmet"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1841
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1967
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1828
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1954
 #@ arforms-form-builder
 msgid "Configuration saved successfully."
 msgstr "Yapılandırma başarıyla kaydedildi."
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2446
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2478
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2433
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2465
 #@ arforms-form-builder
 msgid "Payment received on"
 msgstr "Ödeme alındı"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2901
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2888
 #@ arforms-form-builder
 msgid "Hello admin,"
 msgstr "Merhaba admin,"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2902
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2920
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2889
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2907
 #@ arforms-form-builder
 msgid "Payment successfully received from"
 msgstr "Ödeme başarıyla alındı"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2903
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2921
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2890
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2908
 #@ arforms-form-builder
 msgid "Following are the payment details:"
 msgstr "Ödeme detayları aşağıdadır:"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2904
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2922
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2891
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2909
 #@ arforms-form-builder
 msgid "Transaction id"
 msgstr "İşlem kimliği"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2905
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2923
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2892
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2910
 #@ arforms-form-builder
 msgid "Amount paid"
 msgstr "Ödenen miktar"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2906
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2924
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2893
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2911
 #@ arforms-form-builder
 msgid "Payment date"
 msgstr "Ödeme tarihi"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2907
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2925
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2894
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2912
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:156
 #@ arforms-form-builder
 msgid "Payer Email"
 msgstr "Ödeyen E-postası"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2908
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2926
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2895
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2913
 #@ arforms-form-builder
 msgid "Payer ID"
 msgstr "Ödeyen Kimliği"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2909
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2927
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2896
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2914
 #@ arforms-form-builder
 msgid "Payer First name"
 msgstr "Ödeyen Adı"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2910
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2928
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2897
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2915
 #@ arforms-form-builder
 msgid "Payer Last name"
 msgstr "Ödeyen Soyadı"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2911
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2929
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2898
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2916
 #@ arforms-form-builder
 msgid "Thank you"
 msgstr "Teşekkür ederim"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2919
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2906
 #@ arforms-form-builder
 msgid "Hello user,"
 msgstr "Merhaba kullanıcı,"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2984
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3004
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2971
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2991
 #: integrations/Payments/PayPal/core/edit_3.0.php:147
 #@ arforms-form-builder
 msgid "PayPal Configuration"
 msgstr "PayPal Yapılandırması"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2986
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3006
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2973
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2993
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:55
 #@ arforms-form-builder
 msgid "PayPal Transactions"
@@ -9054,12 +9058,12 @@ msgstr "Üzgünüz, bu sitede ek modülü aktifleştirmenize/devre dışı bıra
 msgid "Sorry! Email was not sent successfully."
 msgstr "Üzgünüz! E-posta başarıyla gönderilemedi."
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:744
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:748
 #@ arforms-form-builder
 msgid "Payment Gateways Debug Log"
 msgstr "Ödeme Ağ Geçitleri Hata Ayıklama Günlüğü"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:747
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:751
 #@ arforms-form-builder
 msgid "Paypal Debug Log"
 msgstr "Paypal Hata Ayıklama Günlüğü"
@@ -9141,12 +9145,6 @@ msgstr "Bilinmeyen bir hata oluştu"
 msgid "Your HTML content is broken, do you want to fix it?"
 msgstr "HTML içeriğiniz bozuldu. Düzeltmek ister misiniz?"
 
-#. translators: plugin header field 'Version'
-#: arforms-form-builder.php:0
-#@ arforms-form-builder
-msgid "1.7.7"
-msgstr "1.7.7"
-
 #: core/classes/class.arforms_form_builder.php:859
 #@ arforms-form-builder
 msgid "Please choose a wipe option to proceed."
@@ -9186,4 +9184,23 @@ msgstr "Tüm ARForms verilerini silip varsayılanlara sıfırlıyorum."
 #@ arforms-form-builder
 msgid "AffiliatePress Successfully installed."
 msgstr "AffiliatePress Başarıyla kuruldu."
+
+#. translators: plugin header field 'Version'
+#: arforms-form-builder.php:0
+#@ arforms-form-builder
+msgid "1.7.8"
+msgstr "1.7.8"
+
+#: core/views/arflite_settings_form.php:252
+#: core/views/arflite_settings_form.php:262
+#: core/views/arflite_settings_form.php:455
+#: core/views/arflite_settings_form.php:614
+#@ arforms-form-builder
+msgid "This does not look like a valid email"
+msgstr "Bu geçerli bir e-posta gibi görünmüyor"
+
+#: core/models/arfliterecordmodel.php:183
+#@ arforms-form-builder
+msgid "Form submission failed due to invalid or incomplete required field data. Please refresh the page or try again using a private/incognito window."
+msgstr "Gerekli alan verilerinin geçersiz veya eksik olması nedeniyle form gönderimi başarısız oldu. Lütfen sayfayı yenileyin veya özel/gizli pencereyi kullanarak tekrar deneyin."
 

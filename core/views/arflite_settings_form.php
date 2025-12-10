@@ -249,6 +249,7 @@ $arf_character_arr = array(
 									<td valign="top " class="email-setting-input-td">
 										<input type="text" class="txtmodal1 width400px" id="frm_reply_to" name="frm_reply_to" value="<?php echo esc_attr( $arflitesettings->reply_to ); ?>">
 										<div class="arferrmessage display-none-cls" id="frm_reply_to_error"><?php echo esc_html__( 'This field cannot be blank.', 'arforms-form-builder' ); ?></div>
+										<div class="arferrmessage display-none-cls" id="frm_reply_to_invalid_mail_error"><?php echo esc_html__( 'This does not look like a valid email', 'arforms-form-builder' ); ?></div>
 									</td>
 								</tr>
 								<tr>
@@ -257,7 +258,8 @@ $arf_character_arr = array(
 									</td>
 									<td valign="top " class="email-setting-input-td">
 										<input type="text" class="txtmodal1 width400px" id="reply_to_email" name="reply_to_email" value="<?php echo esc_attr( $arflitesettings->reply_to_email ); ?>">
-										<div class="arferrmessage display-none-cls" id="frm_reply_to_error"><?php echo esc_html__( 'This field cannot be blank.', 'arforms-form-builder' ); ?></div>
+										<div class="arferrmessage display-none-cls" id="reply_to_email_error"><?php echo esc_html__( 'This field cannot be blank.', 'arforms-form-builder' ); ?></div>
+										<div class="arferrmessage display-none-cls" id="reply_to_email_invalid_mail_error"><?php echo esc_html__( 'This does not look like a valid email', 'arforms-form-builder' ); ?></div>
 									</td>
 								</tr>
 								<tr>
@@ -450,6 +452,7 @@ $arf_character_arr = array(
 									<td valign="top" style="padding-bottom:10px;">
 										<input type="text" id="arflite_sendtestgmail_to" name="arflite_sendtestgmail_to" class="txtmodal1 <?php echo esc_html($gmail_test_main_class); ?>" value="<?php echo isset( $arflitesettings->smtp_send_test_mail_to ) ? $arflitesettings->smtp_send_test_mail_to : ''; //phpcs:ignore ?>" <?php echo $gmail_test_mail_style; //phpcs:ignore ?> />
 										<p class="arf_error_msg_gmail_to_email"> <?php echo esc_html__( 'Please Enter To Email', 'arforms-form-builder' ); ?> </p>
+										<div class="arferrmessage display-none-cls arf_error_msg_gmail_to_invalid_email"><?php echo esc_html__( 'This does not look like a valid email', 'arforms-form-builder' ); ?></div>
 									</td>
 								</tr>
 
@@ -607,6 +610,8 @@ $arf_character_arr = array(
 									</td>
 									<td valign="top" class="email-setting-input-td">
 										<input type="text" id="sendtestmail_to" name="sendtestmail_to" class="txtmodal1 <?php echo esc_attr( $smtp_test_main_class ); ?>" value="<?php echo isset( $arflitesettings->smtp_send_test_mail_to ) ? esc_attr( $arflitesettings->smtp_send_test_mail_to ) : ''; ?>" <?php echo esc_attr( $smtp_test_mail_style ); ?> />
+										<div class="arferrmessage display-none-cls" id="sendtestmail_to_error"><?php echo esc_html__( 'This field cannot be blank.', 'arforms-form-builder' ); ?></div>
+								       	 	<div class="arferrmessage display-none-cls" id="sendtestmail_to_invalid_mail_error"><?php echo esc_html__( 'This does not look like a valid email', 'arforms-form-builder' ); ?></div>
 									</td>
 								</tr>
 
@@ -618,6 +623,7 @@ $arf_character_arr = array(
 									</td>
 									<td valign="top" class="email-setting-input-td">
 										<textarea class="txtmultinew testmailmsg  <?php echo esc_attr( $smtp_test_main_class ); ?>" name="sendtestmail_msg" <?php echo esc_attr( $smtp_test_mail_style ); ?> id="sendtestmail_msg" ><?php echo isset( $arflitesettings->smtp_send_test_mail_msg ) ? esc_attr( $arflitesettings->smtp_send_test_mail_msg ) : ''; ?></textarea>
+										<div class="arferrmessage display-none-cls" id="sendtestmail_msg_error"><?php echo esc_html__( 'This field cannot be blank.', 'arforms-form-builder' ); ?></div>
 									</td>
 								</tr>
 

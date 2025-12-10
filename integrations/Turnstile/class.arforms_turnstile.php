@@ -76,7 +76,7 @@ class arforms_turnstile{
 
         add_filter( 'arf_new_field_array_materialize_outlined_filter_outside', array( $this, 'arf_new_field_array_filter_outside_materialize' ), 10, 4 );
 
-        add_filter( 'form_fields', array( $this, 'add_field_to_frontend' ), 11, 10 );
+        add_filter( 'arf_form_fields', array( $this, 'add_field_to_frontend' ), 11, 10 );
         add_filter( 'arflite_form_fields', array( $this, 'add_field_to_frontend' ), 11, 10 );
 
         add_action( 'arfdisplayaddedfields', array( $this, 'arf_display_tccaptcha_in_editor' ), 11 );

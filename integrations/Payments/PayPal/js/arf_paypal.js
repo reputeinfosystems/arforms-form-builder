@@ -94,7 +94,7 @@ function arfpaypalactionfunc(act, id) {
                     "order":[[1,'desc']],
                     "aoColumnDefs": [            
                         {"bSortable": false, "aTargets": [0,4]},
-                        {"sClass": "","aTargets":[0]}, 
+                        {"sClass": "", "sWidth": "30px", "aTargets":[0]}, 
                         {"sClass": "","aTargets":[1]}, 
                         {"sClass": "","aTargets":[2]}, 
                         {"sClass": "","aTargets":[3]}, 
@@ -331,7 +331,7 @@ function arf_delete_bulk_transaction(is_delete) {
                     },
                     "aoColumnDefs": [
                         {"bSortable": false, "aTargets": [0, 6]},
-                        {"sClass": "cbox","aTargets":[0]}, 
+                        {"sClass": "cbox", "sWidth": "30px", "aTargets":[0]}, 
                         {"sClass": "","aTargets":[1]}, 
                         {"sClass": "","aTargets":[2]}, 
                         {"sClass": "","aTargets":[3]}, 
@@ -449,7 +449,7 @@ function arfpaypalformactionfunc(act, id) {
                 },
                 "aoColumnDefs": [
                     {"bSortable": false, "aTargets": [0, 6]},
-                    {"sClass": "cbox","aTargets":[0]}, 
+                    {"sClass": "cbox", "sWidth": "30px", "aTargets":[0]}, 
                     {"sClass": "","aTargets":[1]}, 
                     {"sClass": "","aTargets":[2]}, 
                     {"sClass": "","aTargets":[3]}, 
@@ -592,7 +592,7 @@ function arf_paypal_form_bulk_act() {
                     },
                     "aoColumnDefs": [
                         {"bSortable": false, "aTargets": [0, 6]},
-                        {"sClass": "cbox","aTargets":[0]}, 
+                        {"sClass": "cbox", "sWidth": "30px", "aTargets":[0]}, 
                         {"sClass": "","aTargets":[1]}, 
                         {"sClass": "","aTargets":[2]}, 
                         {"sClass": "","aTargets":[3]}, 
@@ -702,7 +702,7 @@ function arf_delete_bulk_paypal_form(is_delete) {
                         },
                         "aoColumnDefs": [
                             {"bSortable": false, "aTargets": [0, 6]},
-                            {"sClass": "cbox","aTargets":[0]}, 
+                            {"sClass": "cbox", "sWidth": "30px","aTargets":[0]}, 
                             {"sClass": "","aTargets":[1]}, 
                             {"sClass": "","aTargets":[2]}, 
                             {"sClass": "","aTargets":[3]}, 
@@ -1020,7 +1020,7 @@ function change_form_orders() {
         "order":[[1,'desc']],
         "aoColumnDefs": [            
             {"bSortable": false, "aTargets": [0,4]},
-            {"sClass": "","aTargets":[0]}, 
+            {"sClass": "", "sWidth": "30px", "aTargets":[0]}, 
             {"sClass": "","aTargets":[1]}, 
             {"sClass": "","aTargets":[2]}, 
             {"sClass": "","aTargets":[3]}, 
@@ -1278,6 +1278,17 @@ jQuery(document).ready(function() {
 
     wp.hooks.addFilter( 'arf_modify_datatable_action_outside', 'arfpaypal', arf_modify_ajax_actions, 10 );
 
+        jQuery(document).on('change', '#arf_bulk_action_one, #arf_bulk_action_two', function() {
+        
+        var newValue = jQuery(this).val();
+        var newLabel = jQuery(this).closest('.arf_list_bulk_action_wrapper').find('dd ul li[data-value="' + newValue + '"]').attr('data-label');
+
+        if (typeof newLabel !== 'undefined') {
+            jQuery('#arf_bulk_action_one, #arf_bulk_action_two').val(newValue);
+            jQuery('dl[data-id="arf_bulk_action_one"] dt span, dl[data-id="arf_bulk_action_two"] dt span').text(newLabel);
+        }
+    });
+
     if (jQuery('#arfpaypal_form_error').length > 0) {
         var pageurl = removeVariableFromURL(document.URL, 'err');
         if (window.history.pushState) {
@@ -1521,18 +1532,22 @@ function arf_paypal_list_form_initialize() {
             nPaging.appendChild(nNext);
             nPaging.appendChild(nLast);
             jQuery(nFirst).click(function() {
+                if (jQuery(this).hasClass('paginate_disabled_first')) { return; }
                 oSettings.oApi._fnPageChange(oSettings, "first");
                 fnCallbackDraw(oSettings);
             });
             jQuery(nPrevious).click(function() {
+                if (jQuery(this).hasClass('paginate_disabled_previous')) { return; }
                 oSettings.oApi._fnPageChange(oSettings, "previous");
                 fnCallbackDraw(oSettings);
             });
             jQuery(nNext).click(function() {
+                if (jQuery(this).hasClass('paginate_disabled_next')) { return; }
                 oSettings.oApi._fnPageChange(oSettings, "next");
                 fnCallbackDraw(oSettings);
             });
             jQuery(nLast).click(function() {
+                if (jQuery(this).hasClass('paginate_disabled_last')) { return; }
                 oSettings.oApi._fnPageChange(oSettings, "last");
                 fnCallbackDraw(oSettings);
             });
@@ -1647,7 +1662,7 @@ function arf_paypal_list_form_initialize() {
     };
     dtobj.aoColumnDefs = [
         {"bSortable": false, "aTargets": [0, 6]},
-        {"sClass": "cbox","aTargets":[0]}, 
+        {"sClass": "cbox", "sWidth": "30px", "aTargets":[0]}, 
         {"sClass": "","aTargets":[1]}, 
         {"sClass": "","aTargets":[2]}, 
         {"sClass": "","aTargets":[3]}, 
@@ -1749,18 +1764,22 @@ function arf_paypal_transaction_form_init() {
             nPaging.appendChild(nNext);
             nPaging.appendChild(nLast);
             jQuery(nFirst).click(function() {
+                if (jQuery(this).hasClass('paginate_disabled_first')) { return; }
                 oSettings.oApi._fnPageChange(oSettings, "first");
                 fnCallbackDraw(oSettings);
             });
             jQuery(nPrevious).click(function() {
+                if (jQuery(this).hasClass('paginate_disabled_previous')) { return; }
                 oSettings.oApi._fnPageChange(oSettings, "previous");
                 fnCallbackDraw(oSettings);
             });
             jQuery(nNext).click(function() {
+                if (jQuery(this).hasClass('paginate_disabled_next')) { return; }
                 oSettings.oApi._fnPageChange(oSettings, "next");
                 fnCallbackDraw(oSettings);
             });
             jQuery(nLast).click(function() {
+                if (jQuery(this).hasClass('paginate_disabled_last')) { return; }
                 oSettings.oApi._fnPageChange(oSettings, "last");
                 fnCallbackDraw(oSettings);
             });
@@ -1884,7 +1903,7 @@ function arf_paypal_transaction_form_init() {
     };
     dtobj.aoColumnDefs = [            
         {"bSortable": false, "aTargets": [0,4]},
-        {"sClass": "","aTargets":[0]}, 
+        {"sClass": "", "sWidth": "30px", "aTargets":[0]}, 
         {"sClass": "","aTargets":[1]}, 
         {"sClass": "","aTargets":[2]}, 
         {"sClass": "","aTargets":[3]}, 

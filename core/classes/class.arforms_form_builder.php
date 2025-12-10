@@ -1796,8 +1796,8 @@ class arforms_form_builder{
 		
 		do_action('arformslite_rearrange_submanu');
         $arf_current_date = current_time('timestamp', true );
-		$arf_sale_start_time = '1732064400';
-		$arf_sale_end_time = '1733270399';
+		$arf_sale_start_time = '1763510400';
+		$arf_sale_end_time = '1764720000';
 
 		if( $arf_current_date >= $arf_sale_start_time && $arf_current_date <= $arf_sale_end_time ){
 			add_submenu_page( 'ARForms', 'ARForms | ' . __( 'Black Friday Sale', 'arforms-form-builder' ), __( 'Black Friday Sale', 'arforms-form-builder' ), 'arfchangesettings', 'ARForms&amp;upgrade-to-pro=yes' , array( $this, 'arforms_router' ) );

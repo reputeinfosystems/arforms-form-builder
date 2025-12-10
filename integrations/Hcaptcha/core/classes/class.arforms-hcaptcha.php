@@ -142,7 +142,7 @@ if ( ! class_exists( 'ARF_hcaptcha' ) ) {
 
 			add_filter( 'arf_new_field_array_materialize_outlined_filter_outside', array( $this, 'arf_hcaptcha_new_field_materialize_outside' ), 10, 4 );
 
-			add_filter( 'form_fields', array( $this, 'arf_hcaptcha_field_to_frontend' ), 11, 10 );
+			add_filter( 'arf_form_fields', array( $this, 'arf_hcaptcha_field_to_frontend' ), 11, 10 );
 			add_filter( 'arflite_form_fields', array( $this, 'arf_hcaptcha_field_to_frontend' ), 11, 10 );
 
 			add_action( 'arfdisplayaddedfields', array( $this, 'arf_display_hcaptcha_field_in_editor' ), 11 );

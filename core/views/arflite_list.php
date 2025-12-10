@@ -208,15 +208,15 @@ global $arfliteformcontroller;
  <?php 
 	if(isset($_GET['upgrade-to-pro']) && $_GET['upgrade-to-pro'] == 'yes'){
 		$arf_current_date = current_time('timestamp', true );
-		$arf_sale_start_time = '1732064400';
-		$arf_sale_end_time = '1733270399';
+		$arf_sale_start_time = '1763510400';
+		$arf_sale_end_time = '1764720000';
 
 		if( $arf_current_date >= $arf_sale_start_time && $arf_current_date <= $arf_sale_end_time ){
 			?>
 				<div id="myModal" class="modal" >
 					<div class="arflite_upgred_to_premium_background">
 					<div class="sale_close"><img id="black_friday_sale_close" src="<?php echo esc_url(ARFLITEIMAGESURL . '/Cross.png');?>" alt="arf_sale_close_image"></div>
-						<button class="arflite_upgred_to_premium_button">Grab Now</button>
+						<button class="arflite_upgred_to_premium_button">Grab Deal at <strong>$19</strong> <span class="old-price">$39</span></button>
 					</div>
 				</div>
 			<?php

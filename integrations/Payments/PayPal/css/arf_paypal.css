@@ -64,6 +64,7 @@
 .arfformentry_delete#delete_form_message .delete_title {
     left: -50%;
     font-size: 17px !important;
+    margin-top: 8%;
 }
 .arfformentry_delete#delete_form_message .delete_column_arrow, .delete_row_arrow {
     left: 13.5%;
@@ -93,7 +94,7 @@
 }
 #delete_bulk_paypal_form_message, #delete_bulk_transaction_message {
     height: 200px !important;
-    top: 35%;
+    top: 35% !important;;
     left: 35%;
 }
 #arf_paypal_setting .lblsubtitle {
@@ -412,7 +413,7 @@ input#arf_paypal_trial_amount {
     width: 130px;
 }
 .arf_pp_cb_all_checkbox {
-    margin-left: 15px;
+    margin-left: 12px;
 }
 .arf_pp_transaction_col {
     text-align: center;
@@ -705,7 +706,7 @@ th.arf_pp_order_col_action {
 
 .arf_paypal_order_list .arf-row-actions .delete_popup#delete_form_message .delete_column_arrow{
     left: 25px;
-    margin-top:-15px;
+    margin-top:20px;
 }
 .wrap #example_wrapper .dataTables_filter#example_filter{
     float:right;

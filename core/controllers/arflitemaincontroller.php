@@ -1350,8 +1350,8 @@ class arflitemaincontroller {
 
 		wp_register_script('arf_black_friday_sale_js', ARFLITEURL .'/js/arf_upgrade_to_premium_popup.js',array($jquery_handler), $arfliteversion);
 		$arf_current_date = current_time('timestamp', true );
-		$arf_sale_start_time = '1732064400';
-		$arf_sale_end_time = '1733270399';
+		$arf_sale_start_time = '1763510400';
+		$arf_sale_end_time = '1764720000';
 
 		if( $arf_current_date >= $arf_sale_start_time && $arf_current_date <= $arf_sale_end_time ){
 			$stylesheet = '#adminmenu #toplevel_page_ARForms .wp-submenu li:last-child a {
@@ -2647,7 +2647,7 @@ class arflitemaincontroller {
 			$arflitenewdbversion = get_option( 'arflite_db_version' );
 		}
 
-		if ( version_compare( $arflitenewdbversion, '1.7.7', '<' ) ) {
+		if ( version_compare( $arflitenewdbversion, '1.7.8', '<' ) ) {
 			$path = ARFLITE_FORMPATH . '/core/views/arflite_upgrade_latest_data.php';
 			include $path;
 			$this->arforms_send_anonymous_data_cron();

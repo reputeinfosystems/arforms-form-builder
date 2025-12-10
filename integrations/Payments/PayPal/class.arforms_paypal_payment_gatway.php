@@ -679,7 +679,11 @@ class ARForms_Paypal_payment_gatway {
 	function arf_set_css() {
 		global $arf_paypal_version,$arf_paypal_assets_version;
 
-		wp_register_style( 'arfpaypal-css', ARFLITEURL . '/integrations/Payments/PayPal/css/arf_paypal.css', array(), $arf_paypal_assets_version );
+		if ( $this->is_arforms_support() && $this->is_arforms_version() ) {
+			wp_register_style( 'arfpaypal-css', ARFURL . '/integrations/Payments/PayPal/css/arf_paypal.css', array(), $arf_paypal_assets_version );
+		}else{
+			wp_register_style( 'arfpaypal-css', ARFLITEURL . '/integrations/Payments/PayPal/css/arf_paypal.css', array(), $arf_paypal_assets_version );
+		}
 
 
 		wp_register_style( 'tipso', ARFLITEURL . '/css/tipso.min.css', array(), $arf_paypal_assets_version );
@@ -1192,24 +1196,15 @@ class ARForms_Paypal_payment_gatway {
 	}
 
 	function arf_paypal_order_bulk_act() {
+		global $arfform,$arflitemainhelper;
 
 		if ( empty( $_POST['wp_arflite_paypal_nonce'] ) || ( isset( $_POST['wp_arflite_paypal_nonce'] ) && '' != $_POST['wp_arflite_paypal_nonce'] && ! wp_verify_nonce( sanitize_text_field( $_POST['wp_arflite_paypal_nonce'] ), 'arf_paypal_order_nonce' ) ) ) {
 			echo esc_attr( 'security_error' );
 			die;
 		}
-		global $arfform,$arflitemainhelper;
-
-		$check_cap = $this->arf_paypal_check_user_cap( 'arfpaypaltransaction', true );
-
-		if ( 'success' != $check_cap ) {
-			$user_cap = json_decode( $check_cap, true );
-			echo json_encode(
-				array(
-					'success' => false,
-					'message' => $user_cap[0],
-				)
-			);
-			die;
+		if ( ! current_user_can( 'arfpaypaltransaction' ) ) {
+			$status['errorMessage'] = esc_html__( 'Sorry, you do not have permission to perform this action', 'arforms-form-builder' );
+			wp_send_json_error( $status );
 		}
 
 		if ( ! isset( $_POST ) ) {
@@ -1471,22 +1466,14 @@ class ARForms_Paypal_payment_gatway {
 
 	function arf_paypal_form_bulk_act() {
 
-		if ( empty( $_POST['wp_paypal_bulk_nonce'] ) || ( isset( $_POST['wp_paypal_bulk_nonce'] ) && '' != $_POST['wp_paypal_bulk_nonce'] && ! wp_verify_nonce( sanitize_text_field( $_POST['wp_paypal_bulk_nonce'] ), 'arf_paypal_form_list_nonce' ) ) ) {
+		if ( empty( $_POST['wp_arf_paypal_forms_nonce'] ) || ( isset( $_POST['wp_arf_paypal_forms_nonce'] ) && '' != $_POST['wp_arf_paypal_forms_nonce'] && ! wp_verify_nonce( sanitize_text_field( $_POST['wp_arf_paypal_forms_nonce'] ), 'arf_paypal_form_list_nonce' ) ) ) {
 			echo esc_attr( 'security_error' );
 			die;
 		}
 
-		$check_cap = $this->arf_paypal_check_user_cap( 'arfpaypalconfiguration', true );
-
-		if ( 'success' != $check_cap ) {
-			$user_cap = json_decode( $check_cap, true );
-			echo json_encode(
-				array(
-					'success' => false,
-					'message' => $user_cap[0],
-				)
-			);
-			die;
+		if ( ! current_user_can( 'arfpaypalconfiguration' ) ) {
+			$status['errorMessage'] = esc_html__( 'Sorry, you do not have permission to perform this action', 'arforms-form-builder' );
+			wp_send_json_error( $status );
 		}
 
 		global $arflitemainhelper;

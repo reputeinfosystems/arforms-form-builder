@@ -491,11 +491,11 @@ if( version_compare( $arflitenewdbversion, '1.7.1', '<') ){
 
 	
 }
-update_option( 'arflite_db_version', '1.7.7' );
+update_option( 'arflite_db_version', '1.7.8' );
 delete_transient( 'arforms_form_builder_addon_page_notice' );
 
 global $arflitenewdbversion;
-$arflitenewdbversion = '1.7.7';
+$arflitenewdbversion = '1.7.8';
 
 update_option( 'arflite_new_version_installed', intval( 1 ) );
 update_option( 'arflite_update_date_' . $arflitenewdbversion, current_time( 'mysql' ) );

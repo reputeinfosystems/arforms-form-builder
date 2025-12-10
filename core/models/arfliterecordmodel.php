@@ -126,6 +126,62 @@ class arfliterecordmodel {
 				}
 			}
 		}
+
+		$all_field_values = $values['item_meta'];
+
+		if( !empty( $all_field_values ) ){
+            global $arflitefield;
+            $return_pre_posted_data = false;
+
+            foreach( $all_field_values as $field_id => $field_value ){
+                $field_data = $arflitefield->arflitegetOne( $field_id );
+
+                if( $field_data->type == 'select' || $field_data->type == 'radio' ){
+
+					$is_separate_value = ( true === $field_data->field_options['separate_value'] || '1' == $field_data->field_options['separate_value'] || 'true' === $field_data->field_options['separate_value'] ) ? true : false;
+					if( 'radio' == $field_data->type || true == $is_separate_value ){
+						$field_options = array_map( function( $a ){
+							return $a['value'];
+						}, $field_data->field_options['options'] );
+					} else {
+						$field_options = $field_data->field_options['options'];
+					}
+					
+                    if( 1 == $field_data->field_options['required'] ){
+					
+						if( !empty( $field_options ) && !in_array( $field_value, $field_options ) ){
+							$return_pre_posted_data = true;
+							break;
+						}
+                    }
+                } else if( 'checkbox' == $field_data->type ){
+					$is_separate_value = ( true === $field_data->field_options['separate_value'] || '1' == $field_data->field_options['separate_value'] || 'true' === $field_data->field_options['separate_value'] ) ? true : false;
+					$field_options = $field_data->field_options['options'];
+					if( 1 == $field_data->field_options['required'] ){
+						$field_values_arr = array_map( function( $a ){
+							return $a['value'];
+						}, $field_options );
+						foreach( $field_value as $fvalue ){
+							if( !empty( $fvalue ) && !in_array( $fvalue, $field_values_arr ) ){
+								$return_pre_posted_data = true;
+								break;
+							}
+						}
+					}
+				}
+            }
+        }
+
+		if( !empty( $return_pre_posted_data ) && true == $return_pre_posted_data ) {
+            $return["conf_method"] = "message";
+            $return["message"] = '<div class="arf_form ar_main_div_{arf_form_id} arf_error_wrapper" id="arffrm_{arf_form_id}_container"><div class="frm_error_style" id="arf_message_error"><div class="msg-detail"><div class="arf_res_front_msg_desc">'.esc_html__( 'Form submission failed due to invalid or incomplete required field data. Please refresh the page or try again using a private/incognito window.', 'arforms-form-builder' ).'</div>';
+            $return = apply_filters( 'arflite_reset_built_in_captcha', $return, $_POST );
+            if($_POST['form_submit_type'] == 1) {
+                echo json_encode($return);
+                exit;
+            }
+            return false;
+        }
 		
 
 		if ( isset( $return_values ) && $return_values == true ) {

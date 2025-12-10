@@ -740,7 +740,7 @@ $arfliteaction = !empty( sanitize_text_field($_GET['arfaction'] )) ? esc_attr( s
 			$browser_info = $arfliterecordcontroller->arflitegetBrowser( $arflitehttp_user_agent ); 
 		?>
 		<input type="hidden" data-id="arf_browser_name" value="<?php echo esc_attr( $browser_info['name'] ); ?>" />
-		<div class="arf_editor_header_belt">
+		<div class="arf_editor_header_belt arf_editor_header_belt_cls">
 			<div class="arf_editor_header_inner_belt">
 				<div class="arf_editor_top_menu_wrapper">
 					<ul class="arf_editor_top_menu">
