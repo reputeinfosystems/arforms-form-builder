@@ -1,5 +1,5 @@
 <?php 
-if( !defined( 'ABSPATH' ) ) exit;
+if( !defined( 'ABSPATH' ) ) exit; 
 ?>
 <div class="arf_field_option_model" id="arf_field_option_model_skeleton">
 	<div class="arf_field_option_model_header"><?php echo esc_html__( 'Field Options', 'arforms-form-builder' ); ?></div>
@@ -715,7 +715,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 				<div class="arf_field_option_content_cell_input">
 					
 					<textarea id="arf_field_description_{arf_field_id}" name="description" class="arf_field_option_input_textarea html_field_description"></textarea>
-					<div id="arf_invalid_html_content_message_<?php echo esc_attr($arf_field_id); ?>" class="arf_invalid_html_content_message" style="display: none;">
+					<div id="arf_invalid_html_content_message_{arf_field_id}" class="arf_invalid_html_content_message" style="display: none;">
                         <div class="arf_invalid_html_wrapper">
                             <div class="arf_invalid_html_msg"><?php esc_html_e("Your HTML content is broken, do you want to fix it?", 'arforms-form-builder'); ?></div>
                             <div class="arf_invalid_html_actions">

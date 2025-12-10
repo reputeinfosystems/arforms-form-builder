@@ -2647,7 +2647,7 @@ class arflitemaincontroller {
 			$arflitenewdbversion = get_option( 'arflite_db_version' );
 		}
 
-		if ( version_compare( $arflitenewdbversion, '1.7.6', '<' ) ) {
+		if ( version_compare( $arflitenewdbversion, '1.7.7', '<' ) ) {
 			$path = ARFLITE_FORMPATH . '/core/views/arflite_upgrade_latest_data.php';
 			include $path;
 			$this->arforms_send_anonymous_data_cron();
@@ -2728,7 +2728,7 @@ class arflitemaincontroller {
             return;
         }
 		
-		if ( $arfsettings_data['arfmainformloadjscss'] == 1 ) {
+		if ( !empty( $arfsettings_data['arfmainformloadjscss'] ) && $arfsettings_data['arfmainformloadjscss'] == 1 ) {
 			wp_enqueue_script( 'bootstrap-inputmask' );
 			wp_enqueue_script( 'jquery-maskedinput' );
 			wp_enqueue_script( 'arformslite_phone_utils' );

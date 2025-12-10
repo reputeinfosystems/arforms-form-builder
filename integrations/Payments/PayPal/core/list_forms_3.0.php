@@ -126,7 +126,7 @@ if ( isset( $_GET['err'] ) && 1 == $_GET['err'] ) {
 														$total_amount = isset( $ord_details->total_amout ) ? $ord_details->total_amount : 0;
 
 														
-														$total_amount = number_format( (float)$ord_details->total_amount, 2, '.' );
+														$total_amount = number_format( (float)$ord_details->total_amount, 2, '.', '' );
 														
 														
 														echo esc_attr($total_amount) . ' ' . esc_attr($options['currency']);

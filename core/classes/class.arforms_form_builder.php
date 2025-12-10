@@ -237,12 +237,6 @@ class arforms_form_builder{
 				    $mailchimp_arr['type_val'] = '';
 
 					$mailchimp = maybe_serialize($mailchimp_arr);
-					
-				    $madmimi_arr['enable'] ='';
-				    $madmimi_arr['is_global'] = 1;
-				    $madmimi_arr['type'] = '';
-
-					$madmimi = maybe_serialize($madmimi_arr);
 
 				    $getresponse_arr['enable'] = '';
 				    $getresponse_arr['is_global'] = 1;
@@ -250,20 +244,6 @@ class arforms_form_builder{
 				    $getresponse_arr['type_val'] = '';
 
 					$getresponse = maybe_serialize($getresponse_arr);
-
-				    $gvo_arr['enable'] = '';
-				    $gvo_arr['is_global'] = 1;
-				    $gvo_arr['type'] = '';
-				    $gvo_arr['type_val'] = '';
-
-					$gvo = maybe_serialize($gvo_arr);
-
-				    $ebizac_arr['enable'] ='';
-				    $ebizac_arr['is_global'] = 1;
-				    $ebizac_arr['type'] = '';
-				    $ebizac_arr['type_val'] = '';
-
-					$ebizac = maybe_serialize($ebizac_arr);
 
 				    $icontact_arr['enable'] ='';
 				    $icontact_arr['is_global'] = 1;
@@ -318,9 +298,6 @@ class arforms_form_builder{
 							'aweber' 			=> $aweber,
 							'mailchimp' 		=> $mailchimp,
 							'getresponse' 		=> $getresponse,
-							'gvo' 				=> $gvo,
-							'ebizac' 			=> $ebizac,
-							'madmimi' 			=> $madmimi,
 							'icontact' 			=> $icontact,
 							'constant_contact' 	=> $constant_contact,
 							'enable_ar' 		=> maybe_serialize( array() ),
@@ -874,6 +851,20 @@ class arforms_form_builder{
 			wp_enqueue_script('arflitedatatables');
 			wp_enqueue_script('buttons-colvis');
 			wp_enqueue_style('datatables');
+			wp_register_script( 'arforms-settings', ARFLITEURL . '/js/arforms_settings.js', array( 'jquery', 'wp-hooks' ), $this->arforms_get_assets_version() );
+
+			$wipe_data_params = array(
+                'ajaxurl'             => admin_url( 'admin-ajax.php' ),
+                'nonce'               => wp_create_nonce( 'arflite_wp_nonce' ),
+                'no_option_selected'  => esc_js( __( 'Please choose a wipe option to proceed.', 'arforms-form-builder' ) ),
+                'confirm_message'     => esc_js( __( 'Are you ABSOLUTELY SURE you want to proceed? This action is permanent and cannot be undone.', 'arforms-form-builder' ) ),
+                'success_reload_msg'  => esc_js( __( 'The plugin has been reset to its default state. The page will now reload.', 'arforms-form-builder' ) ),
+                'generic_error'       => esc_js( __( 'An unexpected error occurred. Please try again.', 'arforms-form-builder' ) ),
+				'wipe_entries_analysis'   => esc_js( __( 'Deleting all entries, partial entries, and analytics.', 'arforms-form-builder' ) ),
+				'wipe_exclude_settings'   => esc_js( __( 'Deleting forms, fields, entries, and analytics', 'arforms-form-builder' ) ),
+				'wipe_all'                => esc_js( __( 'Deleting all ARForms data and reset it to default.', 'arforms-form-builder' ) ),
+            );
+            wp_localize_script( 'arforms-settings', 'arforms_wipe_data_globals', $wipe_data_params );
 			
 			wp_register_script( 'arforms-settings', ARFLITEURL . '/js/arforms_settings.js', array( 'jquery', 'wp-hooks' ), $this->arforms_get_assets_version() );
 			wp_enqueue_script( 'arforms-settings' );
@@ -1709,6 +1700,7 @@ class arforms_form_builder{
 			'tc_theme'              		=> 'light',
 			'hcaptcha_public_key'           => '',
 			'hcaptcha_private_key'          => '',
+			'recaptcha_value'           => 'Invalid reCaptcha. Please try again.'
 		);
 	}
 

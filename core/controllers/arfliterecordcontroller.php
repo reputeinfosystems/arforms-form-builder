@@ -443,8 +443,14 @@ class arfliterecordcontroller {
 				$print_style  = 'wp_enqueue_style';
 				$print_script = 'wp_enqueue_script';
 			}
+			if (!isset($arfsettings)) {
+                $arfsettings_new = get_option('arflite_options');
+            } else {
+                $arfsettings_new = $arfsettings;
+            }
+
 			$arf_load_js_css = $arformsmain->arforms_get_settings('arf_load_js_css','general_settings');
-			$load_js_css = !empty( $arf_load_js_css ) ? json_decode($arf_load_js_css, true) : array();
+			$load_js_css = ( isset($arfsettings_new->arfmainformloadjscss) && $arfsettings_new->arfmainformloadjscss == 1 && !empty($arf_load_js_css) ) ? $arf_load_js_css : array();
 			
 			foreach ( $arflite_forms_loaded as $form ) {
 

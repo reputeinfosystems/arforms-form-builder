@@ -9,16 +9,21 @@ class ARForms_Paypal_payment_gatway {
 
 	function __construct() {
 
-		global $wpdb;
+		global $wpdb, $is_version_compatible, $arf_version;
+
+		$is_version_compatible = $this->is_arforms_version();
+		$arf_version = $this->get_arforms_version();
 
 		$this->db_paypal_forms = $wpdb->prefix . 'arf_paypal_forms';
 		$this->db_paypal_order = $wpdb->prefix . 'arf_paypal_order';
 
+		if ( ! ( $this->is_arforms_support() ) ) {
+			add_action( 'arfliteaftercreateentry', array( $this, 'arf_paypal_submission' ), 100, 2 );
+			add_action( 'wp_ajax_arf_paypal_save_settings', array( $this, 'arf_paypal_save_settings_callback' ) );
+		}
+
 		add_action( 'arformslite_rearrange_submanu', array( $this, 'arf_paypal_menu' ), 27 );
 		add_filter( 'arforms_rearrange_submenu_items', array( $this, 'arforms_paypal_menu_with_pro') );
-
-		add_action( 'arfliteaftercreateentry', array( $this, 'arf_paypal_submission' ), 100, 2 );
-		add_action( 'arfaftercreateentry', array( $this, 'arf_paypal_submission' ), 100, 2 );
 
 		add_action( 'admin_notices', array( $this, 'arf_paypal_admin_notices' ) );
 
@@ -67,8 +72,6 @@ class ARForms_Paypal_payment_gatway {
 		add_filter( 'arflite_prevent_paypal_to_stop_sending_email_outside', array( $this, 'arf_paypal_to_prevent_send_mail' ), 10, 3 );
 		add_filter( 'arf_prevent_paypal_to_stop_sending_email_outside', array( $this, 'arf_paypal_to_prevent_send_mail' ), 10, 3 );
 
-		add_action( 'wp_ajax_arf_paypal_save_settings', array( $this, 'arf_paypal_save_settings_callback' ) );
-
 		add_action( 'admin_init', array( $this, 'arf_paypal_check_redirection' ) );
 
 		add_action( 'arflite_afterdisplay_form', array( $this, 'arf_set_paypal_front_js' ) );
@@ -80,6 +83,28 @@ class ARForms_Paypal_payment_gatway {
 		add_action( 'wp_ajax_arf_retrieve_paypal_config_data', array( $this, 'arf_retrieve_paypal_config_data' ) );
 
 		add_action( 'wp_ajax_arf_retrieve_paypal_transaction_data', array( $this, 'arf_retrieve_paypal_transaction_data' ) );
+	}
+
+	function is_arforms_version() {
+		if ( version_compare( $this->get_arforms_version(), '6.7', '>=' ) ) {
+			return 1;
+		} else {
+			return 0;
+		}
+	}
+
+    function get_arforms_version() {
+
+		$arf_db_version = get_option( 'arf_db_version' );
+
+		return ( isset( $arf_db_version ) ) ? $arf_db_version : 0;
+	}
+
+	function is_arforms_support() {
+		if ( file_exists( ABSPATH . 'wp-admin/includes/plugin.php' ) ) {
+			include_once ABSPATH . 'wp-admin/includes/plugin.php';
+		}
+		return is_plugin_active( 'arforms/arforms.php' );
 	}
 
 	function arf_retrieve_paypal_config_data(){
@@ -448,7 +473,11 @@ class ARForms_Paypal_payment_gatway {
 				$form_data = $wpdb->get_var( $wpdb->prepare( 'SELECT count(*) FROM `' . $arf_paypal->db_paypal_forms . '` WHERE form_id = %d', $form->id ) );//phpcs:ignore 
 			
 
-				wp_register_script( 'arf_paypal_front_js', ARFLITEURL . '/integrations/Payments/PayPal/js/arf_paypal_front.js', array('jquery'), $arf_paypal_assets_version );
+				if ( $this->is_arforms_support() && $this->is_arforms_version() ) {
+					wp_register_script( 'arf_paypal_front_js', ARFURL . '/integrations/Payments/PayPal/js/arf_paypal_front.js', array('jquery'), $arf_paypal_assets_version );
+				}else{
+					wp_register_script( 'arf_paypal_front_js', ARFLITEURL . '/integrations/Payments/PayPal/js/arf_paypal_front.js', array('jquery'), $arf_paypal_assets_version );
+				}
 				wp_enqueue_script( 'arf_paypal_front_js' );
 			
 		}
@@ -590,7 +619,11 @@ class ARForms_Paypal_payment_gatway {
 		global $arf_paypal, $arf_paypal_version;
 		if ( isset( $_REQUEST['page'] ) && 'ARForms-Paypal' == $_REQUEST['page'] && isset( $_REQUEST['arfaction'] ) && ( 'new' == $_REQUEST['arfaction'] || 'edit' == $_REQUEST['arfaction'] ) ) {
 			
+			if ( $this->is_arforms_support() && $this->is_arforms_version() ) {
+				include FORMPATH . '/integrations/Payments/PayPal/core/edit_3.0.php';
+			}else{
 				include ARFLITE_FORMPATH . '/integrations/Payments/PayPal/core/edit_3.0.php';
+			}
 			
 		} elseif ( isset( $_REQUEST['page'] ) && 'ARForms-Paypal-order' == $_REQUEST['page'] ) {
 
@@ -606,7 +639,11 @@ class ARForms_Paypal_payment_gatway {
 
 		global $arf_paypal_assets_version;
 
-		wp_register_script( 'arfpaypal-js', ARFLITEURL . '/integrations/Payments/PayPal/js/arf_paypal.js', array( 'jquery' ), $arf_paypal_assets_version );
+		if ( $this->is_arforms_support() && $this->is_arforms_version() ) {
+			wp_register_script( 'arfpaypal-js', ARFURL . '/integrations/Payments/PayPal/js/arf_paypal.js', array( 'jquery' ), $arf_paypal_assets_version );
+		}else{
+			wp_register_script( 'arfpaypal-js', ARFLITEURL . '/integrations/Payments/PayPal/js/arf_paypal.js', array( 'jquery' ), $arf_paypal_assets_version );
+		}
 
 		wp_register_script( 'tipso', ARFLITEURL . '/js/tipso.min.js', array( 'jquery' ), $arf_paypal_assets_version );
 
@@ -896,7 +933,13 @@ class ARForms_Paypal_payment_gatway {
 					global $arf_paypal_assets_version;
 					$is_normal_submit = 'arf_paypal_form_normal';
 					wp_print_scripts( 'jquery' );
-					wp_register_script( 'arf_paypal_front_js', ARFLITEURL . '/integrations/Payments/PayPal/js/arf_paypal_front.js', array(), $arf_paypal_assets_version );
+
+					if ( $this->is_arforms_support() && $this->is_arforms_version() ) {
+						wp_register_script( 'arf_paypal_front_js', ARFURL . '/integrations/Payments/PayPal/js/arf_paypal_front.js', array(), $arf_paypal_assets_version );
+					}else{
+						wp_register_script( 'arf_paypal_front_js', ARFLITEURL . '/integrations/Payments/PayPal/js/arf_paypal_front.js', array(), $arf_paypal_assets_version );
+					}
+					
 					wp_print_scripts( 'arf_paypal_front_js' );
 				}
 
@@ -968,6 +1011,13 @@ class ARForms_Paypal_payment_gatway {
 
 			$paypal_form_data = $wpdb->get_results( $wpdb->prepare('SELECT * FROM `'.$arf_paypal->db_paypal_forms.'` WHERE form_id = %d', $form_id ));
 			$options = maybe_unserialize($paypal_form_data[0]->options);
+			
+			$paypal_field_amount = '';
+
+			if ( '' != $options['amount'] ) {
+				$paypal_field_amount = $options['amount'];
+			}
+		 
 			$arf_check_payment = true;
 		} 
 
@@ -2987,9 +3037,28 @@ class ARForms_Paypal_payment_gatway {
 					$entry_id = $response['entry_id'];
 
 					$options = maybe_unserialize($paypal_form_data[0]->options);
+					$is_submit = false;
 
-					update_option( 'arf_paypal_user_email_notification_' . $entry_id .'_'.$form_id, json_encode( $response ) );
-					$is_submit = false;					
+					$paypal_field_amount = '';
+
+					if ( '' != $options['amount'] ) {
+						$paypal_field_amount = $options['amount'];
+					}
+
+					if( !empty( $paypal_field_amount )){
+						global $tbl_arf_entry_values;
+		
+						$arf_get_paypal_amount = $wpdb->get_row( $wpdb->prepare('SELECT * FROM `'.$tbl_arf_entry_values.'` WHERE entry_id = %d AND field_id = %d', $entry_id, $paypal_field_amount ));
+		
+						if( $arf_get_paypal_amount->entry_value > 0 ){
+		
+							$is_submit = true;
+						} else {
+							$is_submit = false;
+						}
+					}
+
+					update_option( 'arf_paypal_user_email_notification_' . $entry_id .'_'.$form_id, json_encode( $response ) );					
 
 				} else {
 					$is_submit = true;

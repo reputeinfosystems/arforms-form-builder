@@ -82,6 +82,49 @@ global $arformsmain; ?>
                 </div>
                 <div class="plugin_cards">
 
+                        <!-- affiliatepress card -->
+                        <div class="card1">
+                            <div class="logo"> <img src="<?php echo ARFLITEIMAGESURL . '/affiliatepress_icon_white.webp'; //phpcs:ignore ?>"></div>
+                            <div class="content">
+                                <div class="card_heading">
+                                    <label class="affiliatepress_heading"><label class="lable1">AffiliatePress</label><label class="lable2"><b> - WordPress Affiliate Plugin</b></label></label>
+                                </div>
+                                <div class="card_description">
+                                    Seamlessly compatible with WooCommerce, ARMember, BookingPress, and 20+ other platforms, AffiliatePress makes running affiliate programs effortless. With multiple commission types, powerful tracking, and a modern interface, it's the smarter choice over costly and complex affiliate tools.
+                                </div>
+                                <div class="key_features">
+                                    <div class="key_features_heading"><b>Key Features:</b></div>
+                                    <ul class="arf-feature-list-cls-plugin-dec">
+                                        <li class="arf-feature-list-li-plugin"> Easy Affiliates Management </li>
+                                        <li class="arf-feature-list-li-plugin"> Multiple Commission Types </li>
+                                        <li class="arf-feature-list-li-plugin"> Customized Affiliate Signup </li>
+                                        <li class="arf-feature-list-li-plugin"> Advanced Reports </li>
+                                        <li class="arf-feature-list-li-plugin"> Realtime Commission Tracking </li>
+                                        <li class="arf-feature-list-li-plugin"> AI-Powered Fraud Detection </li>
+                                    </ul>
+                                </div>
+
+                                <div class="card_last_section">
+                                    <a href="https://www.affiliatepressplugin.com/" target="_blank" class="learn_more_affiliatepress">Learn More</a>
+                                        <input type="hidden" name="arf_install_affiliatepress_nonce" id="arf_install_affiliatepress_nonce" value="<?php echo wp_create_nonce('arf_install_affiliatepress_nonce'); //phpcs:ignore ?>">
+                                        <label class="second_button">
+                                            <?php
+                                                if ((is_plugin_active('affiliatepress-affiliate-marketing/affiliatepress-affiliate-marketing.php')) || file_exists( WP_PLUGIN_DIR . '/affiliatepress-affiliate-marketing/affiliatepress-affiliate-marketing.php')  ) {
+
+                                                    ?><button class="arf_install_affiliatepress_installed" disabled>Installed</button> <?php
+                                                    }
+                                                else
+                                                {
+                                            ?>
+                                            <button class="arf_install_affiliatepress">Install</button>
+                                            <?php  } ?>
+                                        </label>
+
+                                </div>
+                                <div class="position_of__loader"><span class="load_event_img" id="load_event_affiliatepress_id" ></div>
+                            </div>
+                        </div>
+
                         <!-- booking press card -->
                         <div class="card1">
                             <div class="logo"> <img src="<?php echo ARFLITEIMAGESURL . '/bookingpress-logo.png' //phpcs:ignore ?>"></div>
@@ -105,7 +148,7 @@ global $arformsmain; ?>
                                 </div>
 
                                 <div class="card_last_section">
-                                        <a href="https://wordpress.org/plugins/bookingpress-appointment-booking/" target="_blank" class="learn_more_booking_press">Learn More</a>  
+                                        <a href="https://www.bookingpressplugin.com/" target="_blank" class="learn_more_booking_press">Learn More</a>  
                                         <label class="second_a">
                                             <input type="hidden" name="arf_install_booking_press_nonce" id="arf_install_booking_press_nonce" value="<?php echo wp_create_nonce("arf_install_booking_press_nonce"); //phpcs:ignore ?>">
                                             <?php 
@@ -125,8 +168,8 @@ global $arformsmain; ?>
                             </div>
                         </div>
 
-                    <!-- armember card -->
-                    <div class="card1">
+                        <!-- armember card -->
+                        <div class="card1">
                             <div class="logo"> <img src="<?php echo ARFLITEIMAGESURL . '/armember-logo.png' //phpcs:ignore ?>"></div>
                             <div class="content">
                                 <div class="card_heading">
@@ -148,7 +191,7 @@ global $arformsmain; ?>
                                 </div>
 
                                 <div class="card_last_section">
-                                        <a href="https://wordpress.org/plugins/armember-membership/" target="_blank" class="learn_more_armember">Learn More</a>
+                                        <a href="https://www.armemberplugin.com/" target="_blank" class="learn_more_armember">Learn More</a>
                                         <label class="second_button">
                                             <input type="hidden" name="arf_install_armember_nonce" id="arf_install_armember_nonce" value="<?php echo wp_create_nonce("arf_install_armember_nonce"); //phpcs:ignore ?>">
                                             <?php
@@ -192,7 +235,7 @@ global $arformsmain; ?>
                                 </div>
 
                                 <div class="card_last_section">
-                                    <a href="https://wordpress.org/plugins/arprice-responsive-pricing-table/" target="_blank" class="learn_more_arprice">Learn More</a>
+                                    <a href="https://www.arpriceplugin.com/" target="_blank" class="learn_more_arprice">Learn More</a>
                                         <input type="hidden" name="arf_install_arprice_nonce" id="arf_install_arprice_nonce" value="<?php echo wp_create_nonce('arf_install_arprice_nonce'); //phpcs:ignore ?>">
                                         <label class="second_button">
                                             <?php
@@ -210,7 +253,6 @@ global $arformsmain; ?>
                                 </div>
                                 <div class="position_of__loader"><span class="load_event_img" id="load_event_arprice_id" ></div>
                             </div>
-
                         </div>
                 </div>
             </div>

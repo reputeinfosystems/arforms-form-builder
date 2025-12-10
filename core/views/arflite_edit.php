@@ -1,6 +1,6 @@
 <?php
 if( !defined( 'ABSPATH' ) ) exit;
-global $wpdb, $arflite_memory_limit, $arflitememorylimit, $arfliteversion, $mailchimpkey, $mailchimpid, $infusionsoftkey, $aweberkey, $aweberid, $getresponsekey, $getresponseid, $gvokey, $gvoid, $ebizackey, $ebizacid, $style_settings, $arformsmain, $arfliteformhelper, $arfliterecordcontroller, $arflitemainhelper, $arfliteformcontroller, $arflitefieldhelper, $arflitemaincontroller, $arfliteadvanceerrcolor, $ARFLiteMdlDb, $arflitefield, $arfliteform, $arfliteajaxurl, $arflite_date_check_arr, $tbl_arf_forms, $tbl_arf_fields;
+global $wpdb, $arflite_memory_limit, $arflitememorylimit, $arfliteversion, $mailchimpkey, $mailchimpid, $infusionsoftkey, $aweberkey, $aweberid, $getresponsekey, $getresponseid, $style_settings, $arformsmain, $arfliteformhelper, $arfliterecordcontroller, $arflitemainhelper, $arfliteformcontroller, $arflitefieldhelper, $arflitemaincontroller, $arfliteadvanceerrcolor, $ARFLiteMdlDb, $arflitefield, $arfliteform, $arfliteajaxurl, $arflite_date_check_arr, $tbl_arf_forms, $tbl_arf_fields;
 
 if ( isset( $arflite_memory_limit ) && isset( $arflitememorylimit ) && ( $arflite_memory_limit * 1024 * 1024 ) > $arflitememorylimit ) {
 	@ini_set( 'memory_limit', $arflite_memory_limit . 'M' );

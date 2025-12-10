@@ -124,6 +124,10 @@ class arforms_modules{
 
         if( 1 == $arf_is_paypal_enable && !is_plugin_active( 'arformspaypal/arformspaypal.php') ){
             require_once ARFLITE_FORMPATH . '/integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php';
+            if( is_plugin_active( 'arforms/arforms.php' ) ){
+                require_once FORMPATH . '/integrations/Payments/PayPal/class_arforms_paypal_integration.php';
+            }
+            
         }
         
     }

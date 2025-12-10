@@ -245,7 +245,7 @@ class ARForms_Google_Captcha {
             </td>
             
             <td>				
-                <input type="text" class="txtmodal1" value="<?php echo esc_attr( $arflitesettings->re_msg ); ?>" id="arfvaluerecaptcha" name="frm_recaptcha_value" />
+                <input type="text" class="txtmodal1" value="<?php echo esc_attr( $arflitesettings->recaptcha_value ); ?>" id="arfvaluerecaptcha" name="frm_recaptcha_value" />
                 <div class="arferrmessage" id="arferrorsubmitvalue" style="display:none;"><?php echo esc_html__( 'This field cannot be blank.', 'arforms-form-builder' ); ?></div>
             </td>
         </tr>

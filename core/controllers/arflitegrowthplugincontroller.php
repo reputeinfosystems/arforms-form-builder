@@ -6,6 +6,7 @@ if( !defined( 'ABSPATH' ) ) exit;
             add_action('wp_ajax_arf_install_booking_press', array( $this, 'arf_install_booking_press_get_func'));  
             add_action('wp_ajax_arf_armember_install', array( $this, 'arf_armember_install_func'));         
             add_action('wp_ajax_arf_install_arprice', array( $this, 'arf_install_arprice_fun'));         
+            add_action('wp_ajax_arf_install_affiliatepress', array( $this, 'arf_install_affiliatepress_func'));
         }
 
         function arf_pro_force_check_for_plugin_update( $param = [], $force_update = false, $slug = '' ){
@@ -30,11 +31,11 @@ if( !defined( 'ABSPATH' ) ) exit;
                 'body' => array(
                     'action' => 'lite_plugin_new_version_check',
                     'request' => serialize( $args ),
-                    'api-key' => md5( ARF_HOME_URL ),
+                    'api-key' => md5( ARFLITE_HOME_URL ),
                     'is_update' => $force_update
                 ),
                 'sslverify' => false,
-                'user-agent' => 'ARFLITE-WordPress/'.$wp_version.';'.ARF_HOME_URL
+                'user-agent' => 'ARFLITE-WordPress/'.$wp_version.';'.ARFLITE_HOME_URL
             );
         
             //Start checking for an update
@@ -279,6 +280,70 @@ if( !defined( 'ABSPATH' ) ) exit;
             }
         }
         
+        function arf_install_affiliatepress_func(){
+            if(isset( $_POST['arf_install_affiliatepress_nonce'] ) && sanitize_text_field($_POST['arf_install_affiliatepress_nonce']) !="" && wp_verify_nonce($_POST['arf_install_affiliatepress_nonce'],'arf_install_affiliatepress_nonce')){ //phpcs:ignore
+                $affiliatepress_install_activate = 0;
+                if ( ! file_exists( WP_PLUGIN_DIR . '/affiliatepress-affiliate-marketing/affiliatepress-affiliate-marketing.php' ) ) {
+                    if ( ! function_exists( 'plugins_api' ) ) {
+                        require_once ABSPATH . 'wp-admin/includes/plugin-install.php';
+                    }
+                    $response = plugins_api(
+                        'plugin_information',
+                        array(
+                            'slug'   => 'affiliatepress-affiliate-marketing',
+                            'fields' => array(
+                                'sections' => false,
+                                'versions' => true,
+                            ),
+                        )
+                    );
+                    if ( ! is_wp_error( $response ) && property_exists( $response, 'versions' ) ) {
+                        if ( ! class_exists( 'Plugin_Upgrader', false ) ) {
+                            require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+                        }
+                        $upgrader = new \Plugin_Upgrader( new \Automatic_Upgrader_Skin() );
+                        $source   = ! empty( $response->download_link ) ? $response->download_link : '';
+
+                        if ( ! empty( $source ) ) {
+                            if ( $upgrader->install( $source ) === true ) {
+                                activate_plugin( 'affiliatepress-affiliate-marketing/affiliatepress-affiliate-marketing.php' );
+                                $affiliatepress_install_activate = 1;
+                            }
+                        }
+                    } else {
+                        $package_data = $this->arf_pro_force_check_for_plugin_update( ['version', 'dwlurl'], false, 'affiliatepress-affiliate-marketing' );
+
+                        $package_url = !empty( $package_data['dwlurl'] ) ? $package_data['dwlurl'] : '';
+
+                        if( !empty( $package_url ) ){
+                            if ( ! class_exists( 'Plugin_Upgrader', false ) ) {
+                                require_once ABSPATH . 'wp-admin/includes/class-wp-upgrader.php';
+                            }
+                            $upgrader = new \Plugin_Upgrader( new \Automatic_Upgrader_Skin() );
+                            update_option('arforms_lite_download_automatic', 1);
+                            if ( ! empty( $package_url ) ) {
+                                if ( $upgrader->install( $package_url ) === true ) {
+                                    activate_plugin( 'affiliatepress-affiliate-marketing/affiliatepress-affiliate-marketing.php' );
+                                    $affiliatepress_install_activate = 1;
+                                }
+                            }
+                        }
+                    }
+                }
+                if( $affiliatepress_install_activate == 1 ){
+                    $response_data['variant']               = 'success';
+                    $response_data['title']                 = esc_html__('Success', 'arforms-form-builder');
+                    $response_data['msg']                   = esc_html__('AffiliatePress Successfully installed.', 'arforms-form-builder');
+                    $response_data['redirect_url']          = admin_url('admin.php?page=ARForms-Growth-Tools');
+                } else {
+                    $response_data['variant']               = 'error';
+                    $response_data['title']                 = esc_html__('error', 'arforms-form-builder');
+                    $response_data['msg']                   = esc_html__('Something went wrong please try again later.', 'arforms-form-builder');
+                }
+                wp_send_json($response_data);
+                die;
+            }
+        }
     }
     
 

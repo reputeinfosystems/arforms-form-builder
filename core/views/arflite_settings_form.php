@@ -99,7 +99,7 @@ $arf_character_arr = array(
 
 								<div id="error_message" class="arf_error_message">
 								<div class="message_descripiton">
-									<div id="form_error_message_des"></div>
+									<div style="float: left; margin-right: 15px;" id="form_error_message_des"></div>
 									<div class="message_svg_icon">
 										<svg class="arfheightwidth14"><path fill-rule="evenodd" clip-rule="evenodd" fill="#ffffff" d="M10.702,10.909L6.453,6.66l-4.249,4.249L1.143,9.848l4.249-4.249L1.154,1.361l1.062-1.061l4.237,4.237l4.238-4.237l1.061,1.061L7.513,5.599l4.249,4.249L10.702,10.909z"></path></svg>
 									</div>
@@ -730,15 +730,15 @@ $arf_character_arr = array(
 										<div class="font-setting-div">
 											<span class="font-setting-span">
 												<?php
+												$arf_css_character_set_arr = json_decode( $arflitesettings->arf_css_character_set ,true  );
 												$arf_chk_counter = 1;
 												foreach ( $arf_character_arr as $arf_character => $arf_character_value ) {
-
 													$default_charset = '';
-													if ( isset( $arflitesettings->arf_css_character_set ) ) {
-														if ( is_object( $arflitesettings->arf_css_character_set ) ) {
-															$default_charset = isset( $arflitesettings->arf_css_character_set->$arf_character ) ? $arflitesettings->arf_css_character_set->$arf_character : '';
-														} elseif ( is_array( $arflitesettings->arf_css_character_set ) ) {
-															$default_charset = ( isset( $arflitesettings->arf_css_character_set[ $arf_character ] ) ) ? $arflitesettings->arf_css_character_set[ $arf_character ] : '';
+													if ( isset( $arf_css_character_set_arr ) ) {
+														if ( is_object( $arf_css_character_set_arr ) ) {
+															$default_charset = isset( $arf_css_character_set_arr->$arf_character ) ? $arf_css_character_set_arr->$arf_character : '';
+														} elseif ( is_array( $arf_css_character_set_arr )  ) {
+															$default_charset = ( isset( $arf_css_character_set_arr[ $arf_character ] ) ) ? $arf_css_character_set_arr[ $arf_character ] : '';
 														} else {
 															$default_charset = '';
 														}
@@ -774,10 +774,6 @@ $arf_character_arr = array(
 
 								<?php $arforms_general_settings->arforms_render_pro_settings( 'upload_file_path' ); ?>
 
-								<?php $arforms_general_settings->arforms_render_pro_settings( 'remove_junk_file' ); ?>
-
-								<?php $arforms_general_settings->arforms_render_pro_settings( 'remove_anaytics_view_data' ); ?>
-
 								<tr> 
 									<td class="tdclass" valign="top" style="padding-left:30px;"><label class="lblsubtitle"><?php echo esc_html__('Help us improve ARForms by sending anonymous usage stats', 'arforms-form-builder'); ?></label> </td>
 
@@ -795,6 +791,8 @@ $arf_character_arr = array(
 										</div>
 									</td>
 								</tr>
+
+								<?php $arforms_general_settings->arforms_render_pro_settings( 'wipe_data' ); ?>
 
 								<tr class="arfmainformfield" valign="top">
 									<td colspan="2"><div class="dotted_line dottedline-width96"></div></td>
