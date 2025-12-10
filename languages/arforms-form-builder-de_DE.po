@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ARForms Form Builder v1.7.8\n"
+"Project-Id-Version: ARForms Form Builder v1.7.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-11-18 08:41:14+0000\n"
+"PO-Revision-Date: 2025-11-27 07:35:43+0000\n"
 "Last-Translator: admin <testrepute123@gmail.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -6405,7 +6405,7 @@ msgid "Sorry, You are not an authorized person to perform this action."
 msgstr "Entschuldigung, Sie sind keine autorisierte Person, um diese Aktion auszuführen."
 
 #: core/controllers/arfliteformcontroller.php:744
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3195
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3200
 #@ arforms-form-builder
 msgid "Sorry, you do not have enough permission to perform this action"
 msgstr "Leider haben Sie nicht genügend Berechtigungen, um diese Aktion auszuführen"
@@ -6442,7 +6442,7 @@ msgid "Sorry, you don't have permission to perform this action."
 msgstr "Leider haben Sie keine Berechtigung, diese Aktion auszuführen."
 
 #: core/controllers/arfliteformcontroller.php:700
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3211
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3216
 #@ arforms-form-builder
 msgid "Sorry, your request could not be processed due to security reason"
 msgstr "Leider konnte Ihre Anfrage aus Sicherheitsgründen nicht bearbeitet werden"
@@ -9185,12 +9185,6 @@ msgstr "Löschen aller ARForms-Daten und Zurücksetzen auf die Standardeinstellu
 msgid "AffiliatePress Successfully installed."
 msgstr "AffiliatePress erfolgreich installiert."
 
-#. translators: plugin header field 'Version'
-#: arforms-form-builder.php:0
-#@ arforms-form-builder
-msgid "1.7.8"
-msgstr "1.7.8"
-
 #: core/views/arflite_settings_form.php:252
 #: core/views/arflite_settings_form.php:262
 #: core/views/arflite_settings_form.php:455
@@ -9199,8 +9193,14 @@ msgstr "1.7.8"
 msgid "This does not look like a valid email"
 msgstr "Dies scheint keine gültige E-Mail-Adresse zu sein."
 
-#: core/models/arfliterecordmodel.php:183
+#: core/models/arfliterecordmodel.php:181
 #@ arforms-form-builder
 msgid "Form submission failed due to invalid or incomplete required field data. Please refresh the page or try again using a private/incognito window."
 msgstr "Das Formular konnte aufgrund ungültiger oder unvollständiger Pflichtfelder nicht übermittelt werden. Bitte aktualisieren Sie die Seite oder versuchen Sie es erneut in einem privaten/Inkognito-Fenster."
+
+#. translators: plugin header field 'Version'
+#: arforms-form-builder.php:0
+#@ arforms-form-builder
+msgid "1.7.9"
+msgstr "1.7.9"
 

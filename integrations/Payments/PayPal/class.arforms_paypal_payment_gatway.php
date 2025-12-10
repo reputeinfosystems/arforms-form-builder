@@ -3155,7 +3155,7 @@ class ARForms_Paypal_payment_gatway {
 
 	function arf_display_message_content( $content, $form_id ) {
 
-		global $arformcontroller,$wpdb,$tbl_arf_forms;
+		global $arformcontroller,$wpdb,$tbl_arf_forms, $arformsmain;
 
 		update_option("inside_this_function",'3746');
 
@@ -3169,7 +3169,12 @@ class ARForms_Paypal_payment_gatway {
 			$success_msg = $options['success_msg'];
 
 			$msg  = "<div class='arf_form arflite_main_div_{$form_id}' id='arffrm_{$form_id}_container'><div id='arf_message_success'><div class='msg-detail'><div class='msg-description-success arf_pp_text_align_center'>{$success_msg}</div></div></div>";
-			//$msg = apply_filters('arf_display_digital_product_link',$msg, $options, $form_id);
+
+			if( $arformsmain->arforms_is_pro_active() ){
+
+				$msg = apply_filters('arf_display_digital_product_link',$msg, $options, $form_id);
+			}
+
 			$msg .= "</div>";
 
 			$return['conf_method'] = 'message';

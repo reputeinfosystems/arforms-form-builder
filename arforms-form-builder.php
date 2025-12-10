@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ARForms Form Builder
  * Description: Most Powerful Form Builder to create wide variety of forms within a minute
- * Version: 1.7.8
+ * Version: 1.7.9
  * Requires at least: 5.0
  * Requires PHP: 7.4
  * Plugin URI: https://www.arformsplugin.com/
@@ -133,8 +133,8 @@ if ( ! defined( 'IS_WPMU' ) ) {
 }
 
 global $arflitedbversion, $arfliteadvanceerrcolor, $arflite_memory_limit, $arflitememorylimit, $arflite_jscss_version, $arflite_plugin_slug;
-$arfliteversion        = '1.7.8';
-$arflitedbversion      = '1.7.8';
+$arfliteversion        = '1.7.9';
+$arflitedbversion      = '1.7.9';
 $arflite_jscss_version = $arfliteversion . '.' . rand( 10, 100 );
 $arflite_memory_limit  = 256;
 $arflitememorylimit    = ini_get( 'memory_limit' );

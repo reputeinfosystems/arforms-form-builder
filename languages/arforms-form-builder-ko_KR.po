@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ARForms Form Builder v1.7.8\n"
+"Project-Id-Version: ARForms Form Builder v1.7.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-11-18 08:42:49+0000\n"
+"PO-Revision-Date: 2025-11-27 07:44:48+0000\n"
 "Last-Translator: admin <testrepute123@gmail.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -6405,7 +6405,7 @@ msgid "Sorry, You are not an authorized person to perform this action."
 msgstr "죄송합니다.이 작업을 수행 할 권한이있는 사람이 아닙니다."
 
 #: core/controllers/arfliteformcontroller.php:744
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3195
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3200
 #@ arforms-form-builder
 msgid "Sorry, you do not have enough permission to perform this action"
 msgstr "죄송합니다.이 작업을 수행 할 수있는 권한이 없습니다"
@@ -6442,7 +6442,7 @@ msgid "Sorry, you don't have permission to perform this action."
 msgstr "이 작업을 수행 할 권한이 없습니다."
 
 #: core/controllers/arfliteformcontroller.php:700
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3211
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3216
 #@ arforms-form-builder
 msgid "Sorry, your request could not be processed due to security reason"
 msgstr "보안상의 이유로 요청을 처리하지 못했습니다."
@@ -9185,12 +9185,6 @@ msgstr "모든 ARForms 데이터를 삭제하고 기본값으로 재설정합니
 msgid "AffiliatePress Successfully installed."
 msgstr "AffiliatePress가 성공적으로 설치되었습니다."
 
-#. translators: plugin header field 'Version'
-#: arforms-form-builder.php:0
-#@ arforms-form-builder
-msgid "1.7.8"
-msgstr "1.7.8"
-
 #: core/views/arflite_settings_form.php:252
 #: core/views/arflite_settings_form.php:262
 #: core/views/arflite_settings_form.php:455
@@ -9199,8 +9193,14 @@ msgstr "1.7.8"
 msgid "This does not look like a valid email"
 msgstr "이것은 유효한 이메일이 아닌 것 같습니다."
 
-#: core/models/arfliterecordmodel.php:183
+#: core/models/arfliterecordmodel.php:181
 #@ arforms-form-builder
 msgid "Form submission failed due to invalid or incomplete required field data. Please refresh the page or try again using a private/incognito window."
 msgstr "필수 필드 데이터가 잘못되었거나 불완전하여 양식을 제출하지 못했습니다. 페이지를 새로 고치거나 비공개/시크릿 창을 사용하여 다시 시도하세요."
+
+#. translators: plugin header field 'Version'
+#: arforms-form-builder.php:0
+#@ arforms-form-builder
+msgid "1.7.9"
+msgstr "1.7.9"
 

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ARForms Form Builder v1.7.8\n"
+"Project-Id-Version: ARForms Form Builder v1.7.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2025-11-18 08:40:52+0000\n"
+"PO-Revision-Date: 2025-11-27 07:35:28+0000\n"
 "Last-Translator: admin <testrepute123@gmail.com>\n"
 "Language-Team: Arabic\n"
 "MIME-Version: 1.0\n"
@@ -6405,7 +6405,7 @@ msgid "Sorry, You are not an authorized person to perform this action."
 msgstr "عذرًا ، أنت لست شخصًا مخولًا للقيام بهذا الإجراء."
 
 #: core/controllers/arfliteformcontroller.php:744
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3195
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3200
 #@ arforms-form-builder
 msgid "Sorry, you do not have enough permission to perform this action"
 msgstr "عذرًا ، ليس لديك الإذن الكافي للقيام بهذا الإجراء"
@@ -6442,7 +6442,7 @@ msgid "Sorry, you don't have permission to perform this action."
 msgstr "عذرًا ، ليس لديك إذن للقيام بهذا الإجراء."
 
 #: core/controllers/arfliteformcontroller.php:700
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3211
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3216
 #@ arforms-form-builder
 msgid "Sorry, your request could not be processed due to security reason"
 msgstr "عذرًا ، تعذرت معالجة طلبك لأسباب أمنية"
@@ -9185,12 +9185,6 @@ msgstr "حذف جميع بيانات ARForms وإعادة تعيينها إلى 
 msgid "AffiliatePress Successfully installed."
 msgstr "تم تثبيت AffiliatePress بنجاح."
 
-#. translators: plugin header field 'Version'
-#: arforms-form-builder.php:0
-#@ arforms-form-builder
-msgid "1.7.8"
-msgstr "1.7.8"
-
 #: core/views/arflite_settings_form.php:252
 #: core/views/arflite_settings_form.php:262
 #: core/views/arflite_settings_form.php:455
@@ -9199,8 +9193,14 @@ msgstr "1.7.8"
 msgid "This does not look like a valid email"
 msgstr "لا يبدو أن هذا بريد إلكتروني صالح"
 
-#: core/models/arfliterecordmodel.php:183
+#: core/models/arfliterecordmodel.php:181
 #@ arforms-form-builder
 msgid "Form submission failed due to invalid or incomplete required field data. Please refresh the page or try again using a private/incognito window."
 msgstr "فشل إرسال النموذج بسبب بيانات حقل مطلوب غير صالحة أو غير مكتملة. يُرجى تحديث الصفحة أو المحاولة مرة أخرى باستخدام نافذة خاصة/متخفية."
+
+#. translators: plugin header field 'Version'
+#: arforms-form-builder.php:0
+#@ arforms-form-builder
+msgid "1.7.9"
+msgstr "1.7.9"
 

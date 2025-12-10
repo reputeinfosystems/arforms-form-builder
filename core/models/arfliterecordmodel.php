@@ -139,7 +139,13 @@ class arfliterecordmodel {
                 if( $field_data->type == 'select' || $field_data->type == 'radio' ){
 
 					$is_separate_value = ( true === $field_data->field_options['separate_value'] || '1' == $field_data->field_options['separate_value'] || 'true' === $field_data->field_options['separate_value'] ) ? true : false;
-					if( 'radio' == $field_data->type || true == $is_separate_value ){
+
+					$use_as_separate_value = false;
+                    if( is_string( $field_data->options ) && preg_match( '/\"label\":\"(.*?)\"\,/', $field_data->options ) ){
+                        $use_as_separate_value = true;
+                    }
+
+					if( true == $use_as_separate_value ){
 						$field_options = array_map( function( $a ){
 							return $a['value'];
 						}, $field_data->field_options['options'] );
@@ -149,7 +155,7 @@ class arfliterecordmodel {
 					
                     if( 1 == $field_data->field_options['required'] ){
 					
-						if( !empty( $field_options ) && !in_array( $field_value, $field_options ) ){
+						if( !empty( $field_options ) && is_array( $field_options ) && !in_array( $field_value, $field_options ) ){
 							$return_pre_posted_data = true;
 							break;
 						}
@@ -157,14 +163,24 @@ class arfliterecordmodel {
                 } else if( 'checkbox' == $field_data->type ){
 					$is_separate_value = ( true === $field_data->field_options['separate_value'] || '1' == $field_data->field_options['separate_value'] || 'true' === $field_data->field_options['separate_value'] ) ? true : false;
 					$field_options = $field_data->field_options['options'];
+					$use_as_separate_value = false;
+                    if( is_string( $field_data->options ) && preg_match( '/\"label\":\"(.*?)\"\,/', $field_data->options ) ){
+                        $use_as_separate_value = true;
+                    }
 					if( 1 == $field_data->field_options['required'] ){
-						$field_values_arr = array_map( function( $a ){
-							return $a['value'];
-						}, $field_options );
-						foreach( $field_value as $fvalue ){
-							if( !empty( $fvalue ) && !in_array( $fvalue, $field_values_arr ) ){
-								$return_pre_posted_data = true;
-								break;
+						if( false == $use_as_separate_value ){
+							$field_values_arr = array_map( function( $a ){
+								return $a['value'];
+							}, $field_options );
+						} else {
+							$field_values_arr = $field_options;
+						}
+						if( !empty( $field_values_arr )){
+							foreach( $field_value as $fvalue ){
+								if( !empty( $fvalue ) && is_array( $field_values_arr ) && !in_array( $fvalue, $field_values_arr ) ){
+									$return_pre_posted_data = true;
+									break;
+								}
 							}
 						}
 					}
