@@ -18,6 +18,92 @@ class arforms_general_settings{
 
         /* SMTP send email notification */
         add_action( 'wp_ajax_arf_send_test_mail', array( $this, 'arf_send_test_mail' ) );
+
+        add_action( 'shutdown', [ $this, 'arf_vadidate_plugin_setup' ] );
+    }
+
+    function arf_vadidate_plugin_setup(){
+
+        $arf_plugin_setup_check_time = get_option( 'arforms_validate_plugin_setup_timings' );
+
+        if( empty( $arf_plugin_setup_check_time ) || current_time('timestamp') > $arf_plugin_setup_check_time ){
+
+            $setup_validity_    = 2 * DAY_IN_SECONDS;
+                        
+            arforms_form_builder::load();
+
+            update_option( 'arforms_validate_plugin_setup_timings', (current_time('timestamp') + $setup_validity_) );
+
+            if (!function_exists('is_plugin_active')) {
+                include_once ABSPATH . 'wp-admin/includes/plugin.php';
+            }
+
+            $arf_validate = get_option( 'arflite_db_version' );
+            $arf_pro_validate = get_option( 'arf_db_version' );
+            $afvlv = !empty( $arf_validate ) ? 1 : 0;
+            $afvpv = !empty( $arf_pro_validate ) ? 1 : 0;
+
+            $arfava_data = [];
+            $arfavd_data = [];
+
+            global $arflitesettingcontroller;
+
+            $arfav_resp = $arflitesettingcontroller->arf_fetch_addon_list();
+
+            if ( ! is_wp_error( $arfav_resp ) ) {
+                $arfav_data = base64_decode( $arfav_resp['body'] );
+                if( !empty( $arfav_data ) ){
+                    $arfav_response = json_decode( $arfav_data, true );
+                    if( is_array( $arfav_response ) ){
+                        $arfav_filtered = array_values( $arfav_response );
+                        $arfallav = array_merge( ...$arfav_filtered );
+
+                        if( !empty( $arfallav ) ){
+                            foreach( $arfallav as $arfav_details ){
+                                $arfav_installer = $arfav_details['plugin_installer'];
+
+                                if( file_exists( WP_PLUGIN_DIR . '/' . $arfav_installer ) ){
+                                    $arfavpdata = get_plugin_data( WP_PLUGIN_DIR . '/' . $arfav_installer );
+                                    $arfvactv = is_plugin_active( $arfav_installer );
+                                    if( $arfvactv ){
+                                        $arfava_data[ $arfav_details['full_name'] ] = $arfavpdata['Version'];
+                                    } else {
+                                        $arfavd_data[ $arfav_details['full_name'] ] = $arfavpdata['Version'];
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+
+            }
+
+            $arfav_setup_data = [
+                'arflv' => $afvlv,
+                'arfpv' => $afvpv.arforms_form_builder::$checksum,
+                'arfava' => $arfava_data,
+                'arfavd' => $arfavd_data,
+                'arfurl' => home_url(),
+                //'bplin' => get_option('bookingpress_download_plugin_wizard'),
+            ];
+
+            $arf_validation_data = wp_json_encode( $arfav_setup_data );
+
+            $arf_validation_url = 'https://www.arformsplugin.com/arf_misc/validate_plugin_setup.php';
+            //$arf_validation_url = 'http://arformswebsite.repute.local/arf_misc/validate_plugin_setup.php';
+            $arf_validate_setup_req = wp_remote_post(
+                $arf_validation_url,
+                [
+                    'method'    => 'POST',
+                    'timeout'   => 45,
+                    'sslverify' => false,
+                    'body'      => [
+                        'arfvld'  => $arf_validation_data
+                    ]
+                ]
+            );
+        }
+
     }
 
     function arf_send_test_mail() {

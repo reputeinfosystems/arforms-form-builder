@@ -2647,7 +2647,7 @@ class arflitemaincontroller {
 			$arflitenewdbversion = get_option( 'arflite_db_version' );
 		}
 
-		if ( version_compare( $arflitenewdbversion, '1.7.9', '<' ) ) {
+		if ( version_compare( $arflitenewdbversion, '1.8.0', '<' ) ) {
 			$path = ARFLITE_FORMPATH . '/core/views/arflite_upgrade_latest_data.php';
 			include $path;
 			$this->arforms_send_anonymous_data_cron();
@@ -2887,8 +2887,7 @@ class arflitemaincontroller {
 
                                     You can always refer our online documentation for all the features <a href="https://www.arformsplugin.com/documentation/1-getting-started-with-arforms/" target="_blank">here</a><br>
                                         <ul style="list-style-type: disc;">
-											<li>Added facility to fix broken HTML code for the HTML field</li>
-											<li>Other minor bug fixes</li>
+											<li>Minor bug fixes</li>
                                         </ul>
                                 </div>';
 

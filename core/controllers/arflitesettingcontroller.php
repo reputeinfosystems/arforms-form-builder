@@ -434,8 +434,8 @@ class arflitesettingcontroller {
 		$wp_filesystem->rmdir( $directory );
 		return true;
 	}
-
-	function addons_page() {
+	
+	public function arf_fetch_addon_list(){
 		global $arflitesettingcontroller, $arfliteversion, $ARFLiteMdlDb,$arflitenotifymodel,$arfliteform,$arfliterecordmeta;
 
 		$bloginformation = array();
@@ -482,6 +482,14 @@ class arflitesettingcontroller {
 				'cookies'     => array(),
 			)
 		);
+
+		return $raw_response;
+	}
+
+	function addons_page() {
+		global $arflitesettingcontroller, $arfliteversion, $ARFLiteMdlDb,$arflitenotifymodel,$arfliteform,$arfliterecordmeta;
+
+		$raw_response = $this->arf_fetch_addon_list();
 
 		if ( is_wp_error( $raw_response ) || $raw_response['response']['code'] != 200 ) {
 			echo "<div class='error_message' style='margin-top:100px; padding:20px;'>" . esc_html__( 'Add-On listing is currently unavailable. Please try again later.', 'arforms-form-builder' ) . '</div>';

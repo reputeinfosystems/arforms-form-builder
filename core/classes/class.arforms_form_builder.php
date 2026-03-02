@@ -11,6 +11,8 @@ class arforms_form_builder{
 	var $view;
 	var $debug_log_setting;
 
+	static $checksum;
+
     function __construct(){
 
         global $wpdb, $blog_id, $arflitedbversion, $tbl_arf_fields, $tbl_arf_forms, $tbl_arf_entries, $tbl_arf_entry_values, $tbl_arf_debug_log_setting, $tbl_arf_settings, $tbl_arf_paypal_forms, $tbl_arf_paypal_order;
@@ -1725,6 +1727,31 @@ class arforms_form_builder{
     public static function arforms_is_pro_active(){
         return is_plugin_active( 'arforms/arforms.php' );
     }
+
+	public static function load(){
+		self::$checksum = self::validate_data();
+	}
+
+	protected static function validate_data(){
+		
+		$valid_string = '';
+		if( self::arforms_is_pro_active() ){
+			
+			$svl = 0;
+			global $arformcontroller,$arformsplugin;
+			if( $arformcontroller && $arformsplugin ){
+				$svl = $arformcontroller->$arformsplugin();
+			}
+
+			
+			$valid_string = 'invalid';
+			if( 1 == $svl ){
+				$valid_string = get_option('arfSortInfo');
+			}
+		}
+
+		return $valid_string;
+	}
 
     function arf_get_free_menu_position($start, $increment = 0.1) {
         foreach ($GLOBALS['menu'] as $key => $menu) {
