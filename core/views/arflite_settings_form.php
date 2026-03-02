@@ -772,7 +772,7 @@ $arf_character_arr = array(
 								<tr>
 									<td class="tdclass email-setting-label-td arf_vertical_align_top mt-0" valign="top"><label class="lblsubtitle arfform-global-css" style="margin-top: -8px !important;"><?php echo esc_html__( 'Form Global CSS', 'arforms-form-builder' ); ?></label></td>
 
-									<td valign="top" class="email-setting-input-td"><div class="arf_gloabal_css_wrapper"><textarea name="arf_global_css" id="arf_global_css" class="txtmultinew"><?php echo stripslashes_deep( $arflitesettings->arf_global_css );//phpcs:ignore ?></textarea></div></td>
+									<td valign="top" class="email-setting-input-td"><div class="arf_gloabal_css_wrapper"><textarea name="arf_global_css" id="arf_global_css" class="txtmultinew"><?php echo esc_textarea( stripslashes_deep( $arflitesettings->arf_global_css ) ); ?></textarea></div></td>
 
 								</tr>
 

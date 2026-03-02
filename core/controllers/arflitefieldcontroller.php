@@ -499,6 +499,11 @@ class arflitefieldcontroller {
 			die;
 		}
 
+		if( ! current_user_can( 'arfeditforms' ) ){
+			echo esc_attr( 'error' );
+			die;
+		}
+
 		$fn                    = isset( $_POST['file_name'] ) ? sanitize_file_name( $_POST['file_name'] ) : '';
 		$arf_preset_future_use = isset( $_POST['arf_save_preset_for_future'] ) ? sanitize_text_field( $_POST['arf_save_preset_for_future'] ) : false;
 
@@ -590,6 +595,10 @@ class arflitefieldcontroller {
 
 	function arflite_upload_radio_label_img() {
 		if ( empty( $_POST['_wpnonce_arflite'] ) || ( isset( $_POST['_wpnonce_arflite'] ) && '' != $_POST['_wpnonce_arflite'] && ! wp_verify_nonce( sanitize_text_field( $_POST['_wpnonce_arflite'] ), 'arflite_wp_nonce' ) ) ) {
+			echo esc_attr( 'security_error' );
+			die;
+		}
+		if( ! current_user_can( 'arfeditforms' ) ){
 			echo esc_attr( 'security_error' );
 			die;
 		}
@@ -724,6 +733,11 @@ class arflitefieldcontroller {
 	function arflite_get_field_data_dynamic() {
 
 		if ( empty( $_POST['_wpnonce_arflite'] ) || ( isset( $_POST['_wpnonce_arflite'] ) && '' != $_POST['_wpnonce_arflite'] && ! wp_verify_nonce( sanitize_text_field( $_POST['_wpnonce_arflite'] ), 'arflite_wp_nonce' ) ) ) {
+			echo esc_attr( 'security_error' );
+			die;
+		}
+
+		if( ! current_user_can( 'arfeditforms' ) ){
 			echo esc_attr( 'security_error' );
 			die;
 		}

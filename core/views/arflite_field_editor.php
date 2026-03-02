@@ -844,7 +844,7 @@ if ( is_array( $field ) ) {
 
 												 echo '<span class="arf_checkbox_label" style="width:' . esc_attr( $image_size ) . 'px">';
 											}
-											echo html_entity_decode( $opt ); //phpcs:ignore
+											echo wp_kses( $opt, arflite_retrieve_attrs_for_wp_kses( true ) );
 
 											if ( $field_opts->use_image == 1 && $label_image != '' ) {
 												echo '</span>';
@@ -952,7 +952,7 @@ if ( is_array( $field ) ) {
 
 												echo '<span class="arf_checkbox_label" style="width:' . esc_attr( $image_size ) . 'px">';
 											}
-											echo html_entity_decode( $opt ); //phpcs:ignore
+											echo wp_kses( $opt, arflite_retrieve_attrs_for_wp_kses( true ) );
 
 											if ( $field_opts->use_image == 1 && $label_image != '' ) {
 												echo '</span>';
@@ -1063,7 +1063,7 @@ if ( is_array( $field ) ) {
 
 												echo '<span class="arf_checkbox_label">';
 											}
-											echo html_entity_decode( $opt ); //phpcs:ignore
+											echo wp_kses( $opt, arflite_retrieve_attrs_for_wp_kses( true ) );
 											if ( (isset($field_opts->use_image) && $field_opts->use_image == 1) && $label_image != '' ) {
 												echo '</span>';
 											}
@@ -1161,7 +1161,7 @@ if ( is_array( $field ) ) {
 												echo '<span class="arf_checkbox_label" style="width:' . esc_attr( $image_size ) . 'px; display:block;">';
 
 											}
-											echo html_entity_decode( $opt ); //phpcs:ignore
+											echo wp_kses( $opt, arflite_retrieve_attrs_for_wp_kses( true ) );
 											if ( $field_opts->use_image == 1 && $label_image != '' ) {
 												echo '</span>';
 											}

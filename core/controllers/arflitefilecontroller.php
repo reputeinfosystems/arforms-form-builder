@@ -41,7 +41,7 @@ class arflitefilecontroller {
 
 		$this->import = $import;
 
-		$this->invalid_ext = apply_filters( 'arflite_restricted_file_ext', array( 'html','js','css','php', 'php2', 'php3', 'php4', 'php5', 'py', 'pl', 'jsp', 'asp', 'cgi', 'ext', 'tar', 'zip', 'gz', 'gzip', 'rar', '7z', 'htm' ) );
+		$this->invalid_ext = apply_filters( 'arflite_restricted_file_ext', array( 'html','js','css','php', 'php2', 'php3', 'php4', 'php5', 'php7', 'php8', 'phar', 'phtml', 'py', 'pl', 'jsp', 'asp', 'aspx', 'cgi', 'ext', 'htm', 'htaccess', 'shtml', 'xhtml', 'tar', 'zip', 'gz', 'gzip', 'rar', '7z' ) );
 
 		$this->compression_ext = apply_filters( 'arflite_exclude_file_check_ext', array( 'tar', 'zip', 'gz', 'gzip', 'rar', '7z' ) );
 
@@ -182,7 +182,106 @@ class arflitefilecontroller {
 		global $wp_filesystem;
 
 		if ( $this->import ) {
-			$file_content = $wp_filesystem->get_contents( $this->file );
+			if( filter_var( $this->file, FILTER_VALIDATE_URL ) ){
+
+				// Block SSRF on non-local environments: private/loopback addresses
+				// are only permitted when WordPress is running locally or in development.
+				$arf_env = function_exists( 'wp_get_environment_type' ) ? wp_get_environment_type() : 'production';
+				if ( ! in_array( $arf_env, array( 'local', 'development' ), true ) ) {
+					$arf_parsed_url = wp_parse_url( $this->file );
+					$arf_host       = strtolower( trim( $arf_parsed_url['host'] ?? '' ) );
+
+					$scheme = strtolower( $arf_parsed_url['scheme'] ?? '' );
+					if ( ! in_array( $scheme, array( 'http', 'https' ), true ) ) {
+						return false;
+					}
+
+					// Private / loopback ranges checked against binary IPs (IPv4 + IPv6).
+					$arf_private_ranges = array(
+						// IPv4 loopback: 127.0.0.0/8
+						array( "\x7f\x00\x00\x00", "\x7f\xff\xff\xff" ),
+						// IPv4 private: 10.0.0.0/8
+						array( "\x0a\x00\x00\x00", "\x0a\xff\xff\xff" ),
+						// IPv4 private: 172.16.0.0/12
+						array( "\xac\x10\x00\x00", "\xac\x1f\xff\xff" ),
+						// IPv4 private: 192.168.0.0/16
+						array( "\xc0\xa8\x00\x00", "\xc0\xa8\xff\xff" ),
+						// IPv4 link-local: 169.254.0.0/16 (AWS metadata et al.)
+						array( "\xa9\xfe\x00\x00", "\xa9\xfe\xff\xff" ),
+						// IPv6 loopback: ::1
+						array( "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01",
+						       "\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x01" ),
+						// IPv6 link-local: fe80::/10
+						array( "\xfe\x80\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00\x00",
+						       "\xfe\xbf\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff\xff" ),
+					);
+
+					// Helper: check a single binary IP against all private ranges.
+					$arf_is_private_ip = function( $arf_binary_ip ) use ( $arf_private_ranges ) {
+						foreach ( $arf_private_ranges as $arf_range ) {
+							if ( strcmp( $arf_binary_ip, $arf_range[0] ) >= 0 &&
+							     strcmp( $arf_binary_ip, $arf_range[1] ) <= 0 ) {
+								return true;
+							}
+						}
+						return false;
+					};
+
+					$arf_ssrf_blocked = false;
+
+					// Step 1 — reject bare loopback hostnames before any IP parsing.
+					if ( in_array( $arf_host, array( 'localhost', '::1' ), true ) ) {
+						$arf_ssrf_blocked = true;
+					}
+
+					// Step 2 — if host is a raw IP literal, check it directly.
+					if ( ! $arf_ssrf_blocked ) {
+						$arf_ip = @inet_pton( $arf_host );
+						if ( $arf_ip !== false && $arf_is_private_ip( $arf_ip ) ) {
+							$arf_ssrf_blocked = true;
+						}
+					}
+
+					// Step 3 — host is a domain name: resolve it
+					// and check every returned IP, catching internal hostnames that map to
+					// private addresses regardless of how the domain is named.
+					if ( ! $arf_ssrf_blocked ) {
+						$arf_resolved = @dns_get_record( $arf_host, DNS_A | DNS_AAAA );
+						if ( ! empty( $arf_resolved ) ) {
+							foreach ( $arf_resolved as $arf_record ) {
+								$arf_resolved_ip_str = isset( $arf_record['ip'] ) ? $arf_record['ip'] : ( $arf_record['ipv6'] ?? '' );
+								$arf_resolved_ip_bin = @inet_pton( $arf_resolved_ip_str );
+								if ( $arf_resolved_ip_bin !== false && $arf_is_private_ip( $arf_resolved_ip_bin ) ) {
+									$arf_ssrf_blocked = true;
+									break;
+								}
+							}
+						} elseif ( @inet_pton( $arf_host ) === false ) {
+							// dns_get_record returned nothing and it is not an IP literal —
+							// unresolvable hostname; block it to fail safely.
+							$arf_ssrf_blocked = true;
+						}
+					}
+
+					if ( $arf_ssrf_blocked ) {
+						$this->error_message = esc_html__( 'The file could not be fetched due to security reasons.', 'arforms-form-builder' );
+						return false;
+					}
+				}
+
+				$args = array(
+					'timeout'   => 30,
+					'sslverify' => true,
+					'redirection' => 0,
+					'limit_response_size' => 5 * 1024 * 1024, // Prevent memory DoS
+				);
+				$getFileContent = wp_safe_remote_get( $this->file, $args );
+				if( !is_wp_error( $getFileContent ) ){
+					$file_content = wp_remote_retrieve_body( $getFileContent );
+				}
+			} else {
+				$file_content = $wp_filesystem->get_contents( $this->file );
+			}
 		} else {
 			$file_content = $wp_filesystem->get_contents( $this->file['tmp_name'] );
 		}
@@ -226,11 +325,8 @@ class arflitefilecontroller {
 
 		$file_size = number_format( $file_bytes / 1048576, 2 );
 
-		if ( $file_size > 10 ) {
-			return true;
-		}
 
-		$arflite_valid_pattern = '/(\<\?(php)|\<\?\=)/i';
+		$arflite_valid_pattern = '/(<\?(php|\=)|<script[^>]+language\s*=\s*["\']?\s*php\s*["\']?)/i';
 
 		if ( preg_match( $arflite_valid_pattern, $file_content ) ) {
 			$this->error_message = __( 'The file could not be uploaded due to security reason as it contains malicious code', 'arforms-form-builder' );
@@ -244,17 +340,17 @@ class arflitefilecontroller {
 	function arflite_convert_to_bytes() {
 
 		$units_arr = array(
-			'B'  => 0,
-			'K'  => 1,
-			'KB' => 1,
-			'M'  => 2,
-			'MB' => 2,
-			'G'  => 3,
-			'GB' => 3,
-			'T'  => 4,
-			'TB' => 4,
-			'P'  => 5,
-			'PB' => 5,
+			"B"  => 0,
+			"K"  => 1,
+			"KB" => 1,
+			"M"  => 2,
+			"MB" => 2,
+			"G"  => 3,
+			"GB" => 3,
+			"T"  => 4,
+			"TB" => 4,
+			"P"  => 5,
+			"PB" => 5
 		);
 
 		$numbers = preg_replace( '/[^\d.]/', '', $this->max_file_size );

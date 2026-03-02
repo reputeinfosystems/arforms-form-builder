@@ -29,7 +29,7 @@ class fusion_builder_elements{
 
 		foreach ( $arforms_forms_lite_data as $k => $value ) {
             $arforms_forms_lite_list['']            =__("Please select a form",'arforms-form-builder');
-			$arforms_forms_lite_list[$value->id]    = $arflitemainhelper->arflitetruncate( html_entity_decode( stripslashes( $value->name ) ), 33 ) . ' (id: ' . $value->id . ')';
+			$arforms_forms_lite_list[$value->id]    = $arflitemainhelper->arflitetruncate( esc_html( stripslashes( $value->name ) ), 33 ) . ' (id: ' . $value->id . ')';
 			
 		}
 

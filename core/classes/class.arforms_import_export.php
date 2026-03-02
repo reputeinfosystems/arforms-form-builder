@@ -16,6 +16,11 @@ class arforms_import_export_settings{
             die;
 		} 
 
+        if( ! current_user_can( 'arfimportexport' ) ){
+            echo esc_attr( 'permission_error' );
+            die;
+        }
+
 		$separator = !empty( $_REQUEST['separator']) ? sanitize_text_field( $_REQUEST['separator'] ) : '';
 		update_option( 'arf_form_entry_separator', $separator );
 	}
@@ -903,6 +908,11 @@ class arforms_import_export_settings{
 			echo esc_attr( 'security_error' );
 			die;
 		}
+
+        if( ! current_user_can( 'arfimportexport' ) ){
+            echo esc_attr( 'security_error' );
+            die;
+        }
 
 		$arforms_all_form_id     = !empty( $_POST['form_id'] ) ? intval( $_POST['form_id'] ) : '';
 		$arforms_all_form_id_arr = explode( ',', $arforms_all_form_id );

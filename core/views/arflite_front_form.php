@@ -440,10 +440,10 @@ if ( ! function_exists( 'arflite_get_form_builder_string' ) ) {
 			$arf_form .= '<div class="arftitlecontainer">';
 
 			if ( isset( $form->name ) && $form->name != '' ) {
-				$arf_form .= '<div class="formtitle_style">' . html_entity_decode( stripslashes( $form->name) )  . '</div>';
+				$arf_form .= '<div class="formtitle_style">' . wp_kses( html_entity_decode( stripslashes( $form->name ) ), arflite_retrieve_attrs_for_wp_kses( true ) )  . '</div>';
 			}
 			if ( isset( $form->description ) && $form->description != '' ) {
-				$arf_form .= '<div class="arf_field_description formdescription_style">' . html_entity_decode( stripslashes( $form->description ) ) . '</div>';
+				$arf_form .= '<div class="arf_field_description formdescription_style">' . wp_kses( html_entity_decode( stripslashes( $form->description ) ), arflite_retrieve_attrs_for_wp_kses( true ) ) . '</div>';
 			}
 
 			$arf_form .= '</div>';

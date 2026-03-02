@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ARForms Form Builder v1.8.0\n"
+"Project-Id-Version: ARForms Form Builder v1.8.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-02-12 08:36:25+0000\n"
+"PO-Revision-Date: 2026-02-20 12:23:49+0000\n"
 "Last-Translator: admin <admin@gmail.com>\n"
 "Language-Team: Chinese (China)\n"
 "MIME-Version: 1.0\n"
@@ -325,12 +325,12 @@ msgstr "帐户ID"
 msgid "Action"
 msgstr "行动"
 
-#: core/controllers/arflitesettingcontroller.php:572
+#: core/controllers/arflitesettingcontroller.php:582
 #@ arforms-form-builder
 msgid "Activated"
 msgstr "活性"
 
-#: core/controllers/arflitesettingcontroller.php:559
+#: core/controllers/arflitesettingcontroller.php:569
 #@ arforms-form-builder
 msgid "Active"
 msgstr "活性"
@@ -403,7 +403,7 @@ msgstr "添加图标（引导程序样式）"
 msgid "Add Image"
 msgstr "添加图片"
 
-#: core/classes/class.arforms_form_builder.php:1811
+#: core/classes/class.arforms_form_builder.php:1816
 #: core/controllers/arfliteformcontroller.php:260
 #: core/controllers/arfliteprocontroller.php:65
 #: core/views/arflite_list.php:90
@@ -431,13 +431,13 @@ msgstr "添加定时器"
 msgid "Add to page"
 msgstr "添加到页面"
 
-#: core/controllers/arflitesettingcontroller.php:495
+#: core/controllers/arflitesettingcontroller.php:505
 #: core/views/arflite_view_addons.php:7
 #@ arforms-form-builder
 msgid "Add-On listing is currently unavailable. Please try again later."
 msgstr "加载项列表当前不可用。 请稍后再试。"
 
-#: core/classes/class.arforms_form_builder.php:1819
+#: core/classes/class.arforms_form_builder.php:1824
 #: core/controllers/arfliteprocontroller.php:75
 #@ arforms-form-builder
 msgid "Add-ons"
@@ -453,9 +453,9 @@ msgstr "添加/编辑自定义显示"
 msgid "Add/Edit Forms and Templates"
 msgstr "添加/编辑表单和模板"
 
-#: core/classes/class.arforms_form_builder.php:1819
+#: core/classes/class.arforms_form_builder.php:1824
 #: core/controllers/arfliteprocontroller.php:75
-#: core/controllers/arflitesettingcontroller.php:130
+#: core/controllers/arflitesettingcontroller.php:135
 #@ arforms-form-builder
 msgid "Addons"
 msgstr "插件"
@@ -575,8 +575,8 @@ msgstr "允许像这样的电话号码"
 msgid "American Samoa"
 msgstr "美属萨摩亚"
 
-#: core/classes/class.arforms_form_builder.php:995
-#: core/classes/class.arforms_form_builder.php:1002
+#: core/classes/class.arforms_form_builder.php:1000
+#: core/classes/class.arforms_form_builder.php:1007
 #@ arforms-form-builder
 msgid "Analytics / Chart"
 msgstr "分析/图表"
@@ -884,7 +884,7 @@ msgstr "授权重定向 URI"
 msgid "Autocomplete"
 msgstr "自动完成"
 
-#: core/controllers/arflitemaincontroller.php:2917
+#: core/controllers/arflitemaincontroller.php:2927
 #@ arforms-form-builder
 msgid "Available Add-ons"
 msgstr "可用的附件"
@@ -1030,8 +1030,8 @@ msgstr "百慕大"
 msgid "Bhutan"
 msgstr "不丹"
 
-#: core/classes/class.arforms_form_builder.php:1830
-#: core/controllers/arflitesettingcontroller.php:142
+#: core/classes/class.arforms_form_builder.php:1835
+#: core/controllers/arflitesettingcontroller.php:147
 #@ arforms-form-builder
 msgid "Black Friday Sale"
 msgstr "黑色星期五促销"
@@ -1457,7 +1457,7 @@ msgstr "选择颜色"
 msgid "Choose File"
 msgstr "选择文件"
 
-#: core/controllers/arflitemaincontroller.php:3258
+#: core/controllers/arflitemaincontroller.php:3268
 #@ arforms-form-builder
 msgid "Choose Option"
 msgstr "选择选项"
@@ -1487,7 +1487,7 @@ msgstr "点击此处输入表格说明"
 msgid "Click here to enter form title"
 msgstr "点击此处输入表格标题"
 
-#: core/controllers/arfliteformcontroller.php:840
+#: core/controllers/arfliteformcontroller.php:856
 #: core/controllers/arflitemaincontroller.php:2323
 #: core/controllers/arfliterecordcontroller.php:2475
 #: core/views/arflite_settings_form.php:394
@@ -1555,7 +1555,7 @@ msgstr "客户秘密"
 msgid "Clock Settings"
 msgstr "时钟设定"
 
-#: core/classes/class.arforms_form_builder.php:704
+#: core/classes/class.arforms_form_builder.php:709
 #@ arforms-form-builder
 msgid "Close"
 msgstr "关闭"
@@ -1597,7 +1597,7 @@ msgstr "逗号（，）"
 msgid "Comoros"
 msgstr "科摩罗"
 
-#: core/classes/class.arf_schedular_status.php:163
+#: core/classes/class.arf_schedular_status.php:177
 #@ arforms-form-builder
 msgid "Completed"
 msgstr "完全的"
@@ -1786,7 +1786,7 @@ msgstr "克罗地亚语"
 msgid "CSV File Separator"
 msgstr "CSV文件分隔符"
 
-#: core/controllers/arfliteformcontroller.php:7108
+#: core/controllers/arfliteformcontroller.php:7124
 #@ arforms-form-builder
 msgid "CSV generated successfully."
 msgstr "CSV生成成功。"
@@ -1807,7 +1807,7 @@ msgstr "库拉索"
 msgid "Current Field Type"
 msgstr "当前字段类型"
 
-#: core/controllers/arflitefieldcontroller.php:580
+#: core/controllers/arflitefieldcontroller.php:585
 #: core/views/arflite_edit.php:1178
 #: core/views/arflite_edit.php:2605
 #@ arforms-form-builder
@@ -1899,7 +1899,7 @@ msgstr "日期无效"
 msgid "Date range"
 msgstr "日期范围"
 
-#: core/controllers/arfliteformcontroller.php:6573
+#: core/controllers/arfliteformcontroller.php:6589
 #@ arforms-form-builder
 msgid "Datepicker / Timepicker"
 msgstr "日期选择器/时间选择器"
@@ -1925,13 +1925,13 @@ msgid "days"
 msgstr "天"
 
 #: core/controllers/arfliteprocontroller.php:301
-#: core/controllers/arflitesettingcontroller.php:570
+#: core/controllers/arflitesettingcontroller.php:580
 #: core/views/arflite_view_addons.php:92
 #@ arforms-form-builder
 msgid "Deactivate"
 msgstr "停用"
 
-#: core/controllers/arflitesettingcontroller.php:570
+#: core/controllers/arflitesettingcontroller.php:580
 #@ arforms-form-builder
 msgid "Deactivated"
 msgstr "已停用"
@@ -1983,7 +1983,7 @@ msgstr "默认提交按钮"
 msgid "Default Value"
 msgstr "默认值"
 
-#: core/controllers/arfliteformcontroller.php:889
+#: core/controllers/arfliteformcontroller.php:905
 #: core/controllers/arflitemaincontroller.php:2331
 #: core/controllers/arflitemaincontroller.php:2400
 #: core/controllers/arfliterecordcontroller.php:2329
@@ -2028,7 +2028,7 @@ msgstr "从管理区域删除条目"
 msgid "DELETE ENTRY"
 msgstr "删除条目"
 
-#: core/controllers/arflitefieldcontroller.php:704
+#: core/controllers/arflitefieldcontroller.php:713
 #@ arforms-form-builder
 msgid "Delete Field"
 msgstr "删除栏位"
@@ -2119,7 +2119,7 @@ msgstr "多明尼加共和国"
 msgid "Dotted"
 msgstr "点缀"
 
-#: core/controllers/arfliteformcontroller.php:6566
+#: core/controllers/arfliteformcontroller.php:6582
 #@ arforms-form-builder
 msgid "Drop Down"
 msgstr "落下"
@@ -2131,12 +2131,12 @@ msgstr "落下"
 msgid "Dropdown"
 msgstr "落下"
 
-#: core/controllers/arflitefieldcontroller.php:707
+#: core/controllers/arflitefieldcontroller.php:716
 #@ arforms-form-builder
 msgid "Duplicate Field"
 msgstr "重复栏位"
 
-#: core/controllers/arfliteformcontroller.php:872
+#: core/controllers/arfliteformcontroller.php:888
 #: core/controllers/arfliterecordcontroller.php:2513
 #@ arforms-form-builder
 msgid "Duplicate Form"
@@ -2169,7 +2169,7 @@ msgstr "厄瓜多尔"
 msgid "Edit Entries"
 msgstr "编辑条目"
 
-#: core/controllers/arfliteformcontroller.php:863
+#: core/controllers/arfliteformcontroller.php:879
 #: core/controllers/arfliterecordcontroller.php:2499
 #@ arforms-form-builder
 msgid "Edit Form"
@@ -2241,13 +2241,13 @@ msgstr "电邮格式"
 msgid "Email is invalid"
 msgstr "电邮无效"
 
-#: core/classes/class.arforms_form_builder.php:1016
-#: core/classes/class.arforms_form_builder.php:1028
+#: core/classes/class.arforms_form_builder.php:1021
+#: core/classes/class.arforms_form_builder.php:1033
 #@ arforms-form-builder
 msgid "Email Marketing Tools"
 msgstr "电子邮件营销工具"
 
-#: core/controllers/arflitesettingcontroller.php:273
+#: core/controllers/arflitesettingcontroller.php:278
 #@ arforms-form-builder
 msgid "Email Marketing Tools setting saved successfully."
 msgstr "电子邮件营销工具设置已成功保存。"
@@ -2426,9 +2426,9 @@ msgstr "厄立特里亚"
 #: core/classes/class.arf_debug_log.php:523
 #: core/classes/class.arf_debug_log.php:532
 #: core/classes/class.arf_debug_log.php:540
-#: core/classes/class.arforms_general_settings.php:277
-#: core/classes/class.arforms_general_settings.php:286
-#: core/classes/class.arforms_general_settings.php:293
+#: core/classes/class.arforms_general_settings.php:281
+#: core/classes/class.arforms_general_settings.php:290
+#: core/classes/class.arforms_general_settings.php:297
 #: core/controllers/arfliterecordcontroller.php:1617
 #: core/controllers/arfliterecordcontroller.php:1626
 #@ arforms-form-builder
@@ -2503,7 +2503,7 @@ msgstr "独家Wordpress Form Builder插件"
 msgid "Export"
 msgstr "出口"
 
-#: core/controllers/arfliteformcontroller.php:874
+#: core/controllers/arfliteformcontroller.php:890
 #: core/controllers/arfliterecordcontroller.php:2517
 #@ arforms-form-builder
 msgid "Export Entries"
@@ -2529,7 +2529,7 @@ msgstr "导出为CSV"
 msgid "Exported File Content"
 msgstr "导出文件内容"
 
-#: core/classes/class.arforms_form_builder.php:690
+#: core/classes/class.arforms_form_builder.php:695
 #@ arforms-form-builder
 msgid "Facebook Community"
 msgstr "脸书社区"
@@ -2638,7 +2638,7 @@ msgstr "栏位标签"
 msgid "Field Options"
 msgstr "栏位选项"
 
-#: core/controllers/arflitefieldcontroller.php:701
+#: core/controllers/arflitefieldcontroller.php:710
 #@ arforms-form-builder
 msgid "Field Settings"
 msgstr "栏位设定"
@@ -2707,14 +2707,14 @@ msgstr "领域"
 msgid "Fiji"
 msgstr "斐济"
 
-#: core/classes/class.arforms_import_export.php:887
+#: core/classes/class.arforms_import_export.php:892
 #: core/views/arflite_view_addons.php:177
 #@ arforms-form-builder
 msgid "File is not proper."
 msgstr "文件不正确。"
 
-#: core/classes/class.arforms_import_export.php:667
-#: core/classes/class.arforms_import_export.php:706
+#: core/classes/class.arforms_import_export.php:672
+#: core/classes/class.arforms_import_export.php:711
 #@ arforms-form-builder
 msgid "File Not writable"
 msgstr "文件不可写"
@@ -2750,7 +2750,7 @@ msgstr "芬兰"
 msgid "Finnish"
 msgstr "芬兰"
 
-#: core/classes/class.arforms_form_builder.php:981
+#: core/classes/class.arforms_form_builder.php:986
 #: core/controllers/arflitemaincontroller.php:2455
 #@ arforms-form-builder
 msgid "First"
@@ -2761,7 +2761,7 @@ msgstr "第一"
 msgid "Flat"
 msgstr "平面"
 
-#: core/controllers/arfliteformcontroller.php:6580
+#: core/controllers/arfliteformcontroller.php:6596
 #: core/views/arflite_edit.php:5077
 #@ arforms-form-builder
 msgid "Font Awesome"
@@ -2832,7 +2832,7 @@ msgstr "表格说明"
 msgid "Form description"
 msgstr "表格说明"
 
-#: core/classes/class.arforms_form_builder.php:1813
+#: core/classes/class.arforms_form_builder.php:1818
 #: core/controllers/arfliteprocontroller.php:67
 #: core/controllers/arfliterecordcontroller.php:329
 #: core/views/arf_view_records.php:315
@@ -2840,13 +2840,13 @@ msgstr "表格说明"
 msgid "Form Entries"
 msgstr "表格输入"
 
-#: core/classes/class.arforms_form_builder.php:993
-#: core/classes/class.arforms_form_builder.php:1001
+#: core/classes/class.arforms_form_builder.php:998
+#: core/classes/class.arforms_form_builder.php:1006
 #@ arforms-form-builder
 msgid "Form Entries Data"
 msgstr "表单条目数据"
 
-#: core/controllers/arfliteformcontroller.php:869
+#: core/controllers/arfliteformcontroller.php:885
 #: core/controllers/arfliterecordcontroller.php:2507
 #@ arforms-form-builder
 msgid "Form Entry"
@@ -2863,7 +2863,7 @@ msgstr "形成全球CSS"
 msgid "Form inner wrapper"
 msgstr "表格内包装"
 
-#: core/classes/class.arforms_import_export.php:875
+#: core/classes/class.arforms_import_export.php:880
 #@ arforms-form-builder
 msgid "Form is imported successfully."
 msgstr "表格已成功导入。"
@@ -2878,7 +2878,7 @@ msgstr "表格不可用。"
 msgid "Form is not successfully updated"
 msgstr "表格未成功更新"
 
-#: core/controllers/arfliteformcontroller.php:2150
+#: core/controllers/arfliteformcontroller.php:2166
 #@ arforms-form-builder
 msgid "Form is saved successfully."
 msgstr "表格保存成功。"
@@ -2966,7 +2966,7 @@ msgstr "表格宽度设置"
 msgid "Form(s) Only"
 msgstr "仅表格"
 
-#: core/classes/class.arforms_form_builder.php:1809
+#: core/classes/class.arforms_form_builder.php:1814
 #: core/controllers/arfliteformcontroller.php:259
 #: core/controllers/arfliteprocontroller.php:63
 #@ arforms-form-builder
@@ -3092,17 +3092,17 @@ msgstr "一般图示"
 msgid "General Options"
 msgstr "常规选项"
 
-#: core/classes/class.arforms_general_settings.php:356
-#: core/controllers/arflitesettingcontroller.php:271
+#: core/classes/class.arforms_general_settings.php:360
+#: core/controllers/arflitesettingcontroller.php:276
 #@ arforms-form-builder
 msgid "General setting saved successfully."
 msgstr "常规设置已成功保存。"
 
-#: core/classes/class.arforms_form_builder.php:1013
-#: core/classes/class.arforms_form_builder.php:1025
-#: core/classes/class.arforms_form_builder.php:1815
+#: core/classes/class.arforms_form_builder.php:1018
+#: core/classes/class.arforms_form_builder.php:1030
+#: core/classes/class.arforms_form_builder.php:1820
 #: core/controllers/arfliteprocontroller.php:69
-#: core/controllers/arflitesettingcontroller.php:126
+#: core/controllers/arflitesettingcontroller.php:131
 #: core/views/arflite_settings_form.php:64
 #@ arforms-form-builder
 msgid "General Settings"
@@ -3142,7 +3142,7 @@ msgstr "德国"
 msgid "Get Authorization Code"
 msgstr "获取授权码"
 
-#: core/controllers/arflitesettingcontroller.php:568
+#: core/controllers/arflitesettingcontroller.php:578
 #@ arforms-form-builder
 msgid "Get It"
 msgstr "得到它"
@@ -3159,8 +3159,8 @@ msgstr "加纳"
 msgid "Gibraltar"
 msgstr "直布罗陀"
 
-#: core/classes/class.arforms_general_settings.php:146
-#: core/controllers/arflitesettingcontroller.php:69
+#: core/classes/class.arforms_general_settings.php:150
+#: core/controllers/arflitesettingcontroller.php:74
 #@ arforms-form-builder
 msgid "GMAIL Test E-Mail"
 msgstr "GMAIL 测试电子邮件"
@@ -3223,8 +3223,8 @@ msgstr "格林纳达"
 msgid "Group Name"
 msgstr "组的名字"
 
-#: core/classes/class.arforms_form_builder.php:1821
-#: core/controllers/arflitesettingcontroller.php:134
+#: core/classes/class.arforms_form_builder.php:1826
+#: core/controllers/arflitesettingcontroller.php:139
 #@ arforms-form-builder
 msgid "Growth Plugins"
 msgstr "增长插件"
@@ -3423,7 +3423,7 @@ msgstr "匈牙利"
 msgid "Hungary"
 msgstr "匈牙利"
 
-#: core/controllers/arflitemaincontroller.php:2842
+#: core/controllers/arflitemaincontroller.php:2852
 #@ arforms-form-builder
 msgid "I already did"
 msgstr "我已经做了"
@@ -3514,9 +3514,9 @@ msgstr "图像宽度"
 msgid "Import"
 msgstr "进口"
 
-#: core/classes/class.arforms_form_builder.php:1817
+#: core/classes/class.arforms_form_builder.php:1822
 #: core/controllers/arfliteprocontroller.php:71
-#: core/controllers/arflitesettingcontroller.php:128
+#: core/controllers/arflitesettingcontroller.php:133
 #@ arforms-form-builder
 msgid "Import / Export"
 msgstr "进出口"
@@ -3526,9 +3526,9 @@ msgstr "进出口"
 msgid "Import / Export Forms"
 msgstr "导入/导出表格"
 
-#: core/classes/class.arforms_form_builder.php:1817
+#: core/classes/class.arforms_form_builder.php:1822
 #: core/controllers/arfliteprocontroller.php:71
-#: core/controllers/arflitesettingcontroller.php:128
+#: core/controllers/arflitesettingcontroller.php:133
 #@ arforms-form-builder
 msgid "Import Export"
 msgstr "进出口"
@@ -3538,7 +3538,7 @@ msgstr "进出口"
 msgid "Import Form(s)"
 msgstr "进口表格"
 
-#: core/classes/class.arf_schedular_status.php:161
+#: core/classes/class.arf_schedular_status.php:175
 #@ arforms-form-builder
 msgid "In Process"
 msgstr "处理中"
@@ -3637,13 +3637,13 @@ msgstr "输入字体设置"
 msgid "Input Style"
 msgstr "输入方式"
 
-#: core/controllers/arflitesettingcontroller.php:565
+#: core/controllers/arflitesettingcontroller.php:575
 #: core/views/arflite_view_samples.php:41
 #@ arforms-form-builder
 msgid "Install"
 msgstr "安装"
 
-#: core/controllers/arflitesettingcontroller.php:565
+#: core/controllers/arflitesettingcontroller.php:575
 #@ arforms-form-builder
 msgid "Installed"
 msgstr "已安装"
@@ -3659,7 +3659,7 @@ msgstr "无效的文件扩展名。 请选择有效的文件"
 msgid "Invalid File Size."
 msgstr "无效的文件大小。"
 
-#: core/controllers/arfliteformcontroller.php:4300
+#: core/controllers/arfliteformcontroller.php:4316
 #@ arforms-form-builder
 msgid "Invalid maximum characters length"
 msgstr "无效的最大字符长度"
@@ -3884,7 +3884,7 @@ msgstr "缺乏文件"
 msgid "Laos"
 msgstr "老挝"
 
-#: core/classes/class.arforms_form_builder.php:980
+#: core/classes/class.arforms_form_builder.php:985
 #: core/controllers/arflitemaincontroller.php:2453
 #@ arforms-form-builder
 msgid "Last"
@@ -4091,7 +4091,7 @@ msgstr "马里"
 msgid "Malta"
 msgstr "马耳他"
 
-#: core/classes/class.arforms_form_builder.php:1809
+#: core/classes/class.arforms_form_builder.php:1814
 #: core/controllers/arfliteformcontroller.php:259
 #: core/controllers/arfliteprocontroller.php:63
 #: core/views/arflite_list.php:50
@@ -4099,7 +4099,7 @@ msgstr "马耳他"
 msgid "Manage Forms"
 msgstr "管理表格"
 
-#: core/controllers/arflitefieldcontroller.php:713
+#: core/controllers/arflitefieldcontroller.php:722
 #@ arforms-form-builder
 msgid "Manage Options"
 msgstr "管理选项"
@@ -4131,12 +4131,12 @@ msgstr "马绍尔群岛"
 msgid "Martinique"
 msgstr "马提尼克岛"
 
-#: core/controllers/arfliteformcontroller.php:6586
+#: core/controllers/arfliteformcontroller.php:6602
 #@ arforms-form-builder
 msgid "Mask Input"
 msgstr "遮罩输入"
 
-#: core/controllers/arfliteformcontroller.php:6599
+#: core/controllers/arfliteformcontroller.php:6615
 #@ arforms-form-builder
 msgid "Material"
 msgstr "材料"
@@ -4409,7 +4409,7 @@ msgstr "摩洛哥"
 msgid "Most Powerful Form Builder to create wide variety of forms within a minute"
 msgstr "Most Powerful Form Builder to create wide variety of forms within a minute"
 
-#: core/controllers/arflitefieldcontroller.php:710
+#: core/controllers/arflitefieldcontroller.php:719
 #@ arforms-form-builder
 msgid "Move"
 msgstr "移动"
@@ -4470,7 +4470,7 @@ msgstr "纳米比亚"
 msgid "Nauru"
 msgstr "瑙鲁"
 
-#: core/classes/class.arforms_form_builder.php:682
+#: core/classes/class.arforms_form_builder.php:687
 #@ arforms-form-builder
 msgid "Need Help ?"
 msgstr "需要帮忙 ？"
@@ -4508,7 +4508,7 @@ msgstr "新表格"
 msgid "New Zealand"
 msgstr "新西兰"
 
-#: core/classes/class.arforms_form_builder.php:979
+#: core/classes/class.arforms_form_builder.php:984
 #: core/controllers/arflitemaincontroller.php:2451
 #: core/helpers/arflitefieldhelper.php:815
 #@ arforms-form-builder
@@ -4581,7 +4581,7 @@ msgstr "没有"
 msgid "No data available in table"
 msgstr "表中没有可用数据"
 
-#: core/classes/class.arforms_form_builder.php:649
+#: core/classes/class.arforms_form_builder.php:654
 #@ arforms-form-builder
 msgid "No data found"
 msgstr "没有找到数据"
@@ -4626,14 +4626,14 @@ msgstr "未能找到匹配的记录"
 msgid "No one! You do not have permission"
 msgstr "没有人！ 你没有许可"
 
-#: core/controllers/arflitesettingcontroller.php:593
-#: core/controllers/arflitesettingcontroller.php:732
-#: core/controllers/arflitesettingcontroller.php:838
+#: core/controllers/arflitesettingcontroller.php:603
+#: core/controllers/arflitesettingcontroller.php:742
+#: core/controllers/arflitesettingcontroller.php:848
 #@ arforms-form-builder
 msgid "No plugin specified."
 msgstr "未指定插件。"
 
-#: core/controllers/arflitemaincontroller.php:2841
+#: core/controllers/arflitemaincontroller.php:2851
 #@ arforms-form-builder
 msgid "No, Maybe later"
 msgstr "不，也许以后"
@@ -4819,7 +4819,7 @@ msgstr "的"
 msgid "Off days"
 msgstr "休息日"
 
-#: core/controllers/arflitemaincontroller.php:2943
+#: core/controllers/arflitemaincontroller.php:2953
 #: core/views/arflite_edit.php:4760
 #: core/views/arflite_edit.php:4780
 #: core/views/arflite_edit.php:4928
@@ -4867,7 +4867,7 @@ msgstr "休息日"
 msgid "OK"
 msgstr "好"
 
-#: core/controllers/arflitemaincontroller.php:2840
+#: core/controllers/arflitemaincontroller.php:2850
 #@ arforms-form-builder
 msgid "OK, you deserve it"
 msgstr "好，你应得的"
@@ -5039,8 +5039,8 @@ msgstr "巴布亚新几内亚"
 msgid "Paraguay"
 msgstr "巴拉圭"
 
-#: core/classes/class.arforms_form_builder.php:997
-#: core/classes/class.arforms_form_builder.php:1003
+#: core/classes/class.arforms_form_builder.php:1002
+#: core/classes/class.arforms_form_builder.php:1008
 #@ arforms-form-builder
 msgid "Partial Filled Form Entries"
 msgstr "部分填写的表单条目"
@@ -5056,7 +5056,7 @@ msgstr "通过验证并使用默认值。"
 msgid "Password"
 msgstr "密码"
 
-#: core/classes/class.arf_schedular_status.php:166
+#: core/classes/class.arf_schedular_status.php:180
 #@ arforms-form-builder
 msgid "Pending"
 msgstr "待办的"
@@ -5261,7 +5261,7 @@ msgstr "请仅选择图像文件。"
 msgid "Please select one or more record to perform action"
 msgstr "请选择一个或多个记录以执行操作"
 
-#: core/controllers/arfliteformcontroller.php:730
+#: core/controllers/arfliteformcontroller.php:746
 #@ arforms-form-builder
 msgid "Please select one or more record to perform action."
 msgstr "请选择一个或多个记录以执行操作。"
@@ -5295,7 +5295,7 @@ msgstr "请选择选项以向用户发送自动回复。"
 msgid "Please select valid action"
 msgstr "请选择有效的动作"
 
-#: core/controllers/arfliteformcontroller.php:719
+#: core/controllers/arfliteformcontroller.php:735
 #: core/controllers/arfliterecordcontroller.php:1704
 #@ arforms-form-builder
 msgid "Please select valid action."
@@ -5304,8 +5304,8 @@ msgstr "请选择有效的操作。"
 #: core/classes/class.arforms_block_widget.php:61
 #: core/classes/class.arforms_block_widget.php:83
 #: core/classes/class.arforms_block_widget.php:102
-#: core/controllers/arfliteformcontroller.php:7158
-#: core/controllers/arfliteformcontroller.php:7170
+#: core/controllers/arfliteformcontroller.php:7174
+#: core/controllers/arfliteformcontroller.php:7186
 #: core/controllers/arflitemaincontroller.php:1974
 #: core/views/arflite_form_preview.php:10
 #@ arforms-form-builder
@@ -5438,7 +5438,7 @@ msgstr "预设字段选择"
 msgid "Preset Title"
 msgstr "预设标题"
 
-#: core/controllers/arfliteformcontroller.php:884
+#: core/controllers/arfliteformcontroller.php:900
 #: core/controllers/arfliterecordcontroller.php:2320
 #: core/controllers/arfliterecordcontroller.php:2530
 #: core/views/arflite_edit.php:856
@@ -5448,7 +5448,7 @@ msgstr "预设标题"
 msgid "Preview"
 msgstr "预习"
 
-#: core/classes/class.arforms_form_builder.php:982
+#: core/classes/class.arforms_form_builder.php:987
 #: core/controllers/arflitemaincontroller.php:2457
 #: core/helpers/arflitefieldhelper.php:814
 #@ arforms-form-builder
@@ -5460,7 +5460,7 @@ msgstr "以前"
 msgid "Previous Entry"
 msgstr "上一个条目"
 
-#: core/controllers/arflitemaincontroller.php:2925
+#: core/controllers/arflitemaincontroller.php:2935
 #: core/views/arflite_edit.php:932
 #: core/views/arflite_edit.php:1010
 #@ arforms-form-builder
@@ -5548,8 +5548,8 @@ msgid "Record could not be deleted"
 msgstr "记录无法删除"
 
 #: core/controllers/arfliteformcontroller.php:242
-#: core/controllers/arfliteformcontroller.php:772
-#: core/controllers/arfliteformcontroller.php:7181
+#: core/controllers/arfliteformcontroller.php:788
+#: core/controllers/arfliteformcontroller.php:7197
 #: core/controllers/arfliterecordcontroller.php:3230
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1168
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1307
@@ -5622,7 +5622,7 @@ msgstr "回复邮件"
 msgid "Reply to Email"
 msgstr "回覆电邮"
 
-#: core/controllers/arflitefieldcontroller.php:698
+#: core/controllers/arflitefieldcontroller.php:707
 #@ arforms-form-builder
 msgid "Required"
 msgstr "需要"
@@ -5694,7 +5694,7 @@ msgstr "圆形样式"
 msgid "RTL"
 msgstr "RTL"
 
-#: core/controllers/arflitefieldcontroller.php:716
+#: core/controllers/arflitefieldcontroller.php:725
 #@ arforms-form-builder
 msgid "Running Total (Math Logic) is Enabled"
 msgstr "启用运行总计（数学逻辑）"
@@ -5832,7 +5832,7 @@ msgstr "储值"
 msgid "Saving"
 msgstr "保存"
 
-#: core/classes/class.arf_schedular_status.php:159
+#: core/classes/class.arf_schedular_status.php:173
 #@ arforms-form-builder
 msgid "Scheduled"
 msgstr "预定"
@@ -5940,9 +5940,9 @@ msgstr "选择日期"
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1986
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2025
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2027
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2085
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2086
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2113
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2096
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2097
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2124
 #@ arforms-form-builder
 msgid "Select Field"
 msgstr "选择栏位"
@@ -6143,7 +6143,7 @@ msgstr "设定值"
 msgid "Settings"
 msgstr "设定值"
 
-#: core/controllers/arflitesettingcontroller.php:275
+#: core/controllers/arflitesettingcontroller.php:280
 #@ arforms-form-builder
 msgid "Settings Saved."
 msgstr "设置已保存。"
@@ -6224,7 +6224,7 @@ msgstr "正在显示"
 msgid "Sierra Leone"
 msgstr "塞拉利昂"
 
-#: core/classes/class.arforms_general_settings.php:191
+#: core/classes/class.arforms_general_settings.php:195
 #: core/controllers/arflitesettingcontroller.php:54
 #@ arforms-form-builder
 msgid "Sign out successfully."
@@ -6377,7 +6377,7 @@ msgstr "索马里"
 msgid "Something went wrong please try again later."
 msgstr "发生错误。请稍后再试。"
 
-#: core/classes/class.arforms_general_settings.php:294
+#: core/classes/class.arforms_general_settings.php:298
 #@ arforms-form-builder
 msgid "Something Went wrong while updating settings..."
 msgstr "更新设置时出了点问题.."
@@ -6393,19 +6393,20 @@ msgid "Sorry, this file type is not permitted for security reasons"
 msgstr "抱歉，出于安全原因，不允许使用此文件类型"
 
 #: core/controllers/arflitemaincontroller.php:439
-#: core/controllers/arflitemaincontroller.php:2978
-#: core/controllers/arflitesettingcontroller.php:615
+#: core/controllers/arflitemaincontroller.php:2988
+#: core/controllers/arflitesettingcontroller.php:625
 #@ arforms-form-builder
 msgid "Sorry, you are not allowed to install plugins on this site."
 msgstr "抱歉，不允许您在此站点上安装插件。"
 
-#: core/classes/class.arforms_import_export.php:60
+#: core/classes/class.arforms_import_export.php:65
 #@ arforms-form-builder
 msgid "Sorry, You are not an authorized person to perform this action."
 msgstr "抱歉，您不是执行此操作的授权人。"
 
-#: core/controllers/arfliteformcontroller.php:744
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3200
+#: core/controllers/arfliteformcontroller.php:716
+#: core/controllers/arfliteformcontroller.php:760
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3211
 #@ arforms-form-builder
 msgid "Sorry, you do not have enough permission to perform this action"
 msgstr "抱歉，您没有足够的权限执行此操作"
@@ -6413,11 +6414,11 @@ msgstr "抱歉，您没有足够的权限执行此操作"
 #: core/classes/class.arf_debug_log.php:125
 #: core/classes/class.arf_debug_log.php:430
 #: core/classes/class.arf_debug_log.php:541
-#: core/classes/class.arforms_general_settings.php:172
-#: core/classes/class.arforms_general_settings.php:287
-#: core/classes/class.arforms_import_export.php:937
+#: core/classes/class.arforms_general_settings.php:176
+#: core/classes/class.arforms_general_settings.php:291
+#: core/classes/class.arforms_import_export.php:947
 #: core/controllers/arflitemaincontroller.php:2459
-#: core/controllers/arflitemaincontroller.php:3018
+#: core/controllers/arflitemaincontroller.php:3028
 #: core/controllers/arfliterecordcontroller.php:1627
 #: core/controllers/arfliterecordcontroller.php:1665
 #: core/controllers/arfliterecordcontroller.php:1893
@@ -6441,8 +6442,8 @@ msgstr "抱歉，您无权执行此操作"
 msgid "Sorry, you don't have permission to perform this action."
 msgstr "抱歉，您无权执行此操作。"
 
-#: core/controllers/arfliteformcontroller.php:700
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3216
+#: core/controllers/arfliteformcontroller.php:705
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3227
 #@ arforms-form-builder
 msgid "Sorry, your request could not be processed due to security reason"
 msgstr "抱歉，由于安全原因无法处理您的请求"
@@ -6453,11 +6454,11 @@ msgstr "抱歉，由于安全原因无法处理您的请求"
 #: core/classes/class.arf_debug_log.php:524
 #: core/classes/class.arf_debug_log.php:533
 #: core/classes/class.arforms_divi_module.php:15
-#: core/classes/class.arforms_general_settings.php:278
-#: core/classes/class.arforms_import_export.php:943
+#: core/classes/class.arforms_general_settings.php:282
+#: core/classes/class.arforms_import_export.php:953
 #: core/controllers/arflitemaincontroller.php:2461
-#: core/controllers/arflitemaincontroller.php:3037
-#: core/controllers/arflitemaincontroller.php:3057
+#: core/controllers/arflitemaincontroller.php:3047
+#: core/controllers/arflitemaincontroller.php:3067
 #: core/controllers/arfliterecordcontroller.php:1618
 #: core/controllers/arfliterecordcontroller.php:1879
 #: core/controllers/arfliterecordcontroller.php:2373
@@ -6577,7 +6578,7 @@ msgid "Start timer on page no."
 msgstr "在第 1 页开始计时器。"
 
 #: core/controllers/arfliteprocontroller.php:73
-#: core/controllers/arflitesettingcontroller.php:132
+#: core/controllers/arflitesettingcontroller.php:137
 #@ arforms-form-builder
 msgid "Status"
 msgstr "地位"
@@ -6659,8 +6660,8 @@ msgstr "提交表格"
 
 #: core/classes/class.arf_debug_log.php:154
 #: core/classes/class.arf_debug_log.php:474
-#: core/classes/class.arforms_general_settings.php:190
-#: core/classes/class.arforms_general_settings.php:355
+#: core/classes/class.arforms_general_settings.php:194
+#: core/classes/class.arforms_general_settings.php:359
 #: core/controllers/arflitegrowthplugincontroller.php:133
 #: core/controllers/arflitegrowthplugincontroller.php:201
 #: core/controllers/arflitegrowthplugincontroller.php:269
@@ -6878,7 +6879,7 @@ msgstr "该模板无法编辑"
 msgid "the above shortcode will set minimum date to 10 year before current date. ( possible values for unit are Y - year, M - month, and D - days )."
 msgstr "上面的简码会将最短日期设置为当前日期之前的 10 年。 （单位的可能值为 Y - 年、M - 月和 D - 天）。"
 
-#: core/controllers/arflitefilecontroller.php:236
+#: core/controllers/arflitefilecontroller.php:332
 #@ arforms-form-builder
 msgid "The file could not be uploaded due to security reason as it contains malicious code"
 msgstr "由于安全原因，该文件无法上传，因为它包含恶意代码"
@@ -6918,19 +6919,19 @@ msgstr "然后重定向到"
 msgid "There is an error deleting that entry"
 msgstr "删除该条目时出错"
 
-#: core/controllers/arflitefilecontroller.php:197
+#: core/controllers/arflitefilecontroller.php:296
 #@ arforms-form-builder
 msgid "There is an issue while uploading a file. Please try again"
 msgstr "上传文件时出现问题。 请再试一次"
 
-#: core/classes/class.arforms_form_builder.php:947
+#: core/classes/class.arforms_form_builder.php:952
 #: core/controllers/arflitemaincontroller.php:2449
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:666
 #@ arforms-form-builder
 msgid "There is no any form found"
 msgstr "找不到任何表格"
 
-#: core/classes/class.arforms_form_builder.php:978
+#: core/classes/class.arforms_form_builder.php:983
 #: core/controllers/arflitemaincontroller.php:2437
 #@ arforms-form-builder
 msgid "There is no entry found"
@@ -6951,7 +6952,7 @@ msgstr "这些字段将不会显示在表单中。 输入要隐藏的值"
 msgid "This feature is only recommended when you have big amount of entries in the form and you want to change the particular field type without losing the entry data for that field."
 msgstr "仅当表单中有大量条目并且想要更改特定字段类型而又不丢失该字段的条目数据时，才建议使用此功能。"
 
-#: core/controllers/arfliteformcontroller.php:3343
+#: core/controllers/arfliteformcontroller.php:3359
 #: core/controllers/arflitemaincontroller.php:2394
 #: core/controllers/arfliterecordcontroller.php:536
 #: core/controllers/arfliterecordcontroller.php:602
@@ -7224,7 +7225,7 @@ msgstr "托克劳"
 msgid "Tonga"
 msgstr "汤加"
 
-#: core/controllers/arfliteformcontroller.php:6592
+#: core/controllers/arfliteformcontroller.php:6608
 #: core/views/arflite_field_option_popup.php:861
 #@ arforms-form-builder
 msgid "Tooltip"
@@ -7356,7 +7357,7 @@ msgstr "乌克兰"
 msgid "Ukrainian"
 msgstr "乌克兰"
 
-#: core/controllers/arflitesettingcontroller.php:668
+#: core/controllers/arflitesettingcontroller.php:678
 #@ arforms-form-builder
 msgid "Unable to connect to the filesystem. Please confirm your credentials."
 msgstr "无法连接到文件系统。 请确认您的凭据。"
@@ -7416,9 +7417,9 @@ msgstr "更新资料"
 msgid "Update ARForms Database"
 msgstr "更新 ARForms 数据库"
 
-#: core/classes/class.arforms_form_builder.php:1832
+#: core/classes/class.arforms_form_builder.php:1837
 #: core/controllers/arfliteformcontroller.php:134
-#: core/controllers/arflitesettingcontroller.php:144
+#: core/controllers/arflitesettingcontroller.php:149
 #@ arforms-form-builder
 msgid "Upgrade To Premium"
 msgstr "升级到高级"
@@ -7727,7 +7728,7 @@ msgstr "我们收集什么个人数据以及为什么收集它。"
 msgid "What was the dificult part?"
 msgstr "难点是什么？"
 
-#: core/controllers/arflitemaincontroller.php:2882
+#: core/controllers/arflitemaincontroller.php:2892
 #@ arforms-form-builder
 msgid "What's New in ARForms Form Builder"
 msgstr "ARForms Form Builder中的新增功能"
@@ -7847,14 +7848,14 @@ msgstr "您正在转换"
 msgid "You are using ARForms Premium plugin on your website and it is an extension to ARForms Lite, so, If you deactivate ARForms Lite then it will automatically deactivate ARForms Premium and all the add-ons"
 msgstr "您在网站上使用 ARForms Premium 插件，它是 ARForms Lite 的扩展，因此，如果您停用 ARForms Lite，那么它将自动停用 ARForms Premium 和所有附加组件"
 
-#: core/classes/class.arforms_form_builder.php:1694
+#: core/classes/class.arforms_form_builder.php:1699
 #: core/helpers/arfliteformhelper.php:133
 #: core/models/arflitesettingmodel.php:117
 #@ arforms-form-builder
 msgid "You have already submitted this form before. You are not allowed to submit this form again."
 msgstr "您之前已经提交过此表格。 您无权再次提交此表格。"
 
-#: core/controllers/arflitesettingcontroller.php:279
+#: core/controllers/arflitesettingcontroller.php:284
 #@ arforms-form-builder
 msgid "You have made below required fields which may not supported by system."
 msgstr "您已在以下必填字段中填写了系统可能不支持的字段。"
@@ -7895,7 +7896,7 @@ msgstr "由于某些原因未发送您的测试邮件，请检查您的SMTP设�
 msgid "Your test mail is successfully sent"
 msgstr "您的测试邮件已成功发送"
 
-#: core/classes/class.arforms_form_builder.php:697
+#: core/classes/class.arforms_form_builder.php:702
 #@ arforms-form-builder
 msgid "YouTube Channel"
 msgstr "YouTube 频道"
@@ -7952,8 +7953,8 @@ msgstr "出了些问题"
 msgid "log download successfully"
 msgstr "记录下载成功"
 
-#: core/classes/class.arforms_form_builder.php:1019
-#: core/classes/class.arforms_form_builder.php:1031
+#: core/classes/class.arforms_form_builder.php:1024
+#: core/classes/class.arforms_form_builder.php:1036
 #: core/views/arf_debug_log.php:71
 #@ arforms-form-builder
 msgid "Debug Logs"
@@ -8000,12 +8001,12 @@ msgstr "提交"
 msgid "Invalid reCaptcha. Please try again."
 msgstr "验证码无效。 请再试一次。"
 
-#: core/controllers/arflitesettingcontroller.php:711
+#: core/controllers/arflitesettingcontroller.php:721
 #@ arforms-form-builder
 msgid "Sorry! you do not have permission to activate the add-on"
 msgstr "对不起！ 您无权激活该附加组件"
 
-#: core/controllers/arflitesettingcontroller.php:819
+#: core/controllers/arflitesettingcontroller.php:829
 #@ arforms-form-builder
 msgid "Sorry! you do not have permission to deactivate the add-on"
 msgstr "对不起！ 您无权停用该附加组件"
@@ -8129,6 +8130,7 @@ msgid "General"
 msgstr "一般的"
 
 #: core/classes/class.arf_debug_log.php:39
+#: core/controllers/arflitemaincontroller.php:3309
 #@ arforms-form-builder
 msgid "Sorry, you do not have permission to perform this action."
 msgstr "抱歉，您无权执行此操作。"
@@ -8148,7 +8150,7 @@ msgstr "能力错误"
 msgid "success"
 msgstr "成功"
 
-#: core/classes/class.arforms_form_builder.php:892
+#: core/classes/class.arforms_form_builder.php:897
 #@ arforms-form-builder
 msgid "Settings saved successfully"
 msgstr "设置保存成功"
@@ -8195,17 +8197,18 @@ msgstr "自定义日期"
 msgid "Accordion"
 msgstr "手风琴"
 
-#: core/classes/class.arforms_general_settings.php:165
+#: core/classes/class.arforms_general_settings.php:169
 #: core/controllers/arflitemaincontroller.php:446
-#: core/controllers/arflitemaincontroller.php:2987
+#: core/controllers/arflitemaincontroller.php:2997
+#: core/controllers/arflitemaincontroller.php:3305
 #: core/controllers/arfliterecordcontroller.php:1676
 #@ arforms-form-builder
 msgid "Sorry, your request cannot be processed due to security reason."
 msgstr "抱歉，由于安全原因，您的请求无法处理。"
 
-#: core/controllers/arflitesettingcontroller.php:605
-#: core/controllers/arflitesettingcontroller.php:743
-#: core/controllers/arflitesettingcontroller.php:849
+#: core/controllers/arflitesettingcontroller.php:615
+#: core/controllers/arflitesettingcontroller.php:753
+#: core/controllers/arflitesettingcontroller.php:859
 #@ arforms-form-builder
 msgid "You cannot install this Plugin as your are not using ARForms"
 msgstr "您无法安装此插件，因为您没有使用 ARForms"
@@ -8285,7 +8288,7 @@ msgstr "条目已成功读取。"
 msgid "Entries Unread successfully."
 msgstr "成功取消读取条目。"
 
-#: core/controllers/arflitesettingcontroller.php:576
+#: core/controllers/arflitesettingcontroller.php:586
 #@ arforms-form-builder
 msgid "Upgade to Pro"
 msgstr "升级至专业版"
@@ -8653,92 +8656,92 @@ msgstr "产品 / 服务"
 msgid "Configuration saved successfully."
 msgstr "配置保存成功。"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2433
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2465
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2444
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2476
 #@ arforms-form-builder
 msgid "Payment received on"
 msgstr "付款收到日期"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2888
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2899
 #@ arforms-form-builder
 msgid "Hello admin,"
 msgstr "你好，管理员，"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2889
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2907
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2900
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2918
 #@ arforms-form-builder
 msgid "Payment successfully received from"
 msgstr "已成功收到付款"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2890
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2908
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2901
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2919
 #@ arforms-form-builder
 msgid "Following are the payment details:"
 msgstr "以下是付款细节："
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2891
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2909
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2902
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2920
 #@ arforms-form-builder
 msgid "Transaction id"
 msgstr "交易编号"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2892
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2910
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2903
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2921
 #@ arforms-form-builder
 msgid "Amount paid"
 msgstr "已付金额"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2893
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2911
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2904
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2922
 #@ arforms-form-builder
 msgid "Payment date"
 msgstr "付款日期"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2894
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2912
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2905
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2923
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:156
 #@ arforms-form-builder
 msgid "Payer Email"
 msgstr "付款人电子邮箱"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2895
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2913
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2906
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2924
 #@ arforms-form-builder
 msgid "Payer ID"
 msgstr "付款人 ID"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2896
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2914
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2907
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2925
 #@ arforms-form-builder
 msgid "Payer First name"
 msgstr "付款人名字"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2897
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2915
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2908
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2926
 #@ arforms-form-builder
 msgid "Payer Last name"
 msgstr "付款人姓氏"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2898
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2916
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2909
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2927
 #@ arforms-form-builder
 msgid "Thank you"
 msgstr "谢谢"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2906
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2917
 #@ arforms-form-builder
 msgid "Hello user,"
 msgstr "你好用户，"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2971
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2991
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2982
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3002
 #: integrations/Payments/PayPal/core/edit_3.0.php:147
 #@ arforms-form-builder
 msgid "PayPal Configuration"
 msgstr "PayPal 配置"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2973
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2993
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2984
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3004
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:55
 #@ arforms-form-builder
 msgid "PayPal Transactions"
@@ -9125,17 +9128,17 @@ msgstr "hCaptcha 失败消息"
 msgid "Invalid hCaptcha. Please try again"
 msgstr "hCaptcha 无效。请重试"
 
-#: arforms-form-builder.php:2572
+#: arforms-form-builder.php:2585
 #@ arforms-form-builder
 msgid "An Unexpected HTTP Error occurred during the API request."
 msgstr "API 请求期间发生意外 HTTP 错误。"
 
-#: arforms-form-builder.php:2572
+#: arforms-form-builder.php:2585
 #@ arforms-form-builder
 msgid "Try again"
 msgstr "再试一次"
 
-#: arforms-form-builder.php:2577
+#: arforms-form-builder.php:2590
 #@ arforms-form-builder
 msgid "An unknown error occurred"
 msgstr "发生未知错误"
@@ -9145,37 +9148,37 @@ msgstr "发生未知错误"
 msgid "Your HTML content is broken, do you want to fix it?"
 msgstr "您的 HTML 内容已损坏。要修复吗？"
 
-#: core/classes/class.arforms_form_builder.php:861
+#: core/classes/class.arforms_form_builder.php:866
 #@ arforms-form-builder
 msgid "Please choose a wipe option to proceed."
 msgstr "请选择擦除选项以继续。"
 
-#: core/classes/class.arforms_form_builder.php:862
+#: core/classes/class.arforms_form_builder.php:867
 #@ arforms-form-builder
 msgid "Are you ABSOLUTELY SURE you want to proceed? This action is permanent and cannot be undone."
 msgstr "您确定要继续吗？此操作是永久性的，无法撤消。"
 
-#: core/classes/class.arforms_form_builder.php:863
+#: core/classes/class.arforms_form_builder.php:868
 #@ arforms-form-builder
 msgid "The plugin has been reset to its default state. The page will now reload."
 msgstr "插件已重置为默认状态。页面将立即重新加载。"
 
-#: core/classes/class.arforms_form_builder.php:864
+#: core/classes/class.arforms_form_builder.php:869
 #@ arforms-form-builder
 msgid "An unexpected error occurred. Please try again."
 msgstr "发生意外错误。请重试。"
 
-#: core/classes/class.arforms_form_builder.php:865
+#: core/classes/class.arforms_form_builder.php:870
 #@ arforms-form-builder
 msgid "Deleting all entries, partial entries, and analytics."
 msgstr "删除所有条目、部分条目和分析。"
 
-#: core/classes/class.arforms_form_builder.php:866
+#: core/classes/class.arforms_form_builder.php:871
 #@ arforms-form-builder
 msgid "Deleting forms, fields, entries, and analytics"
 msgstr "删除表单、字段、条目和分析"
 
-#: core/classes/class.arforms_form_builder.php:867
+#: core/classes/class.arforms_form_builder.php:872
 #@ arforms-form-builder
 msgid "Deleting all ARForms data and reset it to default."
 msgstr "删除所有 ARForms 数据并将其重置为默认值。"
@@ -9201,6 +9204,16 @@ msgstr "由于必填字段数据无效或不完整，表单提交失败。请刷
 #. translators: plugin header field 'Version'
 #: arforms-form-builder.php:0
 #@ arforms-form-builder
-msgid "1.8.0"
-msgstr "1.8.0"
+msgid "1.8.1"
+msgstr "1.8.1"
+
+#: core/controllers/arflitefilecontroller.php:267
+#@ arforms-form-builder
+msgid "The file could not be fetched due to security reasons."
+msgstr "由于安全原因，无法获取该文件。"
+
+#: core/classes/class.arforms_divi_module.php:25
+#@ arforms-form-builder
+msgid "Sorry, you are not allowed to access this data."
+msgstr "抱歉，您无权访问此数据。"
 

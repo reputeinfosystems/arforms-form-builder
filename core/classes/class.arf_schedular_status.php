@@ -19,6 +19,11 @@ class arf_schedular_status{
             die;
 		}
 
+        if ( ! current_user_can( 'arfviewforms' ) ) {
+            echo esc_attr( 'security_error' );
+            die;
+        }
+
         $return_arr = array(
             'is_stop' => false    
         );
@@ -78,6 +83,15 @@ class arf_schedular_status{
             );
             die;
 		}
+
+        if ( ! current_user_can( 'arfviewforms' ) ) {
+            echo wp_json_encode(
+                array(
+                    'aaData' => array()
+                )    
+            );
+            die;
+        }
 
         $schedular_data = $arformsmain->arforms_get_settings( 'arforms_schedular_data', 'scheduling_settings' );
 

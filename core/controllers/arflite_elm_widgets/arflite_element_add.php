@@ -69,7 +69,7 @@ class arf_element_shortcode extends Widget_Base {
 		if ( $forms ) {
 			foreach ( $forms as $form ) {
 				/* $arf_forms[ 'id=' . $form->id ] = $arflitemainhelper->arflitetruncate( $form->name, 33 ); */
-				$arf_forms[ 'id=' . $form->id ] = $arflitemainhelper->arflitetruncate( html_entity_decode( stripslashes_deep( $form->name ) ), 33 );
+				$arf_forms[ 'id=' . $form->id ] = $arflitemainhelper->arflitetruncate( esc_html( stripslashes_deep( $form->name ) ), 33 );
 			}
 		}
 		$this->start_controls_section(

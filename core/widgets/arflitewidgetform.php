@@ -113,7 +113,7 @@ class ARFLITEwidgetForm extends WP_Widget {
 		}
 		echo '<div class="arf_widget_form ' . esc_attr($widget_cls) . '">';
 		if ( $is_title ) {
-			echo $before_title . stripslashes( $is_title ) . $after_title; //phpcs:ignore
+			echo $before_title . esc_html( stripslashes( $is_title ) ) . $after_title; //phpcs:ignore
 		}
 
 		if ( is_ssl() ) {

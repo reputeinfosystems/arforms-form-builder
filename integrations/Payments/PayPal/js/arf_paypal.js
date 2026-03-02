@@ -926,7 +926,7 @@ function arf_paypal_form_change() {
     jQuery.ajax({
         type: "POST",
         url: ajaxurl,
-        data: "action=arf_paypal_field_dropdown&form_id=" + form_id,
+        data: "action=arf_paypal_field_dropdown&form_id=" + form_id + "&_wpnonce_paypal=" + jQuery('#_wpnonce_paypal').val(),
         success: function(msg) {
             jQuery('.arf_paypal_fields').each(function(i) {
                 var id = jQuery(this).attr('id');

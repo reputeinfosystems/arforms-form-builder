@@ -629,6 +629,11 @@ class arforms_form_builder{
 			echo esc_attr( 'security_error' );
 			die;
 		}
+
+		if ( ! current_user_can( 'arfviewforms' ) ) {
+			echo esc_attr( 'security_error' );
+			die;
+		}
 		
 		if ( !empty($_POST['action']) && $_POST['action'] == 'arforms_get_help_data' && !empty($_POST['arf_help_page']) ) {
 			

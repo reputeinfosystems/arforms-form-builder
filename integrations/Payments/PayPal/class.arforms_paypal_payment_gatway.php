@@ -2064,6 +2064,17 @@ class ARForms_Paypal_payment_gatway {
 
 	function arf_paypal_field_dropdown() {
 
+		$arf_paypal_nonce = isset( $_POST['_wpnonce_paypal'] ) ? sanitize_text_field( $_POST['_wpnonce_paypal'] ) : '';
+		if ( empty( $arf_paypal_nonce ) || ! wp_verify_nonce( $arf_paypal_nonce, 'arforms_paypal_nonce' ) ) {
+			echo esc_attr( 'security_error' );
+			die;
+		}
+
+		if ( ! current_user_can( 'arfpaypalconfiguration' ) ) {
+			echo esc_attr( 'security_error' );
+			die;
+		}
+
 		global $arflitefield, $arflitemainhelper,$arflitefieldhelper;
 
 		$form_id = isset($_REQUEST['form_id']) ? sanitize_text_field($_REQUEST['form_id']) : '';
@@ -2770,7 +2781,7 @@ class ARForms_Paypal_payment_gatway {
 				$def_label = $form->form_name;
 			}
 			$form_title             = $this->get_form_name( $form->form_id );
-			$list_options[$form->form_id] =	$arflitemainhelper->arflitetruncate(html_entity_decode(stripslashes( $form_title)),50) . ' (' . $this->get_order_count( $form->form_id ) . ')';
+			$list_options[$form->form_id] =	$arflitemainhelper->arflitetruncate( esc_html( stripslashes( $form_title ) ), 50 ) . ' (' . $this->get_order_count( $form->form_id ) . ')';
 			
 		}
 		?>

@@ -211,7 +211,7 @@ class arforms_block_widget{
 			$n                       = 0;
 			foreach ( $arforms_forms_lite_data as $k => $value ) {
 				$arforms_forms_lite_list[ $n ]['id']    = $value->id;
-				$arforms_forms_lite_list[ $n ]['label'] = $value->name . ' (id: ' . $value->id . ')';
+				$arforms_forms_lite_list[ $n ]['label'] = wp_kses( html_entity_decode( $value->name ), arflite_retrieve_attrs_for_wp_kses( true ) ) . ' (id: ' . $value->id . ')';
 				$n++;
 			}
 
@@ -239,7 +239,7 @@ class arforms_block_widget{
 			$n                       = 0;
 			foreach ( $arforms_forms_lite_data as $k => $value ) {
 				$arforms_forms_lite_list[ $n ]['id']    = $value->id;
-				$arforms_forms_lite_list[ $n ]['label'] = $value->name . ' (id: ' . $value->id . ')';
+				$arforms_forms_lite_list[ $n ]['label'] = wp_kses( html_entity_decode( $value->name ), arflite_retrieve_attrs_for_wp_kses( true ) ) . ' (id: ' . $value->id . ')';
 				$n++;
 			}
 

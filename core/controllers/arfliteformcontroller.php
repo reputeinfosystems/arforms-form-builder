@@ -62,7 +62,7 @@ class arfliteformcontroller {
     
             $file_ext = end( $fn_ext );
             
-            $arf_not_allowd_extention = array('html','js','css','php', 'php2', 'php3', 'php4', 'php5', 'py', 'pl', 'jsp', 'asp', 'cgi', 'ext', 'tar', 'zip', 'gz', 'gzip', 'rar', '7z');
+            $arf_not_allowd_extention = array('html','js','css','php', 'php2', 'php3', 'php4', 'php5', 'php7', 'php8', 'phar', 'phtml', 'py', 'pl', 'jsp', 'asp', 'aspx', 'cgi', 'ext', 'htm', 'htaccess', 'shtml', 'xhtml', 'tar', 'zip', 'gz', 'gzip', 'rar', '7z');
     
             if( in_array( strtolower($file_ext) , $arf_not_allowd_extention) ){
                
@@ -670,6 +670,11 @@ class arfliteformcontroller {
 			die;
 		}
 
+		if( ! current_user_can( 'arfviewforms' ) ){
+			echo '';
+			die;
+		}
+
 		$colsArray = isset( $_POST['colsArray'] ) ? sanitize_text_field( $_POST['colsArray'] ) : '';
 
 		$new_arr = explode( ',', $colsArray );
@@ -698,6 +703,17 @@ class arfliteformcontroller {
 				array(
 					'error'       => true,
 					'message'     => __( 'Sorry, your request could not be processed due to security reason', 'arforms-form-builder' ),
+					'total_forms' => 0,
+				)
+			);
+			die();
+		}
+
+		if( ! current_user_can( 'arfeditforms' ) ){
+			echo wp_json_encode(
+				array(
+					'error'       => true,
+					'message'     => __( 'Sorry, you do not have enough permission to perform this action', 'arforms-form-builder' ),
 					'total_forms' => 0,
 				)
 			);
@@ -822,9 +838,9 @@ class arfliteformcontroller {
 					case 'name':
 						$edit_link = "?page=ARForms&arfaction=edit&id={$form_data->id}";
 						if ( current_user_can( 'arfeditforms' ) ) {
-							$data .= "<td class='form_title_column'><a class='row-title' href='{$edit_link}'>" . html_entity_decode( stripslashes( $form_data->name ) ) . '</a></td>';
+							$data .= "<td class='form_title_column'><a class='row-title' href='{$edit_link}'>" . esc_html( stripslashes( $form_data->name ) ) . '</a></td>';
 						} else {
-							$data .= "<td class='form_title_column'>" . html_entity_decode( stripslashes_deep( $form_data->name ) ) . '</td>';
+							$data .= "<td class='form_title_column'>" . esc_html( stripslashes_deep( $form_data->name ) ) . '</td>';
 						}
 
 						$ni++;
@@ -4578,7 +4594,7 @@ class arfliteformcontroller {
 												$return_string .= '<span class="arf_checkbox_label" style="width:' . $image_size . 'px">';
 											}
 
-											$return_string .= html_entity_decode( $opt );
+											$return_string .= wp_kses( $opt, arflite_retrieve_attrs_for_wp_kses( true ) );
 											$return_string .= '</label>';
 
 											if ( $field['use_image'] == 1 && $label_image != '' ) {
@@ -4831,7 +4847,7 @@ class arfliteformcontroller {
 												$return_string .= '<span class="arf_checkbox_label" style="width:' . $image_size . 'px">';
 
 											}
-											$return_string .= html_entity_decode( $opt );
+											$return_string .= wp_kses( $opt, arflite_retrieve_attrs_for_wp_kses( true ) );
 
 											if ( $field['use_image'] == 1 && $label_image != '' ) {
 												$is_checkbox_img_enable = true;
@@ -5035,7 +5051,7 @@ class arfliteformcontroller {
 												}
 												$return_string .= '<span class="arf_radio_label" style="width:' . $image_size . 'px">';
 											}
-											$return_string .= html_entity_decode( $opt );
+											$return_string .= wp_kses( $opt, arflite_retrieve_attrs_for_wp_kses( true ) );
 											if ( isset( $field['radio_use_image'] ) && $field['radio_use_image'] ) {
 												$is_radio_img_enable = true;
 												$return_string      .= '</span>';
@@ -5207,7 +5223,7 @@ class arfliteformcontroller {
 												   $return_string .= '<img src="' . esc_attr( $label_image ) . '" style="width:' . $image_size . 'px; height:' . $image_size . 'px; max-width:100%;"></span><span class="arf_radio_label" style="width:' . $image_size . 'px">';
 											}
 
-											$return_string .= html_entity_decode( $opt );
+											$return_string .= wp_kses( $opt, arflite_retrieve_attrs_for_wp_kses( true ) );
 
 											if ( $label_image != '' ) {
 												$return_string .= '</span>';

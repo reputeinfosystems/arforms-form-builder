@@ -76,7 +76,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 
         function arf_install_booking_press_get_func() {
 
-            if( isset($_POST['arf_install_booking_press_nonce']) && $_POST['arf_install_booking_press_nonce'] != "" && wp_verify_nonce( $_POST['arf_install_booking_press_nonce'], 'arf_install_booking_press_nonce' ) ){ //phpcs:ignore
+            if( isset($_POST['arf_install_booking_press_nonce']) && $_POST['arf_install_booking_press_nonce'] != "" && wp_verify_nonce( $_POST['arf_install_booking_press_nonce'], 'arf_install_booking_press_nonce' ) && current_user_can( 'install_plugins' ) ){ //phpcs:ignore
 
                 if ( ! file_exists( WP_PLUGIN_DIR . '/bookingpress-appointment-booking/bookingpress-appointment-booking.php' ) ) {
         
@@ -146,7 +146,7 @@ if( !defined( 'ABSPATH' ) ) exit;
         
         function arf_armember_install_func() {
 
-            if(isset( $_POST['arf_install_armember_nonce']) && $_POST['arf_install_armember_nonce'] !="" && wp_verify_nonce($_POST['arf_install_armember_nonce'],'arf_install_armember_nonce')){ //phpcs:ignore
+            if(isset( $_POST['arf_install_armember_nonce']) && $_POST['arf_install_armember_nonce'] !="" && wp_verify_nonce($_POST['arf_install_armember_nonce'],'arf_install_armember_nonce') && current_user_can( 'install_plugins' ) ){ //phpcs:ignore
                 if ( ! file_exists( WP_PLUGIN_DIR . '/armember-membership/armember-membership.php' ) ) {
             
                     if ( ! function_exists( 'plugins_api' ) ) {
@@ -214,7 +214,7 @@ if( !defined( 'ABSPATH' ) ) exit;
 
         function arf_install_arprice_fun(){
             
-            if(isset( $_POST['arf_install_arprice_nonce'] ) && sanitize_text_field($_POST['arf_install_arprice_nonce']) !="" && wp_verify_nonce($_POST['arf_install_arprice_nonce'],'arf_install_arprice_nonce')){ //phpcs:ignore
+            if(isset( $_POST['arf_install_arprice_nonce'] ) && sanitize_text_field($_POST['arf_install_arprice_nonce']) !="" && wp_verify_nonce($_POST['arf_install_arprice_nonce'],'arf_install_arprice_nonce') && current_user_can( 'install_plugins' ) ){ //phpcs:ignore
 
                 if ( ! file_exists( WP_PLUGIN_DIR . '/arprice-responsive-pricing-table/arprice-responsive-pricing-table.php' ) ) {
                     if ( ! function_exists( 'plugins_api' ) ) {
@@ -281,7 +281,7 @@ if( !defined( 'ABSPATH' ) ) exit;
         }
         
         function arf_install_affiliatepress_func(){
-            if(isset( $_POST['arf_install_affiliatepress_nonce'] ) && sanitize_text_field($_POST['arf_install_affiliatepress_nonce']) !="" && wp_verify_nonce($_POST['arf_install_affiliatepress_nonce'],'arf_install_affiliatepress_nonce')){ //phpcs:ignore
+            if(isset( $_POST['arf_install_affiliatepress_nonce'] ) && sanitize_text_field($_POST['arf_install_affiliatepress_nonce']) !="" && wp_verify_nonce($_POST['arf_install_affiliatepress_nonce'],'arf_install_affiliatepress_nonce') && current_user_can( 'install_plugins' ) ){ //phpcs:ignore
                 $affiliatepress_install_activate = 0;
                 if ( ! file_exists( WP_PLUGIN_DIR . '/affiliatepress-affiliate-marketing/affiliatepress-affiliate-marketing.php' ) ) {
                     if ( ! function_exists( 'plugins_api' ) ) {

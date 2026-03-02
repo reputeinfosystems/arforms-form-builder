@@ -2464,9 +2464,9 @@ class arfliterecordcontroller {
 				$data[ $ai ][1] = $form_data->id;
 				$edit_link      = "?page=ARForms&arfaction=edit&id={$form_data->id}";
 				if ( current_user_can( 'arfeditforms' ) ) {
-					$data[ $ai ][2] = "<a class='row-title' href='{$edit_link}'>" . $arflitemainhelper->arflitetruncate( html_entity_decode( stripslashes_deep( $form_data->name ) ), 33 ) . '</a>';
+					$data[ $ai ][2] = "<a class='row-title' href='{$edit_link}'>" . esc_html( $arflitemainhelper->arflitetruncate( stripslashes_deep( $form_data->name ), 33 ) ) . '</a>';
 				} else {
-					$data[ $ai ][2] = $arflitemainhelper->arflitetruncate( html_entity_decode( stripslashes_deep( $form_data->name ) ), 33 );
+					$data[ $ai ][2] = esc_html( $arflitemainhelper->arflitetruncate( stripslashes_deep( $form_data->name ), 33 ) );
 				}
 
 				$data[ $ai ][3] = ( ( current_user_can( 'arfviewentries' ) ) ? "<a href='" . esc_url( admin_url( 'admin.php' ) . '?page=ARForms-entries&form=' . $form_data->id ) . "'>" . esc_html( $form_data->total_entries ) . '</a>' : $form_data->total_entries );

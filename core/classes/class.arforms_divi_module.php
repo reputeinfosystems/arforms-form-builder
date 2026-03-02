@@ -19,10 +19,20 @@ class arf_divi_builder{
             die;
 		}
 
-       $form_id = !empty($_POST['form_id']) ? intval($_POST['form_id']) : '';
+        if ( ! current_user_can( 'arfviewforms' ) ) {
+            echo wp_json_encode(
+                array(
+                    'data' => esc_html__( 'Sorry, you are not allowed to access this data.', 'arforms-form-builder' ),
+                    'success' => false
+                )
+            );
+            die;
+        }
 
-       $params = '';
-       $params = ' is_divibuilder="true" ';
+        $form_id = !empty($_POST['form_id']) ? intval($_POST['form_id']) : '';
+
+        $params = '';
+        $params = ' is_divibuilder="true" ';
 
         if ( is_plugin_active( 'arforms/arforms.php' ) ) {
             $form_string = do_shortcode( '[ARForms id='.$form_id.' '.$params.' ]' );

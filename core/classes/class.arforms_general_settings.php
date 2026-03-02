@@ -141,6 +141,10 @@ class arforms_general_settings{
             echo esc_attr( 'security_error' );
             die;
 		}
+        if( ! current_user_can( 'arfchangesettings' ) ){
+            echo esc_attr( 'permission_error' );
+            die;
+        }
         $from_to = (isset($_POST['from_to'])) && !empty($_POST['from_to']) ? sanitize_email($_POST['from_to']) : '';
         $send_to = (isset($_POST['send_to'])) && !empty($_POST['send_to']) ? sanitize_email($_POST['send_to']) : '';
         $subject = (isset($_POST['subject']) && !empty($_POST['subject'])) ? sanitize_text_field($_POST['subject']) : addslashes(esc_html__('GMAIL Test E-Mail', 'arforms-form-builder'));

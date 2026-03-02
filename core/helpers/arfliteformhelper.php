@@ -213,7 +213,7 @@ class arfliteformhelper {
 				}
 				?>
 
-						<option class="lblnotetitle optionheight" value="<?php echo esc_attr( $form->id ); ?>" <?php selected( $field_value, $form->id ); ?>><?php echo esc_html( $show_form_itd ) . html_entity_decode( $arflitemainhelper->arflitetruncate( $form->name, 33 ) ); //phpcs:ignore ?></option>
+						<option class="lblnotetitle optionheight" value="<?php echo esc_attr( $form->id ); ?>" <?php selected( $field_value, $form->id ); ?>><?php echo esc_html( $show_form_itd ) . esc_html( $arflitemainhelper->arflitetruncate( $form->name, 33 ) ); ?></option>
 
 
 			<?php } ?>
@@ -243,7 +243,7 @@ class arfliteformhelper {
 						$form->name = $arflitefieldhelper->arflite_execute_function( $arflitemainhelper->arflitetruncate( html_entity_decode( stripslashes( $form->name ) ), 33 ), 'strip_tags' );
 						if ( $form->id == $field_value ) {
 							$selected_list_id    = $form->id;
-							$selected_list_label = $arflitemainhelper->arflitetruncate( html_entity_decode( stripslashes( $form->name ) ), 33 );
+							$selected_list_label = esc_html( $arflitemainhelper->arflitetruncate( stripslashes( $form->name ), 33 ) );
 						}
 
 						$list[ $form->id ] = $show_form_itd . $arflitefieldhelper->arflite_execute_function( $arflitemainhelper->arflitetruncate( html_entity_decode( stripslashes( $form->name ) ), 33 ), 'strip_tags' );
@@ -446,7 +446,7 @@ class arfliteformhelper {
 			$count_num  = isset( $record_count[ $form->id ]->count_num ) ? $record_count[ $form->id ]->count_num : 0;
 			if ( $field_value == $form->id ) {
 				$selected_list_id    = $form->id;
-				$selected_list_label = $arflitemainhelper->arflitetruncate( html_entity_decode( stripslashes( $form->name ) ), 23 ) . ' [' . $form->id . ']' . ' (' . $span_class . $count_num . '</span> - ' . __( 'Entries', 'arforms-form-builder' ) . ')';
+				$selected_list_label = esc_html( $arflitemainhelper->arflitetruncate( stripslashes( $form->name ), 23 ) ) . ' [' . $form->id . ']' . ' (' . $span_class . $count_num . '</span> - ' . __( 'Entries', 'arforms-form-builder' ) . ')';
 			}
 			$arfform_display_option = $arflitefieldhelper->arflite_execute_function( $arflitemainhelper->arflitetruncate( html_entity_decode( stripslashes( $form->name ) ), 23 ), 'strip_tags' ) . ' [' . $form->id . ']' . ' (' . $span_class . $count_num . '</span> - ' . __( 'Entries', 'arforms-form-builder' ) . ')';
 

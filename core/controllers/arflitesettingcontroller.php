@@ -64,6 +64,11 @@ class arflitesettingcontroller {
             die;
 		}
 
+        if( ! current_user_can( 'arfchangesettings' ) ){
+            echo esc_attr( 'permission_error' );
+            die;
+        }
+
         $from_to = (isset($_POST['from_to'])) && !empty($_POST['from_to']) ? sanitize_email($_POST['from_to']) : ''; //phpcs:ignore WordPress.Security.NonceVerification
         $send_to = (isset($_POST['send_to'])) && !empty($_POST['send_to']) ? sanitize_email($_POST['send_to']) : ''; //phpcs:ignore WordPress.Security.NonceVerification
         $subject = (isset($_POST['subject']) && !empty($_POST['subject'])) ? sanitize_text_field($_POST['subject']) : addslashes(esc_html__('GMAIL Test E-Mail', 'arforms-form-builder')); //phpcs:ignore WordPress.Security.NonceVerification
@@ -312,6 +317,11 @@ class arflitesettingcontroller {
 	function arflite_upload_submit_hover_bg() {
 
 		if ( empty( $_POST['_wpnonce_arflite'] ) || ( isset( $_POST['_wpnonce_arflite'] ) && '' != $_POST['_wpnonce_arflite'] && ! wp_verify_nonce( sanitize_text_field( $_POST['_wpnonce_arflite'] ), 'arflite_wp_nonce' ) ) ) {
+			echo esc_attr( 'security_error' );
+			die;
+		}
+
+		if( !current_user_can( 'arfeditforms' ) ){
 			echo esc_attr( 'security_error' );
 			die;
 		}
