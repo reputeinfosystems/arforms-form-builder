@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ARForms Form Builder v1.8.1\n"
+"Project-Id-Version: ARForms Form Builder v1.8.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-02-20 12:20:30+0000\n"
+"PO-Revision-Date: 2026-04-23 04:29:50+0000\n"
 "Last-Translator: admin <testrepute123@gmail.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -325,12 +325,12 @@ msgstr "Konto-ID"
 msgid "Action"
 msgstr "Aktion"
 
-#: core/controllers/arflitesettingcontroller.php:582
+#: core/controllers/arflitesettingcontroller.php:543
 #@ arforms-form-builder
 msgid "Activated"
 msgstr "Aktiviert"
 
-#: core/controllers/arflitesettingcontroller.php:569
+#: core/controllers/arflitesettingcontroller.php:530
 #@ arforms-form-builder
 msgid "Active"
 msgstr "Aktiv"
@@ -431,7 +431,7 @@ msgstr "Timer hinzufügen"
 msgid "Add to page"
 msgstr "Zur Seite hinzufügen"
 
-#: core/controllers/arflitesettingcontroller.php:505
+#: core/controllers/arflitesettingcontroller.php:466
 #: core/views/arflite_view_addons.php:7
 #@ arforms-form-builder
 msgid "Add-On listing is currently unavailable. Please try again later."
@@ -455,7 +455,7 @@ msgstr "Formulare und Vorlagen hinzufügen / bearbeiten"
 
 #: core/classes/class.arforms_form_builder.php:1824
 #: core/controllers/arfliteprocontroller.php:75
-#: core/controllers/arflitesettingcontroller.php:135
+#: core/controllers/arflitesettingcontroller.php:133
 #@ arforms-form-builder
 msgid "Addons"
 msgstr "Addons"
@@ -1031,7 +1031,7 @@ msgid "Bhutan"
 msgstr "Bhutan"
 
 #: core/classes/class.arforms_form_builder.php:1835
-#: core/controllers/arflitesettingcontroller.php:147
+#: core/controllers/arflitesettingcontroller.php:145
 #@ arforms-form-builder
 msgid "Black Friday Sale"
 msgstr "Black-Friday-Sale"
@@ -1807,7 +1807,7 @@ msgstr "Curacao"
 msgid "Current Field Type"
 msgstr "Aktueller Feldtyp"
 
-#: core/controllers/arflitefieldcontroller.php:585
+#: core/controllers/arflitefieldcontroller.php:528
 #: core/views/arflite_edit.php:1178
 #: core/views/arflite_edit.php:2605
 #@ arforms-form-builder
@@ -1925,13 +1925,13 @@ msgid "days"
 msgstr "Tage"
 
 #: core/controllers/arfliteprocontroller.php:301
-#: core/controllers/arflitesettingcontroller.php:580
+#: core/controllers/arflitesettingcontroller.php:541
 #: core/views/arflite_view_addons.php:92
 #@ arforms-form-builder
 msgid "Deactivate"
 msgstr "Deaktivieren"
 
-#: core/controllers/arflitesettingcontroller.php:580
+#: core/controllers/arflitesettingcontroller.php:541
 #@ arforms-form-builder
 msgid "Deactivated"
 msgstr "Deaktiviert"
@@ -2028,7 +2028,7 @@ msgstr "Einträge aus dem Admin-Bereich löschen"
 msgid "DELETE ENTRY"
 msgstr "EINTRAG LÖSCHEN"
 
-#: core/controllers/arflitefieldcontroller.php:713
+#: core/controllers/arflitefieldcontroller.php:656
 #@ arforms-form-builder
 msgid "Delete Field"
 msgstr "Feld löschen"
@@ -2131,7 +2131,7 @@ msgstr "Dropdown-Liste"
 msgid "Dropdown"
 msgstr "Dropdown-Liste"
 
-#: core/controllers/arflitefieldcontroller.php:716
+#: core/controllers/arflitefieldcontroller.php:659
 #@ arforms-form-builder
 msgid "Duplicate Field"
 msgstr "Feld duplizieren"
@@ -2247,7 +2247,7 @@ msgstr "E-Mail ist ungültig"
 msgid "Email Marketing Tools"
 msgstr "E-Mail-Marketing-Tools"
 
-#: core/controllers/arflitesettingcontroller.php:278
+#: core/controllers/arflitesettingcontroller.php:276
 #@ arforms-form-builder
 msgid "Email Marketing Tools setting saved successfully."
 msgstr "Die Einstellung der E-Mail-Marketing-Tools wurde erfolgreich gespeichert."
@@ -2423,12 +2423,12 @@ msgstr "Eritrea"
 #: core/classes/class.arf_debug_log.php:420
 #: core/classes/class.arf_debug_log.php:429
 #: core/classes/class.arf_debug_log.php:436
-#: core/classes/class.arf_debug_log.php:523
-#: core/classes/class.arf_debug_log.php:532
-#: core/classes/class.arf_debug_log.php:540
-#: core/classes/class.arforms_general_settings.php:281
-#: core/classes/class.arforms_general_settings.php:290
-#: core/classes/class.arforms_general_settings.php:297
+#: core/classes/class.arf_debug_log.php:524
+#: core/classes/class.arf_debug_log.php:533
+#: core/classes/class.arf_debug_log.php:541
+#: core/classes/class.arforms_general_settings.php:286
+#: core/classes/class.arforms_general_settings.php:295
+#: core/classes/class.arforms_general_settings.php:302
 #: core/controllers/arfliterecordcontroller.php:1617
 #: core/controllers/arfliterecordcontroller.php:1626
 #@ arforms-form-builder
@@ -2638,7 +2638,7 @@ msgstr "Feldbezeichnung"
 msgid "Field Options"
 msgstr "Feldoptionen"
 
-#: core/controllers/arflitefieldcontroller.php:710
+#: core/controllers/arflitefieldcontroller.php:653
 #@ arforms-form-builder
 msgid "Field Settings"
 msgstr "Feldeinstellungen"
@@ -3092,8 +3092,8 @@ msgstr "Allgemeine Symbole"
 msgid "General Options"
 msgstr "Allgemeine Optionen"
 
-#: core/classes/class.arforms_general_settings.php:360
-#: core/controllers/arflitesettingcontroller.php:276
+#: core/classes/class.arforms_general_settings.php:365
+#: core/controllers/arflitesettingcontroller.php:274
 #@ arforms-form-builder
 msgid "General setting saved successfully."
 msgstr "Allgemeine Einstellung erfolgreich gespeichert."
@@ -3102,7 +3102,7 @@ msgstr "Allgemeine Einstellung erfolgreich gespeichert."
 #: core/classes/class.arforms_form_builder.php:1030
 #: core/classes/class.arforms_form_builder.php:1820
 #: core/controllers/arfliteprocontroller.php:69
-#: core/controllers/arflitesettingcontroller.php:131
+#: core/controllers/arflitesettingcontroller.php:129
 #: core/views/arflite_settings_form.php:64
 #@ arforms-form-builder
 msgid "General Settings"
@@ -3142,7 +3142,7 @@ msgstr "Deutschland"
 msgid "Get Authorization Code"
 msgstr "Autorisierungscode anfordern"
 
-#: core/controllers/arflitesettingcontroller.php:578
+#: core/controllers/arflitesettingcontroller.php:539
 #@ arforms-form-builder
 msgid "Get It"
 msgstr "Kapiert"
@@ -3159,8 +3159,8 @@ msgstr "Ghana"
 msgid "Gibraltar"
 msgstr "Gibraltar"
 
-#: core/classes/class.arforms_general_settings.php:150
-#: core/controllers/arflitesettingcontroller.php:74
+#: core/classes/class.arforms_general_settings.php:155
+#: core/controllers/arflitesettingcontroller.php:72
 #@ arforms-form-builder
 msgid "GMAIL Test E-Mail"
 msgstr "GMAIL-Test-E-Mail"
@@ -3224,7 +3224,7 @@ msgid "Group Name"
 msgstr "Gruppenname"
 
 #: core/classes/class.arforms_form_builder.php:1826
-#: core/controllers/arflitesettingcontroller.php:139
+#: core/controllers/arflitesettingcontroller.php:137
 #@ arforms-form-builder
 msgid "Growth Plugins"
 msgstr "Wachstums-Plugins"
@@ -3516,7 +3516,7 @@ msgstr "Importieren"
 
 #: core/classes/class.arforms_form_builder.php:1822
 #: core/controllers/arfliteprocontroller.php:71
-#: core/controllers/arflitesettingcontroller.php:133
+#: core/controllers/arflitesettingcontroller.php:131
 #@ arforms-form-builder
 msgid "Import / Export"
 msgstr "Import Export"
@@ -3528,7 +3528,7 @@ msgstr "Formulare importieren / exportieren"
 
 #: core/classes/class.arforms_form_builder.php:1822
 #: core/controllers/arfliteprocontroller.php:71
-#: core/controllers/arflitesettingcontroller.php:133
+#: core/controllers/arflitesettingcontroller.php:131
 #@ arforms-form-builder
 msgid "Import Export"
 msgstr "Import Export"
@@ -3637,13 +3637,13 @@ msgstr "Eingabe der Schriftarteneinstellungen"
 msgid "Input Style"
 msgstr "Eingabestil"
 
-#: core/controllers/arflitesettingcontroller.php:575
+#: core/controllers/arflitesettingcontroller.php:536
 #: core/views/arflite_view_samples.php:41
 #@ arforms-form-builder
 msgid "Install"
 msgstr "Installieren"
 
-#: core/controllers/arflitesettingcontroller.php:575
+#: core/controllers/arflitesettingcontroller.php:536
 #@ arforms-form-builder
 msgid "Installed"
 msgstr "Eingerichtet"
@@ -4099,7 +4099,7 @@ msgstr "Malta"
 msgid "Manage Forms"
 msgstr "Formulare verwalten"
 
-#: core/controllers/arflitefieldcontroller.php:722
+#: core/controllers/arflitefieldcontroller.php:665
 #@ arforms-form-builder
 msgid "Manage Options"
 msgstr "Optionen verwalten"
@@ -4409,7 +4409,7 @@ msgstr "Marokko"
 msgid "Most Powerful Form Builder to create wide variety of forms within a minute"
 msgstr "Most Powerful Form Builder to create wide variety of forms within a minute"
 
-#: core/controllers/arflitefieldcontroller.php:719
+#: core/controllers/arflitefieldcontroller.php:662
 #@ arforms-form-builder
 msgid "Move"
 msgstr "Bewegung"
@@ -4626,9 +4626,9 @@ msgstr "Keine übereinstimmenden Aufzeichnungen gefunden"
 msgid "No one! You do not have permission"
 msgstr "Niemand! Sie haben keine Berechtigung"
 
-#: core/controllers/arflitesettingcontroller.php:603
-#: core/controllers/arflitesettingcontroller.php:742
-#: core/controllers/arflitesettingcontroller.php:848
+#: core/controllers/arflitesettingcontroller.php:564
+#: core/controllers/arflitesettingcontroller.php:703
+#: core/controllers/arflitesettingcontroller.php:809
 #@ arforms-form-builder
 msgid "No plugin specified."
 msgstr "Kein Plugin angegeben."
@@ -5193,13 +5193,6 @@ msgstr "Bitte öffnen Sie Ihre exportierte Datei, kopieren Sie den gesamten Inha
 msgid "Please save form to generate shortcode."
 msgstr "Bitte speichern Sie das Formular, um einen Shortcode zu generieren."
 
-#: core/controllers/arflitefieldcontroller.php:459
-#: core/controllers/arflitefieldcontroller.php:462
-#: core/controllers/arflitefieldcontroller.php:490
-#@ arforms-form-builder
-msgid "Please select a CSV file"
-msgstr "Bitte wählen Sie eine CSV-Datei"
-
 #: core/controllers/arflitemaincontroller.php:2499
 #@ arforms-form-builder
 msgid "Please select a custom display"
@@ -5622,7 +5615,7 @@ msgstr "Antwort auf E-Mail"
 msgid "Reply to Email"
 msgstr "Auf E-Mail antworten"
 
-#: core/controllers/arflitefieldcontroller.php:707
+#: core/controllers/arflitefieldcontroller.php:650
 #@ arforms-form-builder
 msgid "Required"
 msgstr "Erforderlich"
@@ -5694,7 +5687,7 @@ msgstr "Abgerundeter Stil"
 msgid "RTL"
 msgstr "RTL"
 
-#: core/controllers/arflitefieldcontroller.php:725
+#: core/controllers/arflitefieldcontroller.php:668
 #@ arforms-form-builder
 msgid "Running Total (Math Logic) is Enabled"
 msgstr "Running Total (Math Logic) ist aktiviert"
@@ -6143,7 +6136,7 @@ msgstr "Stellen Sie den Wert von ein"
 msgid "Settings"
 msgstr "die Einstellungen"
 
-#: core/controllers/arflitesettingcontroller.php:280
+#: core/controllers/arflitesettingcontroller.php:278
 #@ arforms-form-builder
 msgid "Settings Saved."
 msgstr "Einstellungen gespeichert."
@@ -6224,8 +6217,8 @@ msgstr "Zeigen"
 msgid "Sierra Leone"
 msgstr "Sierra Leone"
 
-#: core/classes/class.arforms_general_settings.php:195
-#: core/controllers/arflitesettingcontroller.php:54
+#: core/classes/class.arforms_general_settings.php:200
+#: core/controllers/arflitesettingcontroller.php:52
 #@ arforms-form-builder
 msgid "Sign out successfully."
 msgstr "Abmelden erfolgreich."
@@ -6342,7 +6335,7 @@ msgstr "SMTP-Port"
 msgid "SMTP Server"
 msgstr "SMTP-Server"
 
-#: core/classes/class.arforms_general_settings.php:120
+#: core/classes/class.arforms_general_settings.php:125
 #@ arforms-form-builder
 msgid "SMTP Test E-Mail"
 msgstr "SMTP-Test-E-Mail"
@@ -6377,12 +6370,12 @@ msgstr "Somalia"
 msgid "Something went wrong please try again later."
 msgstr "Es ist ein Fehler aufgetreten. Bitte versuchen Sie es später noch einmal."
 
-#: core/classes/class.arforms_general_settings.php:298
+#: core/classes/class.arforms_general_settings.php:303
 #@ arforms-form-builder
 msgid "Something Went wrong while updating settings..."
 msgstr "Beim Aktualisieren der Einstellungen ist ein Fehler aufgetreten."
 
-#: core/controllers/arflitefieldcontroller.php:407
+#: core/controllers/arflitefieldcontroller.php:405
 #@ arforms-form-builder
 msgid "Sorry, the action \"Reset Form Outside\" could not be processed due to security reason"
 msgstr "Leider konnte die Aktion \\\"Formular außerhalb zurücksetzen\\\" aus Sicherheitsgründen nicht verarbeitet werden"
@@ -6394,7 +6387,7 @@ msgstr "Dieser Dateityp ist aus Sicherheitsgründen leider nicht zulässig"
 
 #: core/controllers/arflitemaincontroller.php:439
 #: core/controllers/arflitemaincontroller.php:2988
-#: core/controllers/arflitesettingcontroller.php:625
+#: core/controllers/arflitesettingcontroller.php:586
 #@ arforms-form-builder
 msgid "Sorry, you are not allowed to install plugins on this site."
 msgstr "Leider dürfen Sie auf dieser Site keine Plugins installieren."
@@ -6413,9 +6406,9 @@ msgstr "Leider haben Sie nicht genügend Berechtigungen, um diese Aktion auszuf�
 
 #: core/classes/class.arf_debug_log.php:125
 #: core/classes/class.arf_debug_log.php:430
-#: core/classes/class.arf_debug_log.php:541
-#: core/classes/class.arforms_general_settings.php:176
-#: core/classes/class.arforms_general_settings.php:291
+#: core/classes/class.arf_debug_log.php:542
+#: core/classes/class.arforms_general_settings.php:181
+#: core/classes/class.arforms_general_settings.php:296
 #: core/classes/class.arforms_import_export.php:947
 #: core/controllers/arflitemaincontroller.php:2459
 #: core/controllers/arflitemaincontroller.php:3028
@@ -6451,10 +6444,10 @@ msgstr "Leider konnte Ihre Anfrage aus Sicherheitsgründen nicht bearbeitet werd
 #: core/classes/class.arf_debug_log.php:38
 #: core/classes/class.arf_debug_log.php:116
 #: core/classes/class.arf_debug_log.php:421
-#: core/classes/class.arf_debug_log.php:524
-#: core/classes/class.arf_debug_log.php:533
+#: core/classes/class.arf_debug_log.php:525
+#: core/classes/class.arf_debug_log.php:534
 #: core/classes/class.arforms_divi_module.php:15
-#: core/classes/class.arforms_general_settings.php:282
+#: core/classes/class.arforms_general_settings.php:287
 #: core/classes/class.arforms_import_export.php:953
 #: core/controllers/arflitemaincontroller.php:2461
 #: core/controllers/arflitemaincontroller.php:3047
@@ -6578,7 +6571,7 @@ msgid "Start timer on page no."
 msgstr "Timer starten auf Seite Nr."
 
 #: core/controllers/arfliteprocontroller.php:73
-#: core/controllers/arflitesettingcontroller.php:137
+#: core/controllers/arflitesettingcontroller.php:135
 #@ arforms-form-builder
 msgid "Status"
 msgstr "Status"
@@ -6659,14 +6652,14 @@ msgid "Submitting form"
 msgstr "Formular einreichen"
 
 #: core/classes/class.arf_debug_log.php:154
-#: core/classes/class.arf_debug_log.php:474
-#: core/classes/class.arforms_general_settings.php:194
-#: core/classes/class.arforms_general_settings.php:359
+#: core/classes/class.arf_debug_log.php:475
+#: core/classes/class.arforms_general_settings.php:199
+#: core/classes/class.arforms_general_settings.php:364
 #: core/controllers/arflitegrowthplugincontroller.php:133
 #: core/controllers/arflitegrowthplugincontroller.php:201
 #: core/controllers/arflitegrowthplugincontroller.php:269
 #: core/controllers/arflitegrowthplugincontroller.php:335
-#: core/controllers/arflitesettingcontroller.php:53
+#: core/controllers/arflitesettingcontroller.php:51
 #@ arforms-form-builder
 msgid "Success"
 msgstr "Erfolg"
@@ -7357,7 +7350,7 @@ msgstr "Ukraine"
 msgid "Ukrainian"
 msgstr "ukrainisch"
 
-#: core/controllers/arflitesettingcontroller.php:678
+#: core/controllers/arflitesettingcontroller.php:639
 #@ arforms-form-builder
 msgid "Unable to connect to the filesystem. Please confirm your credentials."
 msgstr "Es kann keine Verbindung zum Dateisystem hergestellt werden. Bitte bestätigen Sie Ihre Anmeldeinformationen."
@@ -7419,7 +7412,7 @@ msgstr "Aktualisieren Sie die ARForms-Datenbank"
 
 #: core/classes/class.arforms_form_builder.php:1837
 #: core/controllers/arfliteformcontroller.php:134
-#: core/controllers/arflitesettingcontroller.php:149
+#: core/controllers/arflitesettingcontroller.php:147
 #@ arforms-form-builder
 msgid "Upgrade To Premium"
 msgstr "Auf Premium upgraden"
@@ -7855,7 +7848,7 @@ msgstr "Sie verwenden das ARForms Premium-Plugin auf Ihrer Website und es ist ei
 msgid "You have already submitted this form before. You are not allowed to submit this form again."
 msgstr "Sie haben dieses Formular bereits zuvor eingereicht. Sie dürfen dieses Formular nicht erneut einreichen."
 
-#: core/controllers/arflitesettingcontroller.php:284
+#: core/controllers/arflitesettingcontroller.php:282
 #@ arforms-form-builder
 msgid "You have made below required fields which may not supported by system."
 msgstr "Sie haben unten erforderliche Felder erstellt, die möglicherweise nicht vom System unterstützt werden."
@@ -7948,7 +7941,7 @@ msgstr "Datum und Uhrzeit protokollieren"
 msgid "Something went wrong"
 msgstr "Etwas ist schief gelaufen"
 
-#: core/classes/class.arf_debug_log.php:475
+#: core/classes/class.arf_debug_log.php:476
 #@ arforms-form-builder
 msgid "log download successfully"
 msgstr "Protokoll-Download erfolgreich"
@@ -8001,12 +7994,12 @@ msgstr "einreichen"
 msgid "Invalid reCaptcha. Please try again."
 msgstr "Ungültiges reCaptcha. Bitte versuche es erneut."
 
-#: core/controllers/arflitesettingcontroller.php:721
+#: core/controllers/arflitesettingcontroller.php:682
 #@ arforms-form-builder
 msgid "Sorry! you do not have permission to activate the add-on"
 msgstr "Entschuldigung! Sie haben keine Berechtigung, das Add-on zu aktivieren"
 
-#: core/controllers/arflitesettingcontroller.php:829
+#: core/controllers/arflitesettingcontroller.php:790
 #@ arforms-form-builder
 msgid "Sorry! you do not have permission to deactivate the add-on"
 msgstr "Entschuldigung! Sie haben keine Berechtigung, das Add-on zu deaktivieren"
@@ -8145,7 +8138,7 @@ msgstr "nonce_error"
 msgid "capabilitie_error"
 msgstr "capabilitie_error"
 
-#: core/classes/class.arf_debug_log.php:549
+#: core/classes/class.arf_debug_log.php:550
 #@ arforms-form-builder
 msgid "success"
 msgstr "Erfolg"
@@ -8197,7 +8190,7 @@ msgstr "Benutzerdefinierte Daten"
 msgid "Accordion"
 msgstr "Akkordeon"
 
-#: core/classes/class.arforms_general_settings.php:169
+#: core/classes/class.arforms_general_settings.php:174
 #: core/controllers/arflitemaincontroller.php:446
 #: core/controllers/arflitemaincontroller.php:2997
 #: core/controllers/arflitemaincontroller.php:3305
@@ -8206,9 +8199,9 @@ msgstr "Akkordeon"
 msgid "Sorry, your request cannot be processed due to security reason."
 msgstr "Leider kann Ihre Anfrage aus Sicherheitsgründen nicht bearbeitet werden."
 
-#: core/controllers/arflitesettingcontroller.php:615
-#: core/controllers/arflitesettingcontroller.php:753
-#: core/controllers/arflitesettingcontroller.php:859
+#: core/controllers/arflitesettingcontroller.php:576
+#: core/controllers/arflitesettingcontroller.php:714
+#: core/controllers/arflitesettingcontroller.php:820
 #@ arforms-form-builder
 msgid "You cannot install this Plugin as your are not using ARForms"
 msgstr "Sie können dieses Plugin nicht installieren, da Sie ARForms nicht verwenden"
@@ -8288,7 +8281,7 @@ msgstr "Einträge erfolgreich gelesen."
 msgid "Entries Unread successfully."
 msgstr "Einträge erfolgreich ungelesen."
 
-#: core/controllers/arflitesettingcontroller.php:586
+#: core/controllers/arflitesettingcontroller.php:547
 #@ arforms-form-builder
 msgid "Upgade to Pro"
 msgstr "Upgrade auf Pro"
@@ -9201,12 +9194,6 @@ msgstr "Dies scheint keine gültige E-Mail-Adresse zu sein."
 msgid "Form submission failed due to invalid or incomplete required field data. Please refresh the page or try again using a private/incognito window."
 msgstr "Das Formular konnte aufgrund ungültiger oder unvollständiger Pflichtfelder nicht übermittelt werden. Bitte aktualisieren Sie die Seite oder versuchen Sie es erneut in einem privaten/Inkognito-Fenster."
 
-#. translators: plugin header field 'Version'
-#: arforms-form-builder.php:0
-#@ arforms-form-builder
-msgid "1.8.1"
-msgstr "1.8.1"
-
 #: core/controllers/arflitefilecontroller.php:267
 #@ arforms-form-builder
 msgid "The file could not be fetched due to security reasons."
@@ -9216,4 +9203,10 @@ msgstr "Die Datei konnte aus Sicherheitsgründen nicht abgerufen werden."
 #@ arforms-form-builder
 msgid "Sorry, you are not allowed to access this data."
 msgstr "Leider haben Sie keinen Zugriff auf diese Daten."
+
+#. translators: plugin header field 'Version'
+#: arforms-form-builder.php:0
+#@ arforms-form-builder
+msgid "1.8.2"
+msgstr "1.8.2"
 

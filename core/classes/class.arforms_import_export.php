@@ -1001,7 +1001,7 @@ class arforms_import_export_settings{
                     $form_ids = ( count( $arf_frm_add_form_ids ) > 0 ) ? implode( ',', $arf_frm_add_form_ids ) : '';
                 }
 
-                $res = $wpdb->get_results( 'SELECT * FROM ' . $tbl_arf_forms . ' WHERE id in (' . $form_ids . ')' ); //phpcs:ignore
+                $res = $wpdb->get_results( 'SELECT * FROM ' . $tbl_arf_forms . ' WHERE id in (' . $form_ids . ') AND arf_is_lite_form = 1' ); //phpcs:ignore
 
                 if ( ! is_array( $form_ids ) && empty( $res ) ) {
 

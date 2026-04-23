@@ -114,6 +114,11 @@ class arforms_general_settings{
 			die;
 		}
 
+        if( ! current_user_can( 'arfchangesettings' ) ){
+            echo esc_attr( 'permission_error' );
+            die;
+        }
+
 		$reply_to = ( isset( $_POST['reply_to'] ) && ! empty( $_POST['reply_to'] ) ) ? sanitize_email( $_POST['reply_to'] ) : '';
 		$send_to  = ( isset( $_POST['send_to'] ) && ! empty( $_POST['send_to'] ) ) ? sanitize_email( $_POST['send_to'] ) : '';
 

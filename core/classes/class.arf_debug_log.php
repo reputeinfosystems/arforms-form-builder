@@ -451,7 +451,8 @@ class arfdebuglog{
                 $arf_debug_log_where_cond = $wpdb->prepare(' AND (arf_debug_log_added_date >= %s)', $arf_last_selected_days);
             }
 
-            $arf_download_debug_log_query = 'SELECT * FROM `' . $tbl_arforms_debug_log_setting . "` WHERE `arf_debug_log_type` = '" . $arf_download_log_selector . "'  " . $arf_debug_log_where_cond . ' ORDER BY arf_debug_log_id DESC';
+            
+            $arf_download_debug_log_query = $wpdb->prepare( "SELECT * FROM {$tbl_arforms_debug_log_setting} WHERE `arf_debug_log_type` = %s {$arf_debug_log_where_cond} ORDER BY arf_debug_log_id DESC", $arf_download_log_selector ); //phpcs:ignore
 
             $arf_download_debug_log_data = $wpdb->get_results($arf_download_debug_log_query, ARRAY_A); //phpcs:ignore
 

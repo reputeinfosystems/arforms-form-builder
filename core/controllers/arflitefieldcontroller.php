@@ -31,8 +31,6 @@ class arflitefieldcontroller {
 
 		add_action( 'wp_ajax_nopriv_arflite_is_resetformoutside', array( $this, 'arflite_resetformoutside' ) );
 
-		add_action( 'wp_ajax_arflite_add_new_preset', array( $this, 'arflite_add_new_preset' ) );
-
 		add_action( 'wp_ajax_arflite_upload_radio_label_img', array( $this, 'arflite_upload_radio_label_img' ) );
 
 		add_action( 'wp_ajax_arflite_save_new_preset_field', array( $this, 'arflite_save_new_preset_field_function' ) );
@@ -435,61 +433,6 @@ class arflitefieldcontroller {
 		}
 
 		die();
-	}
-
-	function arflite_add_new_preset() {
-
-		$fn = isset( $_SERVER['HTTP_X_FILENAME'] ) ? sanitize_file_name( $_SERVER['HTTP_X_FILENAME'] ) : false;
-
-		if ( $fn && isset( $_FILES['preset_file']['tmp_name'] ) ) {
-
-			$upload_main_url = ARFLITE_UPLOAD_PRESET_FILE_DIR;
-
-			$fn_ext = explode( '.', $fn );
-    
-            $file_ext = end( $fn_ext );
-    
-            if( 'csv' != strtolower( trim( $file_ext ) ) ){
-                echo esc_attr( 'security_error' );
-                die;
-            }
-
-			$arflitefilecontroller = new arflitefilecontroller( $_FILES['preset_file'], false ); //phpcs:ignore
-
-			$arflitefilecontroller->default_error_msg = __( 'Please select a CSV file', 'arforms-form-builder' );
-
-			if ( ! $arflitefilecontroller ) {
-				echo 'error~|~' . esc_html__( 'Please select a CSV file', 'arforms-form-builder' );
-				die;
-			}
-
-			$arflitefilecontroller->check_cap    = true;
-			$arflitefilecontroller->capabilities = array( 'arfviewforms', 'arfeditforms', 'arfchangesettings' );
-
-			$arflitefilecontroller->check_nonce  = true;
-			$arflitefilecontroller->nonce_data   = isset( $_POST['_nonce_add_preset'] ) ? sanitize_text_field( $_POST['_nonce_add_preset'] ) : ''; //phpcs:ignore
-			$arflitefilecontroller->nonce_action = 'arflite_wp_preset_nonce';
-
-			$arflitefilecontroller->check_only_image = false;
-
-			$arflitefilecontroller->check_specific_ext = true;
-			$arflitefilecontroller->allowed_ext        = array( 'csv' );
-
-			$destination = $upload_main_url . $fn;
-
-			$upload_file = $arflitefilecontroller->arflite_process_upload( $destination );
-
-			if ( false == $upload_file ) {
-				echo 'error~|~' . $arflitefilecontroller->error_message; //phpcs:ignore
-				die;
-			} else {
-				echo esc_html( $fn );
-				die;
-			}
-		} else {
-			echo 'error~|~' . esc_html__( 'Please select a CSV file', 'arforms-form-builder' );
-			die;
-		}
 	}
 
 	function arflite_save_new_preset_field_function() {

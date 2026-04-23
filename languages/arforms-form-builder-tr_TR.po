@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ARForms Form Builder v1.8.1\n"
+"Project-Id-Version: ARForms Form Builder v1.8.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-02-20 12:23:29+0000\n"
+"PO-Revision-Date: 2026-04-23 04:35:34+0000\n"
 "Last-Translator: admin <admin@gmail.com>\n"
 "Language-Team: Turkish\n"
 "MIME-Version: 1.0\n"
@@ -325,12 +325,12 @@ msgstr "Hesap Kimliği"
 msgid "Action"
 msgstr "Aksiyon"
 
-#: core/controllers/arflitesettingcontroller.php:582
+#: core/controllers/arflitesettingcontroller.php:543
 #@ arforms-form-builder
 msgid "Activated"
 msgstr "Aktif"
 
-#: core/controllers/arflitesettingcontroller.php:569
+#: core/controllers/arflitesettingcontroller.php:530
 #@ arforms-form-builder
 msgid "Active"
 msgstr "Aktif"
@@ -431,7 +431,7 @@ msgstr "Zamanlayıcı Ekle"
 msgid "Add to page"
 msgstr "Sayfaya ekle"
 
-#: core/controllers/arflitesettingcontroller.php:505
+#: core/controllers/arflitesettingcontroller.php:466
 #: core/views/arflite_view_addons.php:7
 #@ arforms-form-builder
 msgid "Add-On listing is currently unavailable. Please try again later."
@@ -455,7 +455,7 @@ msgstr "Form ve Şablon Ekle / Düzenle"
 
 #: core/classes/class.arforms_form_builder.php:1824
 #: core/controllers/arfliteprocontroller.php:75
-#: core/controllers/arflitesettingcontroller.php:135
+#: core/controllers/arflitesettingcontroller.php:133
 #@ arforms-form-builder
 msgid "Addons"
 msgstr "Eklentiler"
@@ -1031,7 +1031,7 @@ msgid "Bhutan"
 msgstr "Butan"
 
 #: core/classes/class.arforms_form_builder.php:1835
-#: core/controllers/arflitesettingcontroller.php:147
+#: core/controllers/arflitesettingcontroller.php:145
 #@ arforms-form-builder
 msgid "Black Friday Sale"
 msgstr "Kara Cuma İndirimi"
@@ -1807,7 +1807,7 @@ msgstr "Curacao"
 msgid "Current Field Type"
 msgstr "Geçerli Alan Türü"
 
-#: core/controllers/arflitefieldcontroller.php:585
+#: core/controllers/arflitefieldcontroller.php:528
 #: core/views/arflite_edit.php:1178
 #: core/views/arflite_edit.php:2605
 #@ arforms-form-builder
@@ -1925,13 +1925,13 @@ msgid "days"
 msgstr "günler"
 
 #: core/controllers/arfliteprocontroller.php:301
-#: core/controllers/arflitesettingcontroller.php:580
+#: core/controllers/arflitesettingcontroller.php:541
 #: core/views/arflite_view_addons.php:92
 #@ arforms-form-builder
 msgid "Deactivate"
 msgstr "Devre dışı bırakmak"
 
-#: core/controllers/arflitesettingcontroller.php:580
+#: core/controllers/arflitesettingcontroller.php:541
 #@ arforms-form-builder
 msgid "Deactivated"
 msgstr "Devre dışı bırakıldı"
@@ -2028,7 +2028,7 @@ msgstr "Yönetici Alanından Girişleri Silme"
 msgid "DELETE ENTRY"
 msgstr "GİRİŞİ SİL"
 
-#: core/controllers/arflitefieldcontroller.php:713
+#: core/controllers/arflitefieldcontroller.php:656
 #@ arforms-form-builder
 msgid "Delete Field"
 msgstr "Alanı Sil"
@@ -2131,7 +2131,7 @@ msgstr "Yıkılmak"
 msgid "Dropdown"
 msgstr "Yıkılmak"
 
-#: core/controllers/arflitefieldcontroller.php:716
+#: core/controllers/arflitefieldcontroller.php:659
 #@ arforms-form-builder
 msgid "Duplicate Field"
 msgstr "Yinelenen Alan"
@@ -2247,7 +2247,7 @@ msgstr "e-posta geçersiz"
 msgid "Email Marketing Tools"
 msgstr "E-posta Pazarlama Araçları"
 
-#: core/controllers/arflitesettingcontroller.php:278
+#: core/controllers/arflitesettingcontroller.php:276
 #@ arforms-form-builder
 msgid "Email Marketing Tools setting saved successfully."
 msgstr "E-posta Pazarlama Araçları ayarı başarıyla kaydedildi."
@@ -2423,12 +2423,12 @@ msgstr "Eritre"
 #: core/classes/class.arf_debug_log.php:420
 #: core/classes/class.arf_debug_log.php:429
 #: core/classes/class.arf_debug_log.php:436
-#: core/classes/class.arf_debug_log.php:523
-#: core/classes/class.arf_debug_log.php:532
-#: core/classes/class.arf_debug_log.php:540
-#: core/classes/class.arforms_general_settings.php:281
-#: core/classes/class.arforms_general_settings.php:290
-#: core/classes/class.arforms_general_settings.php:297
+#: core/classes/class.arf_debug_log.php:524
+#: core/classes/class.arf_debug_log.php:533
+#: core/classes/class.arf_debug_log.php:541
+#: core/classes/class.arforms_general_settings.php:286
+#: core/classes/class.arforms_general_settings.php:295
+#: core/classes/class.arforms_general_settings.php:302
 #: core/controllers/arfliterecordcontroller.php:1617
 #: core/controllers/arfliterecordcontroller.php:1626
 #@ arforms-form-builder
@@ -2638,7 +2638,7 @@ msgstr "Alan etiketi"
 msgid "Field Options"
 msgstr "Alan Seçenekleri"
 
-#: core/controllers/arflitefieldcontroller.php:710
+#: core/controllers/arflitefieldcontroller.php:653
 #@ arforms-form-builder
 msgid "Field Settings"
 msgstr "Saha Ayarları"
@@ -3092,8 +3092,8 @@ msgstr "Genel Simgeler"
 msgid "General Options"
 msgstr "Genel seçenekler"
 
-#: core/classes/class.arforms_general_settings.php:360
-#: core/controllers/arflitesettingcontroller.php:276
+#: core/classes/class.arforms_general_settings.php:365
+#: core/controllers/arflitesettingcontroller.php:274
 #@ arforms-form-builder
 msgid "General setting saved successfully."
 msgstr "Genel ayar başarıyla kaydedildi."
@@ -3102,7 +3102,7 @@ msgstr "Genel ayar başarıyla kaydedildi."
 #: core/classes/class.arforms_form_builder.php:1030
 #: core/classes/class.arforms_form_builder.php:1820
 #: core/controllers/arfliteprocontroller.php:69
-#: core/controllers/arflitesettingcontroller.php:131
+#: core/controllers/arflitesettingcontroller.php:129
 #: core/views/arflite_settings_form.php:64
 #@ arforms-form-builder
 msgid "General Settings"
@@ -3142,7 +3142,7 @@ msgstr "Almanya"
 msgid "Get Authorization Code"
 msgstr "Onay Kodu Al"
 
-#: core/controllers/arflitesettingcontroller.php:578
+#: core/controllers/arflitesettingcontroller.php:539
 #@ arforms-form-builder
 msgid "Get It"
 msgstr "Anla"
@@ -3159,8 +3159,8 @@ msgstr "Gana"
 msgid "Gibraltar"
 msgstr "Cebelitarık"
 
-#: core/classes/class.arforms_general_settings.php:150
-#: core/controllers/arflitesettingcontroller.php:74
+#: core/classes/class.arforms_general_settings.php:155
+#: core/controllers/arflitesettingcontroller.php:72
 #@ arforms-form-builder
 msgid "GMAIL Test E-Mail"
 msgstr "GMAIL Test E-postası"
@@ -3224,7 +3224,7 @@ msgid "Group Name"
 msgstr "Grup ismi"
 
 #: core/classes/class.arforms_form_builder.php:1826
-#: core/controllers/arflitesettingcontroller.php:139
+#: core/controllers/arflitesettingcontroller.php:137
 #@ arforms-form-builder
 msgid "Growth Plugins"
 msgstr "Büyüme Eklentileri"
@@ -3516,7 +3516,7 @@ msgstr "İthalat"
 
 #: core/classes/class.arforms_form_builder.php:1822
 #: core/controllers/arfliteprocontroller.php:71
-#: core/controllers/arflitesettingcontroller.php:133
+#: core/controllers/arflitesettingcontroller.php:131
 #@ arforms-form-builder
 msgid "Import / Export"
 msgstr "İthalat ihracat"
@@ -3528,7 +3528,7 @@ msgstr "Formları İçe / Dışa Aktar"
 
 #: core/classes/class.arforms_form_builder.php:1822
 #: core/controllers/arfliteprocontroller.php:71
-#: core/controllers/arflitesettingcontroller.php:133
+#: core/controllers/arflitesettingcontroller.php:131
 #@ arforms-form-builder
 msgid "Import Export"
 msgstr "İthalat ihracat"
@@ -3637,13 +3637,13 @@ msgstr "Yazı Tipi Ayarlarını Girin"
 msgid "Input Style"
 msgstr "Giriş Stili"
 
-#: core/controllers/arflitesettingcontroller.php:575
+#: core/controllers/arflitesettingcontroller.php:536
 #: core/views/arflite_view_samples.php:41
 #@ arforms-form-builder
 msgid "Install"
 msgstr "Yüklemek"
 
-#: core/controllers/arflitesettingcontroller.php:575
+#: core/controllers/arflitesettingcontroller.php:536
 #@ arforms-form-builder
 msgid "Installed"
 msgstr "Kurulmuş"
@@ -4099,7 +4099,7 @@ msgstr "Malta"
 msgid "Manage Forms"
 msgstr "Formları Yönet"
 
-#: core/controllers/arflitefieldcontroller.php:722
+#: core/controllers/arflitefieldcontroller.php:665
 #@ arforms-form-builder
 msgid "Manage Options"
 msgstr "Seçenekleri Yönet"
@@ -4409,7 +4409,7 @@ msgstr "Fas"
 msgid "Most Powerful Form Builder to create wide variety of forms within a minute"
 msgstr "Most Powerful Form Builder to create wide variety of forms within a minute"
 
-#: core/controllers/arflitefieldcontroller.php:719
+#: core/controllers/arflitefieldcontroller.php:662
 #@ arforms-form-builder
 msgid "Move"
 msgstr "Hareket"
@@ -4626,9 +4626,9 @@ msgstr "Hiçbir eşleşen kayıt bulunamadı"
 msgid "No one! You do not have permission"
 msgstr "Hiç kimse! Izniniz yok"
 
-#: core/controllers/arflitesettingcontroller.php:603
-#: core/controllers/arflitesettingcontroller.php:742
-#: core/controllers/arflitesettingcontroller.php:848
+#: core/controllers/arflitesettingcontroller.php:564
+#: core/controllers/arflitesettingcontroller.php:703
+#: core/controllers/arflitesettingcontroller.php:809
 #@ arforms-form-builder
 msgid "No plugin specified."
 msgstr "Eklenti belirtilmedi."
@@ -5193,13 +5193,6 @@ msgstr "Lütfen dışa aktarılan dosyanızı açın, tüm içeriği kopyalayın
 msgid "Please save form to generate shortcode."
 msgstr "Kısa kod oluşturmak için lütfen formu kaydedin."
 
-#: core/controllers/arflitefieldcontroller.php:459
-#: core/controllers/arflitefieldcontroller.php:462
-#: core/controllers/arflitefieldcontroller.php:490
-#@ arforms-form-builder
-msgid "Please select a CSV file"
-msgstr "Lütfen bir CSV dosyası seçin"
-
 #: core/controllers/arflitemaincontroller.php:2499
 #@ arforms-form-builder
 msgid "Please select a custom display"
@@ -5622,7 +5615,7 @@ msgstr "E-postaya cevap ver"
 msgid "Reply to Email"
 msgstr "E-postaya cevap ver"
 
-#: core/controllers/arflitefieldcontroller.php:707
+#: core/controllers/arflitefieldcontroller.php:650
 #@ arforms-form-builder
 msgid "Required"
 msgstr "gereklidir"
@@ -5694,7 +5687,7 @@ msgstr "Yuvarlak Stil"
 msgid "RTL"
 msgstr "RTL"
 
-#: core/controllers/arflitefieldcontroller.php:725
+#: core/controllers/arflitefieldcontroller.php:668
 #@ arforms-form-builder
 msgid "Running Total (Math Logic) is Enabled"
 msgstr "Toplam Koşu (Matematik Mantık) Etkin"
@@ -6143,7 +6136,7 @@ msgstr "Set Değeri"
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: core/controllers/arflitesettingcontroller.php:280
+#: core/controllers/arflitesettingcontroller.php:278
 #@ arforms-form-builder
 msgid "Settings Saved."
 msgstr "Ayarlar kaydedildi."
@@ -6224,8 +6217,8 @@ msgstr "gösterme"
 msgid "Sierra Leone"
 msgstr "Sierra Leone"
 
-#: core/classes/class.arforms_general_settings.php:195
-#: core/controllers/arflitesettingcontroller.php:54
+#: core/classes/class.arforms_general_settings.php:200
+#: core/controllers/arflitesettingcontroller.php:52
 #@ arforms-form-builder
 msgid "Sign out successfully."
 msgstr "Oturumu başarıyla kapatın."
@@ -6342,7 +6335,7 @@ msgstr "SMTP Bağlantı Noktası"
 msgid "SMTP Server"
 msgstr "SMTP sunucusu"
 
-#: core/classes/class.arforms_general_settings.php:120
+#: core/classes/class.arforms_general_settings.php:125
 #@ arforms-form-builder
 msgid "SMTP Test E-Mail"
 msgstr "SMTP Test E-postası"
@@ -6377,12 +6370,12 @@ msgstr "Somali"
 msgid "Something went wrong please try again later."
 msgstr "Bir şeyler yanlış oldu. Lütfen sonra tekrar deneyiniz."
 
-#: core/classes/class.arforms_general_settings.php:298
+#: core/classes/class.arforms_general_settings.php:303
 #@ arforms-form-builder
 msgid "Something Went wrong while updating settings..."
 msgstr "Ayarlar güncellenirken bir şeyler ters gitti.."
 
-#: core/controllers/arflitefieldcontroller.php:407
+#: core/controllers/arflitefieldcontroller.php:405
 #@ arforms-form-builder
 msgid "Sorry, the action \"Reset Form Outside\" could not be processed due to security reason"
 msgstr "Maalesef \\ \\\"Formu Dışında Sıfırla \" işlemi güvenlik nedeniyle işlenemedi"
@@ -6394,7 +6387,7 @@ msgstr "Maalesef, güvenlik nedeniyle bu dosya türüne izin verilmiyor"
 
 #: core/controllers/arflitemaincontroller.php:439
 #: core/controllers/arflitemaincontroller.php:2988
-#: core/controllers/arflitesettingcontroller.php:625
+#: core/controllers/arflitesettingcontroller.php:586
 #@ arforms-form-builder
 msgid "Sorry, you are not allowed to install plugins on this site."
 msgstr "Üzgünüz, bu siteye eklenti kurmanıza izin verilmiyor."
@@ -6413,9 +6406,9 @@ msgstr "Maalesef, bu işlemi gerçekleştirmek için yeterli izniniz yok"
 
 #: core/classes/class.arf_debug_log.php:125
 #: core/classes/class.arf_debug_log.php:430
-#: core/classes/class.arf_debug_log.php:541
-#: core/classes/class.arforms_general_settings.php:176
-#: core/classes/class.arforms_general_settings.php:291
+#: core/classes/class.arf_debug_log.php:542
+#: core/classes/class.arforms_general_settings.php:181
+#: core/classes/class.arforms_general_settings.php:296
 #: core/classes/class.arforms_import_export.php:947
 #: core/controllers/arflitemaincontroller.php:2459
 #: core/controllers/arflitemaincontroller.php:3028
@@ -6451,10 +6444,10 @@ msgstr "Maalesef, güvenlik nedeniyle isteğiniz işlenemedi"
 #: core/classes/class.arf_debug_log.php:38
 #: core/classes/class.arf_debug_log.php:116
 #: core/classes/class.arf_debug_log.php:421
-#: core/classes/class.arf_debug_log.php:524
-#: core/classes/class.arf_debug_log.php:533
+#: core/classes/class.arf_debug_log.php:525
+#: core/classes/class.arf_debug_log.php:534
 #: core/classes/class.arforms_divi_module.php:15
-#: core/classes/class.arforms_general_settings.php:282
+#: core/classes/class.arforms_general_settings.php:287
 #: core/classes/class.arforms_import_export.php:953
 #: core/controllers/arflitemaincontroller.php:2461
 #: core/controllers/arflitemaincontroller.php:3047
@@ -6578,7 +6571,7 @@ msgid "Start timer on page no."
 msgstr "Zamanlayıcıyı sayfa no."
 
 #: core/controllers/arfliteprocontroller.php:73
-#: core/controllers/arflitesettingcontroller.php:137
+#: core/controllers/arflitesettingcontroller.php:135
 #@ arforms-form-builder
 msgid "Status"
 msgstr "Durum"
@@ -6659,14 +6652,14 @@ msgid "Submitting form"
 msgstr "Form gönderiliyor"
 
 #: core/classes/class.arf_debug_log.php:154
-#: core/classes/class.arf_debug_log.php:474
-#: core/classes/class.arforms_general_settings.php:194
-#: core/classes/class.arforms_general_settings.php:359
+#: core/classes/class.arf_debug_log.php:475
+#: core/classes/class.arforms_general_settings.php:199
+#: core/classes/class.arforms_general_settings.php:364
 #: core/controllers/arflitegrowthplugincontroller.php:133
 #: core/controllers/arflitegrowthplugincontroller.php:201
 #: core/controllers/arflitegrowthplugincontroller.php:269
 #: core/controllers/arflitegrowthplugincontroller.php:335
-#: core/controllers/arflitesettingcontroller.php:53
+#: core/controllers/arflitesettingcontroller.php:51
 #@ arforms-form-builder
 msgid "Success"
 msgstr "Başarı"
@@ -7357,7 +7350,7 @@ msgstr "Ukrayna"
 msgid "Ukrainian"
 msgstr "Ukrayna"
 
-#: core/controllers/arflitesettingcontroller.php:678
+#: core/controllers/arflitesettingcontroller.php:639
 #@ arforms-form-builder
 msgid "Unable to connect to the filesystem. Please confirm your credentials."
 msgstr "Dosya sistemine bağlanılamıyor. Lütfen kimlik bilgilerinizi onaylayın."
@@ -7419,7 +7412,7 @@ msgstr "ARForms Veritabanını Güncelle"
 
 #: core/classes/class.arforms_form_builder.php:1837
 #: core/controllers/arfliteformcontroller.php:134
-#: core/controllers/arflitesettingcontroller.php:149
+#: core/controllers/arflitesettingcontroller.php:147
 #@ arforms-form-builder
 msgid "Upgrade To Premium"
 msgstr "Premiuma yükselt"
@@ -7855,7 +7848,7 @@ msgstr "Web sitenizde ARForms Premium eklentisini kullanıyorsunuz ve bu, ARForm
 msgid "You have already submitted this form before. You are not allowed to submit this form again."
 msgstr "Bu formu daha önce göndermiştiniz. Bu formu tekrar göndermenize izin verilmiyor."
 
-#: core/controllers/arflitesettingcontroller.php:284
+#: core/controllers/arflitesettingcontroller.php:282
 #@ arforms-form-builder
 msgid "You have made below required fields which may not supported by system."
 msgstr "Aşağıda sistem tarafından desteklenmeyen zorunlu alanları yaptınız."
@@ -7948,7 +7941,7 @@ msgstr "Günlük Tarihi ve Saati"
 msgid "Something went wrong"
 msgstr "Bir şeyler yanlış gitti"
 
-#: core/classes/class.arf_debug_log.php:475
+#: core/classes/class.arf_debug_log.php:476
 #@ arforms-form-builder
 msgid "log download successfully"
 msgstr "günlüğün başarıyla indirilmesi"
@@ -8001,12 +7994,12 @@ msgstr "göndermek"
 msgid "Invalid reCaptcha. Please try again."
 msgstr "Geçersiz reCaptcha. Lütfen tekrar deneyin."
 
-#: core/controllers/arflitesettingcontroller.php:721
+#: core/controllers/arflitesettingcontroller.php:682
 #@ arforms-form-builder
 msgid "Sorry! you do not have permission to activate the add-on"
 msgstr "Üzgünüm! eklentiyi etkinleştirme izniniz yok"
 
-#: core/controllers/arflitesettingcontroller.php:829
+#: core/controllers/arflitesettingcontroller.php:790
 #@ arforms-form-builder
 msgid "Sorry! you do not have permission to deactivate the add-on"
 msgstr "Üzgünüm! eklentiyi devre dışı bırakma izniniz yok"
@@ -8145,7 +8138,7 @@ msgstr "nonce_error"
 msgid "capabilitie_error"
 msgstr "yetenek hatası"
 
-#: core/classes/class.arf_debug_log.php:549
+#: core/classes/class.arf_debug_log.php:550
 #@ arforms-form-builder
 msgid "success"
 msgstr "başarı"
@@ -8197,7 +8190,7 @@ msgstr "Özel Tarihler"
 msgid "Accordion"
 msgstr "Akordeon"
 
-#: core/classes/class.arforms_general_settings.php:169
+#: core/classes/class.arforms_general_settings.php:174
 #: core/controllers/arflitemaincontroller.php:446
 #: core/controllers/arflitemaincontroller.php:2997
 #: core/controllers/arflitemaincontroller.php:3305
@@ -8206,9 +8199,9 @@ msgstr "Akordeon"
 msgid "Sorry, your request cannot be processed due to security reason."
 msgstr "Üzgünüz, güvenlik nedeniyle isteğiniz işleme alınamıyor."
 
-#: core/controllers/arflitesettingcontroller.php:615
-#: core/controllers/arflitesettingcontroller.php:753
-#: core/controllers/arflitesettingcontroller.php:859
+#: core/controllers/arflitesettingcontroller.php:576
+#: core/controllers/arflitesettingcontroller.php:714
+#: core/controllers/arflitesettingcontroller.php:820
 #@ arforms-form-builder
 msgid "You cannot install this Plugin as your are not using ARForms"
 msgstr "ARForms kullanmadığınız için bu Eklentiyi yükleyemezsiniz"
@@ -8288,7 +8281,7 @@ msgstr "Girişler Başarıyla okundu."
 msgid "Entries Unread successfully."
 msgstr "Girişler başarıyla okunmadı."
 
-#: core/controllers/arflitesettingcontroller.php:586
+#: core/controllers/arflitesettingcontroller.php:547
 #@ arforms-form-builder
 msgid "Upgade to Pro"
 msgstr "Pro'ya yükseltin"
@@ -9201,12 +9194,6 @@ msgstr "Bu geçerli bir e-posta gibi görünmüyor"
 msgid "Form submission failed due to invalid or incomplete required field data. Please refresh the page or try again using a private/incognito window."
 msgstr "Gerekli alan verilerinin geçersiz veya eksik olması nedeniyle form gönderimi başarısız oldu. Lütfen sayfayı yenileyin veya özel/gizli pencereyi kullanarak tekrar deneyin."
 
-#. translators: plugin header field 'Version'
-#: arforms-form-builder.php:0
-#@ arforms-form-builder
-msgid "1.8.1"
-msgstr "1.8.1"
-
 #: core/controllers/arflitefilecontroller.php:267
 #@ arforms-form-builder
 msgid "The file could not be fetched due to security reasons."
@@ -9216,4 +9203,10 @@ msgstr "Güvenlik nedenlerinden dolayı dosya alınamadı."
 #@ arforms-form-builder
 msgid "Sorry, you are not allowed to access this data."
 msgstr "Üzgünüm, bu verilere erişmenize izin verilmiyor."
+
+#. translators: plugin header field 'Version'
+#: arforms-form-builder.php:0
+#@ arforms-form-builder
+msgid "1.8.2"
+msgstr "1.8.2"
 

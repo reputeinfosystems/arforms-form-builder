@@ -4,8 +4,6 @@ class arflitesettingcontroller {
 
 	function __construct() {
 
-		add_action( 'wp_ajax_arflite_upload_submit_hover_bg', array( $this, 'arflite_upload_submit_hover_bg' ) );
-
 		add_filter( 'arflite_trim_values', array( $this, 'arflite_array_map' ), 10, 1 );
 
 		add_action( 'wp_ajax_arflite_install_plugin', array( $this, 'arflite_install_plugin' ) );
@@ -295,43 +293,6 @@ class arflitesettingcontroller {
 		$sections = apply_filters( 'arfliteaddsettingssection', array() );
 
 		require ARFLITE_VIEWS_PATH . '/arflite_settings_form.php';
-	}
-	/* function arflitehead() {
-
-		global $arflitemainhelper, $arfliteversion;
-
-		$uicss = ARFLITEURL . '/css/ui-all/ui.all.css?ver=' . $arfliteversion;
-
-		wp_register_style( 'ui-css', $uicss, array(), $arfliteversion );
-		$arflitemainhelper->arflite_load_styles( array( 'ui-css' ) );
-
-		$customcss = ARFLITESCRIPTURL . '&amp;controller=settings';
-
-		wp_register_style( 'custom-css', $customcss, array(), $arfliteversion );
-		$arflitemainhelper->arflite_load_styles( array( 'custom-css' ) );
-		?>
-		<?php
-		require ARFLITE_VIEWS_PATH . '/arflite_head.php';
-	} */
-
-	function arflite_upload_submit_hover_bg() {
-
-		if ( empty( $_POST['_wpnonce_arflite'] ) || ( isset( $_POST['_wpnonce_arflite'] ) && '' != $_POST['_wpnonce_arflite'] && ! wp_verify_nonce( sanitize_text_field( $_POST['_wpnonce_arflite'] ), 'arflite_wp_nonce' ) ) ) {
-			echo esc_attr( 'security_error' );
-			die;
-		}
-
-		if( !current_user_can( 'arfeditforms' ) ){
-			echo esc_attr( 'security_error' );
-			die;
-		}
-
-		$file = isset( $_POST['image'] ) ? esc_url_raw( $_POST['image'] ) : ''; 
-		?>
-		<input type="hidden" name="arfsbhis" onclick="clear_file_submit_hover();" value="<?php echo esc_url( $file ); ?>" id="arfsubmithoverbuttonimagesetting" />
-		<img src="<?php echo esc_url( $file ); ?>" class="arf_upload_submitbtn_hover-img" height="35" width="35" />&nbsp;<span class="arflite-submit-hover-bgimg-span" onclick="arflite_delete_image('button_hover_image');"><svg width="23px" height="27px" viewBox="0 0 30 30"><path xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" fill="#4786FF" d="M19.002,4.351l0.007,16.986L3.997,21.348L3.992,4.351H1.016V2.38  h1.858h4.131V0.357h8.986V2.38h4.146h1.859l0,0v1.971H19.002z M16.268,4.351H6.745H5.993l0.006,15.003h10.997L17,4.351H16.268z   M12.01,7.346h1.988v9.999H12.01V7.346z M9.013,7.346h1.989v9.999H9.013V7.346z"/></svg></span>
-		<?php
-		die();
 	}
 	
 	function arflitehex2rgb( $hex ) {

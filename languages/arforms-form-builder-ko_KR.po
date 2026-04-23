@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ARForms Form Builder v1.8.1\n"
+"Project-Id-Version: ARForms Form Builder v1.8.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-02-20 12:21:53+0000\n"
+"PO-Revision-Date: 2026-04-23 04:32:56+0000\n"
 "Last-Translator: admin <testrepute123@gmail.com>\n"
 "Language-Team: Korean\n"
 "MIME-Version: 1.0\n"
@@ -325,12 +325,12 @@ msgstr "계정 ID"
 msgid "Action"
 msgstr "동작"
 
-#: core/controllers/arflitesettingcontroller.php:582
+#: core/controllers/arflitesettingcontroller.php:543
 #@ arforms-form-builder
 msgid "Activated"
 msgstr "활성화 됨"
 
-#: core/controllers/arflitesettingcontroller.php:569
+#: core/controllers/arflitesettingcontroller.php:530
 #@ arforms-form-builder
 msgid "Active"
 msgstr "유효한"
@@ -431,7 +431,7 @@ msgstr "타이머 추가"
 msgid "Add to page"
 msgstr "페이지에 추가"
 
-#: core/controllers/arflitesettingcontroller.php:505
+#: core/controllers/arflitesettingcontroller.php:466
 #: core/views/arflite_view_addons.php:7
 #@ arforms-form-builder
 msgid "Add-On listing is currently unavailable. Please try again later."
@@ -455,7 +455,7 @@ msgstr "양식 및 템플릿 추가 / 편집"
 
 #: core/classes/class.arforms_form_builder.php:1824
 #: core/controllers/arfliteprocontroller.php:75
-#: core/controllers/arflitesettingcontroller.php:135
+#: core/controllers/arflitesettingcontroller.php:133
 #@ arforms-form-builder
 msgid "Addons"
 msgstr "애드온"
@@ -1031,7 +1031,7 @@ msgid "Bhutan"
 msgstr "부탄"
 
 #: core/classes/class.arforms_form_builder.php:1835
-#: core/controllers/arflitesettingcontroller.php:147
+#: core/controllers/arflitesettingcontroller.php:145
 #@ arforms-form-builder
 msgid "Black Friday Sale"
 msgstr "블랙 프라이데이 세일"
@@ -1807,7 +1807,7 @@ msgstr "퀴 라소"
 msgid "Current Field Type"
 msgstr "현재 필드 유형"
 
-#: core/controllers/arflitefieldcontroller.php:585
+#: core/controllers/arflitefieldcontroller.php:528
 #: core/views/arflite_edit.php:1178
 #: core/views/arflite_edit.php:2605
 #@ arforms-form-builder
@@ -1925,13 +1925,13 @@ msgid "days"
 msgstr "일"
 
 #: core/controllers/arfliteprocontroller.php:301
-#: core/controllers/arflitesettingcontroller.php:580
+#: core/controllers/arflitesettingcontroller.php:541
 #: core/views/arflite_view_addons.php:92
 #@ arforms-form-builder
 msgid "Deactivate"
 msgstr "비활성화"
 
-#: core/controllers/arflitesettingcontroller.php:580
+#: core/controllers/arflitesettingcontroller.php:541
 #@ arforms-form-builder
 msgid "Deactivated"
 msgstr "비활성화 됨"
@@ -2028,7 +2028,7 @@ msgstr "관리 영역에서 항목 삭제"
 msgid "DELETE ENTRY"
 msgstr "항목 삭제"
 
-#: core/controllers/arflitefieldcontroller.php:713
+#: core/controllers/arflitefieldcontroller.php:656
 #@ arforms-form-builder
 msgid "Delete Field"
 msgstr "필드 삭제"
@@ -2131,7 +2131,7 @@ msgstr "쓰러지 다"
 msgid "Dropdown"
 msgstr "쓰러지 다"
 
-#: core/controllers/arflitefieldcontroller.php:716
+#: core/controllers/arflitefieldcontroller.php:659
 #@ arforms-form-builder
 msgid "Duplicate Field"
 msgstr "중복 필드"
@@ -2247,7 +2247,7 @@ msgstr "이메일이 유효하지 않습니다"
 msgid "Email Marketing Tools"
 msgstr "이메일 마케팅 도구"
 
-#: core/controllers/arflitesettingcontroller.php:278
+#: core/controllers/arflitesettingcontroller.php:276
 #@ arforms-form-builder
 msgid "Email Marketing Tools setting saved successfully."
 msgstr "이메일 마케팅 도구 설정이 저장되었습니다."
@@ -2423,12 +2423,12 @@ msgstr "에리트레아"
 #: core/classes/class.arf_debug_log.php:420
 #: core/classes/class.arf_debug_log.php:429
 #: core/classes/class.arf_debug_log.php:436
-#: core/classes/class.arf_debug_log.php:523
-#: core/classes/class.arf_debug_log.php:532
-#: core/classes/class.arf_debug_log.php:540
-#: core/classes/class.arforms_general_settings.php:281
-#: core/classes/class.arforms_general_settings.php:290
-#: core/classes/class.arforms_general_settings.php:297
+#: core/classes/class.arf_debug_log.php:524
+#: core/classes/class.arf_debug_log.php:533
+#: core/classes/class.arf_debug_log.php:541
+#: core/classes/class.arforms_general_settings.php:286
+#: core/classes/class.arforms_general_settings.php:295
+#: core/classes/class.arforms_general_settings.php:302
 #: core/controllers/arfliterecordcontroller.php:1617
 #: core/controllers/arfliterecordcontroller.php:1626
 #@ arforms-form-builder
@@ -2638,7 +2638,7 @@ msgstr "필드 라벨"
 msgid "Field Options"
 msgstr "필드 옵션"
 
-#: core/controllers/arflitefieldcontroller.php:710
+#: core/controllers/arflitefieldcontroller.php:653
 #@ arforms-form-builder
 msgid "Field Settings"
 msgstr "필드 설정"
@@ -3092,8 +3092,8 @@ msgstr "일반 아이콘"
 msgid "General Options"
 msgstr "일반 옵션"
 
-#: core/classes/class.arforms_general_settings.php:360
-#: core/controllers/arflitesettingcontroller.php:276
+#: core/classes/class.arforms_general_settings.php:365
+#: core/controllers/arflitesettingcontroller.php:274
 #@ arforms-form-builder
 msgid "General setting saved successfully."
 msgstr "일반 설정이 성공적으로 저장되었습니다."
@@ -3102,7 +3102,7 @@ msgstr "일반 설정이 성공적으로 저장되었습니다."
 #: core/classes/class.arforms_form_builder.php:1030
 #: core/classes/class.arforms_form_builder.php:1820
 #: core/controllers/arfliteprocontroller.php:69
-#: core/controllers/arflitesettingcontroller.php:131
+#: core/controllers/arflitesettingcontroller.php:129
 #: core/views/arflite_settings_form.php:64
 #@ arforms-form-builder
 msgid "General Settings"
@@ -3142,7 +3142,7 @@ msgstr "독일"
 msgid "Get Authorization Code"
 msgstr "인증 코드 받기"
 
-#: core/controllers/arflitesettingcontroller.php:578
+#: core/controllers/arflitesettingcontroller.php:539
 #@ arforms-form-builder
 msgid "Get It"
 msgstr "그것을 얻으십시오"
@@ -3159,8 +3159,8 @@ msgstr "가나"
 msgid "Gibraltar"
 msgstr "지브롤터"
 
-#: core/classes/class.arforms_general_settings.php:150
-#: core/controllers/arflitesettingcontroller.php:74
+#: core/classes/class.arforms_general_settings.php:155
+#: core/controllers/arflitesettingcontroller.php:72
 #@ arforms-form-builder
 msgid "GMAIL Test E-Mail"
 msgstr "GMAIL 테스트 이메일"
@@ -3224,7 +3224,7 @@ msgid "Group Name"
 msgstr "그룹 이름"
 
 #: core/classes/class.arforms_form_builder.php:1826
-#: core/controllers/arflitesettingcontroller.php:139
+#: core/controllers/arflitesettingcontroller.php:137
 #@ arforms-form-builder
 msgid "Growth Plugins"
 msgstr "성장 플러그인"
@@ -3516,7 +3516,7 @@ msgstr "수입"
 
 #: core/classes/class.arforms_form_builder.php:1822
 #: core/controllers/arfliteprocontroller.php:71
-#: core/controllers/arflitesettingcontroller.php:133
+#: core/controllers/arflitesettingcontroller.php:131
 #@ arforms-form-builder
 msgid "Import / Export"
 msgstr "수입 수출"
@@ -3528,7 +3528,7 @@ msgstr "가져 오기 / 내보내기 양식"
 
 #: core/classes/class.arforms_form_builder.php:1822
 #: core/controllers/arfliteprocontroller.php:71
-#: core/controllers/arflitesettingcontroller.php:133
+#: core/controllers/arflitesettingcontroller.php:131
 #@ arforms-form-builder
 msgid "Import Export"
 msgstr "수입 수출"
@@ -3637,13 +3637,13 @@ msgstr "입력 글꼴 설정"
 msgid "Input Style"
 msgstr "입력 스타일"
 
-#: core/controllers/arflitesettingcontroller.php:575
+#: core/controllers/arflitesettingcontroller.php:536
 #: core/views/arflite_view_samples.php:41
 #@ arforms-form-builder
 msgid "Install"
 msgstr "설치"
 
-#: core/controllers/arflitesettingcontroller.php:575
+#: core/controllers/arflitesettingcontroller.php:536
 #@ arforms-form-builder
 msgid "Installed"
 msgstr "설치됨"
@@ -4099,7 +4099,7 @@ msgstr "몰타"
 msgid "Manage Forms"
 msgstr "양식 관리"
 
-#: core/controllers/arflitefieldcontroller.php:722
+#: core/controllers/arflitefieldcontroller.php:665
 #@ arforms-form-builder
 msgid "Manage Options"
 msgstr "옵션 관리"
@@ -4409,7 +4409,7 @@ msgstr "모로코"
 msgid "Most Powerful Form Builder to create wide variety of forms within a minute"
 msgstr "Most Powerful Form Builder to create wide variety of forms within a minute"
 
-#: core/controllers/arflitefieldcontroller.php:719
+#: core/controllers/arflitefieldcontroller.php:662
 #@ arforms-form-builder
 msgid "Move"
 msgstr "움직임"
@@ -4626,9 +4626,9 @@ msgstr "일치하는 레코드가 없습니다"
 msgid "No one! You do not have permission"
 msgstr "아무도! 당신은 권한이 없습니다"
 
-#: core/controllers/arflitesettingcontroller.php:603
-#: core/controllers/arflitesettingcontroller.php:742
-#: core/controllers/arflitesettingcontroller.php:848
+#: core/controllers/arflitesettingcontroller.php:564
+#: core/controllers/arflitesettingcontroller.php:703
+#: core/controllers/arflitesettingcontroller.php:809
 #@ arforms-form-builder
 msgid "No plugin specified."
 msgstr "지정된 플러그인이 없습니다."
@@ -5193,13 +5193,6 @@ msgstr "내 보낸 파일을 열고 전체 내용을 복사하여 여기에 붙�
 msgid "Please save form to generate shortcode."
 msgstr "단축 코드를 생성하려면 양식을 저장하십시오."
 
-#: core/controllers/arflitefieldcontroller.php:459
-#: core/controllers/arflitefieldcontroller.php:462
-#: core/controllers/arflitefieldcontroller.php:490
-#@ arforms-form-builder
-msgid "Please select a CSV file"
-msgstr "CSV 파일을 선택하십시오"
-
 #: core/controllers/arflitemaincontroller.php:2499
 #@ arforms-form-builder
 msgid "Please select a custom display"
@@ -5622,7 +5615,7 @@ msgstr "이메일 답장"
 msgid "Reply to Email"
 msgstr "이메일에 회신"
 
-#: core/controllers/arflitefieldcontroller.php:707
+#: core/controllers/arflitefieldcontroller.php:650
 #@ arforms-form-builder
 msgid "Required"
 msgstr "필수"
@@ -5694,7 +5687,7 @@ msgstr "둥근 스타일"
 msgid "RTL"
 msgstr "RTL"
 
-#: core/controllers/arflitefieldcontroller.php:725
+#: core/controllers/arflitefieldcontroller.php:668
 #@ arforms-form-builder
 msgid "Running Total (Math Logic) is Enabled"
 msgstr "누적 합계 (Math Logic)가 활성화되었습니다"
@@ -6143,7 +6136,7 @@ msgstr "설정 값"
 msgid "Settings"
 msgstr "설정"
 
-#: core/controllers/arflitesettingcontroller.php:280
+#: core/controllers/arflitesettingcontroller.php:278
 #@ arforms-form-builder
 msgid "Settings Saved."
 msgstr "설정이 저장되었습니다."
@@ -6224,8 +6217,8 @@ msgstr "전시"
 msgid "Sierra Leone"
 msgstr "시에라 리온"
 
-#: core/classes/class.arforms_general_settings.php:195
-#: core/controllers/arflitesettingcontroller.php:54
+#: core/classes/class.arforms_general_settings.php:200
+#: core/controllers/arflitesettingcontroller.php:52
 #@ arforms-form-builder
 msgid "Sign out successfully."
 msgstr "성공적으로 로그아웃되었습니다."
@@ -6342,7 +6335,7 @@ msgstr "SMTP 포트"
 msgid "SMTP Server"
 msgstr "SMTP 서버"
 
-#: core/classes/class.arforms_general_settings.php:120
+#: core/classes/class.arforms_general_settings.php:125
 #@ arforms-form-builder
 msgid "SMTP Test E-Mail"
 msgstr "SMTP 테스트 이메일"
@@ -6377,12 +6370,12 @@ msgstr "소말리아"
 msgid "Something went wrong please try again later."
 msgstr "문제가 발생했습니다. 나중에 다시 시도해 주세요."
 
-#: core/classes/class.arforms_general_settings.php:298
+#: core/classes/class.arforms_general_settings.php:303
 #@ arforms-form-builder
 msgid "Something Went wrong while updating settings..."
 msgstr "설정을 업데이트하는 중에 문제가 발생했습니다.."
 
-#: core/controllers/arflitefieldcontroller.php:407
+#: core/controllers/arflitefieldcontroller.php:405
 #@ arforms-form-builder
 msgid "Sorry, the action \"Reset Form Outside\" could not be processed due to security reason"
 msgstr "보안상의 이유로 \\ \\\"Reset Form Outside \"작업을 처리 할 수 없습니다."
@@ -6394,7 +6387,7 @@ msgstr "이 파일 형식은 보안상의 이유로 허용되지 않습니다."
 
 #: core/controllers/arflitemaincontroller.php:439
 #: core/controllers/arflitemaincontroller.php:2988
-#: core/controllers/arflitesettingcontroller.php:625
+#: core/controllers/arflitesettingcontroller.php:586
 #@ arforms-form-builder
 msgid "Sorry, you are not allowed to install plugins on this site."
 msgstr "죄송합니다.이 사이트에 플러그인을 설치할 수 없습니다."
@@ -6413,9 +6406,9 @@ msgstr "죄송합니다.이 작업을 수행 할 수있는 권한이 없습니�
 
 #: core/classes/class.arf_debug_log.php:125
 #: core/classes/class.arf_debug_log.php:430
-#: core/classes/class.arf_debug_log.php:541
-#: core/classes/class.arforms_general_settings.php:176
-#: core/classes/class.arforms_general_settings.php:291
+#: core/classes/class.arf_debug_log.php:542
+#: core/classes/class.arforms_general_settings.php:181
+#: core/classes/class.arforms_general_settings.php:296
 #: core/classes/class.arforms_import_export.php:947
 #: core/controllers/arflitemaincontroller.php:2459
 #: core/controllers/arflitemaincontroller.php:3028
@@ -6451,10 +6444,10 @@ msgstr "보안상의 이유로 요청을 처리하지 못했습니다."
 #: core/classes/class.arf_debug_log.php:38
 #: core/classes/class.arf_debug_log.php:116
 #: core/classes/class.arf_debug_log.php:421
-#: core/classes/class.arf_debug_log.php:524
-#: core/classes/class.arf_debug_log.php:533
+#: core/classes/class.arf_debug_log.php:525
+#: core/classes/class.arf_debug_log.php:534
 #: core/classes/class.arforms_divi_module.php:15
-#: core/classes/class.arforms_general_settings.php:282
+#: core/classes/class.arforms_general_settings.php:287
 #: core/classes/class.arforms_import_export.php:953
 #: core/controllers/arflitemaincontroller.php:2461
 #: core/controllers/arflitemaincontroller.php:3047
@@ -6578,7 +6571,7 @@ msgid "Start timer on page no."
 msgstr "페이지 번호에서 타이머를 시작합니다."
 
 #: core/controllers/arfliteprocontroller.php:73
-#: core/controllers/arflitesettingcontroller.php:137
+#: core/controllers/arflitesettingcontroller.php:135
 #@ arforms-form-builder
 msgid "Status"
 msgstr "상태"
@@ -6659,14 +6652,14 @@ msgid "Submitting form"
 msgstr "양식 제출"
 
 #: core/classes/class.arf_debug_log.php:154
-#: core/classes/class.arf_debug_log.php:474
-#: core/classes/class.arforms_general_settings.php:194
-#: core/classes/class.arforms_general_settings.php:359
+#: core/classes/class.arf_debug_log.php:475
+#: core/classes/class.arforms_general_settings.php:199
+#: core/classes/class.arforms_general_settings.php:364
 #: core/controllers/arflitegrowthplugincontroller.php:133
 #: core/controllers/arflitegrowthplugincontroller.php:201
 #: core/controllers/arflitegrowthplugincontroller.php:269
 #: core/controllers/arflitegrowthplugincontroller.php:335
-#: core/controllers/arflitesettingcontroller.php:53
+#: core/controllers/arflitesettingcontroller.php:51
 #@ arforms-form-builder
 msgid "Success"
 msgstr "성공"
@@ -7357,7 +7350,7 @@ msgstr "우크라이나"
 msgid "Ukrainian"
 msgstr "우크라이나 인"
 
-#: core/controllers/arflitesettingcontroller.php:678
+#: core/controllers/arflitesettingcontroller.php:639
 #@ arforms-form-builder
 msgid "Unable to connect to the filesystem. Please confirm your credentials."
 msgstr "파일 시스템에 연결할 수 없습니다. 자격 증명을 확인하십시오."
@@ -7419,7 +7412,7 @@ msgstr "ARForms 데이터베이스 업데이트"
 
 #: core/classes/class.arforms_form_builder.php:1837
 #: core/controllers/arfliteformcontroller.php:134
-#: core/controllers/arflitesettingcontroller.php:149
+#: core/controllers/arflitesettingcontroller.php:147
 #@ arforms-form-builder
 msgid "Upgrade To Premium"
 msgstr "프리미엄으로 업그레이드"
@@ -7855,7 +7848,7 @@ msgstr "귀하의 웹사이트에서 ARForms Premium 플러그인을 사용하�
 msgid "You have already submitted this form before. You are not allowed to submit this form again."
 msgstr "이미이 양식을 제출하셨습니다. 이 양식을 다시 제출할 수 없습니다."
 
-#: core/controllers/arflitesettingcontroller.php:284
+#: core/controllers/arflitesettingcontroller.php:282
 #@ arforms-form-builder
 msgid "You have made below required fields which may not supported by system."
 msgstr "시스템에서 지원하지 않는 필수 필드를 아래와 같이 만들었습니다."
@@ -7948,7 +7941,7 @@ msgstr "로그 날짜 및 시간"
 msgid "Something went wrong"
 msgstr "문제가 발생했습니다."
 
-#: core/classes/class.arf_debug_log.php:475
+#: core/classes/class.arf_debug_log.php:476
 #@ arforms-form-builder
 msgid "log download successfully"
 msgstr "로그 다운로드 성공"
@@ -8001,12 +7994,12 @@ msgstr "제출하다"
 msgid "Invalid reCaptcha. Please try again."
 msgstr "reCaptcha가 잘못되었습니다. 다시 시도해 주세요."
 
-#: core/controllers/arflitesettingcontroller.php:721
+#: core/controllers/arflitesettingcontroller.php:682
 #@ arforms-form-builder
 msgid "Sorry! you do not have permission to activate the add-on"
 msgstr "죄송합니다! 추가 기능을 활성화할 권한이 없습니다"
 
-#: core/controllers/arflitesettingcontroller.php:829
+#: core/controllers/arflitesettingcontroller.php:790
 #@ arforms-form-builder
 msgid "Sorry! you do not have permission to deactivate the add-on"
 msgstr "죄송합니다! 추가 기능을 비활성화할 권한이 없습니다."
@@ -8145,7 +8138,7 @@ msgstr "nonce_error"
 msgid "capabilitie_error"
 msgstr "능력_오류"
 
-#: core/classes/class.arf_debug_log.php:549
+#: core/classes/class.arf_debug_log.php:550
 #@ arforms-form-builder
 msgid "success"
 msgstr "성공"
@@ -8197,7 +8190,7 @@ msgstr "맞춤 날짜"
 msgid "Accordion"
 msgstr "아코디언"
 
-#: core/classes/class.arforms_general_settings.php:169
+#: core/classes/class.arforms_general_settings.php:174
 #: core/controllers/arflitemaincontroller.php:446
 #: core/controllers/arflitemaincontroller.php:2997
 #: core/controllers/arflitemaincontroller.php:3305
@@ -8206,9 +8199,9 @@ msgstr "아코디언"
 msgid "Sorry, your request cannot be processed due to security reason."
 msgstr "죄송합니다. 보안상의 이유로 귀하의 요청을 처리할 수 없습니다."
 
-#: core/controllers/arflitesettingcontroller.php:615
-#: core/controllers/arflitesettingcontroller.php:753
-#: core/controllers/arflitesettingcontroller.php:859
+#: core/controllers/arflitesettingcontroller.php:576
+#: core/controllers/arflitesettingcontroller.php:714
+#: core/controllers/arflitesettingcontroller.php:820
 #@ arforms-form-builder
 msgid "You cannot install this Plugin as your are not using ARForms"
 msgstr "ARForms를 사용하지 않으므로 이 플러그인을 설치할 수 없습니다."
@@ -8288,7 +8281,7 @@ msgstr "항목을 성공적으로 읽었습니다."
 msgid "Entries Unread successfully."
 msgstr "항목을 읽지 않았습니다."
 
-#: core/controllers/arflitesettingcontroller.php:586
+#: core/controllers/arflitesettingcontroller.php:547
 #@ arforms-form-builder
 msgid "Upgade to Pro"
 msgstr "Pro로 업그레이드"
@@ -9201,12 +9194,6 @@ msgstr "이것은 유효한 이메일이 아닌 것 같습니다."
 msgid "Form submission failed due to invalid or incomplete required field data. Please refresh the page or try again using a private/incognito window."
 msgstr "필수 필드 데이터가 잘못되었거나 불완전하여 양식을 제출하지 못했습니다. 페이지를 새로 고치거나 비공개/시크릿 창을 사용하여 다시 시도하세요."
 
-#. translators: plugin header field 'Version'
-#: arforms-form-builder.php:0
-#@ arforms-form-builder
-msgid "1.8.1"
-msgstr "1.8.1"
-
 #: core/controllers/arflitefilecontroller.php:267
 #@ arforms-form-builder
 msgid "The file could not be fetched due to security reasons."
@@ -9216,4 +9203,10 @@ msgstr "보안상의 이유로 파일을 가져올 수 없습니다."
 #@ arforms-form-builder
 msgid "Sorry, you are not allowed to access this data."
 msgstr "죄송합니다. 해당 데이터에 접근할 권한이 없습니다."
+
+#. translators: plugin header field 'Version'
+#: arforms-form-builder.php:0
+#@ arforms-form-builder
+msgid "1.8.2"
+msgstr "1.8.2"
 
