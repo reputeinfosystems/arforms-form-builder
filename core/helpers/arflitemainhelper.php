@@ -963,11 +963,7 @@ class arflitemainhelper {
 				$user_id = $user_ID;
 			} else {
 
-				if ( function_exists( 'get_user_by' ) ) {
 					$user = get_user_by( 'login', $user_id );
-				} else {
-					$user = get_user_by( $user_id );
-				}
 
 				if ( $user ) {
 					$user_id = $user->ID; 

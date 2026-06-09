@@ -44,7 +44,7 @@ if ( $arf_addons == '' ) {
 	$arforms_default_addons_list['default_module'][] = array(
 		'name'                  => __( 'Turnstile Captcha', 'arforms-form-builder' ),
 		'key'                   => 'arforms_tcaptcha',
-		'description'           => __( 'Add reCaptcha with Google reCaptcha Add-On of ARForms', 'arforms-form-builder' ),
+		'description'           => __( 'Add Turnstile Captcha with Turnstile Captcha Add-On of ARForms', 'arforms-form-builder' ),
 		'is_active'             => $arformsmain->arforms_get_settings( 'arforms_tcaptcha', 'arforms_module' ),
 		'documentation_url'     => 'https://www.arformsplugin.com/add-on/google-recaptcha/',
 		'arf_class'             => 'arf_turnstile_captcha',
@@ -52,7 +52,7 @@ if ( $arf_addons == '' ) {
 	$arforms_default_addons_list['default_module'][] = array(
 		'name'                  => __( 'hCaptcha', 'arforms-form-builder' ),
 		'key'                   => 'arforms_hcaptcha',
-		'description'           => __( 'Add reCaptcha with Google reCaptcha Add-On of ARForms', 'arforms-form-builder' ),
+		'description'           => __( 'Add hCaptcha with hCaptcha Add-On of ARForms', 'arforms-form-builder' ),
 		'is_active'             => $arformsmain->arforms_get_settings( 'arforms_hcaptcha', 'arforms_module' ),
 		'documentation_url'     => 'https://www.arformsplugin.com/add-on/google-recaptcha/',
 		'arf_class'             => 'arf_hcaptcha',
@@ -60,9 +60,9 @@ if ( $arf_addons == '' ) {
 	$arforms_default_addons_list['default_module'][] = array(
 		'name'                  => __( 'PayPal', 'arforms-form-builder' ),
 		'key'                   => 'arforms_paypal',
-		'description'           => __( 'Add reCaptcha with Google reCaptcha Add-On of ARForms', 'arforms-form-builder' ),
+		'description'           => __( 'Add PayPal payment gateway with PayPal Add-On of ARForms', 'arforms-form-builder' ),
 		'is_active'             => $arformsmain->arforms_get_settings( 'arforms_paypal', 'arforms_module' ),
-		'documentation_url'     => 'https://www.arformsplugin.com/add-on/google-recaptcha/',
+		'documentation_url'     => 'https://www.arformsplugin.com/add-on/paypal/',
 		'arf_class'             => 'arf_paypal',
 	);
 

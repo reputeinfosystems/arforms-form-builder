@@ -2579,6 +2579,10 @@ class arflitefieldhelper {
 	function arflite_execute_function( $value, $callback ) {
 
 		if ( $callback != '' ) {
+			// Handle null values to prevent deprecation warnings
+			if ( null === $value || '' === $value ) {
+				return '';
+			}
 			return trim( $callback( $value ) );
 		}
 

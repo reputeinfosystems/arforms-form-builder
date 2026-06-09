@@ -55,7 +55,7 @@ $selected_list_id      = '';
 
         <tr id="aweber_api_tr2" >
             <td class="tdclass" style="width:18%; padding-right:20px; padding-bottom:3px; text-align: left;">
-                <label class="lblsubtitle"><?php esc_html__( 'Authorization Code', 'arforms-form-builder' ); ?></label>
+                <label class="lblsubtitle"><?php esc_html_e( 'Authorization Code', 'arforms-form-builder' ); ?></label>
             </td>
             <td style="padding-left: 4px;">
                 <input type="text" name="aweber_oauth_code" class="txtmodal1" id="aweber_api" size="80" value="" />&nbsp;&nbsp;
@@ -498,26 +498,12 @@ $selected_list_id      = '';
                 <label for="constant_contact_1"><?php echo esc_html__( 'Using API', 'arforms-form-builder' ); ?></label>
             </span>
         </div>
-        <div class="arf_radio_wrapper">
-            <div class="arf_custom_radio_div" >
-                <div class="arf_custom_radio_wrapper">
-                    <input type="radio" class="arf_submit_action arf_custom_radio" id="constant_contact_2" name="constant_type" value="0"  onclick="arflite_show_web_form('constant');" />
-                    <svg width="18px" height="18px">
-                    <?php echo ARFLITE_CUSTOM_UNCHECKEDRADIO_ICON; //phpcs:ignore ?>
-                    <?php echo ARFLITE_CUSTOM_CHECKEDRADIO_ICON; //phpcs:ignore ?>
-                    </svg>
-                </div>
-            </div>
-            <span>
-                <label for="constant_contact_2"><?php echo esc_html__( 'Using Web-form', 'arforms-form-builder' ); ?></label>
-            </span>
-        </div>
         </th>
         </tr>
 
         <tr id="constant_api_tr1">
 
-            <td class="tdclass arfemail-marketer-credential-lbl"><label class="lblsubtitle"><?php echo esc_html__( 'API Key', 'arforms-form-builder' ); ?></label></td>
+            <td class="tdclass arfemail-marketer-credential-lbl"><label class="lblsubtitle"><?php echo esc_html__( 'Client ID (API Key)', 'arforms-form-builder' ); ?></label></td>
 
             <td class="arfemailinputtd"><input type="text" name="constant_api" class="txtmodal1" onkeyup="arflite_show_verify_btn('constant');" id="constant_api" size="80" value="" />
                 <div class="arferrmessage display-none-cls" id="constant_api_error" ><?php echo esc_html__( 'This field cannot be blank.', 'arforms-form-builder' ); ?></div></td>
@@ -525,11 +511,11 @@ $selected_list_id      = '';
 
         <tr id="constant_api_tr2">
 
-            <td class="tdclass arf_emilmarkter_list"><label class="lblsubtitle"><?php echo esc_html__( 'Access Token', 'arforms-form-builder' ); ?></label></td>
+            <td class="tdclass arf_emilmarkter_list"><label class="lblsubtitle"><?php echo esc_html__( 'Client Secret', 'arforms-form-builder' ); ?></label></td>
 
             <td class="arficontact-username-td"><input type="text" name="constant_access_token" onkeyup="arflite_show_verify_btn('constant');" class="txtmodal1" id="constant_access_token" size="80" value="" /> &nbsp; &nbsp;
 
-                <span id="constant_link"><a href="javascript:void(0);" class="arlinks arf_restricted_control"><?php echo esc_html__( 'Verify', 'arforms-form-builder' ); ?></a></span>
+                <button type="button" id="arf_cc_connect_btn" class="rounded_button arf_btn_dark_blue arf_restricted_control" style="height:35px; border:0px; color:#FFFFFF; padding:0 10px;"><?php echo addslashes(esc_html__('Authorize', 'arforms-form-builder')); ?></button>
                 <span id="constant_loader" class="display-none-cls" ><div class="arf_imageloader arfemailmarketerloaderdiv"></div></span>
                 <span id="constant_verify" class="frm_verify_li display-none-cls"><?php echo esc_html__( 'Verified', 'arforms-form-builder' ); ?></span>
                 <span id="constant_error" class="frm_not_verify_li display-none-cls"><?php echo esc_html__( 'Not Verified', 'arforms-form-builder' ); ?></span>
@@ -570,18 +556,6 @@ $selected_list_id      = '';
                     <a href="javascript:void(0);" class="arf_restricted_control"><?php echo esc_html__( 'Delete Configuration', 'arforms-form-builder' ); ?></a>
                 </div>
 
-
-            </td>
-
-        </tr>
-
-        <tr id="constant_web_form_tr" class="display-none-cls">
-
-            <td class="tdclass arfwebform-code-emailmarketer"><label class="lblsubtitle"><?php echo esc_html__( 'Webform code from Constant Contact', 'arforms-form-builder' ); ?></label></td>
-
-            <td class="arfpadding-left5px">
-
-                <textarea name="constant_web_form" id="constant_web_form" class="txtmultinew"></textarea>
 
             </td>
 

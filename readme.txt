@@ -3,9 +3,9 @@ Contributors: reputeinfosystems, dimplemodi
 Tags: contact form, popup forms, survey form, payment form, multi-step form
 Donate link: https://codecanyon.net/item/addon-bundle-for-arforms-wordpress-form-builder/23946744
 Requires at least: 5.0
-Tested up to: 6.9.4
+Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.8.2
+Stable tag: 1.8.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -403,8 +403,11 @@ Please follow the steps for your ARForms installation below:
 
 == Changelog ==
 
+= 1.8.3 =
+Minor bug fixes and improvements
+
 = 1.8.2 =
-Minor buf fixes
+Minor bug fixes
 
 = 1.8.1 =
 Minor bug fixes

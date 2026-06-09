@@ -768,7 +768,7 @@ class ARForms_Paypal_payment_gatway {
 
 		global $wpdb, $arfliterecordmeta,$arf_paypal,$arfform, $arfsettings,$arformsmain;
 		
-		$form_data = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM  ' . $arf_paypal->db_paypal_forms . ' WHERE form_id = %d', $form_id ) );//phpcs:ignore 
+		$form_data = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM  ' . $arf_paypal->db_paypal_forms . ' WHERE form_id = %d', (int)$form_id ) );//phpcs:ignore 
 		
 
 		if ( count( $form_data ) > 0 ) {
@@ -912,7 +912,7 @@ class ARForms_Paypal_payment_gatway {
 					$cmd = '_xclick';
 				}
 
-				$arf_pyapal_home_url = get_home_url() . '/';
+				$arf_pyapal_home_url = trailingslashit( get_home_url() );
 
 				if ( strstr( $arf_pyapal_home_url, '?' ) ) {
 					$apyapal_return_url    = $arf_pyapal_home_url . '&arf_page=arforms_paypal_response&custom=' . $entry_id . '|' . $form_id . '|' . $payment_type;
@@ -1004,25 +1004,45 @@ class ARForms_Paypal_payment_gatway {
 	}
 
 	function arf_check_payment( $arf_check_payment, $form_id , $entry_id){
-		global $arfliterecordmeta, $arf_paypal, $arfform, $wpdb;
+		global $arfliterecordmeta, $arf_paypal, $arfform, $wpdb, $tbl_arf_entry_values;
 
 		if ( $arf_check_payment ) {
 			return $arf_check_payment;
 		}
 
-		$is_paypal_form = $wpdb->get_results( $wpdb->prepare('SELECT COUNT(id) FROM `'.$arf_paypal->db_paypal_forms.'` WHERE form_id = %d',  $form_id ) );
+		$check_order_status = $wpdb->get_var( $wpdb->prepare( "SELECT id FROM {$arf_paypal->db_paypal_order} WHERE entry_id = %d AND is_verified = %d", $entry_id, 1 ) );
+		if ( $check_order_status ) {
+			return false;
+		}
+		/* Fixed Issue WordPress, $wpdb->get_results() always returns an Array of objects, Even if the count is 0, it returns an array containing that result
+		   In PHP, an array is almost always evaluated as "greater than 0". Therefore, if( $is_paypal_form > 0 ) evaluates to TRUE for every single form on your website 
+		*/
+		$is_paypal_form = $wpdb->get_var( $wpdb->prepare('SELECT COUNT(id) FROM `'.$arf_paypal->db_paypal_forms.'` WHERE form_id = %d',  (int)$form_id ) ); 
+		
 		if( $is_paypal_form > 0 ){
 
-			$paypal_form_data = $wpdb->get_results( $wpdb->prepare('SELECT * FROM `'.$arf_paypal->db_paypal_forms.'` WHERE form_id = %d', $form_id ));
-			$options = maybe_unserialize($paypal_form_data[0]->options);
+			$paypal_form_data = $wpdb->get_results( $wpdb->prepare('SELECT * FROM `'.$arf_paypal->db_paypal_forms.'` WHERE form_id = %d', (int)$form_id ));
+			$options = isset($paypal_form_data[0]->options) ? maybe_unserialize($paypal_form_data[0]->options) : array();
 			
 			$paypal_field_amount = '';
 
-			if ( '' != $options['amount'] ) {
+			if ( isset($options['amount']) && '' != $options['amount'] ) {
 				$paypal_field_amount = $options['amount'];
 			}
+
+			// Check if the amount greater than 0
+			if ( !empty( $paypal_field_amount ) ) {
+				$entry_amount_row = $wpdb->get_row( $wpdb->prepare('SELECT entry_value FROM `'.$tbl_arf_entry_values.'` WHERE entry_id = %d AND field_id = %d', $entry_id, $paypal_field_amount ));
+				
+				if ( !empty($entry_amount_row) && floatval($entry_amount_row->entry_value) > 0 ) {
+					$arf_check_payment = true;
+				} else {
+					$arf_check_payment = false;
+				}
+			} else {
+				$arf_check_payment = true; 
+			}
 		 
-			$arf_check_payment = true;
 		} 
 
 		return $arf_check_payment;
@@ -1036,7 +1056,7 @@ class ARForms_Paypal_payment_gatway {
 		if ( $entry_id ) {
 			global $wpdb,$arformcontroller,$arfform;
 			
-			$payment_detail = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM ' . $arf_paypal->db_paypal_order . ' WHERE entry_id = %d', $entry_id ) );//phpcs:ignore 
+			$payment_detail = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM ' . $arf_paypal->db_paypal_order . ' WHERE entry_id = %d', (int)$entry_id ) );//phpcs:ignore 
 			
 			if ( isset( $payment_detail ) && '' != $payment_detail && is_array( $payment_detail ) && isset( $payment_detail[0] ) ) {
 				$payment_detail = $payment_detail[0];
@@ -1189,7 +1209,7 @@ class ARForms_Paypal_payment_gatway {
 
 		if ( $id ) {
 			global $wpdb,$arf_paypal;
-			$res = $wpdb->query( $wpdb->prepare( 'DELETE FROM ' . $arf_paypal->db_paypal_order . ' WHERE id = %d', $id ) );//phpcs:ignore 
+			$res = $wpdb->query( $wpdb->prepare( 'DELETE FROM ' . $arf_paypal->db_paypal_order . ' WHERE id = %d', (int)$id ) );//phpcs:ignore 
 
 			return $res;
 		}
@@ -1342,12 +1362,12 @@ class ARForms_Paypal_payment_gatway {
 			if ( $datequery != '' ) {
 				
 				//$orders = $arfform->arf_select_db_data( true, '', $arf_paypal->db_paypal_order, '*', 'WHERE form_id = %d ' . $datequery, array( $form_id ), '', 'ORDER BY id DESC' );
-				$orders = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM ' . $arf_paypal->db_paypal_order . ' WHERE form_id = %d ' . $datequery . ' ORDER BY id DESC', $form_id ) );//phpcs:ignore 
+				$orders = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM ' . $arf_paypal->db_paypal_order . ' WHERE form_id = %d ' . $datequery . ' ORDER BY id DESC', (int)$form_id ) );//phpcs:ignore 
 
 			} else {
 				
 				//$orders = $arfform->arf_select_db_data( true, '', $arf_paypal->db_paypal_order, '*', 'WHERE form_id = %d', array( $form_id ), '', 'ORDER BY id DESC' );
-				$orders = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM ' . $arf_paypal->db_paypal_order . ' WHERE form_id = %d ORDER BY id DESC', $form_id ) );//phpcs:ignore
+				$orders = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM ' . $arf_paypal->db_paypal_order . ' WHERE form_id = %d ORDER BY id DESC', (int)$form_id ) );//phpcs:ignore
 			}
 		} else {
 			if ( $datequery != '' ) {
@@ -2613,10 +2633,12 @@ class ARForms_Paypal_payment_gatway {
 						}
 					}
 
-					echo esc_attr($arrecordcontroller->generate_redirect_form( $arf_form_data, $arf_options['success_url'], $arf_options['arf_data_with_url_type'], $posted_field_data ));
-				} else {
-					wp_redirect( $arf_options['success_url'] );
-					die;
+					if ( ! empty( $arrecordcontroller ) ) {
+						echo esc_attr($arrecordcontroller->generate_redirect_form( $arf_form_data, $arf_options['success_url'], $arf_options['arf_data_with_url_type'], $posted_field_data ));
+					} else {
+						wp_redirect( $arf_options['success_url'] );
+						die;
+					}
 				}
 				exit;
 			} else {
@@ -2726,8 +2748,13 @@ class ARForms_Paypal_payment_gatway {
 								$posted_field_data[ $field_id ] = $entry_value->entry_value;
 							}
 						}
-						//need to confirm with azharsir
-						echo $arrecordcontroller->generate_redirect_form( $arf_form_data, $arf_options['success_url'], $arf_options['arf_data_with_url_type'], $posted_field_data );//phpcs:ignore
+
+						if ( ! empty( $arrecordcontroller ) ) {
+							echo $arrecordcontroller->generate_redirect_form( $arf_form_data, $arf_options['success_url'], $arf_options['arf_data_with_url_type'], $posted_field_data );//phpcs:ignore
+						} else {
+							wp_redirect( $arf_options['success_url'] );
+							die;
+						}
 					} else {
 						wp_redirect( $arf_options['success_url'] );
 						die;

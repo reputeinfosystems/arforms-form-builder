@@ -7,6 +7,11 @@ class arforms_general_settings{
 	var $tc_msg;
 	var $tc_theme;
 
+    public $hcaptcha_public_key;
+    public $hcaptcha_private_key;
+    public $hcaptcha_theme;
+    public $hcaptcha_message;
+
     function __construct(){
 
         add_action('wp_ajax_arf_save_setting_data', array($this,'arf_save_setting_data_func') );

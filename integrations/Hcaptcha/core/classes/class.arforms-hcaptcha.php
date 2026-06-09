@@ -849,6 +849,10 @@ if ( ! class_exists( 'ARF_hcaptcha' ) ) {
 		 */
 		function arf_hcaptcha_field_to_frontend( $return_string, $form, $field_name, $arf_data_uniq_id, $field, $field_tooltip, $field_description, $OFData, $inputStyle, $arf_main_label ) {
 
+			if ( 'hcaptcha' != $field['type'] ) {
+				return $return_string;
+			}
+
 			global $wpdb, $armainhelper, $arfieldhelper, $arformscontroller, $recordcontroller, $arfieldcontroller, $arflitesettings;
 
 			$form->form_css = ( $form->form_css );

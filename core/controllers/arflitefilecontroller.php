@@ -22,6 +22,7 @@ class arflitefilecontroller {
 	var $thumb_path;
 	var $import;
 	var $file_size;
+	var $max_file_size;
 	var $image_exts;
 
 	function __construct( $file, $import ) {
@@ -325,8 +326,13 @@ class arflitefilecontroller {
 
 		$file_size = number_format( $file_bytes / 1048576, 2 );
 
+		$is_short_tag_enabled = ! empty( ini_get( 'short_open_tag' ) );
 
-		$arflite_valid_pattern = '/(<\?(php|\=)|<script[^>]+language\s*=\s*["\']?\s*php\s*["\']?)/i';
+		if ( $is_short_tag_enabled ) {
+			$arflite_valid_pattern = '/(<\?|<script[^>]+language\s*=\s*["\']?\s*php\s*["\']?)/i';
+		} else {
+			$arflite_valid_pattern = '/(<\?(php|\=)|<script[^>]+language\s*=\s*["\']?\s*php\s*["\']?)/i';
+		}
 
 		if ( preg_match( $arflite_valid_pattern, $file_content ) ) {
 			$this->error_message = __( 'The file could not be uploaded due to security reason as it contains malicious code', 'arforms-form-builder' );

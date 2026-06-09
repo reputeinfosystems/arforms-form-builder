@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ARForms Form Builder v1.8.2\n"
+"Project-Id-Version: ARForms Form Builder v1.8.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-04-23 04:36:10+0000\n"
+"PO-Revision-Date: 2026-06-08 07:58:22+0000\n"
 "Last-Translator: admin <admin@gmail.com>\n"
 "Language-Team: Chinese (China)\n"
 "MIME-Version: 1.0\n"
@@ -300,16 +300,11 @@ msgstr "9"
 msgid "Absolute"
 msgstr "绝对"
 
-#: core/helpers/arflitemainhelper.php:1212
-#: core/helpers/arflitemainhelper.php:1213
+#: core/helpers/arflitemainhelper.php:1208
+#: core/helpers/arflitemainhelper.php:1209
 #@ arforms-form-builder
 msgid "Access this Settings Page"
 msgstr "访问此设置页面"
-
-#: core/views/arflite_autoresponder_settings.php:528
-#@ arforms-form-builder
-msgid "Access Token"
-msgstr "访问令牌"
 
 #: core/views/arflite_drip.php:58
 #@ arforms-form-builder
@@ -366,7 +361,7 @@ msgstr "添加ARForms Lite表单"
 msgid "Add CSS Elements"
 msgstr "添加CSS元素"
 
-#: core/helpers/arflitemainhelper.php:1220
+#: core/helpers/arflitemainhelper.php:1216
 #@ arforms-form-builder
 msgid "Add Entries from Admin Area"
 msgstr "从管理区域添加条目"
@@ -443,12 +438,12 @@ msgstr "加载项列表当前不可用。 请稍后再试。"
 msgid "Add-ons"
 msgstr "附加组件"
 
-#: core/helpers/arflitemainhelper.php:1224
+#: core/helpers/arflitemainhelper.php:1220
 #@ arforms-form-builder
 msgid "Add/Edit Custom Displays"
 msgstr "添加/编辑自定义显示"
 
-#: core/helpers/arflitemainhelper.php:1210
+#: core/helpers/arflitemainhelper.php:1206
 #@ arforms-form-builder
 msgid "Add/Edit Forms and Templates"
 msgstr "添加/编辑表单和模板"
@@ -635,7 +630,6 @@ msgstr "任何"
 
 #: core/views/arflite_autoresponder_settings.php:153
 #: core/views/arflite_autoresponder_settings.php:264
-#: core/views/arflite_autoresponder_settings.php:520
 #: core/views/arflite_convertkit.php:44
 #: core/views/arflite_hubspot.php:47
 #: core/views/arflite_mailerlite.php:49
@@ -832,7 +826,7 @@ msgstr "ARPrice 已成功安装。"
 msgid "Aruba"
 msgstr "阿鲁巴岛"
 
-#: core/helpers/arflitemainhelper.php:1015
+#: core/helpers/arflitemainhelper.php:1011
 #@ arforms-form-builder
 msgid "at"
 msgstr "在"
@@ -870,6 +864,7 @@ msgid "Authorization Code"
 msgstr "授权码"
 
 #: core/views/arflite_autoresponder_settings.php:69
+#: core/views/arflite_autoresponder_settings.php:518
 #@ arforms-form-builder
 msgid "Authorize"
 msgstr "授权"
@@ -1545,6 +1540,7 @@ msgstr "单击以标记为非必填字段"
 msgid "Client ID"
 msgstr "客户ID"
 
+#: core/views/arflite_autoresponder_settings.php:514
 #: core/views/arflite_settings_form.php:381
 #@ arforms-form-builder
 msgid "Client Secret"
@@ -1909,7 +1905,7 @@ msgstr "日期选择器/时间选择器"
 msgid "Datepicker Text Color"
 msgstr "日期选择器文本颜色"
 
-#: core/helpers/arflitemainhelper.php:1113
+#: core/helpers/arflitemainhelper.php:1109
 #@ arforms-form-builder
 msgid "day"
 msgstr "天"
@@ -1919,7 +1915,7 @@ msgstr "天"
 msgid "Days"
 msgstr "天"
 
-#: core/helpers/arflitemainhelper.php:1113
+#: core/helpers/arflitemainhelper.php:1109
 #@ arforms-form-builder
 msgid "days"
 msgstr "天"
@@ -1994,8 +1990,8 @@ msgstr "默认值"
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:224
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:421
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:673
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1393
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1598
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1413
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1618
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:4
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:144
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:4
@@ -2008,7 +2004,7 @@ msgstr "删除"
 #: core/views/arflite_autoresponder_settings.php:192
 #: core/views/arflite_autoresponder_settings.php:311
 #: core/views/arflite_autoresponder_settings.php:448
-#: core/views/arflite_autoresponder_settings.php:570
+#: core/views/arflite_autoresponder_settings.php:556
 #: core/views/arflite_convertkit.php:93
 #: core/views/arflite_drip.php:104
 #: core/views/arflite_hubspot.php:87
@@ -2018,7 +2014,7 @@ msgstr "删除"
 msgid "Delete Configuration"
 msgstr "删除配置"
 
-#: core/helpers/arflitemainhelper.php:1222
+#: core/helpers/arflitemainhelper.php:1218
 #@ arforms-form-builder
 msgid "Delete Entries from Admin Area"
 msgstr "从管理区域删除条目"
@@ -2033,7 +2029,7 @@ msgstr "删除条目"
 msgid "Delete Field"
 msgstr "删除栏位"
 
-#: core/helpers/arflitemainhelper.php:1211
+#: core/helpers/arflitemainhelper.php:1207
 #@ arforms-form-builder
 msgid "Delete Forms and Templates"
 msgstr "删除表格和模板"
@@ -2418,17 +2414,17 @@ msgstr "赤道几内亚"
 msgid "Eritrea"
 msgstr "厄立特里亚"
 
-#: core/classes/class.arf_debug_log.php:115
-#: core/classes/class.arf_debug_log.php:124
-#: core/classes/class.arf_debug_log.php:420
-#: core/classes/class.arf_debug_log.php:429
-#: core/classes/class.arf_debug_log.php:436
-#: core/classes/class.arf_debug_log.php:524
-#: core/classes/class.arf_debug_log.php:533
-#: core/classes/class.arf_debug_log.php:541
-#: core/classes/class.arforms_general_settings.php:286
-#: core/classes/class.arforms_general_settings.php:295
-#: core/classes/class.arforms_general_settings.php:302
+#: core/classes/class.arf_debug_log.php:117
+#: core/classes/class.arf_debug_log.php:126
+#: core/classes/class.arf_debug_log.php:422
+#: core/classes/class.arf_debug_log.php:431
+#: core/classes/class.arf_debug_log.php:438
+#: core/classes/class.arf_debug_log.php:526
+#: core/classes/class.arf_debug_log.php:535
+#: core/classes/class.arf_debug_log.php:543
+#: core/classes/class.arforms_general_settings.php:291
+#: core/classes/class.arforms_general_settings.php:300
+#: core/classes/class.arforms_general_settings.php:307
 #: core/controllers/arfliterecordcontroller.php:1617
 #: core/controllers/arfliterecordcontroller.php:1626
 #@ arforms-form-builder
@@ -3092,7 +3088,7 @@ msgstr "一般图示"
 msgid "General Options"
 msgstr "常规选项"
 
-#: core/classes/class.arforms_general_settings.php:365
+#: core/classes/class.arforms_general_settings.php:370
 #: core/controllers/arflitesettingcontroller.php:274
 #@ arforms-form-builder
 msgid "General setting saved successfully."
@@ -3159,7 +3155,7 @@ msgstr "加纳"
 msgid "Gibraltar"
 msgstr "直布罗陀"
 
-#: core/classes/class.arforms_general_settings.php:155
+#: core/classes/class.arforms_general_settings.php:160
 #: core/controllers/arflitesettingcontroller.php:72
 #@ arforms-form-builder
 msgid "GMAIL Test E-Mail"
@@ -3371,12 +3367,12 @@ msgstr "卧式"
 msgid "Hour"
 msgstr "小时"
 
-#: core/helpers/arflitemainhelper.php:1114
+#: core/helpers/arflitemainhelper.php:1110
 #@ arforms-form-builder
 msgid "hour"
 msgstr "小时"
 
-#: core/helpers/arflitemainhelper.php:1114
+#: core/helpers/arflitemainhelper.php:1110
 #@ arforms-form-builder
 msgid "hours"
 msgstr "小时"
@@ -3648,13 +3644,13 @@ msgstr "安装"
 msgid "Installed"
 msgstr "已安装"
 
-#: core/controllers/arflitefilecontroller.php:150
+#: core/controllers/arflitefilecontroller.php:151
 #: core/controllers/arfliteformcontroller.php:69
 #@ arforms-form-builder
 msgid "Invalid file extension. Please select valid file"
 msgstr "无效的文件扩展名。 请选择有效的文件"
 
-#: core/controllers/arflitefilecontroller.php:168
+#: core/controllers/arflitefilecontroller.php:169
 #@ arforms-form-builder
 msgid "Invalid File Size."
 msgstr "无效的文件大小。"
@@ -3989,7 +3985,7 @@ msgid "List ID"
 msgstr "清单编号"
 
 #: core/views/arflite_autoresponder_settings.php:421
-#: core/views/arflite_autoresponder_settings.php:543
+#: core/views/arflite_autoresponder_settings.php:529
 #: core/views/arflite_convertkit.php:70
 #: core/views/arflite_hubspot.php:61
 #@ arforms-form-builder
@@ -4320,12 +4316,12 @@ msgstr "最低要求"
 msgid "Minute"
 msgstr "分钟"
 
-#: core/helpers/arflitemainhelper.php:1115
+#: core/helpers/arflitemainhelper.php:1111
 #@ arforms-form-builder
 msgid "minute"
 msgstr "分钟"
 
-#: core/helpers/arflitemainhelper.php:1115
+#: core/helpers/arflitemainhelper.php:1111
 #@ arforms-form-builder
 msgid "minutes"
 msgstr "分钟"
@@ -4376,7 +4372,7 @@ msgstr "蒙古"
 msgid "Montenegro"
 msgstr "黑山共和国"
 
-#: core/helpers/arflitemainhelper.php:1111
+#: core/helpers/arflitemainhelper.php:1107
 #@ arforms-form-builder
 msgid "month"
 msgstr "月"
@@ -4386,7 +4382,7 @@ msgstr "月"
 msgid "Months"
 msgstr "月数"
 
-#: core/helpers/arflitemainhelper.php:1111
+#: core/helpers/arflitemainhelper.php:1107
 #@ arforms-form-builder
 msgid "months"
 msgstr "月"
@@ -4709,7 +4705,7 @@ msgstr "不是我想要的功能"
 #: core/views/arflite_autoresponder_settings.php:159
 #: core/views/arflite_autoresponder_settings.php:272
 #: core/views/arflite_autoresponder_settings.php:414
-#: core/views/arflite_autoresponder_settings.php:535
+#: core/views/arflite_autoresponder_settings.php:521
 #: core/views/arflite_convertkit.php:60
 #: core/views/arflite_drip.php:69
 #: core/views/arflite_hubspot.php:53
@@ -4754,7 +4750,7 @@ msgstr "注意：此字段不会显示在表单中。 输入要隐藏的值。"
 #: core/views/arflite_autoresponder_settings.php:177
 #: core/views/arflite_autoresponder_settings.php:293
 #: core/views/arflite_autoresponder_settings.php:430
-#: core/views/arflite_autoresponder_settings.php:552
+#: core/views/arflite_autoresponder_settings.php:538
 #: core/views/arflite_convertkit.php:77
 #: core/views/arflite_drip.php:84
 #: core/views/arflite_hubspot.php:68
@@ -5198,7 +5194,7 @@ msgstr "请保存表格以生成简码。"
 msgid "Please select a custom display"
 msgstr "请选择一个自定义显示"
 
-#: core/controllers/arflitefilecontroller.php:30
+#: core/controllers/arflitefilecontroller.php:31
 #@ arforms-form-builder
 msgid "Please select a file to process"
 msgstr "请选择要处理的文件"
@@ -5206,6 +5202,7 @@ msgstr "请选择要处理的文件"
 #: core/classes/class.arforms_beaver_builder.php:31
 #: core/controllers/arflitemaincontroller.php:2498
 #: core/views/arf_view_records.php:396
+#: integrations/Divi/divi5/ArformsDiviModule.php:155
 #: integrations/Divi/modules/arforms-divi-module/arforms-divi-module.php:29
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:111
 #: integrations/fusion/fusion_builder.php:31
@@ -5241,8 +5238,8 @@ msgstr "请选择表格"
 msgid "Please select form"
 msgstr "请选择表格"
 
-#: core/controllers/arflitefilecontroller.php:126
-#: core/controllers/arflitefilecontroller.php:135
+#: core/controllers/arflitefilecontroller.php:127
+#: core/controllers/arflitefilecontroller.php:136
 #@ arforms-form-builder
 msgid "Please select image file only."
 msgstr "请仅选择图像文件。"
@@ -5265,14 +5262,14 @@ msgid "Please select one or more record."
 msgstr "请选择一个或多个记录。"
 
 #: core/controllers/arfliterecordcontroller.php:1718
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1528
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1548
 #@ arforms-form-builder
 msgid "Please select one or more records"
 msgstr "请选择一个或多个记录"
 
 #: core/controllers/arfliteformcontroller.php:217
 #: core/controllers/arfliterecordcontroller.php:809
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1293
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1313
 #@ arforms-form-builder
 msgid "Please select one or more records."
 msgstr "请选择一个或多个记录。"
@@ -5310,7 +5307,7 @@ msgstr "请选择有效表格"
 msgid "Please select valid forms"
 msgstr "请选择有效的表格"
 
-#: core/controllers/arflitefilecontroller.php:146
+#: core/controllers/arflitefilecontroller.php:147
 #@ arforms-form-builder
 msgid "Please set extensions to validate file."
 msgstr "请设置扩展名以验证文件。"
@@ -5544,10 +5541,10 @@ msgstr "记录无法删除"
 #: core/controllers/arfliteformcontroller.php:788
 #: core/controllers/arfliteformcontroller.php:7197
 #: core/controllers/arfliterecordcontroller.php:3230
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1168
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1307
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1432
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1542
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1188
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1327
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1452
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1562
 #@ arforms-form-builder
 msgid "Record is deleted successfully."
 msgstr "记录已成功删除。"
@@ -5574,7 +5571,7 @@ msgstr "推荐连结网址"
 #: core/views/arflite_autoresponder_settings.php:191
 #: core/views/arflite_autoresponder_settings.php:309
 #: core/views/arflite_autoresponder_settings.php:446
-#: core/views/arflite_autoresponder_settings.php:568
+#: core/views/arflite_autoresponder_settings.php:554
 #: core/views/arflite_convertkit.php:91
 #: core/views/arflite_drip.php:102
 #: core/views/arflite_hubspot.php:85
@@ -5850,13 +5847,13 @@ msgstr "搜索"
 msgid "Sec"
 msgstr "秒"
 
-#: core/helpers/arflitemainhelper.php:1116
+#: core/helpers/arflitemainhelper.php:1112
 #@ arforms-form-builder
 msgid "second"
 msgstr "第二"
 
-#: core/helpers/arflitemainhelper.php:1116
-#: core/helpers/arflitemainhelper.php:1137
+#: core/helpers/arflitemainhelper.php:1112
+#: core/helpers/arflitemainhelper.php:1133
 #: core/views/arflite_settings_form.php:725
 #@ arforms-form-builder
 msgid "seconds"
@@ -5929,13 +5926,13 @@ msgstr "选择日期"
 #: core/views/arflite_field_type_conversion.php:51
 #: core/views/arflite_field_type_conversion.php:57
 #: core/views/arflite_field_type_conversion.php:90
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1984
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1986
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2025
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2027
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2096
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2097
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2124
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2004
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2006
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2045
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2047
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2116
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2117
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2144
 #@ arforms-form-builder
 msgid "Select Field"
 msgstr "选择栏位"
@@ -6217,7 +6214,7 @@ msgstr "正在显示"
 msgid "Sierra Leone"
 msgstr "塞拉利昂"
 
-#: core/classes/class.arforms_general_settings.php:200
+#: core/classes/class.arforms_general_settings.php:205
 #: core/controllers/arflitesettingcontroller.php:52
 #@ arforms-form-builder
 msgid "Sign out successfully."
@@ -6335,7 +6332,7 @@ msgstr "SMTP端口"
 msgid "SMTP Server"
 msgstr "SMTP服务器"
 
-#: core/classes/class.arforms_general_settings.php:125
+#: core/classes/class.arforms_general_settings.php:130
 #@ arforms-form-builder
 msgid "SMTP Test E-Mail"
 msgstr "SMTP测试电子邮件"
@@ -6370,7 +6367,7 @@ msgstr "索马里"
 msgid "Something went wrong please try again later."
 msgstr "发生错误。请稍后再试。"
 
-#: core/classes/class.arforms_general_settings.php:303
+#: core/classes/class.arforms_general_settings.php:308
 #@ arforms-form-builder
 msgid "Something Went wrong while updating settings..."
 msgstr "更新设置时出了点问题.."
@@ -6399,16 +6396,16 @@ msgstr "抱歉，您不是执行此操作的授权人。"
 
 #: core/controllers/arfliteformcontroller.php:716
 #: core/controllers/arfliteformcontroller.php:760
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3211
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3238
 #@ arforms-form-builder
 msgid "Sorry, you do not have enough permission to perform this action"
 msgstr "抱歉，您没有足够的权限执行此操作"
 
-#: core/classes/class.arf_debug_log.php:125
-#: core/classes/class.arf_debug_log.php:430
-#: core/classes/class.arf_debug_log.php:542
-#: core/classes/class.arforms_general_settings.php:181
-#: core/classes/class.arforms_general_settings.php:296
+#: core/classes/class.arf_debug_log.php:127
+#: core/classes/class.arf_debug_log.php:432
+#: core/classes/class.arf_debug_log.php:544
+#: core/classes/class.arforms_general_settings.php:186
+#: core/classes/class.arforms_general_settings.php:301
 #: core/classes/class.arforms_import_export.php:947
 #: core/controllers/arflitemaincontroller.php:2459
 #: core/controllers/arflitemaincontroller.php:3028
@@ -6420,34 +6417,34 @@ msgstr "抱歉，您没有足够的权限执行此操作"
 #: core/controllers/arfliterecordcontroller.php:3187
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:118
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:264
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1115
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1206
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1424
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1475
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1135
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1226
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1444
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1495
 #@ arforms-form-builder
 msgid "Sorry, you do not have permission to perform this action"
 msgstr "抱歉，您无权执行此操作"
 
-#: core/controllers/arflitefilecontroller.php:78
-#: core/controllers/arflitefilecontroller.php:88
-#: core/controllers/arflitefilecontroller.php:92
+#: core/controllers/arflitefilecontroller.php:79
+#: core/controllers/arflitefilecontroller.php:89
+#: core/controllers/arflitefilecontroller.php:93
 #@ arforms-form-builder
 msgid "Sorry, you don't have permission to perform this action."
 msgstr "抱歉，您无权执行此操作。"
 
 #: core/controllers/arfliteformcontroller.php:705
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3227
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3254
 #@ arforms-form-builder
 msgid "Sorry, your request could not be processed due to security reason"
 msgstr "抱歉，由于安全原因无法处理您的请求"
 
 #: core/classes/class.arf_debug_log.php:38
-#: core/classes/class.arf_debug_log.php:116
-#: core/classes/class.arf_debug_log.php:421
-#: core/classes/class.arf_debug_log.php:525
-#: core/classes/class.arf_debug_log.php:534
-#: core/classes/class.arforms_divi_module.php:15
-#: core/classes/class.arforms_general_settings.php:287
+#: core/classes/class.arf_debug_log.php:118
+#: core/classes/class.arf_debug_log.php:423
+#: core/classes/class.arf_debug_log.php:527
+#: core/classes/class.arf_debug_log.php:536
+#: core/classes/class.arforms_divi_module.php:32
+#: core/classes/class.arforms_general_settings.php:292
 #: core/classes/class.arforms_import_export.php:953
 #: core/controllers/arflitemaincontroller.php:2461
 #: core/controllers/arflitemaincontroller.php:3047
@@ -6461,8 +6458,8 @@ msgstr "抱歉，由于安全原因无法处理您的请求"
 msgid "Sorry, your request could not be processed due to security reason."
 msgstr "抱歉，由于安全原因无法处理您的请求。"
 
-#: core/controllers/arflitefilecontroller.php:99
-#: core/controllers/arflitefilecontroller.php:104
+#: core/controllers/arflitefilecontroller.php:100
+#: core/controllers/arflitefilecontroller.php:105
 #@ arforms-form-builder
 msgid "Sorry, Your request could not be processed due to security reasons."
 msgstr "抱歉，由于安全原因，您的请求无法处理。"
@@ -6651,10 +6648,10 @@ msgstr "提交包装"
 msgid "Submitting form"
 msgstr "提交表格"
 
-#: core/classes/class.arf_debug_log.php:154
-#: core/classes/class.arf_debug_log.php:475
-#: core/classes/class.arforms_general_settings.php:199
-#: core/classes/class.arforms_general_settings.php:364
+#: core/classes/class.arf_debug_log.php:156
+#: core/classes/class.arf_debug_log.php:477
+#: core/classes/class.arforms_general_settings.php:204
+#: core/classes/class.arforms_general_settings.php:369
 #: core/controllers/arflitegrowthplugincontroller.php:133
 #: core/controllers/arflitegrowthplugincontroller.php:201
 #: core/controllers/arflitegrowthplugincontroller.php:269
@@ -6872,12 +6869,12 @@ msgstr "该模板无法编辑"
 msgid "the above shortcode will set minimum date to 10 year before current date. ( possible values for unit are Y - year, M - month, and D - days )."
 msgstr "上面的简码会将最短日期设置为当前日期之前的 10 年。 （单位的可能值为 Y - 年、M - 月和 D - 天）。"
 
-#: core/controllers/arflitefilecontroller.php:332
+#: core/controllers/arflitefilecontroller.php:338
 #@ arforms-form-builder
 msgid "The file could not be uploaded due to security reason as it contains malicious code"
 msgstr "由于安全原因，该文件无法上传，因为它包含恶意代码"
 
-#: core/controllers/arflitefilecontroller.php:119
+#: core/controllers/arflitefilecontroller.php:120
 #@ arforms-form-builder
 msgid "The file could not be uploaded due to security reasons."
 msgstr "出于安全原因，无法上传该文件。"
@@ -6912,7 +6909,7 @@ msgstr "然后重定向到"
 msgid "There is an error deleting that entry"
 msgstr "删除该条目时出错"
 
-#: core/controllers/arflitefilecontroller.php:296
+#: core/controllers/arflitefilecontroller.php:297
 #@ arforms-form-builder
 msgid "There is an issue while uploading a file. Please try again"
 msgstr "上传文件时出现问题。 请再试一次"
@@ -6980,8 +6977,8 @@ msgstr "该字段不能为空"
 #: core/views/arflite_autoresponder_settings.php:388
 #: core/views/arflite_autoresponder_settings.php:398
 #: core/views/arflite_autoresponder_settings.php:416
+#: core/views/arflite_autoresponder_settings.php:509
 #: core/views/arflite_autoresponder_settings.php:523
-#: core/views/arflite_autoresponder_settings.php:537
 #: core/views/arflite_convertkit.php:48
 #: core/views/arflite_convertkit.php:62
 #: core/views/arflite_drip.php:52
@@ -7482,7 +7479,6 @@ msgstr "使用API"
 #: core/views/arflite_autoresponder_settings.php:145
 #: core/views/arflite_autoresponder_settings.php:255
 #: core/views/arflite_autoresponder_settings.php:376
-#: core/views/arflite_autoresponder_settings.php:512
 #@ arforms-form-builder
 msgid "Using Web-form"
 msgstr "使用网络表格"
@@ -7550,7 +7546,7 @@ msgstr "委内瑞拉"
 #: core/views/arflite_autoresponder_settings.php:158
 #: core/views/arflite_autoresponder_settings.php:271
 #: core/views/arflite_autoresponder_settings.php:413
-#: core/views/arflite_autoresponder_settings.php:534
+#: core/views/arflite_autoresponder_settings.php:520
 #: core/views/arflite_convertkit.php:59
 #: core/views/arflite_drip.php:68
 #: core/views/arflite_hubspot.php:52
@@ -7563,7 +7559,6 @@ msgstr "已验证"
 #: core/views/arflite_autoresponder_settings.php:156
 #: core/views/arflite_autoresponder_settings.php:269
 #: core/views/arflite_autoresponder_settings.php:408
-#: core/views/arflite_autoresponder_settings.php:532
 #: core/views/arflite_convertkit.php:57
 #: core/views/arflite_drip.php:64
 #: core/views/arflite_hubspot.php:50
@@ -7601,7 +7596,7 @@ msgstr "越南"
 msgid "Vietnamese"
 msgstr "越南文"
 
-#: core/helpers/arflitemainhelper.php:1218
+#: core/helpers/arflitemainhelper.php:1214
 #@ arforms-form-builder
 msgid "View Entries from Admin Area"
 msgstr "从管理区域查看条目"
@@ -7611,7 +7606,7 @@ msgstr "从管理区域查看条目"
 msgid "View entry"
 msgstr "查看条目"
 
-#: core/helpers/arflitemainhelper.php:1209
+#: core/helpers/arflitemainhelper.php:1205
 #@ arforms-form-builder
 msgid "View Forms and Templates"
 msgstr "查看表格和模板"
@@ -7635,11 +7630,6 @@ msgstr "瓦利斯和富图纳群岛"
 #@ arforms-form-builder
 msgid "Webform code from Aweber"
 msgstr "Aweber的Webform代码"
-
-#: core/views/arflite_autoresponder_settings.php:580
-#@ arforms-form-builder
-msgid "Webform code from Constant Contact"
-msgstr "持续联系的Webform代码"
 
 #: core/views/arflite_autoresponder_settings.php:322
 #@ arforms-form-builder
@@ -7684,7 +7674,7 @@ msgstr "网址"
 msgid "Wednesday"
 msgstr "星期三"
 
-#: core/helpers/arflitemainhelper.php:1112
+#: core/helpers/arflitemainhelper.php:1108
 #@ arforms-form-builder
 msgid "week"
 msgstr "周"
@@ -7694,7 +7684,7 @@ msgstr "周"
 msgid "Week Days"
 msgstr "平日"
 
-#: core/helpers/arflitemainhelper.php:1112
+#: core/helpers/arflitemainhelper.php:1108
 #@ arforms-form-builder
 msgid "weeks"
 msgstr "周"
@@ -7775,7 +7765,7 @@ msgstr "Y轴"
 msgid "Y-offset"
 msgstr "Y轴偏移"
 
-#: core/helpers/arflitemainhelper.php:1110
+#: core/helpers/arflitemainhelper.php:1106
 #@ arforms-form-builder
 msgid "year"
 msgstr "年"
@@ -7785,7 +7775,7 @@ msgstr "年"
 msgid "Years"
 msgstr "年份"
 
-#: core/helpers/arflitemainhelper.php:1110
+#: core/helpers/arflitemainhelper.php:1106
 #@ arforms-form-builder
 msgid "years"
 msgstr "年份"
@@ -7906,42 +7896,42 @@ msgstr "赞比亚"
 msgid "Zimbabwe"
 msgstr "津巴布韦"
 
-#: core/classes/class.arf_debug_log.php:199
+#: core/classes/class.arf_debug_log.php:201
 #@ arforms-form-builder
 msgid "Log ID"
 msgstr "日志ID"
 
-#: core/classes/class.arf_debug_log.php:202
+#: core/classes/class.arf_debug_log.php:204
 #@ arforms-form-builder
 msgid "Log Name"
 msgstr "日志名称"
 
-#: core/classes/class.arf_debug_log.php:205
+#: core/classes/class.arf_debug_log.php:207
 #@ arforms-form-builder
 msgid "Log Data"
 msgstr "记录数据"
 
-#: core/classes/class.arf_debug_log.php:208
+#: core/classes/class.arf_debug_log.php:210
 #@ arforms-form-builder
 msgid "Log Caller"
 msgstr "记录来电者"
 
-#: core/classes/class.arf_debug_log.php:211
+#: core/classes/class.arf_debug_log.php:213
 #@ arforms-form-builder
 msgid "Log Type"
 msgstr "日志类型"
 
-#: core/classes/class.arf_debug_log.php:214
+#: core/classes/class.arf_debug_log.php:216
 #@ arforms-form-builder
 msgid "Log Date & Time"
 msgstr "记录日期和时间"
 
-#: core/classes/class.arf_debug_log.php:437
+#: core/classes/class.arf_debug_log.php:439
 #@ arforms-form-builder
 msgid "Something went wrong"
 msgstr "出了些问题"
 
-#: core/classes/class.arf_debug_log.php:476
+#: core/classes/class.arf_debug_log.php:478
 #@ arforms-form-builder
 msgid "log download successfully"
 msgstr "记录下载成功"
@@ -8072,7 +8062,7 @@ msgstr "下载"
 msgid "Are you sure you want to clear debug logs?"
 msgstr "您确定要清除调试日志吗？"
 
-#: core/classes/class.arf_debug_log.php:155
+#: core/classes/class.arf_debug_log.php:157
 #: core/views/arf_debug_log.php:158
 #@ arforms-form-builder
 msgid "Debug Log Setting Saved Successfully."
@@ -8128,17 +8118,17 @@ msgstr "一般的"
 msgid "Sorry, you do not have permission to perform this action."
 msgstr "抱歉，您无权执行此操作。"
 
-#: core/classes/class.arf_debug_log.php:165
+#: core/classes/class.arf_debug_log.php:167
 #@ arforms-form-builder
 msgid "nonce_error"
 msgstr "随机数错误"
 
-#: core/classes/class.arf_debug_log.php:170
+#: core/classes/class.arf_debug_log.php:172
 #@ arforms-form-builder
 msgid "capabilitie_error"
 msgstr "能力错误"
 
-#: core/classes/class.arf_debug_log.php:550
+#: core/classes/class.arf_debug_log.php:552
 #@ arforms-form-builder
 msgid "success"
 msgstr "成功"
@@ -8175,7 +8165,7 @@ msgstr "断开"
 msgid "Connect"
 msgstr "连接"
 
-#: core/classes/class.arf_debug_log.php:352
+#: core/classes/class.arf_debug_log.php:354
 #@ arforms-form-builder
 msgid "No Logs Found!"
 msgstr "未找到日志！"
@@ -8190,7 +8180,7 @@ msgstr "自定义日期"
 msgid "Accordion"
 msgstr "手风琴"
 
-#: core/classes/class.arforms_general_settings.php:174
+#: core/classes/class.arforms_general_settings.php:179
 #: core/controllers/arflitemaincontroller.php:446
 #: core/controllers/arflitemaincontroller.php:2997
 #: core/controllers/arflitemaincontroller.php:3305
@@ -8286,14 +8276,14 @@ msgstr "成功取消读取条目。"
 msgid "Upgade to Pro"
 msgstr "升级至专业版"
 
-#: core/helpers/arflitemainhelper.php:1214
+#: core/helpers/arflitemainhelper.php:1210
 #: core/views/arflite_upgrade_latest_data.php:478
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:583
 #@ arforms-form-builder
 msgid "Configure PayPal Forms"
 msgstr "配置 PayPal 表单"
 
-#: core/helpers/arflitemainhelper.php:1215
+#: core/helpers/arflitemainhelper.php:1211
 #: core/views/arflite_upgrade_latest_data.php:479
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:584
 #@ arforms-form-builder
@@ -8486,9 +8476,6 @@ msgid "Google reCaptcha"
 msgstr "Google reCaptcha"
 
 #: core/views/arflite_view_addons.php:39
-#: core/views/arflite_view_addons.php:47
-#: core/views/arflite_view_addons.php:55
-#: core/views/arflite_view_addons.php:63
 #@ arforms-form-builder
 msgid "Add reCaptcha with Google reCaptcha Add-On of ARForms"
 msgstr "使用 ARForms 的 Google reCaptcha 插件添加 reCaptcha"
@@ -8535,14 +8522,14 @@ msgid "Enable reCaptcha"
 msgstr "启用 reCaptcha"
 
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:219
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1594
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1614
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:140
 #@ arforms-form-builder
 msgid "Edit Configuration"
 msgstr "编辑配置"
 
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:221
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1596
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1616
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:83
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:142
 #@ arforms-form-builder
@@ -8550,7 +8537,7 @@ msgid "Transactions"
 msgstr "交易"
 
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:419
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1391
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1411
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:222
 #@ arforms-form-builder
 msgid "View Entry"
@@ -8584,48 +8571,48 @@ msgstr "您确实要 %s 删除此交易吗？"
 msgid "Click here to continue"
 msgstr "单击此处继续"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1047
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1067
 #@ arforms-form-builder
 msgid "Payment Details"
 msgstr "付款细节"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1049
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1069
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:151
 #@ arforms-form-builder
 msgid "Transaction ID"
 msgstr "交易编号"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1051
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1071
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:152
 #@ arforms-form-builder
 msgid "Payment Status"
 msgstr "付款状态"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1054
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1074
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:84
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:153
 #@ arforms-form-builder
 msgid "Total Amount"
 msgstr "总金额"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1061
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1081
 #@ arforms-form-builder
 msgid "Payment at"
 msgstr "付款于"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1063
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1083
 #: integrations/Payments/PayPal/core/edit_3.0.php:606
 #: integrations/Payments/PayPal/core/edit_3.0.php:645
 #@ arforms-form-builder
 msgid "Payer email"
 msgstr "付款人电子邮箱"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1065
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1085
 #@ arforms-form-builder
 msgid "Payer name"
 msgstr "付款人姓名"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1380
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1400
 #: integrations/Payments/PayPal/core/edit_3.0.php:460
 #: integrations/Payments/PayPal/core/edit_3.0.php:473
 #: integrations/Payments/PayPal/core/export_data.php:63
@@ -8634,7 +8621,7 @@ msgstr "付款人姓名"
 msgid "Donations"
 msgstr "捐款"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1382
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1402
 #: integrations/Payments/PayPal/core/edit_3.0.php:452
 #: integrations/Payments/PayPal/core/edit_3.0.php:472
 #: integrations/Payments/PayPal/core/export_data.php:63
@@ -8643,98 +8630,98 @@ msgstr "捐款"
 msgid "Product / Service"
 msgstr "产品 / 服务"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1828
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1954
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1848
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1974
 #@ arforms-form-builder
 msgid "Configuration saved successfully."
 msgstr "配置保存成功。"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2444
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2476
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2464
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2496
 #@ arforms-form-builder
 msgid "Payment received on"
 msgstr "付款收到日期"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2899
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2926
 #@ arforms-form-builder
 msgid "Hello admin,"
 msgstr "你好，管理员，"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2900
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2918
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2927
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2945
 #@ arforms-form-builder
 msgid "Payment successfully received from"
 msgstr "已成功收到付款"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2901
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2919
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2928
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2946
 #@ arforms-form-builder
 msgid "Following are the payment details:"
 msgstr "以下是付款细节："
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2902
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2920
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2929
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2947
 #@ arforms-form-builder
 msgid "Transaction id"
 msgstr "交易编号"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2903
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2921
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2930
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2948
 #@ arforms-form-builder
 msgid "Amount paid"
 msgstr "已付金额"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2904
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2922
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2931
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2949
 #@ arforms-form-builder
 msgid "Payment date"
 msgstr "付款日期"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2905
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2923
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2932
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2950
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:156
 #@ arforms-form-builder
 msgid "Payer Email"
 msgstr "付款人电子邮箱"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2906
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2924
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2933
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2951
 #@ arforms-form-builder
 msgid "Payer ID"
 msgstr "付款人 ID"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2907
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2925
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2934
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2952
 #@ arforms-form-builder
 msgid "Payer First name"
 msgstr "付款人名字"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2908
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2926
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2935
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2953
 #@ arforms-form-builder
 msgid "Payer Last name"
 msgstr "付款人姓氏"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2909
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2927
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2936
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2954
 #@ arforms-form-builder
 msgid "Thank you"
 msgstr "谢谢"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2917
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2944
 #@ arforms-form-builder
 msgid "Hello user,"
 msgstr "你好用户，"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2982
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3002
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3009
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3029
 #: integrations/Payments/PayPal/core/edit_3.0.php:147
 #@ arforms-form-builder
 msgid "PayPal Configuration"
 msgstr "PayPal 配置"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2984
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3004
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3011
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3031
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:55
 #@ arforms-form-builder
 msgid "PayPal Transactions"
@@ -9116,7 +9103,7 @@ msgstr "hCaptcha 主题"
 msgid "hCaptcha Failed Message"
 msgstr "hCaptcha 失败消息"
 
-#: integrations/Hcaptcha/core/classes/class.arforms-hcaptcha.php:1068
+#: integrations/Hcaptcha/core/classes/class.arforms-hcaptcha.php:1072
 #@ arforms-form-builder
 msgid "Invalid hCaptcha. Please try again"
 msgstr "hCaptcha 无效。请重试"
@@ -9194,12 +9181,12 @@ msgstr "这看起来不像是一封有效的电子邮件。"
 msgid "Form submission failed due to invalid or incomplete required field data. Please refresh the page or try again using a private/incognito window."
 msgstr "由于必填字段数据无效或不完整，表单提交失败。请刷新页面或使用隐私/隐身窗口重试。"
 
-#: core/controllers/arflitefilecontroller.php:267
+#: core/controllers/arflitefilecontroller.php:268
 #@ arforms-form-builder
 msgid "The file could not be fetched due to security reasons."
 msgstr "由于安全原因，无法获取该文件。"
 
-#: core/classes/class.arforms_divi_module.php:25
+#: core/classes/class.arforms_divi_module.php:42
 #@ arforms-form-builder
 msgid "Sorry, you are not allowed to access this data."
 msgstr "抱歉，您无权访问此数据。"
@@ -9207,6 +9194,36 @@ msgstr "抱歉，您无权访问此数据。"
 #. translators: plugin header field 'Version'
 #: arforms-form-builder.php:0
 #@ arforms-form-builder
-msgid "1.8.2"
-msgstr "1.8.2"
+msgid "1.8.3"
+msgstr ""
+
+#: core/views/arflite_autoresponder_settings.php:506
+#@ arforms-form-builder
+msgid "Client ID (API Key)"
+msgstr ""
+
+#: core/views/arflite_front_form.php:397
+#@ arforms-form-builder
+msgid "Filter"
+msgstr ""
+
+#: core/views/arflite_view_addons.php:47
+#@ arforms-form-builder
+msgid "Add Turnstile Captcha with Turnstile Captcha Add-On of ARForms"
+msgstr ""
+
+#: core/views/arflite_view_addons.php:55
+#@ arforms-form-builder
+msgid "Add hCaptcha with hCaptcha Add-On of ARForms"
+msgstr ""
+
+#: core/views/arflite_view_addons.php:63
+#@ arforms-form-builder
+msgid "Add PayPal payment gateway with PayPal Add-On of ARForms"
+msgstr ""
+
+#: integrations/Divi/divi5/ArformsDiviModule.php:57
+#@ arforms-form-builder
+msgid "Please select a form."
+msgstr ""
 

@@ -42,7 +42,7 @@ class arforms_divi_module extends ET_Builder_Module{
 				'options'         => $arforms_forms_lite_list,
 			],
 			'arforms_form_token' => [
-				'type'			  => 'input',
+				'type'			  => 'text',
 				'option_category' => 'basic_option',
 				'toggle_slug' 	  => 'main_content',
 				'default'		  => wp_create_nonce( 'arflite_wp_nonce' )

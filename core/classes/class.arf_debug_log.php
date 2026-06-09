@@ -49,8 +49,10 @@ class arfdebuglog{
         }
         if( is_array( $params) ){
             return array_map( array( $this, __FUNCTION__ ), $params );
+        }else if ( is_object( $params ) ) {
+            return $params;
         } else {
-            return htmlspecialchars( $params );
+            return htmlspecialchars((string) $params);
         }
     }
 

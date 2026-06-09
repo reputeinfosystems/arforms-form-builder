@@ -1,0 +1,27 @@
+{
+  "name": "arforms/arformsdivi",
+  "d4Shortcode": "arformsdivi",
+  "title": "ARForms",
+  "titles": "ARForms",
+  "category": "module",
+  "moduleIcon": "arforms-lite-icon",
+  "priority": 10,
+  "attributes": {
+    "form_id": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "value": "0"
+        }
+      }
+    },
+    "arforms_form_token": {
+      "type": "object",
+      "default": {
+        "desktop": {
+          "value": ""
+        }
+      }
+    }
+  }
+}

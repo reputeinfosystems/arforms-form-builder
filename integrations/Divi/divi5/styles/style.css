@@ -1,0 +1,23 @@
+/* ARForms Module */
+.et-vb-module-picker-option[value="arforms/arformsdivi"] .et-vb-icon svg {
+    display: none !important;
+}
+
+.et-vb-module-picker-option[value="arforms/arformsdivi"] .et-vb-icon {
+    background-image: url(./media/arformslogo.svg) !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}
+
+/* ARForms Popup Module */
+.et-vb-module-picker-option[value="arforms/arformspopupdivi"] .et-vb-icon svg {
+    display: none !important;
+}
+
+.et-vb-module-picker-option[value="arforms/arformspopupdivi"] .et-vb-icon {
+    background-image: url(./media/arformslogo.svg) !important;
+    background-size: contain !important;
+    background-position: center !important;
+    background-repeat: no-repeat !important;
+}

@@ -394,7 +394,7 @@ if ( ! function_exists( 'arflite_get_form_builder_string' ) ) {
 		$hidden_captcha = !empty( $hidden_captcha ) ? $hidden_captcha : false;
 
 		if ( 1 != $hidden_captcha ) {
-			$arf_form .= "<input type='text' name='arf_filter_input' data-jqvalidate='false' data-random-key='" . esc_attr( $formRandomID ) . "' value='' style='opacity:0 !important; display:none !important; visibility:hidden !important;' />";
+			$arf_form .= "<input type='text' name='arf_filter_input' data-jqvalidate='false' data-random-key='" . esc_attr( $formRandomID ) . "' aria-label='" . esc_attr__( 'Filter', 'arforms-form-builder' ) . "' value='' style='opacity:0 !important; display:none !important; visibility:hidden !important;' />";
 			$arf_form .= "<input type='hidden' id='arf_ajax_url' value='" . admin_url( 'admin-ajax.php' ) . "' />";
 			$arf_form .= do_shortcode( '[arflite_spam_filters]' );
 		}
