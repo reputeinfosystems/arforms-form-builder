@@ -2647,7 +2647,7 @@ class arflitemaincontroller {
 			$arflitenewdbversion = get_option( 'arflite_db_version' );
 		}
 
-		if ( version_compare( $arflitenewdbversion, '1.8.3', '<' ) ) {
+		if ( version_compare( $arflitenewdbversion, '1.8.4', '<' ) ) {
 			$path = ARFLITE_FORMPATH . '/core/views/arflite_upgrade_latest_data.php';
 			include $path;
 			$this->arforms_send_anonymous_data_cron();
@@ -2897,7 +2897,8 @@ class arflitemaincontroller {
 
                                     You can always refer our online documentation for all the features <a href="https://www.arformsplugin.com/documentation/1-getting-started-with-arforms/" target="_blank">here</a><br>
                                         <ul style="list-style-type: disc;">
-											<li>Minor bug fixes and Improvements</li>
+											<li>Added an option to enable search box for dropdown field</li>
+											<li>Other minor bug fixes and Improvements</li>
                                         </ul>
                                 </div>';
 
@@ -3081,7 +3082,7 @@ class arflitemaincontroller {
 
 	}
 
-	public function arflite_selectpicker_dom( $name = '', $id = '', $attr_class = '', $style = '', $default = '', $attrs = array(), $options = array(), $grouped = false, $options_cls = array(), $disable = false, $options_attr = array(), $is_form_field = false, $field = array(), $enable_autocomplete = false, $list_class = '', $list_id = '', $use_label_as_default = false ) {
+	public function arflite_selectpicker_dom( $name = '', $id = '', $attr_class = '', $style = '', $default = '', $attrs = array(), $options = array(), $grouped = false, $options_cls = array(), $disable = false, $options_attr = array(), $is_form_field = false, $field = array(), $enable_autocomplete = false, $list_class = '', $list_id = '', $use_label_as_default = false, $no_results_text = '', $enable_search_filter = false ) {
 
 		$return_dom = '';
 
@@ -3132,9 +3133,13 @@ class arflitemaincontroller {
 			$attr_class .= ' arf-has-autocomplete ';
 		}
 
+		if ( $enable_search_filter ) {
+			$attr_class .= ' arf-has-search-filter ';
+		}
+
 		$return_dom .= '<div class="arf_selectpicker_wrapper" style="' . $style . '">';
 
-			$return_dom .= '<input type="' . ( $enable_autocomplete ? 'hidden' : 'text' ) . '" autocomplete="off" class="arf-selectpicker-input-control ' . $input_cls . '" id="' . $id . '" name="' . $name . '" value="' . $default . '" ' . $attr_str . '>';
+			$return_dom .= '<input type="' . ( ($enable_autocomplete || $enable_search_filter) ? 'hidden' : 'text' ) . '" autocomplete="off" class="arf-selectpicker-input-control ' . $input_cls . '" id="' . $id . '" name="' . $name . '" value="' . $default . '" ' . $attr_str . '>';
 
 			$return_dom .= '<dl class="arf-selectpicker-control ' . $attr_class . '" data-id="' . $id . '" data-name="' . $name . '">';
 
@@ -3150,6 +3155,10 @@ class arflitemaincontroller {
 
 		if ( $enable_autocomplete ) {
 			$return_dom .= '<input type="text" class="arf-selectpicker-autocomplete">';
+		}
+
+		if ( $enable_search_filter ) {
+			$return_dom .= '<input type="text" class="arf-selectpicker-search-filter">';
 		}
 
 					$return_dom .= '<i class="arf-selectpicker-caret"></i>';
@@ -3286,6 +3295,10 @@ class arflitemaincontroller {
 					$count_i++;
 				}
 			}
+		}
+		if ($enable_autocomplete || $enable_search_filter ) {
+			$arf_no_results_label = ! empty( $no_results_text ) ? $no_results_text : esc_html__( 'No results found', 'arforms-form-builder' );
+			$return_dom .= '<li class="arf_selectpicker_no_results" style="display:none;">' . esc_html( $arf_no_results_label ) . '</li>';
 		}
 					$return_dom .= '</ul>';
 

@@ -170,18 +170,35 @@ class arflitenotifymodel {
 
 		if ( is_array( $to_emails ) ) {
 			foreach ( $to_emails as $to_email ) {
-				$this->arflite_send_notification_email_user( trim( $to_email ), $subject, $mail_body, $reply_to, $reply_to_name, true, array(), false, false, false, false, $user_nreplyto, '', '' );
+				$this->arflite_send_notification_email_user( trim( $to_email ), $subject, $mail_body, $reply_to, $reply_to_name, true, array(), false, false, false, false, $user_nreplyto, '', '', $entry_id, $form_id );
 			}
 		} else {
-			$this->arflite_send_notification_email_user( $to_email, $subject, $mail_body, $reply_to, $reply_to_name, true, array(), false, false, false, false, $user_nreplyto, '', '' );
+			$this->arflite_send_notification_email_user( $to_email, $subject, $mail_body, $reply_to, $reply_to_name, true, array(), false, false, false, false, $user_nreplyto, '', '', $entry_id, $form_id );
 		}
 	}
 
-	function arflite_send_notification_email_user( $to_email, $subject, $message, $reply_to = '', $reply_to_name = '', $plain_text = true, $attachments = array(), $return_value = false, $use_only_smtp_settings = false, $check = false, $enable_debug = false, $user_nreplyto = '', $cc_email = '', $bcc_email = '' ) {
+	function arflite_send_notification_email_user( $to_email, $subject, $message, $reply_to = '', $reply_to_name = '', $plain_text = true, $attachments = array(), $return_value = false, $use_only_smtp_settings = false, $check = false, $enable_debug = false, $user_nreplyto = '', $cc_email = '', $bcc_email = '', $entry_id = '', $form_id = '' ) {
 
-		global $arflite_is_submit,$arformsmain, $arfliteformcontroller ,$wpdb,$ARFLiteMdlDb, $arflitemaincontroller;
+		global $is_submit, $arflite_is_submit,$arformsmain, $arfliteformcontroller ,$wpdb,$ARFLiteMdlDb, $arflitemaincontroller;
 		//$arflitemaincontroller->arfliteafterinstall();
 		$message = $arfliteformcontroller->arflite_html_entity_decode( $message );
+		$is_submit = true;
+
+	        if ( empty( $form_id ) && !empty( $entry_id ) ) {
+	            $form_id = $wpdb->get_var($wpdb->prepare("SELECT form_id FROM " . $ARFLiteMdlDb->entries . " WHERE id = %d", $entry_id));
+	        }
+
+	        if ($check === false) {
+	            do_action('check_arflite_payment_gateway', array('to' => $to_email, 'subject' => $subject, 'message' => $message, 'reply_to' => $reply_to, 'reply_to_name' => $reply_to_name, 'plain_text' => $plain_text, 'attachments' => $attachments, 'return_value' => $return_value, 'use_only_smtp' => $use_only_smtp_settings, 'nreply_to' => $user_nreplyto, 'cc_email' => $cc_email, 'bcc_email' => $bcc_email, 'entry_id' => $entry_id, 'form_id' => $form_id));
+	            global $is_submit;
+	            update_option('is_arflite_submit',$is_submit);
+	        } else {
+	            $is_submit = true;
+	        }
+
+	        if ($is_submit === false) {
+	            return;
+	        }
 
 		$params = func_get_args();
 
@@ -1092,7 +1109,7 @@ class arflitenotifymodel {
 		foreach ( (array) $to_emails as $to_email ) {
 			$to_email = apply_filters( 'arflitecontent', $to_email, $form, $entry_id );
 
-			$arflitenotifymodel->arflite_send_notification_email_user( trim( $to_email ), $subject, $mail_body, $reply_to, $reply_to_name, $plain_text, $attachments, false, false, false, false, $admin_nreplyto, $cc_emails, $bcc_emails );
+			$arflitenotifymodel->arflite_send_notification_email_user( trim( $to_email ), $subject, $mail_body, $reply_to, $reply_to_name, $plain_text, $attachments, false, false, false, false, $admin_nreplyto, $cc_emails, $bcc_emails, $entry_id, $form_id );
 		}
 
 		return $to_emails;

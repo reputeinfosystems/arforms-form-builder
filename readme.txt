@@ -5,7 +5,7 @@ Donate link: https://codecanyon.net/item/addon-bundle-for-arforms-wordpress-form
 Requires at least: 5.0
 Tested up to: 7.0
 Requires PHP: 7.4
-Stable tag: 1.8.3
+Stable tag: 1.8.4
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -402,6 +402,10 @@ Please follow the steps for your ARForms installation below:
 8. ARForms - View Entry
 
 == Changelog ==
+
+= 1.8.4 =
+Added an option to enable search box for dropdown field
+Other minor bug fixes & improvements
 
 = 1.8.3 =
 Minor bug fixes and improvements

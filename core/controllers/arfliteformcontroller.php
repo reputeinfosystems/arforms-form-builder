@@ -4079,6 +4079,9 @@ class arfliteformcontroller {
 
 				if ( $field['type'] == 'select' && $inputStyle == 'material' ) {
 					$arf_main_label_cls .= ' selectpicker_active ';
+					if ( isset( $field['enable_search'] ) && $field['enable_search'] == 1 ) {
+						$arf_main_label_cls .= ' active ';
+					}
 				}
 
 				if ( $field['type'] == 'phone' && isset( $field['phonetype'] ) && $field['phonetype'] == 1 ) {
@@ -5335,8 +5338,11 @@ class arfliteformcontroller {
 
 							$select_attrs['data-field_id'] = $field['id'];
 
+							$arf_enable_search = ( isset( $field['enable_search'] ) && $field['enable_search'] == 1 ) ? true : false;
+							$arf_no_results_text = ( isset( $field['search_no_results_text'] ) && ! empty( $field['search_no_results_text'] ) ) ? $field['search_no_results_text'] : '';
+
 							if ( $inputStyle == 'material' ) {
-								$mo_active_container_cls = ( ! empty( $arfdefault_selected_val ) ) ? 'arf_material_active_container_open' : '';
+								$mo_active_container_cls = ( ! empty( $arfdefault_selected_val ) || $arf_enable_search ) ? 'arf_material_active_container_open' : '';
 								$return_string          .= '<div class="arf_material_theme_container ' . $mo_active_container_cls . '">';
 							}
 
@@ -5344,7 +5350,7 @@ class arfliteformcontroller {
 								$select_attrs['readonly'] = 'readonly';
 							}
 
-							$return_string .= $arflitemaincontroller->arflite_selectpicker_dom( $field_name, $sel_field_id, ' arf_form_field_picker ', '', $arfdefault_selected_val, $select_attrs, $select_field_opts, false, array(), false, array(), true, $field, false, '', '', $arf_set_default_label );
+							$return_string .= $arflitemaincontroller->arflite_selectpicker_dom( $field_name, $sel_field_id, ' arf_form_field_picker ', '', $arfdefault_selected_val, $select_attrs, $select_field_opts, false, array(), false, array(), true, $field, $arf_enable_search, '', '', $arf_set_default_label, $arf_no_results_text );
 
 							if ( $inputStyle == 'material' ) {
 									$return_string         .= '<div class="arf_material_standard">';
@@ -6153,7 +6159,7 @@ class arfliteformcontroller {
 							if ( isset( $field['set_field_value'] ) && $field['set_field_value'] != '' ) {
 								$default_value = $field['set_field_value'];
 							}
-							$return_string .= '<input type="text" name="' . $field_name . '" class="arf_timepciker" id="field_' . $field['field_key'] . '_' . $arflite_data_uniq_id . '" value="' . $field['default_value'] . '" ';
+							$return_string .= '<input type="text" class="arf_timepciker" id="field_' . $field['field_key'] . '_' . $arflite_data_uniq_id . '" value="' . $default_value . '" ';
 
 							$time_field_options = $this->arflite_html_entity_decode( $field['field_options'] );
 
@@ -6173,10 +6179,11 @@ class arfliteformcontroller {
 								$return_string .= ' data-rtl="true" ';
 							}
 
-							$date_field_options = $this->arflite_html_entity_decode( $field['field_options'] );
-
-							$return_string .= ' data-field-options="' . htmlspecialchars( wp_json_encode( $date_field_options ) ) . '"';
 							$return_string .= '/>';
+
+							$return_string .= '<input type="hidden" name="' . $field_name . '" id="field_' . $field['field_key'] . '_' . $arflite_data_uniq_id . '_time_formatted"';
+							$return_string .= " value='" . $default_value . "'";
+							$return_string .= ' />';
 
 							if ( 'material' == $inputStyle ) {
 								$return_string         .= '<div class="arf_material_standard">';

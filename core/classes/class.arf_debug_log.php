@@ -538,7 +538,7 @@ class arfdebuglog{
             wp_send_json( $response );
 		}
 
-		if( !current_user_can( 'arfviewentries' ) ){
+		if( !current_user_can( 'arfchangesettings' ) ){
             $response['variant'] = 'error';
             $response['title'] = esc_html__( 'Error', 'arforms-form-builder');
             $response['msg'] = esc_html__( 'Sorry, you do not have permission to perform this action', 'arforms-form-builder' );;

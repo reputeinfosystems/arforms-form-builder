@@ -1229,7 +1229,9 @@ if ( is_array( $field ) ) {
 								$select_attrs['data-validation-required-message'] = esc_attr( $field['blank'] );
 							}
 
-							echo $arflitemaincontroller->arflite_selectpicker_dom( $field_name, 'field_' . $field['field_key'], ' arf_form_field_picker ', '', $arfdefault_selected_val, $select_attrs, $select_field_opts, false, $opt_cls, false, array(), true, $field, false, '', '', $arf_set_label ); //phpcs:ignore
+							$arf_enable_search = isset( $field['enable_search'] ) && $field['enable_search'] == 1;
+							$arf_no_results_text = ( isset( $field['search_no_results_text'] ) && ! empty( $field['search_no_results_text'] ) ) ? $field['search_no_results_text'] : '';
+					                echo $arflitemaincontroller->arflite_selectpicker_dom( $field_name, 'field_' . $field['field_key'], ' arf_form_field_picker ', '', $arfdefault_selected_val, $select_attrs, $select_field_opts, false, $opt_cls, false, array(), true, $field, false, '', '', $arf_set_label, $arf_no_results_text, $arf_enable_search ); //phpcs:ignore
 
 							if ( $frm_css['arfinputstyle'] == 'material' ) {
 								do_action( 'arflite_material_style_editor_content', $field, $frm_css, $display, $arf_main_label_cls, $arflite_column_classes );

@@ -1,9 +1,9 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: ARForms Form Builder v1.8.3\n"
+"Project-Id-Version: ARForms Form Builder v1.8.4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-06-08 07:49:23+0000\n"
+"PO-Revision-Date: 2026-06-20 05:18:35+0000\n"
 "Last-Translator: admin <testrepute123@gmail.com>\n"
 "Language-Team: Dutch\n"
 "MIME-Version: 1.0\n"
@@ -32,7 +32,7 @@ msgid "%1$s form has been submitted on %2$s."
 msgstr "Het %1$s -formulier is ingediend op %2$s."
 
 #: core/models/arflitenotifymodel.php:169
-#: core/models/arflitenotifymodel.php:1461
+#: core/models/arflitenotifymodel.php:1478
 #, php-format
 #@ arforms-form-builder
 msgid "%1$s Form submitted on %2$s"
@@ -94,7 +94,7 @@ msgstr "0"
 msgid "1"
 msgstr "1"
 
-#: core/views/arflite_field_option_popup.php:222
+#: core/views/arflite_field_option_popup.php:243
 #@ arforms-form-builder
 msgid "1 Column"
 msgstr "1 kolom"
@@ -160,7 +160,7 @@ msgstr "19"
 msgid "2"
 msgstr "2"
 
-#: core/views/arflite_field_option_popup.php:230
+#: core/views/arflite_field_option_popup.php:251
 #@ arforms-form-builder
 msgid "2 Column"
 msgstr "2 Kolom"
@@ -225,7 +225,7 @@ msgstr "29"
 msgid "3"
 msgstr "3"
 
-#: core/views/arflite_field_option_popup.php:238
+#: core/views/arflite_field_option_popup.php:259
 #@ arforms-form-builder
 msgid "3 Column"
 msgstr "3 Kolom"
@@ -250,7 +250,7 @@ msgstr "35-44"
 msgid "4"
 msgstr "4"
 
-#: core/views/arflite_field_option_popup.php:246
+#: core/views/arflite_field_option_popup.php:267
 #@ arforms-form-builder
 msgid "4 Column"
 msgstr "4 Kolom"
@@ -305,11 +305,6 @@ msgstr "Absoluut"
 #@ arforms-form-builder
 msgid "Access this Settings Page"
 msgstr "Ga naar deze instellingenpagina"
-
-#: core/views/arflite_drip.php:58
-#@ arforms-form-builder
-msgid "Account ID"
-msgstr "Account ID"
 
 #: core/views/arf_view_records.php:473
 #: core/views/arflite_edit.php:4994
@@ -387,7 +382,7 @@ msgstr "Veld toevoegen"
 msgid "Add Icon"
 msgstr "Pictogram toevoegen"
 
-#: core/views/arflite_field_option_popup.php:171
+#: core/views/arflite_field_option_popup.php:192
 #@ arforms-form-builder
 msgid "Add icon (Bootstrap style)"
 msgstr "Pictogram toevoegen (Bootstrap-stijl)"
@@ -494,8 +489,8 @@ msgstr "Geavanceerde formulieropties"
 msgid "Afghanistan"
 msgstr "Afghanistan"
 
-#: core/views/arflite_field_option_popup.php:418
-#: core/views/arflite_field_option_popup.php:480
+#: core/views/arflite_field_option_popup.php:439
+#: core/views/arflite_field_option_popup.php:501
 #@ arforms-form-builder
 msgid "Afrikaans"
 msgstr "Afrikaans"
@@ -526,8 +521,8 @@ msgstr "Aland-eilanden"
 msgid "Albania"
 msgstr "Albanië"
 
-#: core/views/arflite_field_option_popup.php:419
-#: core/views/arflite_field_option_popup.php:481
+#: core/views/arflite_field_option_popup.php:440
+#: core/views/arflite_field_option_popup.php:502
 #@ arforms-form-builder
 msgid "Albanian"
 msgstr "Albanees"
@@ -538,7 +533,7 @@ msgstr "Albanees"
 msgid "Algeria"
 msgstr "Algerije"
 
-#: core/views/arflite_field_option_popup.php:206
+#: core/views/arflite_field_option_popup.php:227
 #@ arforms-form-builder
 msgid "Alignment"
 msgstr "Uitlijning"
@@ -549,17 +544,17 @@ msgstr "Uitlijning"
 msgid "All"
 msgstr "Allemaal"
 
-#: core/views/arflite_field_option_popup.php:849
+#: core/views/arflite_field_option_popup.php:870
 #@ arforms-form-builder
 msgid "Allow alpha numeric characters and length must be between 8 to 16 characters"
 msgstr "Sta alfanumerieke tekens toe en de lengte moet tussen 8 en 16 tekens zijn"
 
-#: core/views/arflite_field_option_popup.php:849
+#: core/views/arflite_field_option_popup.php:870
 #@ arforms-form-builder
 msgid "Allow only digits upto 6 digits. e.g. : pincode"
 msgstr "Sta alleen cijfers toe tot 6 cijfers. b.v. : pincode"
 
-#: core/views/arflite_field_option_popup.php:849
+#: core/views/arflite_field_option_popup.php:870
 #@ arforms-form-builder
 msgid "Allow phone number like"
 msgstr "Sta telefoonnummer toe"
@@ -630,23 +625,9 @@ msgstr "Ieder"
 
 #: core/views/arflite_autoresponder_settings.php:153
 #: core/views/arflite_autoresponder_settings.php:264
-#: core/views/arflite_convertkit.php:44
-#: core/views/arflite_hubspot.php:47
-#: core/views/arflite_mailerlite.php:49
-#: core/views/arflite_sendinblue.php:46
 #@ arforms-form-builder
 msgid "API Key"
 msgstr "API sleutel"
-
-#: core/views/arflite_convertkit.php:53
-#@ arforms-form-builder
-msgid "API Secret"
-msgstr "API-geheim"
-
-#: core/views/arflite_drip.php:48
-#@ arforms-form-builder
-msgid "API Token"
-msgstr "API-token"
 
 #: core/views/arflite_autoresponder_settings.php:385
 #@ arforms-form-builder
@@ -674,8 +655,8 @@ msgstr "Van toepassing zijn"
 msgid "April"
 msgstr "april"
 
-#: core/views/arflite_field_option_popup.php:420
-#: core/views/arflite_field_option_popup.php:482
+#: core/views/arflite_field_option_popup.php:441
+#: core/views/arflite_field_option_popup.php:503
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:71
 #@ arforms-form-builder
 msgid "Arabic"
@@ -744,7 +725,7 @@ msgstr "ARForms-add-ons"
 msgid "ARForms Form Builder"
 msgstr "ARForms Form Builder"
 
-#: core/classes/class.arf_admin_notice.php:205
+#: core/classes/class.arf_admin_notice.php:106
 #: core/classes/class.arforms_updater.php:91
 #@ arforms-form-builder
 msgid "ARForms has been updated! To keep things running smoothly, we have to update your database to the newest version."
@@ -809,8 +790,8 @@ msgstr "ARMember Succesvol geïnstalleerd."
 msgid "Armenia"
 msgstr "Armenië"
 
-#: core/views/arflite_field_option_popup.php:421
-#: core/views/arflite_field_option_popup.php:483
+#: core/views/arflite_field_option_popup.php:442
+#: core/views/arflite_field_option_popup.php:504
 #@ arforms-form-builder
 msgid "Armenian"
 msgstr "Armeens"
@@ -879,7 +860,7 @@ msgstr "Geautoriseerde omleidings-URI"
 msgid "Autocomplete"
 msgstr "Automatisch aanvullen"
 
-#: core/controllers/arflitemaincontroller.php:2927
+#: core/controllers/arflitemaincontroller.php:2928
 #@ arforms-form-builder
 msgid "Available Add-ons"
 msgstr "Beschikbare add-ons"
@@ -895,8 +876,8 @@ msgstr "AWEBER-LIJST"
 msgid "Azerbaijan"
 msgstr "Azerbeidzjan"
 
-#: core/views/arflite_field_option_popup.php:422
-#: core/views/arflite_field_option_popup.php:484
+#: core/views/arflite_field_option_popup.php:443
+#: core/views/arflite_field_option_popup.php:505
 #@ arforms-form-builder
 msgid "Azerbaijani"
 msgstr "Azerbeidzjaans"
@@ -967,8 +948,8 @@ msgstr "Basis / actieve kleur"
 msgid "Basic Styling Options"
 msgstr "Basisstijlopties"
 
-#: core/views/arflite_field_option_popup.php:423
-#: core/views/arflite_field_option_popup.php:485
+#: core/views/arflite_field_option_popup.php:444
+#: core/views/arflite_field_option_popup.php:506
 #@ arforms-form-builder
 msgid "Basque"
 msgstr "baskisch"
@@ -1046,7 +1027,7 @@ msgstr "Leeg formulier"
 msgid "Blur"
 msgstr "Vervagen"
 
-#: core/views/arflite_field_option_popup.php:813
+#: core/views/arflite_field_option_popup.php:834
 #@ arforms-form-builder
 msgid "bold"
 msgstr "stoutmoedig"
@@ -1108,8 +1089,8 @@ msgstr "Randtype"
 msgid "Bosnia and Herzegovina"
 msgstr "Bosnië-Herzegovina"
 
-#: core/views/arflite_field_option_popup.php:424
-#: core/views/arflite_field_option_popup.php:486
+#: core/views/arflite_field_option_popup.php:445
+#: core/views/arflite_field_option_popup.php:507
 #@ arforms-form-builder
 msgid "Bosnian"
 msgstr "Bosnisch"
@@ -1166,8 +1147,8 @@ msgstr "Brunei"
 msgid "Bulgaria"
 msgstr "Bulgarije"
 
-#: core/views/arflite_field_option_popup.php:425
-#: core/views/arflite_field_option_popup.php:487
+#: core/views/arflite_field_option_popup.php:446
+#: core/views/arflite_field_option_popup.php:508
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:73
 #@ arforms-form-builder
 msgid "Bulgarian"
@@ -1223,7 +1204,7 @@ msgstr "Knoopbreedte (optioneel)"
 msgid "Calendar Date Format"
 msgstr "Kalender datumformaat"
 
-#: core/views/arflite_field_option_popup.php:469
+#: core/views/arflite_field_option_popup.php:490
 #@ arforms-form-builder
 msgid "Calendar localization"
 msgstr "Kalenderlokalisatie"
@@ -1241,7 +1222,6 @@ msgid "Cameroon"
 msgstr "Kameroen"
 
 #: core/views/arflite_autoresponder_settings.php:283
-#: core/views/arflite_drip.php:77
 #@ arforms-form-builder
 msgid "Campaign Name"
 msgstr "Campagne naam"
@@ -1269,9 +1249,9 @@ msgstr "Canada"
 #: core/views/arflite_edit.php:3587
 #: core/views/arflite_edit.php:4056
 #: core/views/arflite_edit.php:5087
-#: core/views/arflite_field_editor.php:1465
-#: core/views/arflite_field_editor.php:1482
-#: core/views/arflite_field_option_popup.php:887
+#: core/views/arflite_field_editor.php:1467
+#: core/views/arflite_field_editor.php:1484
+#: core/views/arflite_field_option_popup.php:908
 #: core/views/arflite_field_values_popup.php:245
 #: core/views/arflite_field_values_popup.php:270
 #: core/views/arflite_field_values_popup.php:339
@@ -1306,7 +1286,7 @@ msgstr "Canada"
 #: core/views/arflite_new_field_array.php:151
 #: integrations/Hcaptcha/core/classes/class.arforms-hcaptcha.php:756
 #: integrations/Hcaptcha/core/classes/class.arforms-hcaptcha.php:829
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:674
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:730
 #: integrations/Payments/PayPal/core/edit_3.0.php:677
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:205
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:306
@@ -1327,8 +1307,8 @@ msgstr "Kaapverdië"
 msgid "Caribbean Netherlands"
 msgstr "Caribisch Nederland"
 
-#: core/views/arflite_field_option_popup.php:426
-#: core/views/arflite_field_option_popup.php:488
+#: core/views/arflite_field_option_popup.php:447
+#: core/views/arflite_field_option_popup.php:509
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:74
 #@ arforms-form-builder
 msgid "Catalan"
@@ -1359,12 +1339,12 @@ msgstr "Centraal Afrikaanse Republiek"
 msgid "Chad"
 msgstr "Tsjaad"
 
-#: core/views/arflite_field_option_popup.php:303
+#: core/views/arflite_field_option_popup.php:324
 #@ arforms-form-builder
 msgid "Check All"
 msgstr "Controleer alles"
 
-#: core/models/arflitenotifymodel.php:336
+#: core/models/arflitenotifymodel.php:353
 #@ arforms-form-builder
 msgid "Check Full Log"
 msgstr "Controleer volledige log"
@@ -1420,14 +1400,14 @@ msgstr "Chili"
 msgid "China"
 msgstr "China"
 
-#: core/views/arflite_field_option_popup.php:427
-#: core/views/arflite_field_option_popup.php:489
+#: core/views/arflite_field_option_popup.php:448
+#: core/views/arflite_field_option_popup.php:510
 #@ arforms-form-builder
 msgid "Chinese Simplified"
 msgstr "Versimpeld Chinees"
 
-#: core/views/arflite_field_option_popup.php:428
-#: core/views/arflite_field_option_popup.php:490
+#: core/views/arflite_field_option_popup.php:449
+#: core/views/arflite_field_option_popup.php:511
 #@ arforms-form-builder
 msgid "Chinese Traditional"
 msgstr "Chinese traditionele"
@@ -1452,7 +1432,7 @@ msgstr "Kies een kleur"
 msgid "Choose File"
 msgstr "Kies bestand"
 
-#: core/controllers/arflitemaincontroller.php:3268
+#: core/controllers/arflitemaincontroller.php:3277
 #@ arforms-form-builder
 msgid "Choose Option"
 msgstr "Kies optie"
@@ -1462,7 +1442,7 @@ msgstr "Kies optie"
 msgid "Christmas Island"
 msgstr "Kersteiland"
 
-#: core/views/arflite_field_option_popup.php:136
+#: core/views/arflite_field_option_popup.php:157
 #@ arforms-form-builder
 msgid "Clear default text on focus"
 msgstr "Standaardtekst bij focus wissen"
@@ -1495,7 +1475,7 @@ msgstr "Klik om te kopiëren"
 msgid "Click to edit"
 msgstr "Klik om te bewerken"
 
-#: core/helpers/arflitefieldhelper.php:2513
+#: core/helpers/arflitefieldhelper.php:2556
 #: core/views/arflite_field_editor.php:438
 #@ arforms-form-builder
 msgid "Click to mark as"
@@ -1546,7 +1526,7 @@ msgstr "klant identificatie"
 msgid "Client Secret"
 msgstr "Klantgeheim"
 
-#: core/views/arflite_field_option_popup.php:555
+#: core/views/arflite_field_option_popup.php:576
 #@ arforms-form-builder
 msgid "Clock Settings"
 msgstr "Klokinstellingen"
@@ -1603,7 +1583,7 @@ msgstr "Voltooid"
 msgid "Completed Date"
 msgstr "Voltooide datum"
 
-#: core/helpers/arflitefieldhelper.php:2513
+#: core/helpers/arflitefieldhelper.php:2556
 #: core/views/arflite_field_editor.php:438
 #@ arforms-form-builder
 msgid "compulsory field."
@@ -1637,7 +1617,7 @@ msgid "Confirm"
 msgstr "Bevestigen"
 
 #: core/helpers/arflitefieldhelper.php:848
-#: core/views/arflite_field_option_popup.php:347
+#: core/views/arflite_field_option_popup.php:368
 #@ arforms-form-builder
 msgid "Confirm Email"
 msgstr "Bevestig Email"
@@ -1647,12 +1627,12 @@ msgstr "Bevestig Email"
 msgid "Confirm Email does not match with email"
 msgstr "Bevestig dat e-mail niet overeenkomt met e-mail"
 
-#: core/views/arflite_field_option_popup.php:362
+#: core/views/arflite_field_option_popup.php:383
 #@ arforms-form-builder
 msgid "Confirm Email label"
 msgstr "E-maillabel bevestigen"
 
-#: core/views/arflite_field_option_popup.php:374
+#: core/views/arflite_field_option_popup.php:395
 #@ arforms-form-builder
 msgid "Confirm email placeholder"
 msgstr "Bevestig de tijdelijke aanduiding voor e-mail"
@@ -1684,7 +1664,7 @@ msgid "contains"
 msgstr "bevat"
 
 #: core/vc/arflite_class_vc_extend.php:44
-#: core/views/arflite_field_option_popup.php:713
+#: core/views/arflite_field_option_popup.php:734
 #@ arforms-form-builder
 msgid "Content"
 msgstr "Inhoud"
@@ -1743,7 +1723,7 @@ msgstr "Landen"
 msgid "Country"
 msgstr "Land"
 
-#: core/views/arflite_field_option_popup.php:315
+#: core/views/arflite_field_option_popup.php:336
 #@ arforms-form-builder
 msgid "Country wise number validation"
 msgstr "Landgewijze validatie van nummers"
@@ -1770,8 +1750,8 @@ msgstr "Kredietkaart"
 msgid "Croatia"
 msgstr "Kroatië"
 
-#: core/views/arflite_field_option_popup.php:429
-#: core/views/arflite_field_option_popup.php:491
+#: core/views/arflite_field_option_popup.php:450
+#: core/views/arflite_field_option_popup.php:512
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:77
 #@ arforms-form-builder
 msgid "Croatian"
@@ -1782,7 +1762,7 @@ msgstr "Kroatisch"
 msgid "CSV File Separator"
 msgstr "CSV-bestandsscheidingsteken"
 
-#: core/controllers/arfliteformcontroller.php:7124
+#: core/controllers/arfliteformcontroller.php:7131
 #@ arforms-form-builder
 msgid "CSV generated successfully."
 msgstr "CSV gegenereerd."
@@ -1827,7 +1807,7 @@ msgstr "Aangepaste CSS"
 msgid "Custom Font Options"
 msgstr "Aangepaste lettertype-opties"
 
-#: core/views/arflite_field_option_popup.php:857
+#: core/views/arflite_field_option_popup.php:878
 #@ arforms-form-builder
 msgid "CVC/CVV"
 msgstr "CVC / CVV"
@@ -1838,8 +1818,8 @@ msgstr "CVC / CVV"
 msgid "Cyprus"
 msgstr "Cyprus"
 
-#: core/views/arflite_field_option_popup.php:430
-#: core/views/arflite_field_option_popup.php:492
+#: core/views/arflite_field_option_popup.php:451
+#: core/views/arflite_field_option_popup.php:513
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:78
 #@ arforms-form-builder
 msgid "Czech"
@@ -1851,7 +1831,7 @@ msgstr "Tsjechisch"
 msgid "Czech Republic"
 msgstr "Tsjechische Republiek"
 
-#: core/views/arflite_field_option_popup.php:431
+#: core/views/arflite_field_option_popup.php:452
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:79
 #@ arforms-form-builder
 msgid "Danish"
@@ -1890,12 +1870,12 @@ msgstr "Datumnotatie"
 msgid "Date is invalid"
 msgstr "Datum is ongeldig"
 
-#: core/views/arflite_field_option_popup.php:599
+#: core/views/arflite_field_option_popup.php:620
 #@ arforms-form-builder
 msgid "Date range"
 msgstr "Datumbereik"
 
-#: core/controllers/arfliteformcontroller.php:6589
+#: core/controllers/arfliteformcontroller.php:6596
 #@ arforms-form-builder
 msgid "Datepicker / Timepicker"
 msgstr "Datepicker / Timepicker"
@@ -1949,7 +1929,7 @@ msgstr "Standaard"
 #: core/views/arflite_edit.php:3862
 #: core/views/arflite_edit.php:3937
 #: core/views/arflite_edit.php:4015
-#: core/views/arflite_field_option_popup.php:747
+#: core/views/arflite_field_option_popup.php:768
 #@ arforms-form-builder
 msgid "Default Fonts"
 msgstr "Standaardlettertypen"
@@ -1964,7 +1944,7 @@ msgstr "Standaardbericht weergegeven nadat het formulier is verzonden."
 msgid "Default Messages On Form"
 msgstr "Standaardberichten op formulier"
 
-#: core/views/arflite_field_option_popup.php:392
+#: core/views/arflite_field_option_popup.php:413
 #@ arforms-form-builder
 msgid "Default Number format"
 msgstr "Standaard getalnotatie"
@@ -1974,7 +1954,7 @@ msgstr "Standaard getalnotatie"
 msgid "Default Submit Button"
 msgstr "Standaard verzendknop"
 
-#: core/views/arflite_field_option_popup.php:130
+#: core/views/arflite_field_option_popup.php:151
 #@ arforms-form-builder
 msgid "Default Value"
 msgstr "Standaardwaarde"
@@ -1987,11 +1967,11 @@ msgstr "Standaardwaarde"
 #: core/views/arf_debug_log.php:148
 #: core/views/arf_view_records.php:90
 #: core/views/arflite_list.php:6
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:224
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:421
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:673
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1413
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1618
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:280
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:477
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:729
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1469
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1674
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:4
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:144
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:4
@@ -2005,11 +1985,6 @@ msgstr "Verwijderen"
 #: core/views/arflite_autoresponder_settings.php:311
 #: core/views/arflite_autoresponder_settings.php:448
 #: core/views/arflite_autoresponder_settings.php:556
-#: core/views/arflite_convertkit.php:93
-#: core/views/arflite_drip.php:104
-#: core/views/arflite_hubspot.php:87
-#: core/views/arflite_mailerlite.php:87
-#: core/views/arflite_sendinblue.php:81
 #@ arforms-form-builder
 msgid "Delete Configuration"
 msgstr "Configuratie verwijderen"
@@ -2115,7 +2090,7 @@ msgstr "Dominicaanse Republiek"
 msgid "Dotted"
 msgstr "Gestippeld"
 
-#: core/controllers/arfliteformcontroller.php:6582
+#: core/controllers/arfliteformcontroller.php:6589
 #@ arforms-form-builder
 msgid "Drop Down"
 msgstr "Laten vallen"
@@ -2138,7 +2113,7 @@ msgstr "Dubbel veld"
 msgid "Duplicate Form"
 msgstr "Dubbel formulier"
 
-#: core/views/arflite_field_option_popup.php:432
+#: core/views/arflite_field_option_popup.php:453
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:80
 #@ arforms-form-builder
 msgid "Dutch"
@@ -2171,7 +2146,7 @@ msgstr "Invoer bewerken"
 msgid "Edit Form"
 msgstr "Formulier bewerken"
 
-#: core/views/arflite_field_editor.php:1473
+#: core/views/arflite_field_editor.php:1475
 #: core/views/arflite_field_values_popup.php:127
 #: core/views/arflite_new_field_array.php:132
 #: core/views/arflite_new_field_array.php:133
@@ -2264,7 +2239,7 @@ msgstr "Email instellingen"
 msgid "Embed Inline Form"
 msgstr "Inline formulier insluiten"
 
-#: core/views/arflite_field_option_popup.php:728
+#: core/views/arflite_field_option_popup.php:749
 #@ arforms-form-builder
 msgid "Embedded tags for youtube, map etc are supported."
 msgstr "Ingebedde tags voor youtube, kaart etc worden ondersteund."
@@ -2275,7 +2250,7 @@ msgstr "Ingebedde tags voor youtube, kaart etc worden ondersteund."
 msgid "Enable"
 msgstr "Inschakelen"
 
-#: core/views/arflite_field_option_popup.php:252
+#: core/views/arflite_field_option_popup.php:273
 #@ arforms-form-builder
 msgid "Enable country flag dropdown"
 msgstr "Schakel dropdown voor landvlag in"
@@ -2285,7 +2260,7 @@ msgstr "Schakel dropdown voor landvlag in"
 msgid "Enable Readonly"
 msgstr "Alleen-lezen inschakelen"
 
-#: core/views/arflite_field_option_popup.php:708
+#: core/views/arflite_field_option_popup.php:729
 #@ arforms-form-builder
 msgid "Enable Running Total"
 msgstr "Lopend totaal inschakelen"
@@ -2311,14 +2286,14 @@ msgstr "Engels (VK)"
 msgid "English (US)"
 msgstr "Amerikaans Engels)"
 
-#: core/views/arflite_field_option_popup.php:433
-#: core/views/arflite_field_option_popup.php:495
+#: core/views/arflite_field_option_popup.php:454
+#: core/views/arflite_field_option_popup.php:516
 #@ arforms-form-builder
 msgid "English/UK"
 msgstr "Engels / VK"
 
-#: core/views/arflite_field_option_popup.php:417
-#: core/views/arflite_field_option_popup.php:479
+#: core/views/arflite_field_option_popup.php:438
+#: core/views/arflite_field_option_popup.php:500
 #@ arforms-form-builder
 msgid "English/Western"
 msgstr "Engels / Westers"
@@ -2336,7 +2311,7 @@ msgstr "Voer na indiening het trackingscript in"
 #: core/models/arflitetemplate.php:1175
 #: core/models/arflitetemplate.php:1191
 #: core/models/arflitetemplate.php:1227
-#: core/views/arflite_field_option_popup.php:844
+#: core/views/arflite_field_option_popup.php:865
 #@ arforms-form-builder
 msgid "Entered value is invalid"
 msgstr "Ingevoerde waarde is ongeldig"
@@ -2449,8 +2424,8 @@ msgstr "Kleuren van foutmeldingen"
 msgid "Error State Background"
 msgstr "Achtergrond foutstatus"
 
-#: core/views/arflite_field_option_popup.php:434
-#: core/views/arflite_field_option_popup.php:496
+#: core/views/arflite_field_option_popup.php:455
+#: core/views/arflite_field_option_popup.php:517
 #@ arforms-form-builder
 msgid "Esperanto"
 msgstr "Esperanto"
@@ -2461,8 +2436,8 @@ msgstr "Esperanto"
 msgid "Estonia"
 msgstr "Estland"
 
-#: core/views/arflite_field_option_popup.php:435
-#: core/views/arflite_field_option_popup.php:497
+#: core/views/arflite_field_option_popup.php:456
+#: core/views/arflite_field_option_popup.php:518
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:82
 #@ arforms-form-builder
 msgid "Estonian"
@@ -2550,14 +2525,14 @@ msgstr "Familie"
 msgid "Faroe Islands"
 msgstr "Faeröer"
 
-#: core/views/arflite_field_option_popup.php:436
-#: core/views/arflite_field_option_popup.php:498
+#: core/views/arflite_field_option_popup.php:457
+#: core/views/arflite_field_option_popup.php:519
 #@ arforms-form-builder
 msgid "Faroese"
 msgstr "Faeröers"
 
-#: core/views/arflite_field_option_popup.php:437
-#: core/views/arflite_field_option_popup.php:499
+#: core/views/arflite_field_option_popup.php:458
+#: core/views/arflite_field_option_popup.php:520
 #@ arforms-form-builder
 msgid "Farsi/Persian"
 msgstr "Farsi / Perzisch"
@@ -2582,7 +2557,7 @@ msgstr "Veldgrensinstellingen"
 msgid "Field Custom Width"
 msgstr "Veld Aangepaste breedte"
 
-#: core/views/arflite_field_option_popup.php:164
+#: core/views/arflite_field_option_popup.php:185
 #@ arforms-form-builder
 msgid "Field description"
 msgstr "Veldbeschrijving"
@@ -2598,7 +2573,7 @@ msgstr "Veld binnenruimte"
 msgid "Field label"
 msgstr "Veld Label"
 
-#: core/views/arflite_field_editor.php:1459
+#: core/views/arflite_field_editor.php:1461
 #: core/views/arflite_field_option_popup.php:5
 #: core/views/arflite_new_field_array.php:122
 #: core/views/arflite_new_field_array.php:123
@@ -2641,7 +2616,7 @@ msgstr "Lokale instellingen"
 
 #: core/views/arflite_field_option_popup.php:84
 #: core/views/arflite_field_option_popup.php:93
-#: core/views/arflite_field_option_popup.php:338
+#: core/views/arflite_field_option_popup.php:359
 #@ arforms-form-builder
 msgid "Field Size (Characters)"
 msgstr "Veldgrootte (tekens)"
@@ -2739,8 +2714,8 @@ msgstr "gefilterd van"
 msgid "Finland"
 msgstr "Finland"
 
-#: core/views/arflite_field_option_popup.php:438
-#: core/views/arflite_field_option_popup.php:500
+#: core/views/arflite_field_option_popup.php:459
+#: core/views/arflite_field_option_popup.php:521
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:84
 #@ arforms-form-builder
 msgid "Finnish"
@@ -2757,7 +2732,7 @@ msgstr "Eerste"
 msgid "Flat"
 msgstr "Vlak"
 
-#: core/controllers/arfliteformcontroller.php:6596
+#: core/controllers/arfliteformcontroller.php:6603
 #: core/views/arflite_edit.php:5077
 #@ arforms-form-builder
 msgid "Font Awesome"
@@ -2768,7 +2743,7 @@ msgstr "Lettertype Awesome"
 msgid "Font Family"
 msgstr "Lettertypefamilie"
 
-#: core/views/arflite_field_option_popup.php:735
+#: core/views/arflite_field_option_popup.php:756
 #@ arforms-form-builder
 msgid "Font family"
 msgstr "Lettertypefamilie"
@@ -2789,12 +2764,12 @@ msgstr "Lettertype-instellingen"
 msgid "Font Size"
 msgstr "Lettertypegrootte"
 
-#: core/views/arflite_field_option_popup.php:775
+#: core/views/arflite_field_option_popup.php:796
 #@ arforms-form-builder
 msgid "Font size"
 msgstr "Lettertypegrootte"
 
-#: core/views/arflite_field_option_popup.php:801
+#: core/views/arflite_field_option_popup.php:822
 #@ arforms-form-builder
 msgid "Font style"
 msgstr "Lettertype"
@@ -2918,7 +2893,7 @@ msgstr "Formulier inzendingsmethode"
 
 #: core/helpers/arfliteformhelper.php:128
 #: core/helpers/arfliteformhelper.php:395
-#: core/models/arflitenotifymodel.php:968
+#: core/models/arflitenotifymodel.php:985
 #@ arforms-form-builder
 msgid "Form submitted on"
 msgstr "Formulier ingediend op"
@@ -3002,7 +2977,7 @@ msgstr "Frankrijk"
 msgid "free reCAPTCHA key"
 msgstr "gratis reCAPTCHA-sleutel"
 
-#: core/views/arflite_field_option_popup.php:439
+#: core/views/arflite_field_option_popup.php:460
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:85
 #@ arforms-form-builder
 msgid "French"
@@ -3025,13 +3000,13 @@ msgstr "Frans-Guyana"
 msgid "French Polynesia"
 msgstr "Frans-Polynesië"
 
-#: core/views/arflite_field_option_popup.php:440
-#: core/views/arflite_field_option_popup.php:502
+#: core/views/arflite_field_option_popup.php:461
+#: core/views/arflite_field_option_popup.php:523
 #@ arforms-form-builder
 msgid "French/Swiss"
 msgstr "Frans / Zwitsers"
 
-#: core/views/arflite_field_option_popup.php:594
+#: core/views/arflite_field_option_popup.php:615
 #: core/views/arflite_field_values_popup.php:83
 #@ arforms-form-builder
 msgid "Friday"
@@ -3039,7 +3014,7 @@ msgstr "vrijdag"
 
 #: core/views/arf_debug_log.php:125
 #: core/views/arf_view_records.php:391
-#: core/views/arflite_field_option_popup.php:601
+#: core/views/arflite_field_option_popup.php:622
 #: core/views/arforms_import_export_form.php:150
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:97
 #@ arforms-form-builder
@@ -3110,8 +3085,8 @@ msgstr "Algemene instellingen"
 msgid "Georgia"
 msgstr "Georgië"
 
-#: core/views/arflite_field_option_popup.php:441
-#: core/views/arflite_field_option_popup.php:503
+#: core/views/arflite_field_option_popup.php:462
+#: core/views/arflite_field_option_popup.php:524
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:87
 #@ arforms-form-builder
 msgid "German"
@@ -3174,7 +3149,7 @@ msgstr "Gaan"
 #: core/views/arflite_edit.php:3863
 #: core/views/arflite_edit.php:3938
 #: core/views/arflite_edit.php:4016
-#: core/views/arflite_field_option_popup.php:761
+#: core/views/arflite_field_option_popup.php:782
 #@ arforms-form-builder
 msgid "Google Fonts"
 msgstr "Google Fonts"
@@ -3195,8 +3170,8 @@ msgstr "groter dan"
 msgid "Greece"
 msgstr "Griekenland"
 
-#: core/views/arflite_field_option_popup.php:442
-#: core/views/arflite_field_option_popup.php:504
+#: core/views/arflite_field_option_popup.php:463
+#: core/views/arflite_field_option_popup.php:525
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:91
 #@ arforms-form-builder
 msgid "Greek"
@@ -3213,11 +3188,6 @@ msgstr "Groenland"
 #@ arforms-form-builder
 msgid "Grenada"
 msgstr "Grenada"
-
-#: core/views/arflite_mailerlite.php:62
-#@ arforms-form-builder
-msgid "Group Name"
-msgstr "Groepsnaam"
 
 #: core/classes/class.arforms_form_builder.php:1826
 #: core/controllers/arflitesettingcontroller.php:137
@@ -3276,8 +3246,8 @@ msgstr "Guyana"
 msgid "Haiti"
 msgstr "Haïti"
 
-#: core/views/arflite_field_option_popup.php:443
-#: core/views/arflite_field_option_popup.php:505
+#: core/views/arflite_field_option_popup.php:464
+#: core/views/arflite_field_option_popup.php:526
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:92
 #@ arforms-form-builder
 msgid "Hebrew"
@@ -3362,7 +3332,7 @@ msgstr "Haak"
 msgid "Horizontal"
 msgstr "Horizontaal"
 
-#: core/views/arflite_field_option_popup.php:580
+#: core/views/arflite_field_option_popup.php:601
 #@ arforms-form-builder
 msgid "Hour"
 msgstr "Uur"
@@ -3406,8 +3376,8 @@ msgstr "uur"
 msgid "HTML"
 msgstr "HTML"
 
-#: core/views/arflite_field_option_popup.php:444
-#: core/views/arflite_field_option_popup.php:506
+#: core/views/arflite_field_option_popup.php:465
+#: core/views/arflite_field_option_popup.php:527
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:94
 #@ arforms-form-builder
 msgid "Hungarian"
@@ -3441,8 +3411,8 @@ msgstr "Ik begrijp het risico"
 msgid "Iceland"
 msgstr "IJsland"
 
-#: core/views/arflite_field_option_popup.php:445
-#: core/views/arflite_field_option_popup.php:507
+#: core/views/arflite_field_option_popup.php:466
+#: core/views/arflite_field_option_popup.php:528
 #@ arforms-form-builder
 msgid "Icelandic"
 msgstr "IJslands"
@@ -3588,7 +3558,7 @@ msgstr "Erven"
 msgid "Inherit from theme"
 msgstr "Overnemen van thema"
 
-#: core/views/arflite_field_option_popup.php:214
+#: core/views/arflite_field_option_popup.php:235
 #@ arforms-form-builder
 msgid "Inline"
 msgstr "In lijn"
@@ -3655,7 +3625,7 @@ msgstr "Ongeldige bestandsextensie. Selecteer een geldig bestand"
 msgid "Invalid File Size."
 msgstr "Ongeldige bestandsgrootte."
 
-#: core/controllers/arfliteformcontroller.php:4316
+#: core/controllers/arfliteformcontroller.php:4319
 #@ arforms-form-builder
 msgid "Invalid maximum characters length"
 msgstr "Ongeldige maximale lengte van tekens"
@@ -3679,7 +3649,7 @@ msgid "Invalid minimum characters length"
 msgstr "Ongeldige minimale lengte van tekens"
 
 #: core/views/arf_view_records.php:469
-#: core/views/arflite_field_option_popup.php:855
+#: core/views/arflite_field_option_popup.php:876
 #@ arforms-form-builder
 msgid "IP Address"
 msgstr "IP adres"
@@ -3718,14 +3688,14 @@ msgstr "Isle of Man"
 msgid "Israel"
 msgstr "Israël"
 
-#: core/views/arflite_field_option_popup.php:446
-#: core/views/arflite_field_option_popup.php:508
+#: core/views/arflite_field_option_popup.php:467
+#: core/views/arflite_field_option_popup.php:529
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:96
 #@ arforms-form-builder
 msgid "Italian"
 msgstr "Italiaans"
 
-#: core/views/arflite_field_option_popup.php:814
+#: core/views/arflite_field_option_popup.php:835
 #@ arforms-form-builder
 msgid "italic"
 msgstr "cursief"
@@ -3753,8 +3723,8 @@ msgstr "januari"
 msgid "Japan"
 msgstr "Japan"
 
-#: core/views/arflite_field_option_popup.php:447
-#: core/views/arflite_field_option_popup.php:509
+#: core/views/arflite_field_option_popup.php:468
+#: core/views/arflite_field_option_popup.php:530
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:97
 #@ arforms-form-builder
 msgid "Japanese"
@@ -3804,8 +3774,8 @@ msgstr "Kenia"
 msgid "Kiribati"
 msgstr "Kiribati"
 
-#: core/views/arflite_field_option_popup.php:448
-#: core/views/arflite_field_option_popup.php:510
+#: core/views/arflite_field_option_popup.php:469
+#: core/views/arflite_field_option_popup.php:531
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:99
 #@ arforms-form-builder
 msgid "Korean"
@@ -3892,8 +3862,8 @@ msgstr "Laatste"
 msgid "Latvia"
 msgstr "Letland"
 
-#: core/views/arflite_field_option_popup.php:449
-#: core/views/arflite_field_option_popup.php:511
+#: core/views/arflite_field_option_popup.php:470
+#: core/views/arflite_field_option_popup.php:532
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:100
 #@ arforms-form-builder
 msgid "Latvian"
@@ -3986,15 +3956,8 @@ msgstr "Lijst-ID"
 
 #: core/views/arflite_autoresponder_settings.php:421
 #: core/views/arflite_autoresponder_settings.php:529
-#: core/views/arflite_convertkit.php:70
-#: core/views/arflite_hubspot.php:61
 #@ arforms-form-builder
 msgid "List Name"
-msgstr "Lijstnaam"
-
-#: core/views/arflite_sendinblue.php:59
-#@ arforms-form-builder
-msgid "List name"
 msgstr "Lijstnaam"
 
 #: arforms-form-builder.php:1553
@@ -4003,8 +3966,8 @@ msgstr "Lijstnaam"
 msgid "Lithuania"
 msgstr "Litouwen"
 
-#: core/views/arflite_field_option_popup.php:450
-#: core/views/arflite_field_option_popup.php:512
+#: core/views/arflite_field_option_popup.php:471
+#: core/views/arflite_field_option_popup.php:533
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:101
 #@ arforms-form-builder
 msgid "Lithuanian"
@@ -4127,12 +4090,12 @@ msgstr "Marshall eilanden"
 msgid "Martinique"
 msgstr "Martinique"
 
-#: core/controllers/arfliteformcontroller.php:6602
+#: core/controllers/arfliteformcontroller.php:6609
 #@ arforms-form-builder
 msgid "Mask Input"
 msgstr "Maskerinvoer"
 
-#: core/controllers/arfliteformcontroller.php:6615
+#: core/controllers/arfliteformcontroller.php:6622
 #@ arforms-form-builder
 msgid "Material"
 msgstr "Materiaal"
@@ -4185,7 +4148,7 @@ msgstr "Mauritanië"
 msgid "Mauritius"
 msgstr "Mauritius"
 
-#: core/views/arflite_field_option_popup.php:648
+#: core/views/arflite_field_option_popup.php:669
 #@ arforms-form-builder
 msgid "Max Date e.g. 31/12/2020"
 msgstr "Max Date b.v. 31/12/2020"
@@ -4202,8 +4165,8 @@ msgstr "Max Option geselecteerd bericht"
 
 #: core/views/arflite_field_option_popup.php:88
 #: core/views/arflite_field_option_popup.php:99
-#: core/views/arflite_field_option_popup.php:342
-#: core/views/arflite_field_option_popup.php:386
+#: core/views/arflite_field_option_popup.php:363
+#: core/views/arflite_field_option_popup.php:407
 #@ arforms-form-builder
 msgid "Maximum"
 msgstr "Maximaal"
@@ -4233,12 +4196,12 @@ msgstr "Bericht"
 msgid "Message for blank field"
 msgstr "Bericht voor leeg veld"
 
-#: core/views/arflite_field_option_popup.php:368
+#: core/views/arflite_field_option_popup.php:389
 #@ arforms-form-builder
 msgid "Message for invalid confirm email"
 msgstr "Bericht voor ongeldige bevestigings-e-mail"
 
-#: core/views/arflite_field_option_popup.php:332
+#: core/views/arflite_field_option_popup.php:353
 #@ arforms-form-builder
 msgid "Message for invalid submission"
 msgstr "Bericht voor ongeldige indiening"
@@ -4248,12 +4211,12 @@ msgstr "Bericht voor ongeldige indiening"
 msgid "Message for minimum length"
 msgstr "Bericht voor minimale lengte"
 
-#: core/views/arflite_field_option_popup.php:842
+#: core/views/arflite_field_option_popup.php:863
 #@ arforms-form-builder
 msgid "Message for regular expression"
 msgstr "Bericht voor reguliere expressie"
 
-#: core/views/arflite_field_option_popup.php:877
+#: core/views/arflite_field_option_popup.php:898
 #@ arforms-form-builder
 msgid "Message for tooltip"
 msgstr "Bericht voor tooltip"
@@ -4290,7 +4253,7 @@ msgstr "Micronesië"
 msgid "Min"
 msgstr "min"
 
-#: core/views/arflite_field_option_popup.php:620
+#: core/views/arflite_field_option_popup.php:641
 #@ arforms-form-builder
 msgid "Min Date e.g. 20/01/2000"
 msgstr "Min Date b.v. 20/01/2000"
@@ -4306,12 +4269,12 @@ msgid "Min Option Selected Message"
 msgstr "Min Optie Geselecteerd Bericht"
 
 #: core/views/arflite_field_option_popup.php:98
-#: core/views/arflite_field_option_popup.php:385
+#: core/views/arflite_field_option_popup.php:406
 #@ arforms-form-builder
 msgid "Minimum"
 msgstr "Minimum"
 
-#: core/views/arflite_field_option_popup.php:581
+#: core/views/arflite_field_option_popup.php:602
 #@ arforms-form-builder
 msgid "Minute"
 msgstr "Minuut"
@@ -4354,7 +4317,7 @@ msgstr "Moldavië"
 msgid "Monaco"
 msgstr "Monaco"
 
-#: core/views/arflite_field_option_popup.php:590
+#: core/views/arflite_field_option_popup.php:611
 #: core/views/arflite_field_values_popup.php:79
 #@ arforms-form-builder
 msgid "Monday"
@@ -4540,14 +4503,15 @@ msgid "Niue"
 msgstr "Niue"
 
 #: core/views/arflite_field_option_popup.php:71
-#: core/views/arflite_field_option_popup.php:255
-#: core/views/arflite_field_option_popup.php:318
-#: core/views/arflite_field_option_popup.php:350
-#: core/views/arflite_field_option_popup.php:542
-#: core/views/arflite_field_option_popup.php:610
-#: core/views/arflite_field_option_popup.php:638
-#: core/views/arflite_field_option_popup.php:661
-#: core/views/arflite_field_option_popup.php:864
+#: core/views/arflite_field_option_popup.php:133
+#: core/views/arflite_field_option_popup.php:276
+#: core/views/arflite_field_option_popup.php:339
+#: core/views/arflite_field_option_popup.php:371
+#: core/views/arflite_field_option_popup.php:563
+#: core/views/arflite_field_option_popup.php:631
+#: core/views/arflite_field_option_popup.php:659
+#: core/views/arflite_field_option_popup.php:682
+#: core/views/arflite_field_option_popup.php:885
 #@ arforms-form-builder
 msgid "NO"
 msgstr "NEE"
@@ -4558,8 +4522,8 @@ msgstr "NEE"
 #: core/views/arflite_edit.php:2057
 #: core/views/arflite_edit.php:2485
 #: core/views/arflite_edit.php:2747
-#: core/views/arflite_field_option_popup.php:139
-#: core/views/arflite_field_option_popup.php:154
+#: core/views/arflite_field_option_popup.php:160
+#: core/views/arflite_field_option_popup.php:175
 #: core/views/arflite_field_values_popup.php:134
 #: core/views/arflite_field_values_popup.php:150
 #: core/views/arflite_field_values_popup.php:167
@@ -4603,8 +4567,8 @@ msgstr "Geen formulier gevonden"
 msgid "No Icon"
 msgstr "Geen icoon"
 
-#: core/views/arflite_field_option_popup.php:176
-#: core/views/arflite_field_option_popup.php:186
+#: core/views/arflite_field_option_popup.php:197
+#: core/views/arflite_field_option_popup.php:207
 #@ arforms-form-builder
 msgid "No icon"
 msgstr "Geen icoon"
@@ -4634,7 +4598,7 @@ msgstr "Geen plug-in opgegeven."
 msgid "No, Maybe later"
 msgstr "Nee, misschien later"
 
-#: core/views/arflite_field_option_popup.php:826
+#: core/views/arflite_field_option_popup.php:847
 #: core/views/arflite_settings_form.php:539
 #@ arforms-form-builder
 msgid "None"
@@ -4645,7 +4609,7 @@ msgstr "Geen"
 msgid "Norfolk Island"
 msgstr "Norfolkeiland"
 
-#: core/views/arflite_field_option_popup.php:812
+#: core/views/arflite_field_option_popup.php:833
 #@ arforms-form-builder
 msgid "normal"
 msgstr "normaal"
@@ -4679,8 +4643,8 @@ msgstr "noordelijke Mariana eilanden"
 msgid "Norway"
 msgstr "Noorwegen"
 
-#: core/views/arflite_field_option_popup.php:451
-#: core/views/arflite_field_option_popup.php:513
+#: core/views/arflite_field_option_popup.php:472
+#: core/views/arflite_field_option_popup.php:534
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:105
 #@ arforms-form-builder
 msgid "Norwegian"
@@ -4706,11 +4670,6 @@ msgstr "Niet de functies die ik wilde"
 #: core/views/arflite_autoresponder_settings.php:272
 #: core/views/arflite_autoresponder_settings.php:414
 #: core/views/arflite_autoresponder_settings.php:521
-#: core/views/arflite_convertkit.php:60
-#: core/views/arflite_drip.php:69
-#: core/views/arflite_hubspot.php:53
-#: core/views/arflite_mailerlite.php:55
-#: core/views/arflite_sendinblue.php:52
 #@ arforms-form-builder
 msgid "Not Verified"
 msgstr "Niet geverifieerd"
@@ -4727,7 +4686,7 @@ msgid "Note : 0 ( zero ) means it will never hide success message"
 msgstr "Opmerking: 0 (nul) betekent dat het succesbericht nooit zal worden verborgen"
 
 #: core/views/arflite_displayfield.php:116
-#: core/views/arflite_field_editor.php:1267
+#: core/views/arflite_field_editor.php:1269
 #: core/views/arflite_new_field_array.php:130
 #: core/views/arflite_new_field_array.php:147
 #@ arforms-form-builder
@@ -4740,7 +4699,7 @@ msgid "Note: The Gmail mailer works well for sites that send low numbers of emai
 msgstr "Opmerking: de Gmail-mailer werkt goed voor sites die weinig e-mails verzenden. De API van Gmail heeft echter snelheidsbeperkingen en een aantal aanvullende beperkingen die tijdens de installatie tot problemen kunnen leiden. Als u verwacht een groot aantal e-mails te verzenden, of als u merkt dat uw webhost niet compatibel is met de beperkingen van de Gmail API, raden we u aan een andere maileroptie te overwegen."
 
 #: core/views/arflite_displayfield.php:41
-#: core/views/arflite_field_editor.php:1274
+#: core/views/arflite_field_editor.php:1276
 #@ arforms-form-builder
 msgid "Note: This field will not show in the form. Enter the value to be hidden."
 msgstr "Opmerking: dit veld wordt niet weergegeven in het formulier. Voer de te verbergen waarde in."
@@ -4751,11 +4710,6 @@ msgstr "Opmerking: dit veld wordt niet weergegeven in het formulier. Voer de te 
 #: core/views/arflite_autoresponder_settings.php:293
 #: core/views/arflite_autoresponder_settings.php:430
 #: core/views/arflite_autoresponder_settings.php:538
-#: core/views/arflite_convertkit.php:77
-#: core/views/arflite_drip.php:84
-#: core/views/arflite_hubspot.php:68
-#: core/views/arflite_mailerlite.php:68
-#: core/views/arflite_sendinblue.php:65
 #@ arforms-form-builder
 msgid "Nothing Selected"
 msgstr "Niets geselecteerd"
@@ -4787,7 +4741,7 @@ msgstr "Nummer valt buiten het bereik"
 msgid "Number of Rows"
 msgstr "Aantal rijen"
 
-#: core/views/arflite_field_option_popup.php:380
+#: core/views/arflite_field_option_popup.php:401
 #@ arforms-form-builder
 msgid "Number Range"
 msgstr "Nummerbereik"
@@ -4810,12 +4764,12 @@ msgstr "Oneven rij"
 msgid "of"
 msgstr "van"
 
-#: core/views/arflite_field_option_popup.php:586
+#: core/views/arflite_field_option_popup.php:607
 #@ arforms-form-builder
 msgid "Off days"
 msgstr "Vrije dagen"
 
-#: core/controllers/arflitemaincontroller.php:2953
+#: core/controllers/arflitemaincontroller.php:2954
 #: core/views/arflite_edit.php:4760
 #: core/views/arflite_edit.php:4780
 #: core/views/arflite_edit.php:4928
@@ -4825,9 +4779,9 @@ msgstr "Vrije dagen"
 #: core/views/arflite_edit.php:5064
 #: core/views/arflite_edit.php:5088
 #: core/views/arflite_edit.php:5152
-#: core/views/arflite_field_editor.php:1466
-#: core/views/arflite_field_editor.php:1483
-#: core/views/arflite_field_option_popup.php:888
+#: core/views/arflite_field_editor.php:1468
+#: core/views/arflite_field_editor.php:1485
+#: core/views/arflite_field_option_popup.php:909
 #: core/views/arflite_field_values_popup.php:340
 #: core/views/arflite_new_field_array.php:122
 #: core/views/arflite_new_field_array.php:123
@@ -4888,17 +4842,17 @@ msgstr "Oman"
 msgid "On Load Animation"
 msgstr "Animatie bij laden"
 
-#: core/views/arflite_field_option_popup.php:827
+#: core/views/arflite_field_option_popup.php:848
 #@ arforms-form-builder
 msgid "Only Alphabets"
 msgstr "Alleen alfabetten"
 
-#: core/views/arflite_field_option_popup.php:829
+#: core/views/arflite_field_option_popup.php:850
 #@ arforms-form-builder
 msgid "Only Alphabets & Numbers"
 msgstr "Alleen alfabetten en cijfers"
 
-#: core/views/arflite_field_option_popup.php:828
+#: core/views/arflite_field_option_popup.php:849
 #@ arforms-form-builder
 msgid "Only Numbers"
 msgstr "Alleen getallen"
@@ -5126,7 +5080,7 @@ msgid "Plain Text"
 msgstr "Platte tekst"
 
 #: core/controllers/arflitemaincontroller.php:2384
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:669
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:725
 #@ arforms-form-builder
 msgid "Please add one or more rules"
 msgstr "Voeg een of meer regels toe"
@@ -5246,7 +5200,7 @@ msgstr "Selecteer alleen een afbeeldingsbestand."
 
 #: core/controllers/arflitemaincontroller.php:2319
 #: core/controllers/arflitemaincontroller.php:2357
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:668
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:724
 #@ arforms-form-builder
 msgid "Please select one or more record to perform action"
 msgstr "Selecteer een of meer records om actie uit te voeren"
@@ -5262,14 +5216,14 @@ msgid "Please select one or more record."
 msgstr "Selecteer een of meer records."
 
 #: core/controllers/arfliterecordcontroller.php:1718
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1548
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1604
 #@ arforms-form-builder
 msgid "Please select one or more records"
 msgstr "Selecteer een of meer records"
 
 #: core/controllers/arfliteformcontroller.php:217
 #: core/controllers/arfliterecordcontroller.php:809
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1313
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1369
 #@ arforms-form-builder
 msgid "Please select one or more records."
 msgstr "Selecteer een of meer records."
@@ -5280,7 +5234,7 @@ msgid "Please select options to send an automatic response to user."
 msgstr "Selecteer opties om een automatisch antwoord naar de gebruiker te sturen."
 
 #: core/controllers/arflitemaincontroller.php:2329
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:667
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:723
 #@ arforms-form-builder
 msgid "Please select valid action"
 msgstr "Selecteer een geldige actie"
@@ -5294,8 +5248,8 @@ msgstr "Selecteer een geldige actie."
 #: core/classes/class.arforms_block_widget.php:61
 #: core/classes/class.arforms_block_widget.php:83
 #: core/classes/class.arforms_block_widget.php:102
-#: core/controllers/arfliteformcontroller.php:7174
-#: core/controllers/arfliteformcontroller.php:7186
+#: core/controllers/arfliteformcontroller.php:7181
+#: core/controllers/arfliteformcontroller.php:7193
 #: core/controllers/arflitemaincontroller.php:1974
 #: core/views/arflite_form_preview.php:10
 #@ arforms-form-builder
@@ -5312,7 +5266,7 @@ msgstr "Selecteer geldige formulieren"
 msgid "Please set extensions to validate file."
 msgstr "Stel extensies in om het bestand te valideren."
 
-#: core/views/arflite_field_editor.php:1256
+#: core/views/arflite_field_editor.php:1258
 #@ arforms-form-builder
 msgid "Please setup site key and private key in Global Settings otherwise recaptcha will not appear"
 msgstr "Stel de sitesleutel en privésleutel in bij Algemene instellingen, anders wordt recaptcha niet weergegeven"
@@ -5370,8 +5324,8 @@ msgstr "Selecteer de juiste optie"
 msgid "Poland"
 msgstr "Polen"
 
-#: core/views/arflite_field_option_popup.php:452
-#: core/views/arflite_field_option_popup.php:514
+#: core/views/arflite_field_option_popup.php:473
+#: core/views/arflite_field_option_popup.php:535
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:107
 #@ arforms-form-builder
 msgid "Polish"
@@ -5398,8 +5352,8 @@ msgstr "Portugees (Brazilië)"
 msgid "Portuguese (Portugal)"
 msgstr "Portugees (Portugal)"
 
-#: core/views/arflite_field_option_popup.php:453
-#: core/views/arflite_field_option_popup.php:515
+#: core/views/arflite_field_option_popup.php:474
+#: core/views/arflite_field_option_popup.php:536
 #@ arforms-form-builder
 msgid "Portuguese/Brazilian"
 msgstr "Portugees / Braziliaans"
@@ -5412,7 +5366,7 @@ msgstr "Portugees / Braziliaans"
 msgid "Position"
 msgstr "Positie"
 
-#: core/views/arflite_field_option_popup.php:200
+#: core/views/arflite_field_option_popup.php:221
 #: core/views/arflite_field_values_popup.php:101
 #@ arforms-form-builder
 msgid "Prefix"
@@ -5450,7 +5404,7 @@ msgstr "Vorige"
 msgid "Previous Entry"
 msgstr "Vorige invoer"
 
-#: core/controllers/arflitemaincontroller.php:2935
+#: core/controllers/arflitemaincontroller.php:2936
 #: core/views/arflite_edit.php:932
 #: core/views/arflite_edit.php:1010
 #@ arforms-form-builder
@@ -5539,12 +5493,12 @@ msgstr "Record kan niet worden verwijderd"
 
 #: core/controllers/arfliteformcontroller.php:242
 #: core/controllers/arfliteformcontroller.php:788
-#: core/controllers/arfliteformcontroller.php:7197
+#: core/controllers/arfliteformcontroller.php:7204
 #: core/controllers/arfliterecordcontroller.php:3230
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1188
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1327
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1452
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1562
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1244
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1383
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1508
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1618
 #@ arforms-form-builder
 msgid "Record is deleted successfully."
 msgstr "Record is succesvol verwijderd."
@@ -5572,21 +5526,16 @@ msgstr "Verwijzende URL"
 #: core/views/arflite_autoresponder_settings.php:309
 #: core/views/arflite_autoresponder_settings.php:446
 #: core/views/arflite_autoresponder_settings.php:554
-#: core/views/arflite_convertkit.php:91
-#: core/views/arflite_drip.php:102
-#: core/views/arflite_hubspot.php:85
-#: core/views/arflite_mailerlite.php:85
-#: core/views/arflite_sendinblue.php:79
 #@ arforms-form-builder
 msgid "Refresh List"
 msgstr "Ververs lijst"
 
-#: core/views/arflite_field_option_popup.php:848
+#: core/views/arflite_field_option_popup.php:869
 #@ arforms-form-builder
 msgid "Regular expression"
 msgstr "Reguliere expressie"
 
-#: core/views/arflite_field_option_popup.php:830
+#: core/views/arflite_field_option_popup.php:851
 #@ arforms-form-builder
 msgid "Regular Expression (custom)"
 msgstr "Reguliere expressie (aangepast)"
@@ -5666,8 +5615,8 @@ msgstr "Rechts naar links"
 msgid "Romania"
 msgstr "Roemenië"
 
-#: core/views/arflite_field_option_popup.php:454
-#: core/views/arflite_field_option_popup.php:516
+#: core/views/arflite_field_option_popup.php:475
+#: core/views/arflite_field_option_popup.php:537
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:111
 #@ arforms-form-builder
 msgid "Romanian"
@@ -5695,8 +5644,8 @@ msgstr "Lopend totaal (wiskundige logica) is ingeschakeld"
 msgid "Russia"
 msgstr "Rusland"
 
-#: core/views/arflite_field_option_popup.php:455
-#: core/views/arflite_field_option_popup.php:517
+#: core/views/arflite_field_option_popup.php:476
+#: core/views/arflite_field_option_popup.php:538
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:112
 #@ arforms-form-builder
 msgid "Russian"
@@ -5757,7 +5706,7 @@ msgstr "Samoa"
 msgid "Sample Forms"
 msgstr "Voorbeeldformulieren"
 
-#: core/views/arflite_field_option_popup.php:849
+#: core/views/arflite_field_option_popup.php:870
 #@ arforms-form-builder
 msgid "Sample RegExp"
 msgstr "Voorbeeld RegExp"
@@ -5784,7 +5733,7 @@ msgstr "Tevredenheid"
 msgid "Satisfied"
 msgstr "Tevreden"
 
-#: core/views/arflite_field_option_popup.php:595
+#: core/views/arflite_field_option_popup.php:616
 #: core/views/arflite_field_values_popup.php:84
 #@ arforms-form-builder
 msgid "Saturday"
@@ -5835,7 +5784,7 @@ msgstr "Geplande datum"
 #: core/views/arf_view_records.php:415
 #: core/views/arflite_font_awesome.php:2341
 #: core/views/arflite_list.php:142
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:675
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:731
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:162
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:248
 #@ arforms-form-builder
@@ -5926,13 +5875,13 @@ msgstr "Selecteer een datum"
 #: core/views/arflite_field_type_conversion.php:51
 #: core/views/arflite_field_type_conversion.php:57
 #: core/views/arflite_field_type_conversion.php:90
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2004
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2006
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2045
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2047
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2116
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2117
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2144
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2060
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2062
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2101
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2103
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2172
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2173
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2200
 #@ arforms-form-builder
 msgid "Select Field"
 msgstr "Selecteer Veld"
@@ -6057,15 +6006,15 @@ msgstr "Servië"
 msgid "Serbia and Montenegro"
 msgstr "Servië en Montenegro"
 
-#: core/views/arflite_field_option_popup.php:456
-#: core/views/arflite_field_option_popup.php:518
+#: core/views/arflite_field_option_popup.php:477
+#: core/views/arflite_field_option_popup.php:539
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:113
 #@ arforms-form-builder
 msgid "Serbian"
 msgstr "Servisch"
 
-#: core/views/arflite_field_option_popup.php:457
-#: core/views/arflite_field_option_popup.php:519
+#: core/views/arflite_field_option_popup.php:478
+#: core/views/arflite_field_option_popup.php:540
 #@ arforms-form-builder
 msgid "Serbian Cyrillic"
 msgstr "Servisch Cyrillisch"
@@ -6075,23 +6024,23 @@ msgstr "Servisch Cyrillisch"
 msgid "Set conditional redirect URL"
 msgstr "Stel een voorwaardelijke omleidings-URL in"
 
-#: core/views/arflite_field_option_popup.php:609
-#: core/views/arflite_field_option_popup.php:637
+#: core/views/arflite_field_option_popup.php:630
+#: core/views/arflite_field_option_popup.php:658
 #@ arforms-form-builder
 msgid "Set Current Date"
 msgstr "Huidige datum instellen"
 
-#: core/views/arflite_field_option_popup.php:660
+#: core/views/arflite_field_option_popup.php:681
 #@ arforms-form-builder
 msgid "Set Current Date:"
 msgstr "Huidige datum instellen:"
 
-#: core/views/arflite_field_option_popup.php:689
+#: core/views/arflite_field_option_popup.php:710
 #@ arforms-form-builder
 msgid "Set Date e.g."
 msgstr "Datum instellen b.v."
 
-#: core/views/arflite_field_option_popup.php:655
+#: core/views/arflite_field_option_popup.php:676
 #@ arforms-form-builder
 msgid "Set default date"
 msgstr "Stel de standaarddatum in"
@@ -6190,7 +6139,7 @@ msgstr "Kolommen tonen / verbergen"
 msgid "Show confirmation (Summary)"
 msgstr "Bevestiging tonen (samenvatting)"
 
-#: core/views/arflite_field_option_popup.php:539
+#: core/views/arflite_field_option_popup.php:560
 #@ arforms-form-builder
 msgid "Show time picker"
 msgstr "Tijdkiezer weergeven"
@@ -6276,8 +6225,8 @@ msgstr "Schuif geselecteerd"
 msgid "Slider Track"
 msgstr "Slider Track"
 
-#: core/views/arflite_field_option_popup.php:458
-#: core/views/arflite_field_option_popup.php:520
+#: core/views/arflite_field_option_popup.php:479
+#: core/views/arflite_field_option_popup.php:541
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:114
 #@ arforms-form-builder
 msgid "Slovak"
@@ -6295,8 +6244,8 @@ msgstr "Slowakije"
 msgid "Slovenia"
 msgstr "Slovenië"
 
-#: core/views/arflite_field_option_popup.php:459
-#: core/views/arflite_field_option_popup.php:521
+#: core/views/arflite_field_option_popup.php:480
+#: core/views/arflite_field_option_popup.php:542
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:115
 #@ arforms-form-builder
 msgid "Slovenian"
@@ -6383,7 +6332,7 @@ msgid "Sorry, this file type is not permitted for security reasons"
 msgstr "Sorry, dit bestandstype is om veiligheidsredenen niet toegestaan"
 
 #: core/controllers/arflitemaincontroller.php:439
-#: core/controllers/arflitemaincontroller.php:2988
+#: core/controllers/arflitemaincontroller.php:2989
 #: core/controllers/arflitesettingcontroller.php:586
 #@ arforms-form-builder
 msgid "Sorry, you are not allowed to install plugins on this site."
@@ -6396,7 +6345,7 @@ msgstr "Sorry, u bent niet bevoegd om deze actie uit te voeren."
 
 #: core/controllers/arfliteformcontroller.php:716
 #: core/controllers/arfliteformcontroller.php:760
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3238
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3294
 #@ arforms-form-builder
 msgid "Sorry, you do not have enough permission to perform this action"
 msgstr "Sorry, je hebt niet genoeg toestemming om deze actie uit te voeren"
@@ -6408,19 +6357,19 @@ msgstr "Sorry, je hebt niet genoeg toestemming om deze actie uit te voeren"
 #: core/classes/class.arforms_general_settings.php:301
 #: core/classes/class.arforms_import_export.php:947
 #: core/controllers/arflitemaincontroller.php:2459
-#: core/controllers/arflitemaincontroller.php:3028
+#: core/controllers/arflitemaincontroller.php:3029
 #: core/controllers/arfliterecordcontroller.php:1627
 #: core/controllers/arfliterecordcontroller.php:1665
 #: core/controllers/arfliterecordcontroller.php:1893
 #: core/controllers/arfliterecordcontroller.php:2379
 #: core/controllers/arfliterecordcontroller.php:3121
 #: core/controllers/arfliterecordcontroller.php:3187
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:118
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:264
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1135
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1226
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1444
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1495
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:174
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:320
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1191
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1282
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1500
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1551
 #@ arforms-form-builder
 msgid "Sorry, you do not have permission to perform this action"
 msgstr "Sorry, je hebt geen toestemming om deze actie uit te voeren"
@@ -6433,7 +6382,7 @@ msgid "Sorry, you don't have permission to perform this action."
 msgstr "Sorry, je hebt geen toestemming om deze actie uit te voeren."
 
 #: core/controllers/arfliteformcontroller.php:705
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3254
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3310
 #@ arforms-form-builder
 msgid "Sorry, your request could not be processed due to security reason"
 msgstr "Uw verzoek kan om veiligheidsredenen helaas niet worden verwerkt"
@@ -6447,8 +6396,8 @@ msgstr "Uw verzoek kan om veiligheidsredenen helaas niet worden verwerkt"
 #: core/classes/class.arforms_general_settings.php:292
 #: core/classes/class.arforms_import_export.php:953
 #: core/controllers/arflitemaincontroller.php:2461
-#: core/controllers/arflitemaincontroller.php:3047
-#: core/controllers/arflitemaincontroller.php:3067
+#: core/controllers/arflitemaincontroller.php:3048
+#: core/controllers/arflitemaincontroller.php:3068
 #: core/controllers/arfliterecordcontroller.php:1618
 #: core/controllers/arfliterecordcontroller.php:1879
 #: core/controllers/arfliterecordcontroller.php:2373
@@ -6498,8 +6447,8 @@ msgstr "Spanje"
 msgid "Spam Detected"
 msgstr "Spam gedetecteerd"
 
-#: core/views/arflite_field_option_popup.php:460
-#: core/views/arflite_field_option_popup.php:522
+#: core/views/arflite_field_option_popup.php:481
+#: core/views/arflite_field_option_popup.php:543
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:116
 #@ arforms-form-builder
 msgid "Spanish"
@@ -6689,12 +6638,12 @@ msgstr "Bestand succesvol verwijderd"
 msgid "Sudan"
 msgstr "Soedan"
 
-#: core/views/arflite_field_option_popup.php:201
+#: core/views/arflite_field_option_popup.php:222
 #@ arforms-form-builder
 msgid "Suffix"
 msgstr "Achtervoegsel"
 
-#: core/views/arflite_field_option_popup.php:589
+#: core/views/arflite_field_option_popup.php:610
 #: core/views/arflite_field_values_popup.php:78
 #@ arforms-form-builder
 msgid "Sunday"
@@ -6723,8 +6672,8 @@ msgstr "Swaziland"
 msgid "Sweden"
 msgstr "Zweden"
 
-#: core/views/arflite_field_option_popup.php:461
-#: core/views/arflite_field_option_popup.php:523
+#: core/views/arflite_field_option_popup.php:482
+#: core/views/arflite_field_option_popup.php:544
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:118
 #@ arforms-form-builder
 msgid "Swedish"
@@ -6765,8 +6714,8 @@ msgstr "Taiwan"
 msgid "Tajikistan"
 msgstr "Tadzjikistan"
 
-#: core/views/arflite_field_option_popup.php:462
-#: core/views/arflite_field_option_popup.php:524
+#: core/views/arflite_field_option_popup.php:483
+#: core/views/arflite_field_option_popup.php:545
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:119
 #@ arforms-form-builder
 msgid "Tamil"
@@ -6832,8 +6781,8 @@ msgstr "Textarea Elements"
 msgid "Textbox Elements"
 msgstr "Tekstvakelementen"
 
-#: core/views/arflite_field_option_popup.php:463
-#: core/views/arflite_field_option_popup.php:525
+#: core/views/arflite_field_option_popup.php:484
+#: core/views/arflite_field_option_popup.php:546
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:121
 #@ arforms-form-builder
 msgid "Thai"
@@ -6863,8 +6812,8 @@ msgstr "Dat is geen geldig antwoord-e-mailadres voor uw autoresponder."
 msgid "That template cannot be edited"
 msgstr "Die sjabloon kan niet worden bewerkt"
 
-#: core/views/arflite_field_option_popup.php:602
-#: core/views/arflite_field_option_popup.php:630
+#: core/views/arflite_field_option_popup.php:623
+#: core/views/arflite_field_option_popup.php:651
 #@ arforms-form-builder
 msgid "the above shortcode will set minimum date to 10 year before current date. ( possible values for unit are Y - year, M - month, and D - days )."
 msgstr "de bovenstaande shortcode stelt de minimumdatum in op 10 jaar voor de huidige datum. (mogelijke waarden voor eenheid zijn Y - jaar, M - maand en D - dagen)."
@@ -6884,7 +6833,7 @@ msgstr "Het bestand kan om veiligheidsredenen niet worden geüpload."
 msgid "The reCAPTCHA was not entered correctly"
 msgstr "De reCAPTCHA is niet correct ingevoerd"
 
-#: core/models/arflitenotifymodel.php:337
+#: core/models/arflitenotifymodel.php:354
 #@ arforms-form-builder
 msgid "The SMTP debugging output is shown below:"
 msgstr "De SMTP-foutopsporingsuitvoer wordt hieronder weergegeven:"
@@ -6916,7 +6865,7 @@ msgstr "Er is een probleem bij het uploaden van een bestand. Probeer het a.u.b. 
 
 #: core/classes/class.arforms_form_builder.php:952
 #: core/controllers/arflitemaincontroller.php:2449
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:666
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:722
 #@ arforms-form-builder
 msgid "There is no any form found"
 msgstr "Er is geen formulier gevonden"
@@ -6961,8 +6910,8 @@ msgstr "Dit veld mag niet leeg zijn"
 #: core/controllers/arflitemaincontroller.php:2375
 #: core/helpers/arflitefieldhelper.php:800
 #: core/helpers/arflitefieldhelper.php:909
-#: core/helpers/arflitefieldhelper.php:2557
-#: core/helpers/arflitefieldhelper.php:2560
+#: core/helpers/arflitefieldhelper.php:2600
+#: core/helpers/arflitefieldhelper.php:2603
 #: core/models/arflitetemplate.php:1273
 #: core/models/arflitetemplate.php:1289
 #: core/models/arflitetemplate.php:1305
@@ -6979,13 +6928,6 @@ msgstr "Dit veld mag niet leeg zijn"
 #: core/views/arflite_autoresponder_settings.php:416
 #: core/views/arflite_autoresponder_settings.php:509
 #: core/views/arflite_autoresponder_settings.php:523
-#: core/views/arflite_convertkit.php:48
-#: core/views/arflite_convertkit.php:62
-#: core/views/arflite_drip.php:52
-#: core/views/arflite_drip.php:71
-#: core/views/arflite_hubspot.php:55
-#: core/views/arflite_mailerlite.php:57
-#: core/views/arflite_sendinblue.php:54
 #: core/views/arflite_settings_form.php:163
 #: core/views/arflite_settings_form.php:181
 #: core/views/arflite_settings_form.php:194
@@ -7114,7 +7056,7 @@ msgstr "Dit wordt vervangen door de naam van de site."
 msgid "This will be replaced with user browser name."
 msgstr "Dit wordt vervangen door de naam van de gebruikersbrowser."
 
-#: core/views/arflite_field_option_popup.php:593
+#: core/views/arflite_field_option_popup.php:614
 #: core/views/arflite_field_values_popup.php:82
 #@ arforms-form-builder
 msgid "Thursday"
@@ -7165,7 +7107,7 @@ msgstr "TLS"
 
 #: core/views/arf_debug_log.php:129
 #: core/views/arf_view_records.php:391
-#: core/views/arflite_field_option_popup.php:629
+#: core/views/arflite_field_option_popup.php:650
 #: core/views/arflite_settings_form.php:449
 #: core/views/arflite_settings_form.php:608
 #: core/views/arforms_import_export_form.php:150
@@ -7192,8 +7134,8 @@ msgstr "om afbeelding te wijzigen / verwijderen"
 msgid "To export this form, first you need to save it"
 msgstr "Om dit formulier te exporteren, moet u het eerst opslaan"
 
-#: core/views/arflite_field_option_popup.php:602
-#: core/views/arflite_field_option_popup.php:630
+#: core/views/arflite_field_option_popup.php:623
+#: core/views/arflite_field_option_popup.php:651
 #@ arforms-form-builder
 msgid "to set dynamic minimum date please use the below short-code"
 msgstr "gebruik de onderstaande shortcode om de dynamische minimumdatum in te stellen"
@@ -7215,8 +7157,8 @@ msgstr "Tokelau"
 msgid "Tonga"
 msgstr "Tonga"
 
-#: core/controllers/arfliteformcontroller.php:6608
-#: core/views/arflite_field_option_popup.php:861
+#: core/controllers/arfliteformcontroller.php:6615
+#: core/views/arflite_field_option_popup.php:882
 #@ arforms-form-builder
 msgid "Tooltip"
 msgstr "Knopinfo"
@@ -7254,7 +7196,7 @@ msgstr "totaal"
 msgid "Trinidad and Tobago"
 msgstr "Trinidad en Tobago"
 
-#: core/views/arflite_field_option_popup.php:591
+#: core/views/arflite_field_option_popup.php:612
 #: core/views/arflite_field_values_popup.php:80
 #@ arforms-form-builder
 msgid "Tuesday"
@@ -7272,8 +7214,8 @@ msgstr "Tunesië"
 msgid "Turkey"
 msgstr "kalkoen"
 
-#: core/views/arflite_field_option_popup.php:464
-#: core/views/arflite_field_option_popup.php:526
+#: core/views/arflite_field_option_popup.php:485
+#: core/views/arflite_field_option_popup.php:547
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:122
 #@ arforms-form-builder
 msgid "Turkish"
@@ -7340,8 +7282,8 @@ msgstr "Oeganda"
 msgid "Ukraine"
 msgstr "Oekraïne"
 
-#: core/views/arflite_field_option_popup.php:465
-#: core/views/arflite_field_option_popup.php:527
+#: core/views/arflite_field_option_popup.php:486
+#: core/views/arflite_field_option_popup.php:548
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:123
 #@ arforms-form-builder
 msgid "Ukrainian"
@@ -7352,7 +7294,7 @@ msgstr "Oekraïens"
 msgid "Unable to connect to the filesystem. Please confirm your credentials."
 msgstr "Kan geen verbinding maken met het bestandssysteem. Bevestig uw inloggegevens."
 
-#: core/views/arflite_field_option_popup.php:308
+#: core/views/arflite_field_option_popup.php:329
 #@ arforms-form-builder
 msgid "Uncheck All"
 msgstr "Schakel alles uit"
@@ -7401,7 +7343,7 @@ msgstr "Naamloos formulier"
 msgid "Update"
 msgstr "Bijwerken"
 
-#: core/classes/class.arf_admin_notice.php:210
+#: core/classes/class.arf_admin_notice.php:111
 #: core/classes/class.arforms_updater.php:96
 #@ arforms-form-builder
 msgid "Update ARForms Database"
@@ -7424,7 +7366,7 @@ msgstr "Upload alleen CSV-bestand."
 msgid "Urdu"
 msgstr "Urdu"
 
-#: core/views/arflite_field_option_popup.php:854
+#: core/views/arflite_field_option_popup.php:875
 #@ arforms-form-builder
 msgid "URL"
 msgstr "URL"
@@ -7451,7 +7393,7 @@ msgstr "Gebruik afbeelding over opties"
 msgid "Use separate value"
 msgstr "Gebruik een aparte waarde"
 
-#: core/views/arflite_field_option_popup.php:856
+#: core/views/arflite_field_option_popup.php:877
 #@ arforms-form-builder
 msgid "User Name"
 msgstr "Gebruikersnaam"
@@ -7466,11 +7408,6 @@ msgstr "Gebruikersnaam"
 #: core/views/arflite_autoresponder_settings.php:240
 #: core/views/arflite_autoresponder_settings.php:362
 #: core/views/arflite_autoresponder_settings.php:498
-#: core/views/arflite_convertkit.php:35
-#: core/views/arflite_drip.php:39
-#: core/views/arflite_hubspot.php:38
-#: core/views/arflite_mailerlite.php:40
-#: core/views/arflite_sendinblue.php:38
 #@ arforms-form-builder
 msgid "Using API"
 msgstr "API gebruiken"
@@ -7489,12 +7426,12 @@ msgstr "Met behulp van webformulier"
 msgid "Uzbekistan"
 msgstr "Oezbekistan"
 
-#: core/views/arflite_field_option_popup.php:151
+#: core/views/arflite_field_option_popup.php:172
 #@ arforms-form-builder
 msgid "Validate default value"
 msgstr "Valideer de standaardwaarde"
 
-#: core/views/arflite_field_option_popup.php:822
+#: core/views/arflite_field_option_popup.php:843
 #@ arforms-form-builder
 msgid "Validation"
 msgstr "Validatie"
@@ -7547,11 +7484,6 @@ msgstr "Venezuela"
 #: core/views/arflite_autoresponder_settings.php:271
 #: core/views/arflite_autoresponder_settings.php:413
 #: core/views/arflite_autoresponder_settings.php:520
-#: core/views/arflite_convertkit.php:59
-#: core/views/arflite_drip.php:68
-#: core/views/arflite_hubspot.php:52
-#: core/views/arflite_mailerlite.php:54
-#: core/views/arflite_sendinblue.php:51
 #@ arforms-form-builder
 msgid "Verified"
 msgstr "Geverifieerd"
@@ -7559,11 +7491,6 @@ msgstr "Geverifieerd"
 #: core/views/arflite_autoresponder_settings.php:156
 #: core/views/arflite_autoresponder_settings.php:269
 #: core/views/arflite_autoresponder_settings.php:408
-#: core/views/arflite_convertkit.php:57
-#: core/views/arflite_drip.php:64
-#: core/views/arflite_hubspot.php:50
-#: core/views/arflite_mailerlite.php:52
-#: core/views/arflite_sendinblue.php:49
 #@ arforms-form-builder
 msgid "Verify"
 msgstr "Verifiëren"
@@ -7589,8 +7516,8 @@ msgstr "Erg Ontevreden"
 msgid "Vietnam"
 msgstr "Vietnam"
 
-#: core/views/arflite_field_option_popup.php:466
-#: core/views/arflite_field_option_popup.php:528
+#: core/views/arflite_field_option_popup.php:487
+#: core/views/arflite_field_option_popup.php:549
 #: integrations/Google/Captcha/class.arforms_recaptcha.php:125
 #@ arforms-form-builder
 msgid "Vietnamese"
@@ -7668,7 +7595,7 @@ msgstr "Website is ongeldig"
 msgid "Website/URL"
 msgstr "Website URL"
 
-#: core/views/arflite_field_option_popup.php:592
+#: core/views/arflite_field_option_popup.php:613
 #: core/views/arflite_field_values_popup.php:81
 #@ arforms-form-builder
 msgid "Wednesday"
@@ -7787,13 +7714,14 @@ msgid "Yemen"
 msgstr "Jemen"
 
 #: core/views/arflite_field_option_popup.php:78
-#: core/views/arflite_field_option_popup.php:262
-#: core/views/arflite_field_option_popup.php:325
-#: core/views/arflite_field_option_popup.php:357
-#: core/views/arflite_field_option_popup.php:549
-#: core/views/arflite_field_option_popup.php:617
-#: core/views/arflite_field_option_popup.php:645
-#: core/views/arflite_field_option_popup.php:871
+#: core/views/arflite_field_option_popup.php:140
+#: core/views/arflite_field_option_popup.php:283
+#: core/views/arflite_field_option_popup.php:346
+#: core/views/arflite_field_option_popup.php:378
+#: core/views/arflite_field_option_popup.php:570
+#: core/views/arflite_field_option_popup.php:638
+#: core/views/arflite_field_option_popup.php:666
+#: core/views/arflite_field_option_popup.php:892
 #@ arforms-form-builder
 msgid "YES"
 msgstr "JA"
@@ -7805,9 +7733,9 @@ msgstr "JA"
 #: core/views/arflite_edit.php:2064
 #: core/views/arflite_edit.php:2492
 #: core/views/arflite_edit.php:2754
-#: core/views/arflite_field_option_popup.php:146
-#: core/views/arflite_field_option_popup.php:160
-#: core/views/arflite_field_option_popup.php:668
+#: core/views/arflite_field_option_popup.php:167
+#: core/views/arflite_field_option_popup.php:181
+#: core/views/arflite_field_option_popup.php:689
 #: core/views/arflite_field_values_popup.php:141
 #: core/views/arflite_field_values_popup.php:157
 #: core/views/arflite_field_values_popup.php:174
@@ -7957,11 +7885,11 @@ msgstr "U heeft geen toestemming om deze actie uit te voeren"
 
 #: core/controllers/arfliterecordcontroller.php:901
 #: core/helpers/arfliteformhelper.php:389
-#: core/helpers/arfliterecordhelper.php:191
-#: core/helpers/arfliterecordhelper.php:198
+#: core/helpers/arfliterecordhelper.php:200
+#: core/helpers/arfliterecordhelper.php:207
 #: core/models/arfliteformmodel.php:147
 #: core/views/arflite_form_preview.php:188
-#: core/views/arflite_form_preview.php:382
+#: core/views/arflite_form_preview.php:385
 #: core/views/arflite_front_form.php:92
 #: core/views/arflite_front_form.php:152
 #@ arforms-form-builder
@@ -7971,7 +7899,7 @@ msgstr "Het formulier is succesvol verzonden. Bedankt!"
 #: core/controllers/arfliterecordcontroller.php:1313
 #: core/helpers/arfliteformhelper.php:387
 #: core/views/arflite_form_preview.php:55
-#: core/views/arflite_form_preview.php:288
+#: core/views/arflite_form_preview.php:289
 #: core/views/arflite_front_form.php:66
 #@ arforms-form-builder
 msgid "submit"
@@ -7999,8 +7927,8 @@ msgstr "Sorry! u heeft geen toestemming om de add-on te deactiveren"
 msgid "This value must be unique."
 msgstr "Deze waarde moet uniek zijn."
 
-#: core/models/arflitenotifymodel.php:476
-#: core/models/arflitenotifymodel.php:482
+#: core/models/arflitenotifymodel.php:493
+#: core/models/arflitenotifymodel.php:499
 #@ arforms-form-builder
 msgid "Something went wrong please check your configuration."
 msgstr "Er is iets misgegaan. Controleer uw configuratie."
@@ -8017,7 +7945,7 @@ msgstr "Foutopsporingslogboek voor e-mailmeldingen"
 
 #: core/views/arf_debug_log.php:43
 #: core/views/arf_debug_log.php:86
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:759
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:815
 #@ arforms-form-builder
 msgid "Download Logs"
 msgstr "Logboeken downloaden"
@@ -8113,7 +8041,7 @@ msgid "General"
 msgstr "Algemeen"
 
 #: core/classes/class.arf_debug_log.php:39
-#: core/controllers/arflitemaincontroller.php:3309
+#: core/controllers/arflitemaincontroller.php:3322
 #@ arforms-form-builder
 msgid "Sorry, you do not have permission to perform this action."
 msgstr "Sorry, u heeft geen toestemming om deze actie uit te voeren."
@@ -8139,13 +8067,13 @@ msgid "Settings saved successfully"
 msgstr "Instellingen succesvol opgeslagen"
 
 #: core/views/arf_debug_log.php:41
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:758
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:814
 #@ arforms-form-builder
 msgid "View Logs"
 msgstr "Bekijk logboeken"
 
 #: core/views/arf_debug_log.php:44
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:760
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:816
 #@ arforms-form-builder
 msgid "Clear Logs"
 msgstr "Logboeken wissen"
@@ -8182,8 +8110,8 @@ msgstr "Accordeon"
 
 #: core/classes/class.arforms_general_settings.php:179
 #: core/controllers/arflitemaincontroller.php:446
-#: core/controllers/arflitemaincontroller.php:2997
-#: core/controllers/arflitemaincontroller.php:3305
+#: core/controllers/arflitemaincontroller.php:2998
+#: core/controllers/arflitemaincontroller.php:3318
 #: core/controllers/arfliterecordcontroller.php:1676
 #@ arforms-form-builder
 msgid "Sorry, your request cannot be processed due to security reason."
@@ -8201,7 +8129,7 @@ msgstr "U kunt deze plug-in niet installeren omdat u geen ARForms gebruikt"
 msgid "Aria Label"
 msgstr "Aria-label"
 
-#: core/models/arflitenotifymodel.php:406
+#: core/models/arflitenotifymodel.php:423
 #@ arforms-form-builder
 msgid "Email Sent Successfully"
 msgstr "E-mail succesvol verzonden"
@@ -8278,14 +8206,14 @@ msgstr "Upgraden naar Pro"
 
 #: core/helpers/arflitemainhelper.php:1210
 #: core/views/arflite_upgrade_latest_data.php:478
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:583
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:639
 #@ arforms-form-builder
 msgid "Configure PayPal Forms"
 msgstr "PayPal-formulieren configureren"
 
 #: core/helpers/arflitemainhelper.php:1211
 #: core/views/arflite_upgrade_latest_data.php:479
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:584
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:640
 #@ arforms-form-builder
 msgid "View PayPal Transactions"
 msgstr "PayPal-transacties bekijken"
@@ -8521,98 +8449,98 @@ msgstr "Google reCaptcha (v3)"
 msgid "Enable reCaptcha"
 msgstr "reCaptcha inschakelen"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:219
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1614
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:275
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1670
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:140
 #@ arforms-form-builder
 msgid "Edit Configuration"
 msgstr "Configuratie bewerken"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:221
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1616
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:277
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1672
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:83
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:142
 #@ arforms-form-builder
 msgid "Transactions"
 msgstr "Transacties"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:419
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1411
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:475
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1467
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:222
 #@ arforms-form-builder
 msgid "View Entry"
 msgstr "Bekijk vermelding"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:606
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:662
 #@ arforms-form-builder
 msgid "Please meet the minimum requirement of WordPress version 4.5 to active ARForms Paypal add-on"
 msgstr "Voldoe aan de minimale vereisten van WordPress versie 4.5 om de ARForms Paypal-add-on te activeren"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:670
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:726
 #@ arforms-form-builder
 msgid "This form is already deleted or does not exist."
 msgstr "Dit formulier is al verwijderd of bestaat niet."
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:671
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:727
 #, php-format
 #@ arforms-form-builder
 msgid "Are you sure you want to %s delete this configuration?"
 msgstr "Weet u zeker dat u deze configuratie %s wilt verwijderen?"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:672
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:728
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:304
 #, php-format
 #@ arforms-form-builder
 msgid "Are you sure you want to %s delete this transaction?"
 msgstr "Weet u zeker dat u deze transactie %s wilt verwijderen?"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:890
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:946
 #@ arforms-form-builder
 msgid "Click here to continue"
 msgstr "Klik hier om verder te gaan"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1067
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1123
 #@ arforms-form-builder
 msgid "Payment Details"
 msgstr "Betalingsgegevens"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1069
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1125
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:151
 #@ arforms-form-builder
 msgid "Transaction ID"
 msgstr "Transactie-ID"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1071
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1127
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:152
 #@ arforms-form-builder
 msgid "Payment Status"
 msgstr "Betalingsstatus"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1074
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1130
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:84
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:153
 #@ arforms-form-builder
 msgid "Total Amount"
 msgstr "Totaalbedrag"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1081
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1137
 #@ arforms-form-builder
 msgid "Payment at"
 msgstr "Betaling bij"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1083
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1139
 #: integrations/Payments/PayPal/core/edit_3.0.php:606
 #: integrations/Payments/PayPal/core/edit_3.0.php:645
 #@ arforms-form-builder
 msgid "Payer email"
 msgstr "E-mailadres van betaler"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1085
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1141
 #@ arforms-form-builder
 msgid "Payer name"
 msgstr "Naam betaler"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1400
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1456
 #: integrations/Payments/PayPal/core/edit_3.0.php:460
 #: integrations/Payments/PayPal/core/edit_3.0.php:473
 #: integrations/Payments/PayPal/core/export_data.php:63
@@ -8621,7 +8549,7 @@ msgstr "Naam betaler"
 msgid "Donations"
 msgstr "Donaties"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1402
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1458
 #: integrations/Payments/PayPal/core/edit_3.0.php:452
 #: integrations/Payments/PayPal/core/edit_3.0.php:472
 #: integrations/Payments/PayPal/core/export_data.php:63
@@ -8630,98 +8558,98 @@ msgstr "Donaties"
 msgid "Product / Service"
 msgstr "Product/Dienst"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1848
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1974
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1904
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2030
 #@ arforms-form-builder
 msgid "Configuration saved successfully."
 msgstr "Configuratie succesvol opgeslagen."
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2464
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2496
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2520
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2552
 #@ arforms-form-builder
 msgid "Payment received on"
 msgstr "Betaling ontvangen op"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2926
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2982
 #@ arforms-form-builder
 msgid "Hello admin,"
 msgstr "Hallo beheerder,"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2927
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2945
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2983
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3001
 #@ arforms-form-builder
 msgid "Payment successfully received from"
 msgstr "Betaling succesvol ontvangen van"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2928
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2946
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2984
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3002
 #@ arforms-form-builder
 msgid "Following are the payment details:"
 msgstr "Hieronder vindt u de betalingsgegevens:"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2929
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2947
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2985
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3003
 #@ arforms-form-builder
 msgid "Transaction id"
 msgstr "Transactie-id"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2930
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2948
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2986
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3004
 #@ arforms-form-builder
 msgid "Amount paid"
 msgstr "Betaald bedrag"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2931
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2949
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2987
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3005
 #@ arforms-form-builder
 msgid "Payment date"
 msgstr "Betaaldatum"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2932
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2950
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2988
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3006
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:156
 #@ arforms-form-builder
 msgid "Payer Email"
 msgstr "E-mailadres van betaler"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2933
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2951
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2989
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3007
 #@ arforms-form-builder
 msgid "Payer ID"
 msgstr "Betaler-ID"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2934
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2952
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2990
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3008
 #@ arforms-form-builder
 msgid "Payer First name"
 msgstr "Voornaam betaler"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2935
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2953
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2991
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3009
 #@ arforms-form-builder
 msgid "Payer Last name"
 msgstr "Achternaam betaler"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2936
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2954
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2992
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3010
 #@ arforms-form-builder
 msgid "Thank you"
 msgstr "Bedankt"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:2944
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3000
 #@ arforms-form-builder
 msgid "Hello user,"
 msgstr "Hallo gebruiker,"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3009
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3029
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3065
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3085
 #: integrations/Payments/PayPal/core/edit_3.0.php:147
 #@ arforms-form-builder
 msgid "PayPal Configuration"
 msgstr "PayPal-configuratie"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3011
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3031
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3067
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:3087
 #: integrations/Payments/PayPal/core/list_orders_3.0.php:55
 #@ arforms-form-builder
 msgid "PayPal Transactions"
@@ -9036,17 +8964,17 @@ msgstr "Draaihek CAPTCHA-thema"
 msgid "Sorry, you are not allowed to activate/deactivate additional module on this site."
 msgstr "Helaas is het niet toegestaan ​​om extra modules op deze site te activeren/deactiveren."
 
-#: core/models/arflitenotifymodel.php:336
+#: core/models/arflitenotifymodel.php:353
 #@ arforms-form-builder
 msgid "Sorry! Email was not sent successfully."
 msgstr "Sorry! E-mail is niet succesvol verzonden."
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:748
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:804
 #@ arforms-form-builder
 msgid "Payment Gateways Debug Log"
 msgstr "Debuglogboek voor betalingsgateways"
 
-#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:751
+#: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:807
 #@ arforms-form-builder
 msgid "Paypal Debug Log"
 msgstr "Paypal-foutopsporingslogboek"
@@ -9061,7 +8989,7 @@ msgstr "ARFLite_form_all_values_no_separate_valueDit wordt vervangen door alle v
 msgid "This will be replaced with form's all fields & labels without separate values."
 msgstr "Dit wordt vervangen door alle velden en labels zonder aparte waarden."
 
-#: core/views/arflite_field_option_popup.php:531
+#: core/views/arflite_field_option_popup.php:552
 #@ arforms-form-builder
 msgid "Timepicker localization"
 msgstr "Lokalisatie van Timepicker"
@@ -9123,7 +9051,7 @@ msgstr "Probeer het opnieuw"
 msgid "An unknown error occurred"
 msgstr "Er is een onbekende fout opgetreden"
 
-#: core/views/arflite_field_option_popup.php:720
+#: core/views/arflite_field_option_popup.php:741
 #@ arforms-form-builder
 msgid "Your HTML content is broken, do you want to fix it?"
 msgstr "Je HTML-inhoud is beschadigd. Wil je dit oplossen?"
@@ -9191,12 +9119,6 @@ msgstr "Het bestand kon om veiligheidsredenen niet worden opgehaald."
 msgid "Sorry, you are not allowed to access this data."
 msgstr "Sorry, u hebt geen toegang tot deze gegevens."
 
-#. translators: plugin header field 'Version'
-#: arforms-form-builder.php:0
-#@ arforms-form-builder
-msgid "1.8.3"
-msgstr "1.8.3"
-
 #: core/views/arflite_autoresponder_settings.php:506
 #@ arforms-form-builder
 msgid "Client ID (API Key)"
@@ -9226,4 +9148,25 @@ msgstr "Voeg de PayPal-betaalmodule toe met de PayPal-add-on van ARForms."
 #@ arforms-form-builder
 msgid "Please select a form."
 msgstr "Selecteer een formulier."
+
+#. translators: plugin header field 'Version'
+#: arforms-form-builder.php:0
+#@ arforms-form-builder
+msgid "1.8.4"
+msgstr "1.8.4"
+
+#: core/controllers/arflitemaincontroller.php:3300
+#@ arforms-form-builder
+msgid "No results found"
+msgstr "Geen resultaten gevonden"
+
+#: core/views/arflite_field_option_popup.php:130
+#@ arforms-form-builder
+msgid "Enable Search in Dropdown"
+msgstr "Zoekfunctie in vervolgkeuzelijst inschakelen"
+
+#: core/views/arflite_field_option_popup.php:145
+#@ arforms-form-builder
+msgid "Message When No Matches Found"
+msgstr "Bericht wanneer er geen overeenkomsten zijn gevonden"
 

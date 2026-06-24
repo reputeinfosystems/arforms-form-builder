@@ -126,7 +126,28 @@ if( !defined( 'ABSPATH' ) ) exit;
 					<input type="text" class="arf_field_option_input_text" id="arf_class_selector{arf_field_id}" name="class_selector" />
 				</div>
 			</div> 
-			<div class="arf_field_option_content_cell" data-sort="-1" id="default_value">
+			<div class="arf_field_option_content_cell" data-sort="-1" id="enable_search">
+				<label class="arf_field_option_content_cell_label"><?php echo esc_html__( 'Enable Search in Dropdown', 'arforms-form-builder' ); ?></label>
+				<div class="arf_field_option_content_cell_input">
+					<label class="arf_js_switch_label">
+						<span><?php echo esc_html__( 'NO', 'arforms-form-builder' ); ?>&nbsp;</span>
+					</label>
+					<span class="arf_js_switch_wrapper">
+						<input type="checkbox" class="js-switch enable_search_{arf_field_id}" name="enable_search" id="enable_search_{arf_field_id}" value="1" />
+						<span class="arf_js_switch"></span>
+					</span>
+					<label class="arf_js_switch_label">
+						<span>&nbsp;<?php echo esc_html__( 'YES', 'arforms-form-builder' ); ?></span>
+					</label>
+				</div>
+			</div> 
+		<div class="arf_field_option_content_cell" data-sort="-1" id="search_no_results_text">
+			<label class="arf_field_option_content_cell_label"><?php echo esc_html__( 'Message When No Matches Found', 'arforms-form-builder' ); ?></label>
+			<div class="arf_field_option_content_cell_input">
+				<input type="text" class="arf_field_option_input_text" id="search_no_results_text_{arf_field_id}" name="search_no_results_text" value="No results found" />
+			</div>
+		</div>
+		<div class="arf_field_option_content_cell" data-sort="-1" id="default_value">
 				<label class="arf_field_option_content_cell_label"><?php echo esc_html__( 'Default Value', 'arforms-form-builder' ); ?></label>
 				<div class="arf_field_option_content_cell_input">
 					<input type="text" class="arf_field_option_input_text" id="arf_default_value_text_{arf_field_id}" name="default_value" />

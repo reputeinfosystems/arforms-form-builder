@@ -85,7 +85,7 @@ class arforms_updater{
 
             echo '<div id="arf_update_migration_message" class="updated arf_migration_update">';
                 echo '<p>';
-                    echo '<strong>'.esc_html("ARForms database update required","ARForms" ).'</strong>';
+                    echo '<strong>'.esc_html("ARForms database update required","arforms-form-builder" ).'</strong>';
                 echo '</p>';
                 echo '<p>';
                     esc_html_e( 'ARForms has been updated! To keep things running smoothly, we have to update your database to the newest version.', 'arforms-form-builder' );

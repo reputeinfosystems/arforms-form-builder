@@ -1352,6 +1352,8 @@
             "type": "select",
             "aria_label" :"",
             "placeholdertext": "Please Select",
+            "enable_search": "0",
+            "search_no_results_text": "No results found",
             "class_selector": ""
         },
         "email": {

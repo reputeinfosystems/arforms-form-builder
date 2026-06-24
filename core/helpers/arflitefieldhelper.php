@@ -1093,6 +1093,47 @@ class arflitefieldhelper {
 		return $final_date;
 	}
 
+	function arflite_get_time_with_locale( $time, $locale ) {
+
+		$locale = ( in_array( $locale, array( 'ms', 'zh-HK' ) ) ) ? '' : $locale;
+
+		if ( $locale == 'hy' ) {
+			$locale = 'hy-am';
+		} elseif ( $locale == 'no' ) {
+			$locale = 'nb';
+		} elseif ( $locale == 'tu' ) {
+			$locale = 'tr';
+		}
+
+		$json_file = ARFLITE_VIEWS_PATH . '/arflite_editor_data.json';
+		$json_data = file_get_contents( $json_file );
+
+		$json_data = json_decode( $json_data );
+
+		$locale = strtolower( $locale );
+
+		$locale_data = isset( $json_data->date_locale->$locale ) ? $json_data->date_locale->$locale : false;
+
+		$final_time = $time;
+
+		if ( $locale_data ) {
+
+			foreach ( $locale_data->digits as $dig => $locale_digit ) {
+				$final_time = str_replace( $dig, $locale_digit, $final_time );
+			}
+
+			foreach ( $locale_data->meridiem_lower as $ml => $locale_ml ) {
+				$final_time = str_replace( $ml, $locale_ml, $final_time );
+			}
+
+			foreach ( $locale_data->meridiem_upper as $mu => $locale_mu ) {
+				$final_time = str_replace( $mu, $locale_mu, $final_time );
+			}
+		}
+
+		return $final_time;
+	}
+
 	function arfliteget_date( $date, $date_format = false, $field_id = 0 ) {
 
 		global $arflitefield;
@@ -2164,6 +2205,8 @@ class arflitefieldhelper {
 				'aria_label'       => 6,
 				'placeholdertext'  => 7,
 				'class_selector'   => 8,
+				'enable_search'    => 9,
+				'search_no_results_text' => 10,
 			),
 			'email'    => array(
 				'labelname'                 => 1,

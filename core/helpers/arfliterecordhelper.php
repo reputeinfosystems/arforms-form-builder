@@ -20,6 +20,15 @@ class arfliterecordhelper {
 		switch ( $field->type ) {
 			case 'date':
 				$value = $arflitefieldhelper->arfliteget_date_entry( $value, $field->form_id, $field->field_options['show_time_calendar'], $field->field_options['clock'], $field->field_options['locale'] );
+				break;
+			case 'time':
+				if ( $value != '' ) {
+					$timepicker_locale = isset( $field->field_options['timepickerlocalization'] ) ? $field->field_options['timepickerlocalization'] : 'en';
+					if ( $timepicker_locale != 'en' && $timepicker_locale != '' ) {
+						$value = $arflitefieldhelper->arflite_get_time_with_locale( $value, $timepicker_locale );
+					}
+				}
+				break;
 		}
 		if ( is_array( $value ) ) {
 			$new_value = '';
@@ -437,7 +446,9 @@ class arfliterecordhelper {
 
 			$value = $arflitefieldhelper->arfliteget_date_entry( $value, $field->form_id, $field->field_options['show_time_calendar'], $field->field_options['clock'], $field->field_options['locale'] );
 		} elseif ( $atts['type'] == 'time' ) {
-			$value = date_i18n( get_option( 'time_format' ), strtotime( $value ) );
+			if ( isset( $field->field_options['timepickerlocalization'] ) && $field->field_options['timepickerlocalization'] != 'en' && $field->field_options['timepickerlocalization'] != '' ) {
+				$value = $arflitefieldhelper->arflite_get_time_with_locale( $value, $field->field_options['timepickerlocalization'] );
+			}
 		} elseif ( $atts['type'] == 'textarea' ) {
 			$value = nl2br( $value );
 		}

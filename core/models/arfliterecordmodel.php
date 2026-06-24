@@ -406,7 +406,9 @@ class arfliterecordmodel {
 
 		if ( $arfSearch != '' ) {
 			$left_outer_join = " LEFT OUTER JOIN {$entry_meta_table} itmeta ON it.id=itmeta.entry_id ";
-			$where          .= ' and Concat(' . $temp_cols . ") LIKE '%" . $arfSearch . "%'";
+			$search_term = '%' . $wpdb->esc_like( $arfSearch ) . '%';
+			$where .= $wpdb->prepare(" AND CONCAT($temp_cols) LIKE %s", $search_term
+    );
 		}
 
 		if ( $inc_form ) {

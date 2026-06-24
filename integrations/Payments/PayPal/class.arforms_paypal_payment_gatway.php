@@ -17,6 +17,14 @@ class ARForms_Paypal_payment_gatway {
 		$this->db_paypal_forms = $wpdb->prefix . 'arf_paypal_forms';
 		$this->db_paypal_order = $wpdb->prefix . 'arf_paypal_order';
 
+		if ( ! get_option( 'arf_paypal_tables_created' ) ) {
+			$check_table = $wpdb->get_var( "SHOW TABLES LIKE '{$this->db_paypal_forms}'" );
+			if ( empty( $check_table ) ) {
+				$this->create_paypal_tables();
+			}
+			update_option( 'arf_paypal_tables_created', 1 );
+		}
+
 		if ( ! ( $this->is_arforms_support() ) ) {
 			add_action( 'arfliteaftercreateentry', array( $this, 'arf_paypal_submission' ), 100, 2 );
 			add_action( 'wp_ajax_arf_paypal_save_settings', array( $this, 'arf_paypal_save_settings_callback' ) );
@@ -83,6 +91,54 @@ class ARForms_Paypal_payment_gatway {
 		add_action( 'wp_ajax_arf_retrieve_paypal_config_data', array( $this, 'arf_retrieve_paypal_config_data' ) );
 
 		add_action( 'wp_ajax_arf_retrieve_paypal_transaction_data', array( $this, 'arf_retrieve_paypal_transaction_data' ) );
+	}
+
+	function create_paypal_tables() {
+		global $wpdb;
+		require_once ABSPATH . 'wp-admin/includes/upgrade.php';
+
+		$charset_collate = '';
+		if ( $wpdb->has_cap( 'collation' ) ) {
+			if ( ! empty( $wpdb->charset ) ) {
+				$charset_collate = "DEFAULT CHARACTER SET $wpdb->charset";
+			}
+			if ( ! empty( $wpdb->collate ) ) {
+				$charset_collate .= " COLLATE $wpdb->collate";
+			}
+		}
+
+		$sql = "CREATE TABLE IF NOT EXISTS {$this->db_paypal_forms} ( 
+				id int( 11) NOT NULL auto_increment,
+				form_id int( 11) NOT NULL,
+				form_name varchar( 255) default NULL,
+				options longtext default NULL,
+				created_at datetime NOT NULL,
+				PRIMARY KEY ( id)
+			) {$charset_collate};";
+
+		dbDelta( $sql );
+
+		$sql = "CREATE TABLE IF NOT EXISTS {$this->db_paypal_order} ( 
+				id int( 11) NOT NULL auto_increment,
+				item_name varchar( 255) default NULL,
+				txn_id varchar( 255) default NULL,
+				payment_status varchar( 255) default NULL,
+				mc_gross float( 11,2) default NULL,
+				mc_currency varchar( 255) default NULL,
+				quantity varchar( 255) default NULL,
+				payer_email varchar( 255) default NULL,
+				payer_name varchar( 255) default NULL,
+				payment_type varchar( 255) default NULL,
+				user_id int( 11) default NULL,
+				entry_id int( 11) default NULL,  
+				form_id int( 11) default NULL,
+				payment_date varchar( 255) NOT NULL,
+				created_at datetime NOT NULL,
+				is_verified tinyint( 1) default 0, 
+				PRIMARY KEY ( id)
+			) {$charset_collate};";
+
+		dbDelta( $sql );
 	}
 
 	function is_arforms_version() {
@@ -3036,7 +3092,7 @@ class ARForms_Paypal_payment_gatway {
 		global $arfform, $wpdb;
 
 		//$is_paypal_form = $arfform->arf_select_db_data( true, '', $this->db_paypal_forms, 'COUNT(id)', 'WHERE form_id = %d', array( $form_id ), '', '', '', true );
-		$is_paypal_form = $wpdb->get_row( $wpdb->prepare('SELECT COUNT(id) `'.$this->db_paypal_forms.'` WHERE form_id=%d', array( $form_id)));
+		$is_paypal_form = $wpdb->get_var( $wpdb->prepare('SELECT COUNT(id) FROM `'.$this->db_paypal_forms.'` WHERE form_id=%d', array( $form_id)));
 
 		if( $is_paypal_form > 0 ){
 			update_option( 'arf_paypal_admin_email_notification_' . $entry_id . '_' . $form_id, json_encode( $notification_data ) );

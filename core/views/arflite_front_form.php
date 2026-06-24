@@ -520,10 +520,11 @@ if ( ! function_exists( 'arflite_get_form_builder_string' ) ) {
 				$label_margin        = isset( $newarr['width'] ) ? $newarr['width'] : 0;
 				$label_margin        = $label_margin + 15;
 
-				$arf_form .= '<div class="arfsubmitbutton ' . esc_html( $_SESSION['label_position'] ) . '_container" ';
+				$arf_label_pos = isset( $form->form_css['position'] ) ? $form->form_css['position'] : 'top';
+				$arf_form .= '<div class="arfsubmitbutton ' . esc_html( $arf_label_pos ) . '_container" ';
 
 				$arf_form .= '>';
-				$arf_form .= '<div class="arf_submit_div ' . esc_html( $_SESSION['label_position'] ) . '_container">';
+				$arf_form .= '<div class="arf_submit_div ' . esc_html( $arf_label_pos ) . '_container">';
 
 				$arf_form .= '<input type="hidden" data-jqvalidate="false" value="1" name="is_submit_form_' . esc_attr( $form->id ) . '" data-id="is_submit_form_' . esc_attr( $form->id ) . '" />';
 				$arf_form .= '<input type="hidden" data-jqvalidate="false" value="0" data-val="0" data-max="0" name="submit_form_' . esc_attr( $form->id ) . '" data-id="submit_form_' . esc_attr( $form->id ) . '" />';
@@ -551,13 +552,14 @@ if ( ! function_exists( 'arflite_get_form_builder_string' ) ) {
 
 				$arf_form .= '</div><input type="hidden" name="submit_btn_image" id="submit_btn_image" value="' . ARFLITEURL . '/images/submit_loading_img.gif" /></div><div class="arflite-clear-float"></div>';
 			} else {
+				$arf_label_pos = isset( $form->form_css['position'] ) ? $form->form_css['position'] : 'top';
 
-				$arf_form          .= '<div class="arfsubmitbutton ' . esc_html( $_SESSION['label_position'] ) . '_container" >';
+				$arf_form          .= '<div class="arfsubmitbutton ' . esc_html( $arf_label_pos ) . '_container" >';
 				$sbtm_wrapper_class = '';
 				if ( $inputStyle == 'material' ) {
 					$sbtm_wrapper_class = 'file-field ';
 				}
-				$arf_form .= '<div class="arf_submit_div ' . $sbtm_wrapper_class . ' ' . esc_html( $_SESSION['label_position'] ) . '_container">';
+				$arf_form .= '<div class="arf_submit_div ' . $sbtm_wrapper_class . ' ' . esc_html( $arf_label_pos ) . '_container">';
 
 				$arf_form .= '<input type="hidden" data-jqvalidate="false" value="1" name="is_submit_form_' . esc_attr( $form->id ) . '" data-id="is_submit_form_' . esc_attr( $form->id ) . '" />';
 				$arf_form .= '<input type="hidden" data-jqvalidate="false" value="0" data-val="0" data-max="0" name="submit_form_' . esc_attr( $form->id ) . '" data-id="submit_form_' . esc_attr( $form->id ) . '" />';
@@ -602,8 +604,9 @@ if ( ! function_exists( 'arflite_get_form_builder_string' ) ) {
 				$arf_form .= '</div></div><div class="arflite-clear-float"></div>';
 			}
 		} else {
+			$arf_label_pos = isset( $form->form_css['position'] ) ? $form->form_css['position'] : 'top';
 
-			$arf_form .= '<p class="arfsubmitbutton ' . esc_html( $_SESSION['label_position'] ) . '_container">';
+			$arf_form .= '<p class="arfsubmitbutton ' . esc_html( $arf_label_pos ) . '_container">';
 			$submit    = apply_filters( 'arflitegetsubmitbutton', $submit, $form );
 			$arf_form .= '<input type="submit" value="' . esc_attr( $submit ) . '" onclick="return false;" ';
 			$arf_form  = apply_filters( 'arfliteactionsubmitbutton', $arf_form, $form, $form_action );
