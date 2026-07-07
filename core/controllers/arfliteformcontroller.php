@@ -159,8 +159,6 @@ class arfliteformcontroller {
 
 		$arf_disable_form  = false;
 		$arf_current_token = $arflitemainhelper->arflite_generate_captcha_code( 10 );
-		if ( isset( $_SESSION[ 'arf_form_' . $arf_current_token . '_fileuploads' ] ) ) {
-			$_SESSION[ 'arf_form_' . $arf_current_token . '_fileuploads' ] = array(); }
 
 		return '';
 	}
@@ -422,7 +420,6 @@ class arfliteformcontroller {
 		$width  = ( isset( $_GET['width'] ) ) ? sanitize_text_field( $_GET['width'] ) : '';
 		$height = ( isset( $_GET['height'] ) ) ? sanitize_text_field( $_GET['height'] ) : '';
 
-		 $_SESSION['arfaction_ptype'] = ( isset( $_REQUEST['ptype'] ) ) ? sanitize_text_field( $_REQUEST['ptype'] ) : '';
 
 		require ARFLITE_VIEWS_PATH . '/arflite_preview.php';
 	}
@@ -3407,8 +3404,7 @@ class arfliteformcontroller {
 		if ( $type != '' ) {
 			global $arfliteajaxurl;
 			$hidden_fields              .= '<input type="hidden"  data-jqvalidate="false" value="' . $arfliteajaxurl . '" data-id="admin_ajax_url" name="admin_ajax_url" >';
-			$_SESSION['last_open_modal'] = isset( $_SESSION['last_open_modal'] ) ? sanitize_text_field( $_SESSION['last_open_modal'] ) : '';
-			$hidden_fields              .= '<input type="hidden" data-jqvalidate="false" value="' . esc_html( $_SESSION['last_open_modal'] ) . '" data-id="current_modal" name="current_modal" >';
+
 
 			$hidden_fields .= '<input type="hidden" data-jqvalidate="false" value="' . $is_close_link . '" data-id="is_close_link" name="is_close_link" >';
 			$hidden_fields .= '<input type="hidden" data-jqvalidate="false" name="arfmainformurl" data-id="arfmainformurl" value="' . ARFLITEURL . '" />';
@@ -3491,7 +3487,6 @@ class arfliteformcontroller {
 		$newarr       = array();
 
 		$newarr                     = $arr;
-		$_SESSION['label_position'] = $newarr['position'];
 		if ( $newarr['position'] == 'right' ) {
 			$class_position = 'right_container';
 		} elseif ( $newarr['position'] == 'left' ) {

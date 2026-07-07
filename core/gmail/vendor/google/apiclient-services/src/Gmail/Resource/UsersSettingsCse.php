@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,8 +15,7 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
-
-namespace Google\Service\Gmail\Resource;
+namespace Arforms\Google\Service\Gmail\Resource;
 
 /**
  * The "cse" collection of methods.
@@ -25,9 +25,8 @@ namespace Google\Service\Gmail\Resource;
  *   $cse = $gmailService->users_settings_cse;
  *  </code>
  */
-class UsersSettingsCse extends \Google\Service\Resource
+class UsersSettingsCse extends \Arforms\Google\Service\Resource
 {
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(UsersSettingsCse::class, 'Google_Service_Gmail_Resource_UsersSettingsCse');
+class_alias(UsersSettingsCse::class, 'Arforms\Google_Service_Gmail_Resource_UsersSettingsCse');

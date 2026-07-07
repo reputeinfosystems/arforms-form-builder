@@ -12,7 +12,6 @@ if ( ! function_exists( 'arflite_get_form_builder_string' ) ) {
 
 		global $arfliteform, $user_ID, $post, $wpdb, $arflitemainhelper, $arfliterecordcontroller, $arfliteformcontroller, $arflitefieldhelper, $arfliterecordhelper, $arflite_forms_loaded, $arflite_form_all_footer_js, $arflitecreatedentry, $ARFLiteMdlDb,$arflite_func_val,$arflite_decimal_separator,$arfmessage_rest,$arflitemaincontroller, $arflite_glb_preset_data, $is_gutenberg, $tbl_arf_forms;
 
-		$arflitemaincontroller->arflite_start_session( true );
 
 		$arf_current_token = $arflitemainhelper->arflite_generate_captcha_code( 10 );
 
@@ -351,12 +350,7 @@ if ( ! function_exists( 'arflite_get_form_builder_string' ) ) {
 		if ( 1 != $hidden_captcha ) {
 			$captcha_code = $arflitemainhelper->arflite_generate_captcha_code( '8' );
 
-			if ( ! isset( $_SESSION['ARFLITE_FILTER_INPUT'] ) ) {
-				$_SESSION['ARFLITE_FILTER_INPUT'] = array();
-			}
-
-			$_SESSION['ARFLITE_VALIDATE_SCRIPT']               = true;
-			$_SESSION['ARFLITE_FILTER_INPUT'][ $formRandomID ] = $captcha_code;
+			set_transient( 'arf_captcha_' . $formRandomID, $captcha_code, 2 * HOUR_IN_SECONDS );
 
 			$form_attr .= ' data-random-id="' . esc_attr( $formRandomID ) . '" ';
 			$form_attr .= ' data-submission-key="' . esc_attr( $captcha_code ) . '" ';

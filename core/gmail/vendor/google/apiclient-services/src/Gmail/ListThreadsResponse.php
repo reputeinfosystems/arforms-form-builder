@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,66 +15,63 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class ListThreadsResponse extends \Google\Collection
+class ListThreadsResponse extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'threads';
-  /**
-   * @var string
-   */
-  public $nextPageToken;
-  /**
-   * @var string
-   */
-  public $resultSizeEstimate;
-  protected $threadsType = Thread::class;
-  protected $threadsDataType = 'array';
-
-  /**
-   * @param string
-   */
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  /**
-   * @return string
-   */
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param string
-   */
-  public function setResultSizeEstimate($resultSizeEstimate)
-  {
-    $this->resultSizeEstimate = $resultSizeEstimate;
-  }
-  /**
-   * @return string
-   */
-  public function getResultSizeEstimate()
-  {
-    return $this->resultSizeEstimate;
-  }
-  /**
-   * @param Thread[]
-   */
-  public function setThreads($threads)
-  {
-    $this->threads = $threads;
-  }
-  /**
-   * @return Thread[]
-   */
-  public function getThreads()
-  {
-    return $this->threads;
-  }
+    protected $collection_key = 'threads';
+    /**
+     * @var string
+     */
+    public $nextPageToken;
+    /**
+     * @var string
+     */
+    public $resultSizeEstimate;
+    protected $threadsType = Thread::class;
+    protected $threadsDataType = 'array';
+    /**
+     * @param string
+     */
+    public function setNextPageToken($nextPageToken)
+    {
+        $this->nextPageToken = $nextPageToken;
+    }
+    /**
+     * @return string
+     */
+    public function getNextPageToken()
+    {
+        return $this->nextPageToken;
+    }
+    /**
+     * @param string
+     */
+    public function setResultSizeEstimate($resultSizeEstimate)
+    {
+        $this->resultSizeEstimate = $resultSizeEstimate;
+    }
+    /**
+     * @return string
+     */
+    public function getResultSizeEstimate()
+    {
+        return $this->resultSizeEstimate;
+    }
+    /**
+     * @param Thread[]
+     */
+    public function setThreads($threads)
+    {
+        $this->threads = $threads;
+    }
+    /**
+     * @return Thread[]
+     */
+    public function getThreads()
+    {
+        return $this->threads;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListThreadsResponse::class, 'Google_Service_Gmail_ListThreadsResponse');
+class_alias(ListThreadsResponse::class, 'Arforms\Google_Service_Gmail_ListThreadsResponse');

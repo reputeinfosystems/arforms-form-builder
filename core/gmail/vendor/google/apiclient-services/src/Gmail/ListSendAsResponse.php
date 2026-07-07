@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,30 +15,27 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class ListSendAsResponse extends \Google\Collection
+class ListSendAsResponse extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'sendAs';
-  protected $sendAsType = SendAs::class;
-  protected $sendAsDataType = 'array';
-
-  /**
-   * @param SendAs[]
-   */
-  public function setSendAs($sendAs)
-  {
-    $this->sendAs = $sendAs;
-  }
-  /**
-   * @return SendAs[]
-   */
-  public function getSendAs()
-  {
-    return $this->sendAs;
-  }
+    protected $collection_key = 'sendAs';
+    protected $sendAsType = SendAs::class;
+    protected $sendAsDataType = 'array';
+    /**
+     * @param SendAs[]
+     */
+    public function setSendAs($sendAs)
+    {
+        $this->sendAs = $sendAs;
+    }
+    /**
+     * @return SendAs[]
+     */
+    public function getSendAs()
+    {
+        return $this->sendAs;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListSendAsResponse::class, 'Google_Service_Gmail_ListSendAsResponse');
+class_alias(ListSendAsResponse::class, 'Arforms\Google_Service_Gmail_ListSendAsResponse');

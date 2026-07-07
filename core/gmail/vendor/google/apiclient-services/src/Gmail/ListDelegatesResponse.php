@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,30 +15,27 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class ListDelegatesResponse extends \Google\Collection
+class ListDelegatesResponse extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'delegates';
-  protected $delegatesType = Delegate::class;
-  protected $delegatesDataType = 'array';
-
-  /**
-   * @param Delegate[]
-   */
-  public function setDelegates($delegates)
-  {
-    $this->delegates = $delegates;
-  }
-  /**
-   * @return Delegate[]
-   */
-  public function getDelegates()
-  {
-    return $this->delegates;
-  }
+    protected $collection_key = 'delegates';
+    protected $delegatesType = Delegate::class;
+    protected $delegatesDataType = 'array';
+    /**
+     * @param Delegate[]
+     */
+    public function setDelegates($delegates)
+    {
+        $this->delegates = $delegates;
+    }
+    /**
+     * @return Delegate[]
+     */
+    public function getDelegates()
+    {
+        return $this->delegates;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListDelegatesResponse::class, 'Google_Service_Gmail_ListDelegatesResponse');
+class_alias(ListDelegatesResponse::class, 'Arforms\Google_Service_Gmail_ListDelegatesResponse');

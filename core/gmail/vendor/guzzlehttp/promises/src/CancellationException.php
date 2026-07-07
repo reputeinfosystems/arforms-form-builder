@@ -1,6 +1,7 @@
 <?php
 
-namespace GuzzleHttp\Promise;
+declare (strict_types=1);
+namespace Arforms\GuzzleHttp\Promise;
 
 /**
  * Exception that is set as the reason for a promise that has been cancelled.

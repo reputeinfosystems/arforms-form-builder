@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,49 +15,46 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class KaclsKeyMetadata extends \Google\Model
+class KaclsKeyMetadata extends \Arforms\Google\Model
 {
-  /**
-   * @var string
-   */
-  public $kaclsData;
-  /**
-   * @var string
-   */
-  public $kaclsUri;
-
-  /**
-   * @param string
-   */
-  public function setKaclsData($kaclsData)
-  {
-    $this->kaclsData = $kaclsData;
-  }
-  /**
-   * @return string
-   */
-  public function getKaclsData()
-  {
-    return $this->kaclsData;
-  }
-  /**
-   * @param string
-   */
-  public function setKaclsUri($kaclsUri)
-  {
-    $this->kaclsUri = $kaclsUri;
-  }
-  /**
-   * @return string
-   */
-  public function getKaclsUri()
-  {
-    return $this->kaclsUri;
-  }
+    /**
+     * @var string
+     */
+    public $kaclsData;
+    /**
+     * @var string
+     */
+    public $kaclsUri;
+    /**
+     * @param string
+     */
+    public function setKaclsData($kaclsData)
+    {
+        $this->kaclsData = $kaclsData;
+    }
+    /**
+     * @return string
+     */
+    public function getKaclsData()
+    {
+        return $this->kaclsData;
+    }
+    /**
+     * @param string
+     */
+    public function setKaclsUri($kaclsUri)
+    {
+        $this->kaclsUri = $kaclsUri;
+    }
+    /**
+     * @return string
+     */
+    public function getKaclsUri()
+    {
+        return $this->kaclsUri;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(KaclsKeyMetadata::class, 'Google_Service_Gmail_KaclsKeyMetadata');
+class_alias(KaclsKeyMetadata::class, 'Arforms\Google_Service_Gmail_KaclsKeyMetadata');

@@ -13,13 +13,11 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
+namespace Arforms\phpseclib3\Crypt\DSA\Formats\Signature;
 
-namespace phpseclib3\Crypt\DSA\Formats\Signature;
-
-use phpseclib3\File\ASN1 as Encoder;
-use phpseclib3\File\ASN1\Maps;
-use phpseclib3\Math\BigInteger;
-
+use Arforms\phpseclib3\File\ASN1 as Encoder;
+use Arforms\phpseclib3\File\ASN1\Maps;
+use Arforms\phpseclib3\Math\BigInteger;
 /**
  * ASN1 Signature Handler
  *
@@ -36,23 +34,20 @@ abstract class ASN1
     public static function load($sig)
     {
         if (!is_string($sig)) {
-            return false;
+            return \false;
         }
-
         $decoded = Encoder::decodeBER($sig);
         if (empty($decoded)) {
-            return false;
+            return \false;
         }
         $components = Encoder::asn1map($decoded[0], Maps\DssSigValue::MAP);
-
         return $components;
     }
-
     /**
      * Returns a signature in the appropriate format
      *
-     * @param \phpseclib3\Math\BigInteger $r
-     * @param \phpseclib3\Math\BigInteger $s
+     * @param BigInteger $r
+     * @param BigInteger $s
      * @return string
      */
     public static function save(BigInteger $r, BigInteger $s)

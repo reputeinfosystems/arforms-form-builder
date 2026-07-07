@@ -150,11 +150,11 @@ class arfliterecordcontroller {
 			return;
 		}
 
-		$_SESSION[ 'arf_recaptcha_allowed_' . intval( $_POST['form_id'] ) ] = isset( $_SESSION[ 'arf_recaptcha_allowed_' . intval( $_POST['form_id'] ) ] ) ? $_SESSION[ 'arf_recaptcha_allowed_' . intval( $_POST['form_id'] ) ] : ''; //phpcs:ignore
+		$arf_recaptcha_allowed_transient = get_transient( 'arf_recaptcha_allowed_' . intval( $_POST['form_id'] ) );
 
 		$arferrormsg = '';
 		$errors1     = array();
-		if ( $arflite_errors == '' && $_SESSION[ 'arf_recaptcha_allowed_' . intval( $_POST['form_id'] ) ] == '' ) { //phpcs:ignore
+		if ( $arflite_errors == '' && ( $arf_recaptcha_allowed_transient == '' || $arf_recaptcha_allowed_transient === false ) ) { //phpcs:ignore
 			$arferr         = array();
 			$arflite_errors = $arfliterecordcontroller->arflite_internal_check_recaptcha(); //phpcs:ignore
 			if ( count( $arflite_errors ) > 0 ) {
@@ -173,7 +173,7 @@ class arfliterecordcontroller {
 			}
 		}
 
-		unset( $_SESSION[ 'arf_recaptcha_allowed_' . intval( $_POST['form_id'] ) ] ); //phpcs:ignore
+		delete_transient( 'arf_recaptcha_allowed_' . intval( $_POST['form_id'] ) );
 
 		$arflitecreatedentry[ intval( $_POST['form_id'] ) ] = array( 'errors' => $arflite_errors ); //phpcs:ignore
 
@@ -2027,7 +2027,7 @@ class arfliterecordcontroller {
 		$arforderbycolumn = isset( $arf_db_columns[ $sorting_column ] ) ? sanitize_text_field( $arf_db_columns[ $sorting_column ] ) : 'id';
 		$item_order_by    = " ORDER BY it.$arforderbycolumn $sorting_order";
 
-		$where_clause = 'it.form_id=' . $form_id;
+		$where_clause = $wpdb->prepare( "it.form_id=%d", $form_id );
 
 		if ( $new_start_date != '' && $new_end_date != '' ) {
 			if ( $date_format_new == 'dd/mm/yy' ) {
@@ -2038,21 +2038,21 @@ class arfliterecordcontroller {
 
 			$new_end_date_var = date( 'Y-m-d', strtotime( $new_end_date ) );
 
-			$where_clause .= " and DATE(it.created_date) >= '" . $new_start_date_var . "' and DATE(it.created_date) <= '" . $new_end_date_var . "'";
+			$where_clause .= $wpdb->prepare( " and DATE(it.created_date) >= %s and DATE(it.created_date) <= %s", $new_start_date_var, $new_end_date_var );
 		} elseif ( $new_start_date != '' && $new_end_date == '' ) {
 			if ( $date_format_new == 'dd/mm/yy' ) {
 				$new_start_date = str_replace( '/', '-', $new_start_date );
 			}
 			$new_start_date_var = date( 'Y-m-d', strtotime( $new_start_date ) );
 
-			$where_clause .= " and DATE(it.created_date) >= '" . $new_start_date_var . "'";
+			$where_clause .= $wpdb->prepare( " and DATE(it.created_date) >= %s", $new_start_date_var );
 		} elseif ( $new_start_date == '' && $new_end_date != '' ) {
 			if ( $date_format_new == 'dd/mm/yy' ) {
 				$new_end_date = str_replace( '/', '-', $new_end_date );
 			}
 			$new_end_date_var = date( 'Y-m-d', strtotime( $new_end_date ) );
 
-			$where_clause .= " and DATE(it.created_date) <= '" . $new_end_date_var . "'";
+			$where_clause .= $wpdb->prepare( " and DATE(it.created_date) <= %s", $new_end_date_var );
 		}
 
 		$total_records = $wpdb->get_var( 'SELECT count(*) as total_entries FROM `' . $tbl_arf_entries . '` it WHERE ' . $where_clause ); //phpcs:ignore
@@ -2948,7 +2948,7 @@ class arfliterecordcontroller {
 					if ( $response->success ) {
 						$arflite_errors['captcha'] = 'success';
 						$arfform_id = isset( $_POST['form_id'] ) ? intval( $_POST['form_id'] ) : ''; //phpcs:ignore
-						$_SESSION[ 'arf_recaptcha_allowed_' . intval( $arfform_id ) ] = 1;
+						set_transient( 'arf_recaptcha_allowed_' . intval( $arfform_id ), 1, 10 * MINUTE_IN_SECONDS );
 					} else {
 						$arflite_errors[ $field_id ] = ( ! isset( $field->field_options['invalid'] ) || $field->field_options['invalid'] == '' ) ? $re_msg : $field->field_options['invalid'];
 					}

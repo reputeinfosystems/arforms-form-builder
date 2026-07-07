@@ -10,12 +10,10 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://pear.php.net/package/Math_BigInteger
  */
+namespace Arforms\phpseclib3\Math\BigInteger\Engines\BCMath\Reductions;
 
-namespace phpseclib3\Math\BigInteger\Engines\BCMath\Reductions;
-
-use phpseclib3\Math\BigInteger\Engines\BCMath;
-use phpseclib3\Math\BigInteger\Engines\BCMath\Base;
-
+use Arforms\phpseclib3\Math\BigInteger\Engines\BCMath;
+use Arforms\phpseclib3\Math\BigInteger\Engines\BCMath\Base;
 /**
  * PHP Barrett Modular Exponentiation Engine
  *
@@ -29,7 +27,6 @@ abstract class EvalBarrett extends Base
      * @see self::generateCustomReduction
      */
     private static $custom_reduction;
-
     /**
      * Barrett Modular Reduction
      *
@@ -45,7 +42,6 @@ abstract class EvalBarrett extends Base
         $inline = self::$custom_reduction;
         return $inline($n);
     }
-
     /**
      * Generate Custom Reduction
      *
@@ -56,53 +52,45 @@ abstract class EvalBarrett extends Base
     protected static function generateCustomReduction(BCMath $m, $class)
     {
         $m_length = strlen($m);
-
         if ($m_length < 5) {
-            $code = 'return bcmod($x, $n);';
+            $code = 'return self::BCMOD_THREE_PARAMS ? bcmod($x, $n, 0) : bcmod($x, $n);';
             eval('$func = function ($n) { ' . $code . '};');
             self::$custom_reduction = $func;
             return;
         }
-
         $lhs = '1' . str_repeat('0', $m_length + ($m_length >> 1));
         $u = bcdiv($lhs, $m, 0);
-        $m1 = bcsub($lhs, bcmul($u, $m));
-
+        $m1 = bcsub($lhs, bcmul($u, $m, 0), 0);
         $cutoff = $m_length + ($m_length >> 1);
-
-        $m = "'$m'";
-        $u = "'$u'";
-        $m1 = "'$m1'";
-
+        $m = "'{$m}'";
+        $u = "'{$u}'";
+        $m1 = "'{$m1}'";
         $code = '
             $lsd = substr($n, -' . $cutoff . ');
             $msd = substr($n, 0, -' . $cutoff . ');
 
-            $temp = bcmul($msd, ' . $m1 . ');
-            $n = bcadd($lsd, $temp);
+            $temp = bcmul($msd, ' . $m1 . ', 0);
+            $n = bcadd($lsd, $temp, 0);
 
             $temp = substr($n, 0, ' . (-$m_length + 1) . ');
-            $temp = bcmul($temp, ' . $u . ');
+            $temp = bcmul($temp, ' . $u . ', 0);
             $temp = substr($temp, 0, ' . (-($m_length >> 1) - 1) . ');
-            $temp = bcmul($temp, ' . $m . ');
+            $temp = bcmul($temp, ' . $m . ', 0);
 
-            $result = bcsub($n, $temp);
+            $result = bcsub($n, $temp, 0);
 
             if ($result[0] == \'-\') {
                 $temp = \'1' . str_repeat('0', $m_length + 1) . '\';
-                $result = bcadd($result, $temp);
+                $result = bcadd($result, $temp, 0);
             }
 
             while (bccomp($result, ' . $m . ') >= 0) {
-                $result = bcsub($result, ' . $m . ');
+                $result = bcsub($result, ' . $m . ', 0);
             }
 
             return $result;';
-
         eval('$func = function ($n) { ' . $code . '};');
-
         self::$custom_reduction = $func;
-
         return $func;
     }
 }

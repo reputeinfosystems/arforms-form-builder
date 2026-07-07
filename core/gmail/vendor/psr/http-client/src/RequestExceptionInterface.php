@@ -1,9 +1,8 @@
 <?php
 
-namespace Psr\Http\Client;
+namespace Arforms\Psr\Http\Client;
 
-use Psr\Http\Message\RequestInterface;
-
+use Arforms\Psr\Http\Message\RequestInterface;
 /**
  * Exception for when a request failed.
  *

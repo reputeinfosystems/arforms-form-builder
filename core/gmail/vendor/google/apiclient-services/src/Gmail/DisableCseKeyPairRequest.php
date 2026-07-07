@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,12 +15,10 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class DisableCseKeyPairRequest extends \Google\Model
+class DisableCseKeyPairRequest extends \Arforms\Google\Model
 {
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(DisableCseKeyPairRequest::class, 'Google_Service_Gmail_DisableCseKeyPairRequest');
+class_alias(DisableCseKeyPairRequest::class, 'Arforms\Google_Service_Gmail_DisableCseKeyPairRequest');

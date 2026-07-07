@@ -233,7 +233,7 @@ class arforms_general_settings{
                     $arformslite_client_id =  $gmail_api_clientID;
                     $arformslite_client_secret = $gmail_api_client_secret;
                     $arformslite_redirect_url = get_home_url(). '?page=ARForms-settings';
-                    $client = new Google_Client();
+                    $client = new \Arforms\Google\Client();
                     $client->setClientId($arformslite_client_id);
                     $client->setClientSecret( $arformslite_client_secret );
                     $client->setRedirectUri( $arformslite_redirect_url);
@@ -245,7 +245,7 @@ class arforms_general_settings{
                         }
                     }
                     $client->setAccessToken( $response_data );
-                    $service = new Google\Service\Gmail( $client );  
+                    $service = new \Arforms\Google\Service\Gmail( $client );  
                     try {
                         $email = $service->users->getProfile( 'me' )->getEmailAddress();
                     } catch ( \Exception $e ) {
@@ -411,3 +411,4 @@ class arforms_general_settings{
 
 global $arforms_general_settings;
 $arforms_general_settings = new arforms_general_settings();
+

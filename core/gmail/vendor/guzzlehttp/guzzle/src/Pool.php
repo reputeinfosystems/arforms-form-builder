@@ -1,13 +1,12 @@
 <?php
 
-namespace GuzzleHttp;
+namespace Arforms\GuzzleHttp;
 
-use GuzzleHttp\Promise as P;
-use GuzzleHttp\Promise\EachPromise;
-use GuzzleHttp\Promise\PromiseInterface;
-use GuzzleHttp\Promise\PromisorInterface;
-use Psr\Http\Message\RequestInterface;
-
+use Arforms\GuzzleHttp\Promise as P;
+use Arforms\GuzzleHttp\Promise\EachPromise;
+use Arforms\GuzzleHttp\Promise\PromiseInterface;
+use Arforms\GuzzleHttp\Promise\PromisorInterface;
+use Arforms\Psr\Http\Message\RequestInterface;
 /**
  * Sends an iterator of requests concurrently using a capped pool size.
  *
@@ -27,7 +26,6 @@ class Pool implements PromisorInterface
      * @var EachPromise
      */
     private $each;
-
     /**
      * @param ClientInterface $client   Client used to send the requests.
      * @param array|\Iterator $requests Requests or functions that return
@@ -43,14 +41,16 @@ class Pool implements PromisorInterface
         if (!isset($config['concurrency'])) {
             $config['concurrency'] = 25;
         }
-
         if (isset($config['options'])) {
             $opts = $config['options'];
             unset($config['options']);
         } else {
             $opts = [];
         }
-
+        if (!\is_iterable($requests)) {
+            \Arforms\trigger_deprecation('guzzlehttp/guzzle', '7.11', 'Passing a non-iterable request collection to %s::__construct() or %s::batch() is deprecated; guzzlehttp/guzzle 8.0 will require an iterable.', __CLASS__, __CLASS__);
+            $requests = [$requests];
+        }
         $iterable = P\Create::iterFor($requests);
         $requests = static function () use ($iterable, $client, $opts) {
             foreach ($iterable as $key => $rfn) {
@@ -63,10 +63,8 @@ class Pool implements PromisorInterface
                 }
             }
         };
-
         $this->each = new EachPromise($requests(), $config);
     }
-
     /**
      * Get promise
      */
@@ -74,7 +72,6 @@ class Pool implements PromisorInterface
     {
         return $this->each->promise();
     }
-
     /**
      * Sends multiple requests concurrently and returns an array of responses
      * and exceptions that uses the same ordering as the provided requests.
@@ -86,7 +83,7 @@ class Pool implements PromisorInterface
      * @param ClientInterface $client   Client used to send the requests
      * @param array|\Iterator $requests Requests to send concurrently.
      * @param array           $options  Passes through the options available in
-     *                                  {@see \GuzzleHttp\Pool::__construct}
+     *                                  {@see Pool::__construct}
      *
      * @return array Returns an array containing the response or an exception
      *               in the same order that the requests were sent.
@@ -101,10 +98,8 @@ class Pool implements PromisorInterface
         $pool = new static($client, $requests, $options);
         $pool->promise()->wait();
         \ksort($res);
-
         return $res;
     }
-
     /**
      * Execute callback(s)
      */

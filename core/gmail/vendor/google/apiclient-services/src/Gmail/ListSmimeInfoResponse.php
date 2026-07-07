@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,30 +15,27 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class ListSmimeInfoResponse extends \Google\Collection
+class ListSmimeInfoResponse extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'smimeInfo';
-  protected $smimeInfoType = SmimeInfo::class;
-  protected $smimeInfoDataType = 'array';
-
-  /**
-   * @param SmimeInfo[]
-   */
-  public function setSmimeInfo($smimeInfo)
-  {
-    $this->smimeInfo = $smimeInfo;
-  }
-  /**
-   * @return SmimeInfo[]
-   */
-  public function getSmimeInfo()
-  {
-    return $this->smimeInfo;
-  }
+    protected $collection_key = 'smimeInfo';
+    protected $smimeInfoType = SmimeInfo::class;
+    protected $smimeInfoDataType = 'array';
+    /**
+     * @param SmimeInfo[]
+     */
+    public function setSmimeInfo($smimeInfo)
+    {
+        $this->smimeInfo = $smimeInfo;
+    }
+    /**
+     * @return SmimeInfo[]
+     */
+    public function getSmimeInfo()
+    {
+        return $this->smimeInfo;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListSmimeInfoResponse::class, 'Google_Service_Gmail_ListSmimeInfoResponse');
+class_alias(ListSmimeInfoResponse::class, 'Arforms\Google_Service_Gmail_ListSmimeInfoResponse');

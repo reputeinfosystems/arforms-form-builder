@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,85 +15,82 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class ImapSettings extends \Google\Model
+class ImapSettings extends \Arforms\Google\Model
 {
-  /**
-   * @var bool
-   */
-  public $autoExpunge;
-  /**
-   * @var bool
-   */
-  public $enabled;
-  /**
-   * @var string
-   */
-  public $expungeBehavior;
-  /**
-   * @var int
-   */
-  public $maxFolderSize;
-
-  /**
-   * @param bool
-   */
-  public function setAutoExpunge($autoExpunge)
-  {
-    $this->autoExpunge = $autoExpunge;
-  }
-  /**
-   * @return bool
-   */
-  public function getAutoExpunge()
-  {
-    return $this->autoExpunge;
-  }
-  /**
-   * @param bool
-   */
-  public function setEnabled($enabled)
-  {
-    $this->enabled = $enabled;
-  }
-  /**
-   * @return bool
-   */
-  public function getEnabled()
-  {
-    return $this->enabled;
-  }
-  /**
-   * @param string
-   */
-  public function setExpungeBehavior($expungeBehavior)
-  {
-    $this->expungeBehavior = $expungeBehavior;
-  }
-  /**
-   * @return string
-   */
-  public function getExpungeBehavior()
-  {
-    return $this->expungeBehavior;
-  }
-  /**
-   * @param int
-   */
-  public function setMaxFolderSize($maxFolderSize)
-  {
-    $this->maxFolderSize = $maxFolderSize;
-  }
-  /**
-   * @return int
-   */
-  public function getMaxFolderSize()
-  {
-    return $this->maxFolderSize;
-  }
+    /**
+     * @var bool
+     */
+    public $autoExpunge;
+    /**
+     * @var bool
+     */
+    public $enabled;
+    /**
+     * @var string
+     */
+    public $expungeBehavior;
+    /**
+     * @var int
+     */
+    public $maxFolderSize;
+    /**
+     * @param bool
+     */
+    public function setAutoExpunge($autoExpunge)
+    {
+        $this->autoExpunge = $autoExpunge;
+    }
+    /**
+     * @return bool
+     */
+    public function getAutoExpunge()
+    {
+        return $this->autoExpunge;
+    }
+    /**
+     * @param bool
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
+    }
+    /**
+     * @return bool
+     */
+    public function getEnabled()
+    {
+        return $this->enabled;
+    }
+    /**
+     * @param string
+     */
+    public function setExpungeBehavior($expungeBehavior)
+    {
+        $this->expungeBehavior = $expungeBehavior;
+    }
+    /**
+     * @return string
+     */
+    public function getExpungeBehavior()
+    {
+        return $this->expungeBehavior;
+    }
+    /**
+     * @param int
+     */
+    public function setMaxFolderSize($maxFolderSize)
+    {
+        $this->maxFolderSize = $maxFolderSize;
+    }
+    /**
+     * @return int
+     */
+    public function getMaxFolderSize()
+    {
+        return $this->maxFolderSize;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ImapSettings::class, 'Google_Service_Gmail_ImapSettings');
+class_alias(ImapSettings::class, 'Arforms\Google_Service_Gmail_ImapSettings');

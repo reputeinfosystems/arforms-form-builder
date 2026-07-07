@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,66 +15,63 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class ListHistoryResponse extends \Google\Collection
+class ListHistoryResponse extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'history';
-  protected $historyType = History::class;
-  protected $historyDataType = 'array';
-  /**
-   * @var string
-   */
-  public $historyId;
-  /**
-   * @var string
-   */
-  public $nextPageToken;
-
-  /**
-   * @param History[]
-   */
-  public function setHistory($history)
-  {
-    $this->history = $history;
-  }
-  /**
-   * @return History[]
-   */
-  public function getHistory()
-  {
-    return $this->history;
-  }
-  /**
-   * @param string
-   */
-  public function setHistoryId($historyId)
-  {
-    $this->historyId = $historyId;
-  }
-  /**
-   * @return string
-   */
-  public function getHistoryId()
-  {
-    return $this->historyId;
-  }
-  /**
-   * @param string
-   */
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  /**
-   * @return string
-   */
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    protected $collection_key = 'history';
+    protected $historyType = History::class;
+    protected $historyDataType = 'array';
+    /**
+     * @var string
+     */
+    public $historyId;
+    /**
+     * @var string
+     */
+    public $nextPageToken;
+    /**
+     * @param History[]
+     */
+    public function setHistory($history)
+    {
+        $this->history = $history;
+    }
+    /**
+     * @return History[]
+     */
+    public function getHistory()
+    {
+        return $this->history;
+    }
+    /**
+     * @param string
+     */
+    public function setHistoryId($historyId)
+    {
+        $this->historyId = $historyId;
+    }
+    /**
+     * @return string
+     */
+    public function getHistoryId()
+    {
+        return $this->historyId;
+    }
+    /**
+     * @param string
+     */
+    public function setNextPageToken($nextPageToken)
+    {
+        $this->nextPageToken = $nextPageToken;
+    }
+    /**
+     * @return string
+     */
+    public function getNextPageToken()
+    {
+        return $this->nextPageToken;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListHistoryResponse::class, 'Google_Service_Gmail_ListHistoryResponse');
+class_alias(ListHistoryResponse::class, 'Arforms\Google_Service_Gmail_ListHistoryResponse');

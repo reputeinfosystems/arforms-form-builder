@@ -847,21 +847,7 @@ class arflitemainhelper {
 		$referrerinfo = !empty( $_SERVER['HTTP_REFERER'])  ? esc_url_raw($_SERVER['HTTP_REFERER']) : '';
 
 		$i = 1;
-
-		if ( isset( $_SESSION ) && isset( $_SESSION['arfhttppages'] ) && $_SESSION['arfhttppages'] ) {
-
-			foreach ( $_SESSION['arfhttppages'] as $page ) {
-
-				$referrerinfo .= str_pad( "Page visited $i: ", 20 ) . $page . "\r\n";
-
-				$i++;
-			}
-
-			$referrerinfo .= "\r\n";
-		}
-
-		$i = 1;
-
+		
 		foreach ( $keywords as $keyword ) {
 
 			$referrerinfo .= str_pad( "Keyword $i: ", 20 ) . $keyword . "\r\n";

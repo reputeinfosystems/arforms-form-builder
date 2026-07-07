@@ -15,46 +15,39 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+namespace Arforms\Google\Auth\Credentials;
 
-namespace Google\Auth\Credentials;
-
-use Google\Auth\CredentialsLoader;
-use Google\Auth\IamSignerTrait;
-use Google\Auth\SignBlobInterface;
-
+use Arforms\Google\Auth\CredentialsLoader;
+use Arforms\Google\Auth\IamSignerTrait;
+use Arforms\Google\Auth\SignBlobInterface;
 class ImpersonatedServiceAccountCredentials extends CredentialsLoader implements SignBlobInterface
 {
     use IamSignerTrait;
-
     /**
      * @var string
      */
     protected $impersonatedServiceAccountName;
-
     /**
      * @var UserRefreshCredentials
      */
     protected $sourceCredentials;
-
     /**
-     * Instantiate an instance of ImpersonatedServiceAccountCredentials from a credentials file that has be created with
-     * the --impersonated-service-account flag.
+     * Instantiate an instance of ImpersonatedServiceAccountCredentials from a credentials file that
+     * has be created with the --impersonated-service-account flag.
      *
-     * @param string|string[] $scope the scope of the access request, expressed
-     *   either as an Array or as a space-delimited String.
+     * @param string|string[]     $scope   The scope of the access request, expressed either as an
+     *                                     array or as a space-delimited string.
      * @param string|array<mixed> $jsonKey JSON credential file path or JSON credentials
-     *   as an associative array
+     *                                     as an associative array.
      */
-    public function __construct(
-        $scope,
-        $jsonKey
-    ) {
+    public function __construct($scope, $jsonKey)
+    {
         if (is_string($jsonKey)) {
             if (!file_exists($jsonKey)) {
                 throw new \InvalidArgumentException('file does not exist');
             }
             $json = file_get_contents($jsonKey);
-            if (!$jsonKey = json_decode((string) $json, true)) {
+            if (!$jsonKey = json_decode((string) $json, \true)) {
                 throw new \LogicException('invalid json for auth config');
             }
         }
@@ -64,25 +57,23 @@ class ImpersonatedServiceAccountCredentials extends CredentialsLoader implements
         if (!array_key_exists('source_credentials', $jsonKey)) {
             throw new \LogicException('json key is missing the source_credentials field');
         }
-
         $this->impersonatedServiceAccountName = $this->getImpersonatedServiceAccountNameFromUrl($jsonKey['service_account_impersonation_url']);
-
         $this->sourceCredentials = new UserRefreshCredentials($scope, $jsonKey['source_credentials']);
     }
-
     /**
-     * Helper function for extracting the Server Account Name from the URL saved in the account credentials file
-     * @param $serviceAccountImpersonationUrl string URL from the 'service_account_impersonation_url' field
+     * Helper function for extracting the Server Account Name from the URL saved in the account
+     * credentials file.
+     *
+     * @param $serviceAccountImpersonationUrl string URL from "service_account_impersonation_url"
      * @return string Service account email or ID.
      */
-    private function getImpersonatedServiceAccountNameFromUrl(string $serviceAccountImpersonationUrl)
+    private function getImpersonatedServiceAccountNameFromUrl(string $serviceAccountImpersonationUrl): string
     {
         $fields = explode('/', $serviceAccountImpersonationUrl);
         $lastField = end($fields);
         $splitter = explode(':', $lastField);
         return $splitter[0];
     }
-
     /**
      * Get the client name from the keyfile
      *
@@ -91,11 +82,10 @@ class ImpersonatedServiceAccountCredentials extends CredentialsLoader implements
      * @param callable|null $unusedHttpHandler not used by this credentials type.
      * @return string Token issuer email
      */
-    public function getClientName(callable $unusedHttpHandler = null)
+    public function getClientName(?callable $unusedHttpHandler = null)
     {
         return $this->impersonatedServiceAccountName;
     }
-
     /**
      * @param callable $httpHandler
      *
@@ -109,11 +99,10 @@ class ImpersonatedServiceAccountCredentials extends CredentialsLoader implements
      *     @type string $id_token
      * }
      */
-    public function fetchAuthToken(callable $httpHandler = null)
+    public function fetchAuthToken(?callable $httpHandler = null)
     {
         return $this->sourceCredentials->fetchAuthToken($httpHandler);
     }
-
     /**
      * @return string
      */
@@ -121,7 +110,6 @@ class ImpersonatedServiceAccountCredentials extends CredentialsLoader implements
     {
         return $this->sourceCredentials->getCacheKey();
     }
-
     /**
      * @return array<mixed>
      */

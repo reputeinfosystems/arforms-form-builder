@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,66 +15,63 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class ListDraftsResponse extends \Google\Collection
+class ListDraftsResponse extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'drafts';
-  protected $draftsType = Draft::class;
-  protected $draftsDataType = 'array';
-  /**
-   * @var string
-   */
-  public $nextPageToken;
-  /**
-   * @var string
-   */
-  public $resultSizeEstimate;
-
-  /**
-   * @param Draft[]
-   */
-  public function setDrafts($drafts)
-  {
-    $this->drafts = $drafts;
-  }
-  /**
-   * @return Draft[]
-   */
-  public function getDrafts()
-  {
-    return $this->drafts;
-  }
-  /**
-   * @param string
-   */
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  /**
-   * @return string
-   */
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
-  /**
-   * @param string
-   */
-  public function setResultSizeEstimate($resultSizeEstimate)
-  {
-    $this->resultSizeEstimate = $resultSizeEstimate;
-  }
-  /**
-   * @return string
-   */
-  public function getResultSizeEstimate()
-  {
-    return $this->resultSizeEstimate;
-  }
+    protected $collection_key = 'drafts';
+    protected $draftsType = Draft::class;
+    protected $draftsDataType = 'array';
+    /**
+     * @var string
+     */
+    public $nextPageToken;
+    /**
+     * @var string
+     */
+    public $resultSizeEstimate;
+    /**
+     * @param Draft[]
+     */
+    public function setDrafts($drafts)
+    {
+        $this->drafts = $drafts;
+    }
+    /**
+     * @return Draft[]
+     */
+    public function getDrafts()
+    {
+        return $this->drafts;
+    }
+    /**
+     * @param string
+     */
+    public function setNextPageToken($nextPageToken)
+    {
+        $this->nextPageToken = $nextPageToken;
+    }
+    /**
+     * @return string
+     */
+    public function getNextPageToken()
+    {
+        return $this->nextPageToken;
+    }
+    /**
+     * @param string
+     */
+    public function setResultSizeEstimate($resultSizeEstimate)
+    {
+        $this->resultSizeEstimate = $resultSizeEstimate;
+    }
+    /**
+     * @return string
+     */
+    public function getResultSizeEstimate()
+    {
+        return $this->resultSizeEstimate;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListDraftsResponse::class, 'Google_Service_Gmail_ListDraftsResponse');
+class_alias(ListDraftsResponse::class, 'Arforms\Google_Service_Gmail_ListDraftsResponse');

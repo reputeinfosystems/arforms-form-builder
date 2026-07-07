@@ -34,10 +34,6 @@ class arflitespamfiltercontroller {
 
 		global $maincontroller;
 
-		if ( ! session_id() ) {
-			global $arflitemaincontroller;
-			$arflitemaincontroller->arflite_start_session( true );
-		}
 
 		$form_ids = ! empty( $_POST['form_ids'] ) ? explode( ',', sanitize_text_field( $_POST['form_ids'] ) ) : array(); //phpcs:ignore
 
@@ -61,8 +57,7 @@ class arflitespamfiltercontroller {
 
 			$captcha_code = $arflitemainhelper->arflite_generate_captcha_code( '8' );
 
-			 $_SESSION['ARFLITE_VALIDATE_SCRIPT']               = true;
-			 $_SESSION['ARFLITE_FILTER_INPUT'][ $formRandomID ] = $captcha_code;
+			set_transient( 'arf_captcha_' . $formRandomID, $captcha_code, 1 * HOUR_IN_SECONDS );
 
 			$return_arr[ $frm_data_id ] = array(
 				'data_random_id'      => $formRandomID,
@@ -78,10 +73,6 @@ class arflitespamfiltercontroller {
 	function arflite_reset_built_in_captcha_key( $return, $post_val ) {
 		global $arformsmain;
 
-		if ( ! isset( $_SESSION ) ) {
-			global $arflitemaincontroller;
-			$arflitemaincontroller->arflite_start_session( true );
-		}
 
 		$hidden_captcha = $arformsmain->arforms_get_settings('hidden_captcha','general_settings');
 		$hidden_captcha = !empty( $hidden_captcha ) ? $hidden_captcha : false;
@@ -105,7 +96,7 @@ class arflitespamfiltercontroller {
 				$session_var .= substr( $possible_letters, mt_rand( 0, strlen( $possible_letters ) - 1 ), 1 );
 				$i++;
 			}
-			$_SESSION['ARFLITE_FILTER_INPUT'][ $frm_id ] = $session_var;
+			set_transient( 'arf_captcha_' . $frm_id, $session_var, 1 * HOUR_IN_SECONDS );
 			$return['recaptcha_key']                     = base64_encode( $session_var . '~|~' . $form_id . '~|~' . $frm_id );
 		}
 		return $return;
@@ -114,10 +105,6 @@ class arflitespamfiltercontroller {
 	function arflite_check_spam_filter_fields( $validate = true, $form_key = '' ) {
 		global $arformsmain;
 
-		if ( ! isset( $_SESSION ) ) {
-			global $arflitemaincontroller;
-			$arflitemaincontroller->arflite_start_session( true );
-		}
 
 		$hidden_captcha = $arformsmain->arforms_get_settings('hidden_captcha','general_settings');
 		$hidden_captcha = isset( $hidden_captcha ) ? $hidden_captcha : false;
@@ -127,24 +114,27 @@ class arflitespamfiltercontroller {
 		}
 		$is_form_key = $arf_is_removed_field = true;
 
-		if ( ! isset( $_SESSION['ARFLITE_FILTER_INPUT'] ) && isset( $_SESSION['ARFLITE_VALIDATE_SCRIPT'] ) && $_SESSION['ARFLITE_VALIDATE_SCRIPT'] == true ) {
-			$arf_is_removed_field = false;
-		}
+		$field_name = get_transient( 'arf_captcha_' . $form_key );
 
-		if ( $form_key == '' || ( isset( $_SESSION['ARFLITE_FILTER_INPUT'] ) && ! array_key_exists( $form_key, $_SESSION['ARFLITE_FILTER_INPUT'] ) ) ) {
+		if ( $form_key == '' || $field_name === false ) {
 			$is_form_key = false;
 		}
 
-		$field_name = isset( $_SESSION['ARFLITE_FILTER_INPUT'][ $form_key ] ) ? sanitize_text_field( $_SESSION['ARFLITE_FILTER_INPUT'][ $form_key ] ) : '';
-
-		if ( isset( $_REQUEST[ $field_name ] ) ) {
-			$field_value          = sanitize_text_field( $_REQUEST[ $field_name ] );
-			$arf_is_dynamic_field = true;
-			if ( $field_value != '' || ! empty( $field_value ) || $field_value != null ) {
+		if ( $field_name !== false ) {
+			$field_name = sanitize_text_field( $field_name );
+			if ( isset( $_REQUEST[ $field_name ] ) ) {
+				$field_value          = sanitize_text_field( $_REQUEST[ $field_name ] );
+				$arf_is_dynamic_field = true;
+				if ( $field_value != '' || ! empty( $field_value ) || $field_value != null ) {
+					$arf_is_dynamic_field = false;
+				}
+			} else {
 				$arf_is_dynamic_field = false;
 			}
 		} else {
-			$arf_is_dynamic_field = false;
+			// Transient expired or cache missed. We bypass the dynamic field check.
+			$arf_is_dynamic_field = true;
+			$is_form_key          = true;
 		}
 
 		$is_removed_field_exists = false;
@@ -153,11 +143,8 @@ class arflitespamfiltercontroller {
 			$is_removed_field_exists = true;
 		}
 
-		unset( $_SESSION['ARFLITE_FILTER_INPUT'][ $form_key ] );
-
-		if ( ! isset( $_SESSION['ARFLITE_VALIDATE_SCRIPT'] ) || $_SESSION['ARFLITE_VALIDATE_SCRIPT'] == false ) {
-			$arf_is_dynamic_field = true;
-			$is_form_key          = true;
+		if ( $form_key != '' ) {
+			delete_transient( 'arf_captcha_' . $form_key );
 		}
 
 		$validateNonce = $validateReferer = $in_time = $is_user_keyboard = false;

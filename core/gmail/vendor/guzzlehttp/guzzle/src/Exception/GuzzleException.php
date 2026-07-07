@@ -1,9 +1,8 @@
 <?php
 
-namespace GuzzleHttp\Exception;
+namespace Arforms\GuzzleHttp\Exception;
 
-use Psr\Http\Client\ClientExceptionInterface;
-
+use Arforms\Psr\Http\Client\ClientExceptionInterface;
 interface GuzzleException extends ClientExceptionInterface
 {
 }

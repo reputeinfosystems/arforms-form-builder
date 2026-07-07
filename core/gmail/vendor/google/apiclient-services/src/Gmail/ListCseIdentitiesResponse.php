@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,48 +15,45 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class ListCseIdentitiesResponse extends \Google\Collection
+class ListCseIdentitiesResponse extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'cseIdentities';
-  protected $cseIdentitiesType = CseIdentity::class;
-  protected $cseIdentitiesDataType = 'array';
-  /**
-   * @var string
-   */
-  public $nextPageToken;
-
-  /**
-   * @param CseIdentity[]
-   */
-  public function setCseIdentities($cseIdentities)
-  {
-    $this->cseIdentities = $cseIdentities;
-  }
-  /**
-   * @return CseIdentity[]
-   */
-  public function getCseIdentities()
-  {
-    return $this->cseIdentities;
-  }
-  /**
-   * @param string
-   */
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  /**
-   * @return string
-   */
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    protected $collection_key = 'cseIdentities';
+    protected $cseIdentitiesType = CseIdentity::class;
+    protected $cseIdentitiesDataType = 'array';
+    /**
+     * @var string
+     */
+    public $nextPageToken;
+    /**
+     * @param CseIdentity[]
+     */
+    public function setCseIdentities($cseIdentities)
+    {
+        $this->cseIdentities = $cseIdentities;
+    }
+    /**
+     * @return CseIdentity[]
+     */
+    public function getCseIdentities()
+    {
+        return $this->cseIdentities;
+    }
+    /**
+     * @param string
+     */
+    public function setNextPageToken($nextPageToken)
+    {
+        $this->nextPageToken = $nextPageToken;
+    }
+    /**
+     * @return string
+     */
+    public function getNextPageToken()
+    {
+        return $this->nextPageToken;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListCseIdentitiesResponse::class, 'Google_Service_Gmail_ListCseIdentitiesResponse');
+class_alias(ListCseIdentitiesResponse::class, 'Arforms\Google_Service_Gmail_ListCseIdentitiesResponse');

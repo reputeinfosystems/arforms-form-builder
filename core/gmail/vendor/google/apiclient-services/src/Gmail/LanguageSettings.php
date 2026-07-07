@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,31 +15,28 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class LanguageSettings extends \Google\Model
+class LanguageSettings extends \Arforms\Google\Model
 {
-  /**
-   * @var string
-   */
-  public $displayLanguage;
-
-  /**
-   * @param string
-   */
-  public function setDisplayLanguage($displayLanguage)
-  {
-    $this->displayLanguage = $displayLanguage;
-  }
-  /**
-   * @return string
-   */
-  public function getDisplayLanguage()
-  {
-    return $this->displayLanguage;
-  }
+    /**
+     * @var string
+     */
+    public $displayLanguage;
+    /**
+     * @param string
+     */
+    public function setDisplayLanguage($displayLanguage)
+    {
+        $this->displayLanguage = $displayLanguage;
+    }
+    /**
+     * @return string
+     */
+    public function getDisplayLanguage()
+    {
+        return $this->displayLanguage;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(LanguageSettings::class, 'Google_Service_Gmail_LanguageSettings');
+class_alias(LanguageSettings::class, 'Arforms\Google_Service_Gmail_LanguageSettings');

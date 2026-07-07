@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,30 +15,27 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class ListLabelsResponse extends \Google\Collection
+class ListLabelsResponse extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'labels';
-  protected $labelsType = Label::class;
-  protected $labelsDataType = 'array';
-
-  /**
-   * @param Label[]
-   */
-  public function setLabels($labels)
-  {
-    $this->labels = $labels;
-  }
-  /**
-   * @return Label[]
-   */
-  public function getLabels()
-  {
-    return $this->labels;
-  }
+    protected $collection_key = 'labels';
+    protected $labelsType = Label::class;
+    protected $labelsDataType = 'array';
+    /**
+     * @param Label[]
+     */
+    public function setLabels($labels)
+    {
+        $this->labels = $labels;
+    }
+    /**
+     * @return Label[]
+     */
+    public function getLabels()
+    {
+        return $this->labels;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListLabelsResponse::class, 'Google_Service_Gmail_ListLabelsResponse');
+class_alias(ListLabelsResponse::class, 'Arforms\Google_Service_Gmail_ListLabelsResponse');

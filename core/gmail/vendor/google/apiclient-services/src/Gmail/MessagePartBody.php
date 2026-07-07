@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,67 +15,64 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class MessagePartBody extends \Google\Model
+class MessagePartBody extends \Arforms\Google\Model
 {
-  /**
-   * @var string
-   */
-  public $attachmentId;
-  /**
-   * @var string
-   */
-  public $data;
-  /**
-   * @var int
-   */
-  public $size;
-
-  /**
-   * @param string
-   */
-  public function setAttachmentId($attachmentId)
-  {
-    $this->attachmentId = $attachmentId;
-  }
-  /**
-   * @return string
-   */
-  public function getAttachmentId()
-  {
-    return $this->attachmentId;
-  }
-  /**
-   * @param string
-   */
-  public function setData($data)
-  {
-    $this->data = $data;
-  }
-  /**
-   * @return string
-   */
-  public function getData()
-  {
-    return $this->data;
-  }
-  /**
-   * @param int
-   */
-  public function setSize($size)
-  {
-    $this->size = $size;
-  }
-  /**
-   * @return int
-   */
-  public function getSize()
-  {
-    return $this->size;
-  }
+    /**
+     * @var string
+     */
+    public $attachmentId;
+    /**
+     * @var string
+     */
+    public $data;
+    /**
+     * @var int
+     */
+    public $size;
+    /**
+     * @param string
+     */
+    public function setAttachmentId($attachmentId)
+    {
+        $this->attachmentId = $attachmentId;
+    }
+    /**
+     * @return string
+     */
+    public function getAttachmentId()
+    {
+        return $this->attachmentId;
+    }
+    /**
+     * @param string
+     */
+    public function setData($data)
+    {
+        $this->data = $data;
+    }
+    /**
+     * @return string
+     */
+    public function getData()
+    {
+        return $this->data;
+    }
+    /**
+     * @param int
+     */
+    public function setSize($size)
+    {
+        $this->size = $size;
+    }
+    /**
+     * @return int
+     */
+    public function getSize()
+    {
+        return $this->size;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MessagePartBody::class, 'Google_Service_Gmail_MessagePartBody');
+class_alias(MessagePartBody::class, 'Arforms\Google_Service_Gmail_MessagePartBody');

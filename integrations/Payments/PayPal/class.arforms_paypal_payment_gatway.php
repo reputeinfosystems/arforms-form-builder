@@ -910,22 +910,7 @@ class ARForms_Paypal_payment_gatway {
 			if ( '' != $merchant_email ) {
 				global $tbl_arf_entries;
 
-				$pageURL = 'http';
-				if ( isset( $_SERVER['HTTPS'] ) && 'on' == $_SERVER['HTTPS'] ) {
-					$pageURL .= 's';
-				}
-				$pageURL .= '://';
-				$_SERVER['SERVER_NAME'] = isset($_SERVER['SERVER_NAME']) ? sanitize_text_field($_SERVER['SERVER_NAME']) : '';
-				$_SERVER['REQUEST_URI'] = isset($_SERVER['REQUEST_URI']) ? sanitize_text_field($_SERVER['REQUEST_URI']) : '';
-				if ( isset( $_SERVER['SERVER_PORT'] ) && '80' != $_SERVER['SERVER_PORT'] ) {
-					$pageURL .= sanitize_text_field($_SERVER['SERVER_NAME']) . ':' . sanitize_text_field($_SERVER['SERVER_PORT']) . sanitize_text_field($_SERVER['REQUEST_URI']);
-				} else {
-					$pageURL .= sanitize_text_field($_SERVER['SERVER_NAME']) . sanitize_text_field($_SERVER['REQUEST_URI']);
-				}
-
 				$wpdb->update( $tbl_arf_entries, array( 'form_id' => '0' ), array( 'id' => $entry_id ) );
-
-				$_SESSION['arf_return_url'][ $form_id ] = $pageURL;
 
 				if ( is_numeric( $amount ) ) {
 					$amount = number_format( (float) $amount, 2 );
@@ -2586,8 +2571,6 @@ class ARForms_Paypal_payment_gatway {
 
 		global $wpdb,$tbl_arf_entry_values,$arf_paypal,$tbl_arf_entries,$arrecordcontroller, $arflitemaincontroller, $arflitenotifymodel,$fid,$tbl_arf_forms, $tbl_arf_fields, $tbl_arf_entry_values, $arformsmain;
 
-		$arflitemaincontroller->arflite_start_session(true);
-
 		 
 		if ( isset( $_POST['txn_id'] ) && $_POST['txn_id'] != '' ) {//phpcs:ignore
  
@@ -2611,10 +2594,7 @@ class ARForms_Paypal_payment_gatway {
 			$payment_results = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM ' . $arf_paypal->db_paypal_order . ' WHERE txn_id = %s', $txn_id ) );//phpcs:ignore
 
 		 
-			$pageurl = isset( $_SESSION['arf_return_url'][ $form_id ] ) ? $_SESSION['arf_return_url'][ $form_id ] : '';//phpcs:ignore
-			if ( ! isset( $pageurl ) || $pageurl == '' ) {
-				$pageurl = get_home_url();
-			}
+			$pageurl = get_home_url();
  
 
 
@@ -2731,10 +2711,7 @@ class ARForms_Paypal_payment_gatway {
 				$entry_id = $customs[0];
 				$form_id  = $customs[1];
 
-				$pageurl = isset( $_SESSION['arf_return_url'][ $form_id ] ) ? sanitize_text_field($_SESSION['arf_return_url'][ $form_id ]) : '';
-				if ( ! isset( $pageurl ) || $pageurl == '' ) {
-					$pageurl = get_home_url();
-				}
+				$pageurl = get_home_url();
 
 				$admin_email_notification_data = get_option( 'arf_paypal_admin_email_notification_' . $entry_id . '_' . $form_id );
 				$user_email_notification_data = get_option( 'arf_paypal_user_email_notification_' . $entry_id . '_' . $form_id );
@@ -3161,89 +3138,13 @@ class ARForms_Paypal_payment_gatway {
 				$table          = $arf_paypal->db_paypal_forms;
 				$is_paypal_form = $wpdb->get_var( $wpdb->prepare( "SELECT COUNT( *) FROM `{$table}` WHERE form_id =%d ", $form_id ) );//phpcs:ignore
 				if ( $is_paypal_form > 0 ) {
-					$arflitemaincontroller->arflite_start_session( true );
-					$_SESSION['arf_to_mail']        = isset( $response['to'] ) ? $response['to'] : '';
-					$_SESSION['arf_mail_subject']   = isset( $response['subject'] ) ? $response['subject'] : '';
-					$_SESSION['arf_message']        = isset( $response['message'] ) ? $response['message'] : '';
-					$_SESSION['arf_reply_to']       = isset( $response['reply_to'] ) ? $response['reply_to'] : '';
-					$_SESSION['arf_reply_to_name']  = isset( $response['reply_to_name'] ) ? $response['reply_to_name'] : '';
-					$_SESSION['arf_plain_text']     = isset( $response['plain_text'] ) ? $response['plain_text'] : '';
-					$_SESSION['arf_attachments']    = isset( $response['attachments'] ) ? $response['attachments'] : array();
-					$_SESSION['arf_return_value']   = isset( $response['return_value'] ) ? $response['return_value'] : '';
-					$_SESSION['arf_use_only_smtp']  = isset( $response['use_only_smtp'] ) ? $response['use_only_smtp'] : '';
-					$_SESSION['arf_reply_to_email'] = isset( $response['nreply_to'] ) ? $response['nreply_to'] : '';
-					$_SESSION['form_id']            = isset( $response['form_id'] ) ? $response['form_id'] : '';
-					$is_submit                      = false;
+					$is_submit = false;
 				} else {
 					$is_submit = true;
 				}
 			}
 		} else {
 			$is_submit = true;
-			if ( isset( $_SESSION['form_id'] ) && $_SESSION['form_id'] != '' ) {
-				$form_id      = sanitize_text_field($_SESSION['form_id']);
-				$options      = $wpdb->get_row( $wpdb->prepare( 'SELECT options FROM `' . $tbl_arf_forms . '` WHERE ID = %d LIMIT 1', $form_id ) );//phpcs:ignore
-				$form_options = maybe_unserialize( $options->options );
-				if ( isset( $form_options['auto_responder'] ) && $form_options['auto_responder'] == 1 ) {
-					$arf_to_mail       = isset($_SESSION['arf_to_mail']) ? sanitize_text_field($_SESSION['arf_to_mail']) : '';
-					$arf_mail_subject  = isset($_SESSION['arf_mail_subject']) ? $_SESSION['arf_mail_subject'] : '';
-					$arf_message       = isset($_SESSION['arf_message']) ? sanitize_text_field($_SESSION['arf_message']) : '';
-					$arf_reply_to      = isset($_SESSION['arf_replay_to']) ? sanitize_text_field($_SESSION['arf_reply_to']) : '';
-					$arf_reply_to_name = isset($_SESSION['arf_replay_to_name']) ? sanitize_text_field($_SESSION['arf_reply_to_name']) : '';
-					$arf_plain_text    = isset($_SESSION['arf_plain_text']) ? sanitize_text_field($_SESSION['arf_plain_text']) : '';
-					$arf_attachments   = isset($_SESSION['arf_attachments']) ? sanitize_text_field($_SESSION['arf_attachments']) : '';
-					$arf_return_value  = isset($_SESSION['use_only_smtp']) ? sanitize_text_field($_SESSION['use_only_smtp']) : '';
-					$arf_use_only_smtp = isset($_SESSION['arf_use_only_smtp']) ? sanitize_text_field($_SESSION['arf_use_only_smtp']) : '';
-					$arf_nreply_to     = isset($_SESSION['arf_reply_to_email']) ? sanitize_text_field($_SESSION['arf_reply_to_email']) : '';
-					unset( $_SESSION['arf_to_mail'] );
-					unset( $_SESSION['arf_mail_subject'] );
-					unset( $_SESSION['arf_message'] );
-					unset( $_SESSION['arf_reply_to'] );
-					unset( $_SESSION['arf_reply_to_name'] );
-					unset( $_SESSION['arf_plain_text'] );
-					unset( $_SESSION['arf_attachments'] );
-					unset( $_SESSION['use_only_smtp'] );
-					unset( $_SESSION['arf_use_only_smtp'] );
-					unset( $_SESSION['form_id'] );
-					unset( $_SESSION['arf_from_autoresponder'] );
-					unset( $_SESSION['arf_reply_to_email'] );
-					if( $arformsmain->arforms_is_pro_active() ){
-						global $arnotifymodel;
-						$arnotifymodel->send_notification_email_user( $arf_to_mail, $arf_mail_subject, $arf_message, $arf_reply_to, $arf_reply_to_name, $arf_plain_text, $arf_attachments, $arf_return_value, $arf_use_only_smtp, true, false, $arf_nreply_to );
-					} else {
-						$arflitenotifymodel->arflite_send_notification_email_user( $arf_to_mail, $arf_mail_subject, $arf_message, $arf_reply_to, $arf_reply_to_name, $arf_plain_text, $arf_attachments, $arf_return_value, $arf_use_only_smtp, true, false, $arf_nreply_to );
-					}
-				}
-
-				if ( isset( $form_options['chk_admin_notification'] ) && $form_options['chk_admin_notification'] == 1 ) {
-					$admin_emails = isset( $_SESSION['arf_admin_emails'] ) ? sanitize_text_field($_SESSION['arf_admin_emails']) : array();
-					if ( ! empty( $admin_emails ) ) {
-						$arf_admin_subject        = isset($_SESSION['arf_admin_subject']) ? sanitize_text_field($_SESSION['arf_admin_subject']) : '';
-						$arf_admin_mail_body      = isset($_SESSION['arf_admin_mail_body']) ? sanitize_text_field($_SESSION['arf_admin_mail_body']) : '';
-						$arf_admin_reply_to       = isset($_SESSION['arf_admin_reply_to']) ? sanitize_text_field($_SESSION['arf_admin_reply_to']) : '';
-						$arf_admin_reply_to_name  = isset($_SESSION['arf_admin_reply_to_name']) ? sanitize_text_field($_SESSION['arf_admin_reply_to_name']) : '';
-						$arf_admin_plain_text     = isset($_SESSION['arf_admin_plain_text']) ? sanitize_text_field($_SESSION['arf_admin_plain_text']) : '';
-						$arf_admin_attachments    = isset($_SESSION['arf_admin_attachments']) ? sanitize_text_field($_SESSION['arf_admin_attachments']) : '';
-						$arf_admin_reply_to_email = isset($_SESSION['arf_admin_reply_to_email']) ? sanitize_text_field($_SESSION['arf_admin_reply_to_email']) : '';
-						unset( $_SESSION['arf_admin_emails'] );
-						unset( $_SESSION['arf_admin_subject'] );
-						unset( $_SESSION['arf_admin_mail_body'] );
-						unset( $_SESSION['arf_admin_reply_to'] );
-						unset( $_SESSION['arf_admin_reply_to_name'] );
-						unset( $_SESSION['arf_admin_plain_text'] );
-						unset( $_SESSION['arf_admin_attachments'] );
-						unset( $_SESSION['arf_admin_reply_to_email'] );
-						foreach ( $admin_emails as $email ) {
-							if( $arformsmain->arforms_is_pro_active() ){
-								global $arnotifymodel;
-								$arnotifymodel->send_notification_email_user( $email, $arf_admin_subject, $arf_admin_mail_body, $arf_admin_reply_to, $arf_admin_reply_to_name, $arf_admin_plain_text, $arf_admin_attachments, false, false, true, false, $arf_admin_reply_to_email );
-							} else {
-								$arflitenotifymodel->arflite_send_notification_email_user( $email, $arf_admin_subject, $arf_admin_mail_body, $arf_admin_reply_to, $arf_admin_reply_to_name, $arf_admin_plain_text, $arf_admin_attachments, false, false, true, false, $arf_admin_reply_to_email );
-							}
-						}
-					}
-				}
-			}
 		}
 	}
 

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2015 Google Inc.
  *
@@ -14,22 +15,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-namespace Google\Auth;
+namespace Arforms\Google\Auth;
 
 use DomainException;
-use Google\Auth\Credentials\AppIdentityCredentials;
-use Google\Auth\Credentials\GCECredentials;
-use Google\Auth\Credentials\ServiceAccountCredentials;
-use Google\Auth\HttpHandler\HttpClientCache;
-use Google\Auth\HttpHandler\HttpHandlerFactory;
-use Google\Auth\Middleware\AuthTokenMiddleware;
-use Google\Auth\Middleware\ProxyAuthTokenMiddleware;
-use Google\Auth\Subscriber\AuthTokenSubscriber;
-use GuzzleHttp\Client;
+use Arforms\Google\Auth\Credentials\AppIdentityCredentials;
+use Arforms\Google\Auth\Credentials\GCECredentials;
+use Arforms\Google\Auth\Credentials\ServiceAccountCredentials;
+use Arforms\Google\Auth\HttpHandler\HttpClientCache;
+use Arforms\Google\Auth\HttpHandler\HttpHandlerFactory;
+use Arforms\Google\Auth\Middleware\AuthTokenMiddleware;
+use Arforms\Google\Auth\Middleware\ProxyAuthTokenMiddleware;
+use Arforms\Google\Auth\Subscriber\AuthTokenSubscriber;
+use Arforms\GuzzleHttp\Client;
 use InvalidArgumentException;
-use Psr\Cache\CacheItemPoolInterface;
-
+use Arforms\Psr\Cache\CacheItemPoolInterface;
 /**
  * ApplicationDefaultCredentials obtains the default credentials for
  * authorizing a request to a Google service.
@@ -87,18 +86,18 @@ class ApplicationDefaultCredentials
      * @return AuthTokenSubscriber
      * @throws DomainException if no implementation can be obtained.
      */
-    public static function getSubscriber(// @phpstan-ignore-line
+    public static function getSubscriber(
+        // @phpstan-ignore-line
         $scope = null,
-        callable $httpHandler = null,
-        array $cacheConfig = null,
-        CacheItemPoolInterface $cache = null
-    ) {
+        ?callable $httpHandler = null,
+        ?array $cacheConfig = null,
+        ?CacheItemPoolInterface $cache = null
+    )
+    {
         $creds = self::getCredentials($scope, $httpHandler, $cacheConfig, $cache);
-
         /** @phpstan-ignore-next-line */
         return new AuthTokenSubscriber($creds, $httpHandler);
     }
-
     /**
      * Obtains an AuthTokenMiddleware that uses the default FetchAuthTokenInterface
      * implementation to use in this environment.
@@ -117,18 +116,11 @@ class ApplicationDefaultCredentials
      * @return AuthTokenMiddleware
      * @throws DomainException if no implementation can be obtained.
      */
-    public static function getMiddleware(
-        $scope = null,
-        callable $httpHandler = null,
-        array $cacheConfig = null,
-        CacheItemPoolInterface $cache = null,
-        $quotaProject = null
-    ) {
+    public static function getMiddleware($scope = null, ?callable $httpHandler = null, ?array $cacheConfig = null, ?CacheItemPoolInterface $cache = null, $quotaProject = null)
+    {
         $creds = self::getCredentials($scope, $httpHandler, $cacheConfig, $cache, $quotaProject);
-
         return new AuthTokenMiddleware($creds, $httpHandler);
     }
-
     /**
      * Obtains the default FetchAuthTokenInterface implementation to use
      * in this environment.
@@ -144,48 +136,43 @@ class ApplicationDefaultCredentials
      * @param string|string[] $defaultScope The default scope to use if no
      *   user-defined scopes exist, expressed either as an Array or as a
      *   space-delimited string.
+     * @param string $universeDomain Specifies a universe domain to use for the
+     *   calling client library
      *
      * @return FetchAuthTokenInterface
      * @throws DomainException if no implementation can be obtained.
      */
-    public static function getCredentials(
-        $scope = null,
-        callable $httpHandler = null,
-        array $cacheConfig = null,
-        CacheItemPoolInterface $cache = null,
-        $quotaProject = null,
-        $defaultScope = null
-    ) {
+    public static function getCredentials($scope = null, ?callable $httpHandler = null, ?array $cacheConfig = null, ?CacheItemPoolInterface $cache = null, $quotaProject = null, $defaultScope = null, ?string $universeDomain = null)
+    {
         $creds = null;
-        $jsonKey = CredentialsLoader::fromEnv()
-            ?: CredentialsLoader::fromWellKnownFile();
+        $jsonKey = CredentialsLoader::fromEnv() ?: CredentialsLoader::fromWellKnownFile();
         $anyScope = $scope ?: $defaultScope;
-
         if (!$httpHandler) {
-            if (!($client = HttpClientCache::getHttpClient())) {
+            if (!$client = HttpClientCache::getHttpClient()) {
                 $client = new Client();
                 HttpClientCache::setHttpClient($client);
             }
-
             $httpHandler = HttpHandlerFactory::build($client);
         }
-
+        if (is_null($quotaProject)) {
+            // if a quota project isn't specified, try to get one from the env var
+            $quotaProject = CredentialsLoader::quotaProjectFromEnv();
+        }
         if (!is_null($jsonKey)) {
             if ($quotaProject) {
                 $jsonKey['quota_project_id'] = $quotaProject;
             }
-            $creds = CredentialsLoader::makeCredentials(
-                $scope,
-                $jsonKey,
-                $defaultScope
-            );
+            if ($universeDomain) {
+                $jsonKey['universe_domain'] = $universeDomain;
+            }
+            $creds = CredentialsLoader::makeCredentials($scope, $jsonKey, $defaultScope);
         } elseif (AppIdentityCredentials::onAppEngine() && !GCECredentials::onAppEngineFlexible()) {
             $creds = new AppIdentityCredentials($anyScope);
         } elseif (self::onGce($httpHandler, $cacheConfig, $cache)) {
-            $creds = new GCECredentials(null, $anyScope, null, $quotaProject);
-            $creds->setIsOnGce(true); // save the credentials a trip to the metadata server
+            $creds = new GCECredentials(null, $anyScope, null, $quotaProject, null, $universeDomain);
+            $creds->setIsOnGce(\true);
+            // save the credentials a trip to the metadata server
         }
-
         if (is_null($creds)) {
             throw new DomainException(self::notFound());
         }
@@ -194,7 +181,6 @@ class ApplicationDefaultCredentials
         }
         return $creds;
     }
-
     /**
      * Obtains an AuthTokenMiddleware which will fetch an ID token to use in the
      * Authorization header. The middleware is configured with the default
@@ -211,17 +197,11 @@ class ApplicationDefaultCredentials
      * @return AuthTokenMiddleware
      * @throws DomainException if no implementation can be obtained.
      */
-    public static function getIdTokenMiddleware(
-        $targetAudience,
-        callable $httpHandler = null,
-        array $cacheConfig = null,
-        CacheItemPoolInterface $cache = null
-    ) {
+    public static function getIdTokenMiddleware($targetAudience, ?callable $httpHandler = null, ?array $cacheConfig = null, ?CacheItemPoolInterface $cache = null)
+    {
         $creds = self::getIdTokenCredentials($targetAudience, $httpHandler, $cacheConfig, $cache);
-
         return new AuthTokenMiddleware($creds, $httpHandler);
     }
-
     /**
      * Obtains an ProxyAuthTokenMiddleware which will fetch an ID token to use in the
      * Authorization header. The middleware is configured with the default
@@ -238,17 +218,11 @@ class ApplicationDefaultCredentials
      * @return ProxyAuthTokenMiddleware
      * @throws DomainException if no implementation can be obtained.
      */
-    public static function getProxyIdTokenMiddleware(
-        $targetAudience,
-        callable $httpHandler = null,
-        array $cacheConfig = null,
-        CacheItemPoolInterface $cache = null
-    ) {
+    public static function getProxyIdTokenMiddleware($targetAudience, ?callable $httpHandler = null, ?array $cacheConfig = null, ?CacheItemPoolInterface $cache = null)
+    {
         $creds = self::getIdTokenCredentials($targetAudience, $httpHandler, $cacheConfig, $cache);
-
         return new ProxyAuthTokenMiddleware($creds, $httpHandler);
     }
-
     /**
      * Obtains the default FetchAuthTokenInterface implementation to use
      * in this environment, configured with a $targetAudience for fetching an ID
@@ -263,44 +237,33 @@ class ApplicationDefaultCredentials
      * @throws DomainException if no implementation can be obtained.
      * @throws InvalidArgumentException if JSON "type" key is invalid
      */
-    public static function getIdTokenCredentials(
-        $targetAudience,
-        callable $httpHandler = null,
-        array $cacheConfig = null,
-        CacheItemPoolInterface $cache = null
-    ) {
+    public static function getIdTokenCredentials($targetAudience, ?callable $httpHandler = null, ?array $cacheConfig = null, ?CacheItemPoolInterface $cache = null)
+    {
         $creds = null;
-        $jsonKey = CredentialsLoader::fromEnv()
-            ?: CredentialsLoader::fromWellKnownFile();
-
+        $jsonKey = CredentialsLoader::fromEnv() ?: CredentialsLoader::fromWellKnownFile();
         if (!$httpHandler) {
-            if (!($client = HttpClientCache::getHttpClient())) {
+            if (!$client = HttpClientCache::getHttpClient()) {
                 $client = new Client();
                 HttpClientCache::setHttpClient($client);
             }
-
             $httpHandler = HttpHandlerFactory::build($client);
         }
-
         if (!is_null($jsonKey)) {
             if (!array_key_exists('type', $jsonKey)) {
                 throw new \InvalidArgumentException('json key is missing the type field');
             }
-
             if ($jsonKey['type'] == 'authorized_user') {
                 throw new InvalidArgumentException('ID tokens are not supported for end user credentials');
             }
-
             if ($jsonKey['type'] != 'service_account') {
                 throw new InvalidArgumentException('invalid value in the type field');
             }
-
             $creds = new ServiceAccountCredentials(null, $jsonKey, null, $targetAudience);
         } elseif (self::onGce($httpHandler, $cacheConfig, $cache)) {
             $creds = new GCECredentials(null, null, $targetAudience);
-            $creds->setIsOnGce(true); // save the credentials a trip to the metadata server
+            $creds->setIsOnGce(\true);
+            // save the credentials a trip to the metadata server
         }
-
         if (is_null($creds)) {
             throw new DomainException(self::notFound());
         }
@@ -309,38 +272,30 @@ class ApplicationDefaultCredentials
         }
         return $creds;
     }
-
     /**
      * @return string
      */
     private static function notFound()
     {
-        $msg = 'Could not load the default credentials. Browse to ';
-        $msg .= 'https://developers.google.com';
-        $msg .= '/accounts/docs/application-default-credentials';
-        $msg .= ' for more information';
-
+        $msg = 'Your default credentials were not found. To set up ';
+        $msg .= 'Application Default Credentials, see ';
+        $msg .= 'https://cloud.google.com/docs/authentication/external/set-up-adc';
         return $msg;
     }
-
     /**
      * @param callable $httpHandler
      * @param array<mixed> $cacheConfig
      * @param CacheItemPoolInterface $cache
      * @return bool
      */
-    private static function onGce(
-        callable $httpHandler = null,
-        array $cacheConfig = null,
-        CacheItemPoolInterface $cache = null
-    ) {
+    private static function onGce(?callable $httpHandler = null, ?array $cacheConfig = null, ?CacheItemPoolInterface $cache = null)
+    {
         $gceCacheConfig = [];
         foreach (['lifetime', 'prefix'] as $key) {
             if (isset($cacheConfig['gce_' . $key])) {
                 $gceCacheConfig[$key] = $cacheConfig['gce_' . $key];
             }
         }
-
         return (new GCECache($gceCacheConfig, $cache))->onGce($httpHandler);
     }
 }

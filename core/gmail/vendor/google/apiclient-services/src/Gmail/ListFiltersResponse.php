@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,30 +15,27 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class ListFiltersResponse extends \Google\Collection
+class ListFiltersResponse extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'filter';
-  protected $filterType = Filter::class;
-  protected $filterDataType = 'array';
-
-  /**
-   * @param Filter[]
-   */
-  public function setFilter($filter)
-  {
-    $this->filter = $filter;
-  }
-  /**
-   * @return Filter[]
-   */
-  public function getFilter()
-  {
-    return $this->filter;
-  }
+    protected $collection_key = 'filter';
+    protected $filterType = Filter::class;
+    protected $filterDataType = 'array';
+    /**
+     * @param Filter[]
+     */
+    public function setFilter($filter)
+    {
+        $this->filter = $filter;
+    }
+    /**
+     * @return Filter[]
+     */
+    public function getFilter()
+    {
+        return $this->filter;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListFiltersResponse::class, 'Google_Service_Gmail_ListFiltersResponse');
+class_alias(ListFiltersResponse::class, 'Arforms\Google_Service_Gmail_ListFiltersResponse');

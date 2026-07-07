@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,13 +15,11 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail\Resource;
 
-namespace Google\Service\Gmail\Resource;
-
-use Google\Service\Gmail\Profile;
-use Google\Service\Gmail\WatchRequest;
-use Google\Service\Gmail\WatchResponse;
-
+use Arforms\Google\Service\Gmail\Profile;
+use Arforms\Google\Service\Gmail\WatchRequest;
+use Arforms\Google\Service\Gmail\WatchResponse;
 /**
  * The "users" collection of methods.
  * Typical usage is:
@@ -29,52 +28,56 @@ use Google\Service\Gmail\WatchResponse;
  *   $users = $gmailService->users;
  *  </code>
  */
-class Users extends \Google\Service\Resource
+class Users extends \Arforms\Google\Service\Resource
 {
-  /**
-   * Gets the current user's Gmail profile. (users.getProfile)
-   *
-   * @param string $userId The user's email address. The special value `me` can be
-   * used to indicate the authenticated user.
-   * @param array $optParams Optional parameters.
-   * @return Profile
-   */
-  public function getProfile($userId, $optParams = [])
-  {
-    $params = ['userId' => $userId];
-    $params = array_merge($params, $optParams);
-    return $this->call('getProfile', [$params], Profile::class);
-  }
-  /**
-   * Stop receiving push notifications for the given user mailbox. (users.stop)
-   *
-   * @param string $userId The user's email address. The special value `me` can be
-   * used to indicate the authenticated user.
-   * @param array $optParams Optional parameters.
-   */
-  public function stop($userId, $optParams = [])
-  {
-    $params = ['userId' => $userId];
-    $params = array_merge($params, $optParams);
-    return $this->call('stop', [$params]);
-  }
-  /**
-   * Set up or update a push notification watch on the given user mailbox.
-   * (users.watch)
-   *
-   * @param string $userId The user's email address. The special value `me` can be
-   * used to indicate the authenticated user.
-   * @param WatchRequest $postBody
-   * @param array $optParams Optional parameters.
-   * @return WatchResponse
-   */
-  public function watch($userId, WatchRequest $postBody, $optParams = [])
-  {
-    $params = ['userId' => $userId, 'postBody' => $postBody];
-    $params = array_merge($params, $optParams);
-    return $this->call('watch', [$params], WatchResponse::class);
-  }
+    /**
+     * Gets the current user's Gmail profile. (users.getProfile)
+     *
+     * @param string $userId The user's email address. The special value `me` can be
+     * used to indicate the authenticated user.
+     * @param array $optParams Optional parameters.
+     *
+     * @opt_param bool temporaryEeccBypass
+     * @return Profile
+     * @throws \Google\Service\Exception
+     */
+    public function getProfile($userId, $optParams = [])
+    {
+        $params = ['userId' => $userId];
+        $params = array_merge($params, $optParams);
+        return $this->call('getProfile', [$params], Profile::class);
+    }
+    /**
+     * Stop receiving push notifications for the given user mailbox. (users.stop)
+     *
+     * @param string $userId The user's email address. The special value `me` can be
+     * used to indicate the authenticated user.
+     * @param array $optParams Optional parameters.
+     * @throws \Google\Service\Exception
+     */
+    public function stop($userId, $optParams = [])
+    {
+        $params = ['userId' => $userId];
+        $params = array_merge($params, $optParams);
+        return $this->call('stop', [$params]);
+    }
+    /**
+     * Set up or update a push notification watch on the given user mailbox.
+     * (users.watch)
+     *
+     * @param string $userId The user's email address. The special value `me` can be
+     * used to indicate the authenticated user.
+     * @param WatchRequest $postBody
+     * @param array $optParams Optional parameters.
+     * @return WatchResponse
+     * @throws \Google\Service\Exception
+     */
+    public function watch($userId, WatchRequest $postBody, $optParams = [])
+    {
+        $params = ['userId' => $userId, 'postBody' => $postBody];
+        $params = array_merge($params, $optParams);
+        return $this->call('watch', [$params], WatchResponse::class);
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Users::class, 'Google_Service_Gmail_Resource_Users');
+class_alias(Users::class, 'Arforms\Google_Service_Gmail_Resource_Users');

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,48 +15,45 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class ListCseKeyPairsResponse extends \Google\Collection
+class ListCseKeyPairsResponse extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'cseKeyPairs';
-  protected $cseKeyPairsType = CseKeyPair::class;
-  protected $cseKeyPairsDataType = 'array';
-  /**
-   * @var string
-   */
-  public $nextPageToken;
-
-  /**
-   * @param CseKeyPair[]
-   */
-  public function setCseKeyPairs($cseKeyPairs)
-  {
-    $this->cseKeyPairs = $cseKeyPairs;
-  }
-  /**
-   * @return CseKeyPair[]
-   */
-  public function getCseKeyPairs()
-  {
-    return $this->cseKeyPairs;
-  }
-  /**
-   * @param string
-   */
-  public function setNextPageToken($nextPageToken)
-  {
-    $this->nextPageToken = $nextPageToken;
-  }
-  /**
-   * @return string
-   */
-  public function getNextPageToken()
-  {
-    return $this->nextPageToken;
-  }
+    protected $collection_key = 'cseKeyPairs';
+    protected $cseKeyPairsType = CseKeyPair::class;
+    protected $cseKeyPairsDataType = 'array';
+    /**
+     * @var string
+     */
+    public $nextPageToken;
+    /**
+     * @param CseKeyPair[]
+     */
+    public function setCseKeyPairs($cseKeyPairs)
+    {
+        $this->cseKeyPairs = $cseKeyPairs;
+    }
+    /**
+     * @return CseKeyPair[]
+     */
+    public function getCseKeyPairs()
+    {
+        return $this->cseKeyPairs;
+    }
+    /**
+     * @param string
+     */
+    public function setNextPageToken($nextPageToken)
+    {
+        $this->nextPageToken = $nextPageToken;
+    }
+    /**
+     * @return string
+     */
+    public function getNextPageToken()
+    {
+        return $this->nextPageToken;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListCseKeyPairsResponse::class, 'Google_Service_Gmail_ListCseKeyPairsResponse');
+class_alias(ListCseKeyPairsResponse::class, 'Arforms\Google_Service_Gmail_ListCseKeyPairsResponse');

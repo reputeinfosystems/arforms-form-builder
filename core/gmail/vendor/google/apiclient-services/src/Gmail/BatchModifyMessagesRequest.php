@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,68 +15,65 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class BatchModifyMessagesRequest extends \Google\Collection
+class BatchModifyMessagesRequest extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'removeLabelIds';
-  /**
-   * @var string[]
-   */
-  public $addLabelIds;
-  /**
-   * @var string[]
-   */
-  public $ids;
-  /**
-   * @var string[]
-   */
-  public $removeLabelIds;
-
-  /**
-   * @param string[]
-   */
-  public function setAddLabelIds($addLabelIds)
-  {
-    $this->addLabelIds = $addLabelIds;
-  }
-  /**
-   * @return string[]
-   */
-  public function getAddLabelIds()
-  {
-    return $this->addLabelIds;
-  }
-  /**
-   * @param string[]
-   */
-  public function setIds($ids)
-  {
-    $this->ids = $ids;
-  }
-  /**
-   * @return string[]
-   */
-  public function getIds()
-  {
-    return $this->ids;
-  }
-  /**
-   * @param string[]
-   */
-  public function setRemoveLabelIds($removeLabelIds)
-  {
-    $this->removeLabelIds = $removeLabelIds;
-  }
-  /**
-   * @return string[]
-   */
-  public function getRemoveLabelIds()
-  {
-    return $this->removeLabelIds;
-  }
+    protected $collection_key = 'removeLabelIds';
+    /**
+     * @var string[]
+     */
+    public $addLabelIds;
+    /**
+     * @var string[]
+     */
+    public $ids;
+    /**
+     * @var string[]
+     */
+    public $removeLabelIds;
+    /**
+     * @param string[]
+     */
+    public function setAddLabelIds($addLabelIds)
+    {
+        $this->addLabelIds = $addLabelIds;
+    }
+    /**
+     * @return string[]
+     */
+    public function getAddLabelIds()
+    {
+        return $this->addLabelIds;
+    }
+    /**
+     * @param string[]
+     */
+    public function setIds($ids)
+    {
+        $this->ids = $ids;
+    }
+    /**
+     * @return string[]
+     */
+    public function getIds()
+    {
+        return $this->ids;
+    }
+    /**
+     * @param string[]
+     */
+    public function setRemoveLabelIds($removeLabelIds)
+    {
+        $this->removeLabelIds = $removeLabelIds;
+    }
+    /**
+     * @return string[]
+     */
+    public function getRemoveLabelIds()
+    {
+        return $this->removeLabelIds;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BatchModifyMessagesRequest::class, 'Google_Service_Gmail_BatchModifyMessagesRequest');
+class_alias(BatchModifyMessagesRequest::class, 'Arforms\Google_Service_Gmail_BatchModifyMessagesRequest');

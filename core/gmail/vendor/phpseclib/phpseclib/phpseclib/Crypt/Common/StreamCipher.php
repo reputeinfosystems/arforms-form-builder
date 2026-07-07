@@ -11,8 +11,7 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
-
-namespace phpseclib3\Crypt\Common;
+namespace Arforms\phpseclib3\Crypt\Common;
 
 /**
  * Base Class for all stream cipher classes
@@ -26,22 +25,20 @@ abstract class StreamCipher extends SymmetricKey
      *
      * Stream ciphers do not have a block size
      *
-     * @see \phpseclib3\Crypt\Common\SymmetricKey::block_size
+     * @see SymmetricKey::block_size
      * @var int
      */
     protected $block_size = 0;
-
     /**
      * Default Constructor.
      *
      * @see \phpseclib3\Crypt\Common\SymmetricKey::__construct()
-     * @return \phpseclib3\Crypt\Common\StreamCipher
+     * @return StreamCipher
      */
     public function __construct()
     {
         parent::__construct('stream');
     }
-
     /**
      * Stream ciphers not use an IV
      *
@@ -49,6 +46,6 @@ abstract class StreamCipher extends SymmetricKey
      */
     public function usesIV()
     {
-        return false;
+        return \false;
     }
 }

@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2020 Google LLC
  *
@@ -14,8 +15,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
-namespace Google\Auth;
+namespace Arforms\Google\Auth;
 
 /**
  * Describes a Credentials object which supports fetching the project ID.
@@ -28,5 +28,5 @@ interface ProjectIdProviderInterface
      * @param callable $httpHandler Callback which delivers psr7 request
      * @return string|null
      */
-    public function getProjectId(callable $httpHandler = null);
+    public function getProjectId(?callable $httpHandler = null);
 }

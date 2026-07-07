@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,49 +15,46 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class WatchResponse extends \Google\Model
+class WatchResponse extends \Arforms\Google\Model
 {
-  /**
-   * @var string
-   */
-  public $expiration;
-  /**
-   * @var string
-   */
-  public $historyId;
-
-  /**
-   * @param string
-   */
-  public function setExpiration($expiration)
-  {
-    $this->expiration = $expiration;
-  }
-  /**
-   * @return string
-   */
-  public function getExpiration()
-  {
-    return $this->expiration;
-  }
-  /**
-   * @param string
-   */
-  public function setHistoryId($historyId)
-  {
-    $this->historyId = $historyId;
-  }
-  /**
-   * @return string
-   */
-  public function getHistoryId()
-  {
-    return $this->historyId;
-  }
+    /**
+     * @var string
+     */
+    public $expiration;
+    /**
+     * @var string
+     */
+    public $historyId;
+    /**
+     * @param string
+     */
+    public function setExpiration($expiration)
+    {
+        $this->expiration = $expiration;
+    }
+    /**
+     * @return string
+     */
+    public function getExpiration()
+    {
+        return $this->expiration;
+    }
+    /**
+     * @param string
+     */
+    public function setHistoryId($historyId)
+    {
+        $this->historyId = $historyId;
+    }
+    /**
+     * @return string
+     */
+    public function getHistoryId()
+    {
+        return $this->historyId;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(WatchResponse::class, 'Google_Service_Gmail_WatchResponse');
+class_alias(WatchResponse::class, 'Arforms\Google_Service_Gmail_WatchResponse');

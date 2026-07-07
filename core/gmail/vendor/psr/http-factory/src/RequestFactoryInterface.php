@@ -1,6 +1,6 @@
 <?php
 
-namespace Psr\Http\Message;
+namespace Arforms\Psr\Http\Message;
 
 interface RequestFactoryInterface
 {

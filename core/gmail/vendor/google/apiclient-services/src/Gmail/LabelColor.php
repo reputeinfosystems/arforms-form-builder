@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,49 +15,46 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class LabelColor extends \Google\Model
+class LabelColor extends \Arforms\Google\Model
 {
-  /**
-   * @var string
-   */
-  public $backgroundColor;
-  /**
-   * @var string
-   */
-  public $textColor;
-
-  /**
-   * @param string
-   */
-  public function setBackgroundColor($backgroundColor)
-  {
-    $this->backgroundColor = $backgroundColor;
-  }
-  /**
-   * @return string
-   */
-  public function getBackgroundColor()
-  {
-    return $this->backgroundColor;
-  }
-  /**
-   * @param string
-   */
-  public function setTextColor($textColor)
-  {
-    $this->textColor = $textColor;
-  }
-  /**
-   * @return string
-   */
-  public function getTextColor()
-  {
-    return $this->textColor;
-  }
+    /**
+     * @var string
+     */
+    public $backgroundColor;
+    /**
+     * @var string
+     */
+    public $textColor;
+    /**
+     * @param string
+     */
+    public function setBackgroundColor($backgroundColor)
+    {
+        $this->backgroundColor = $backgroundColor;
+    }
+    /**
+     * @return string
+     */
+    public function getBackgroundColor()
+    {
+        return $this->backgroundColor;
+    }
+    /**
+     * @param string
+     */
+    public function setTextColor($textColor)
+    {
+        $this->textColor = $textColor;
+    }
+    /**
+     * @return string
+     */
+    public function getTextColor()
+    {
+        return $this->textColor;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(LabelColor::class, 'Google_Service_Gmail_LabelColor');
+class_alias(LabelColor::class, 'Arforms\Google_Service_Gmail_LabelColor');

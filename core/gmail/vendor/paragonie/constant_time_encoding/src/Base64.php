@@ -1,11 +1,23 @@
 <?php
-declare(strict_types=1);
-namespace ParagonIE\ConstantTime;
+
+declare (strict_types=1);
+namespace Arforms\ParagonIE\ConstantTime;
 
 use InvalidArgumentException;
 use RangeException;
+use SensitiveParameter;
+use SodiumException;
 use TypeError;
-
+use function extension_loaded;
+use function pack;
+use function rtrim;
+use function sodium_base642bin;
+use function sodium_bin2base64;
+use function unpack;
+use const SODIUM_BASE64_VARIANT_ORIGINAL;
+use const SODIUM_BASE64_VARIANT_ORIGINAL_NO_PADDING;
+use const SODIUM_BASE64_VARIANT_URLSAFE;
+use const SODIUM_BASE64_VARIANT_URLSAFE_NO_PADDING;
 /**
  *  Copyright (c) 2016 - 2022 Paragon Initiative Enterprises.
  *  Copyright (c) 2014 Steve "Sc00bz" Thomas (steve at tobtu dot com)
@@ -28,7 +40,6 @@ use TypeError;
  *  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
  *  SOFTWARE.
  */
-
 /**
  * Class Base64
  * [A-Z][a-z][0-9]+/
@@ -47,11 +58,32 @@ abstract class Base64 implements EncoderInterface
      *
      * @throws TypeError
      */
-    public static function encode(string $binString): string
+    public static function encode(
+        #[SensitiveParameter]
+        string $binString
+    ): string
     {
-        return static::doEncode($binString, true);
+        if (extension_loaded('sodium')) {
+            switch (static::class) {
+                case Base64::class:
+                    $variant = SODIUM_BASE64_VARIANT_ORIGINAL;
+                    break;
+                case Base64UrlSafe::class:
+                    $variant = SODIUM_BASE64_VARIANT_URLSAFE;
+                    break;
+                default:
+                    $variant = 0;
+            }
+            if ($variant > 0) {
+                try {
+                    return sodium_bin2base64($binString, $variant);
+                } catch (SodiumException $ex) {
+                    throw new RangeException($ex->getMessage(), $ex->getCode(), $ex);
+                }
+            }
+        }
+        return static::doEncode($binString, \true);
     }
-
     /**
      * Encode into Base64, no = padding
      *
@@ -62,11 +94,32 @@ abstract class Base64 implements EncoderInterface
      *
      * @throws TypeError
      */
-    public static function encodeUnpadded(string $src): string
+    public static function encodeUnpadded(
+        #[SensitiveParameter]
+        string $src
+    ): string
     {
-        return static::doEncode($src, false);
+        if (extension_loaded('sodium')) {
+            switch (static::class) {
+                case Base64::class:
+                    $variant = SODIUM_BASE64_VARIANT_ORIGINAL_NO_PADDING;
+                    break;
+                case Base64UrlSafe::class:
+                    $variant = SODIUM_BASE64_VARIANT_URLSAFE_NO_PADDING;
+                    break;
+                default:
+                    $variant = 0;
+            }
+            if ($variant > 0) {
+                try {
+                    return sodium_bin2base64($src, $variant);
+                } catch (SodiumException $ex) {
+                    throw new RangeException($ex->getMessage(), $ex->getCode(), $ex);
+                }
+            }
+        }
+        return static::doEncode($src, \false);
     }
-
     /**
      * @param string $src
      * @param bool $pad   Include = padding?
@@ -74,42 +127,36 @@ abstract class Base64 implements EncoderInterface
      *
      * @throws TypeError
      */
-    protected static function doEncode(string $src, bool $pad = true): string
+    protected static function doEncode(
+        #[SensitiveParameter]
+        string $src,
+        bool $pad = \true
+    ): string
     {
         $dest = '';
         $srcLen = Binary::safeStrlen($src);
         // Main loop (no padding):
         for ($i = 0; $i + 3 <= $srcLen; $i += 3) {
             /** @var array<int, int> $chunk */
-            $chunk = \unpack('C*', Binary::safeSubstr($src, $i, 3));
+            $chunk = unpack('C*', Binary::safeSubstr($src, $i, 3));
             $b0 = $chunk[1];
             $b1 = $chunk[2];
             $b2 = $chunk[3];
-
-            $dest .=
-                static::encode6Bits(               $b0 >> 2       ) .
-                static::encode6Bits((($b0 << 4) | ($b1 >> 4)) & 63) .
-                static::encode6Bits((($b1 << 2) | ($b2 >> 6)) & 63) .
-                static::encode6Bits(  $b2                     & 63);
+            $dest .= static::encode6Bits($b0 >> 2) . static::encode6Bits(($b0 << 4 | $b1 >> 4) & 63) . static::encode6Bits(($b1 << 2 | $b2 >> 6) & 63) . static::encode6Bits($b2 & 63);
         }
         // The last chunk, which may have padding:
         if ($i < $srcLen) {
             /** @var array<int, int> $chunk */
-            $chunk = \unpack('C*', Binary::safeSubstr($src, $i, $srcLen - $i));
+            $chunk = unpack('C*', Binary::safeSubstr($src, $i, $srcLen - $i));
             $b0 = $chunk[1];
             if ($i + 1 < $srcLen) {
                 $b1 = $chunk[2];
-                $dest .=
-                    static::encode6Bits($b0 >> 2) .
-                    static::encode6Bits((($b0 << 4) | ($b1 >> 4)) & 63) .
-                    static::encode6Bits(($b1 << 2) & 63);
+                $dest .= static::encode6Bits($b0 >> 2) . static::encode6Bits(($b0 << 4 | $b1 >> 4) & 63) . static::encode6Bits($b1 << 2 & 63);
                 if ($pad) {
                     $dest .= '=';
                 }
             } else {
-                $dest .=
-                    static::encode6Bits( $b0 >> 2) .
-                    static::encode6Bits(($b0 << 4) & 63);
+                $dest .= static::encode6Bits($b0 >> 2) . static::encode6Bits($b0 << 4 & 63);
                 if ($pad) {
                     $dest .= '==';
                 }
@@ -117,7 +164,6 @@ abstract class Base64 implements EncoderInterface
         }
         return $dest;
     }
-
     /**
      * decode from base64 into binary
      *
@@ -129,16 +175,18 @@ abstract class Base64 implements EncoderInterface
      *
      * @throws RangeException
      * @throws TypeError
-     * @psalm-suppress RedundantCondition
      */
-    public static function decode(string $encodedString, bool $strictPadding = false): string
+    public static function decode(
+        #[SensitiveParameter]
+        string $encodedString,
+        bool $strictPadding = \false
+    ): string
     {
         // Remove padding
         $srcLen = Binary::safeStrlen($encodedString);
         if ($srcLen === 0) {
             return '';
         }
-
         if ($strictPadding) {
             if (($srcLen & 3) === 0) {
                 if ($encodedString[$srcLen - 1] === '=') {
@@ -149,110 +197,98 @@ abstract class Base64 implements EncoderInterface
                 }
             }
             if (($srcLen & 3) === 1) {
-                throw new RangeException(
-                    'Incorrect padding'
-                );
+                throw new RangeException('Incorrect padding');
             }
             if ($encodedString[$srcLen - 1] === '=') {
-                throw new RangeException(
-                    'Incorrect padding'
-                );
+                throw new RangeException('Incorrect padding');
+            }
+            if (extension_loaded('sodium')) {
+                switch (static::class) {
+                    case Base64::class:
+                        $variant = SODIUM_BASE64_VARIANT_ORIGINAL_NO_PADDING;
+                        break;
+                    case Base64UrlSafe::class:
+                        $variant = SODIUM_BASE64_VARIANT_URLSAFE_NO_PADDING;
+                        break;
+                    default:
+                        $variant = 0;
+                }
+                if ($variant > 0) {
+                    try {
+                        return sodium_base642bin(Binary::safeSubstr($encodedString, 0, $srcLen), $variant);
+                    } catch (SodiumException $ex) {
+                        throw new RangeException($ex->getMessage(), $ex->getCode(), $ex);
+                    }
+                }
             }
         } else {
-            $encodedString = \rtrim($encodedString, '=');
+            $encodedString = rtrim($encodedString, '=');
             $srcLen = Binary::safeStrlen($encodedString);
         }
-
         $err = 0;
         $dest = '';
         // Main loop (no padding):
         for ($i = 0; $i + 4 <= $srcLen; $i += 4) {
             /** @var array<int, int> $chunk */
-            $chunk = \unpack('C*', Binary::safeSubstr($encodedString, $i, 4));
+            $chunk = unpack('C*', Binary::safeSubstr($encodedString, $i, 4));
             $c0 = static::decode6Bits($chunk[1]);
             $c1 = static::decode6Bits($chunk[2]);
             $c2 = static::decode6Bits($chunk[3]);
             $c3 = static::decode6Bits($chunk[4]);
-
-            $dest .= \pack(
-                'CCC',
-                ((($c0 << 2) | ($c1 >> 4)) & 0xff),
-                ((($c1 << 4) | ($c2 >> 2)) & 0xff),
-                ((($c2 << 6) |  $c3      ) & 0xff)
-            );
+            $dest .= pack('CCC', ($c0 << 2 | $c1 >> 4) & 0xff, ($c1 << 4 | $c2 >> 2) & 0xff, ($c2 << 6 | $c3) & 0xff);
             $err |= ($c0 | $c1 | $c2 | $c3) >> 8;
         }
         // The last chunk, which may have padding:
         if ($i < $srcLen) {
             /** @var array<int, int> $chunk */
-            $chunk = \unpack('C*', Binary::safeSubstr($encodedString, $i, $srcLen - $i));
+            $chunk = unpack('C*', Binary::safeSubstr($encodedString, $i, $srcLen - $i));
             $c0 = static::decode6Bits($chunk[1]);
-
             if ($i + 2 < $srcLen) {
                 $c1 = static::decode6Bits($chunk[2]);
                 $c2 = static::decode6Bits($chunk[3]);
-                $dest .= \pack(
-                    'CC',
-                    ((($c0 << 2) | ($c1 >> 4)) & 0xff),
-                    ((($c1 << 4) | ($c2 >> 2)) & 0xff)
-                );
+                $dest .= pack('CC', ($c0 << 2 | $c1 >> 4) & 0xff, ($c1 << 4 | $c2 >> 2) & 0xff);
                 $err |= ($c0 | $c1 | $c2) >> 8;
                 if ($strictPadding) {
-                    $err |= ($c2 << 6) & 0xff;
+                    $err |= $c2 << 6 & 0xff;
                 }
             } elseif ($i + 1 < $srcLen) {
                 $c1 = static::decode6Bits($chunk[2]);
-                $dest .= \pack(
-                    'C',
-                    ((($c0 << 2) | ($c1 >> 4)) & 0xff)
-                );
+                $dest .= pack('C', ($c0 << 2 | $c1 >> 4) & 0xff);
                 $err |= ($c0 | $c1) >> 8;
                 if ($strictPadding) {
-                    $err |= ($c1 << 4) & 0xff;
+                    $err |= $c1 << 4 & 0xff;
                 }
             } elseif ($strictPadding) {
                 $err |= 1;
             }
         }
-        $check = ($err === 0);
+        $check = $err === 0;
         if (!$check) {
-            throw new RangeException(
-                'Base64::decode() only expects characters in the correct base64 alphabet'
-            );
+            throw new RangeException('Base64::decode() only expects characters in the correct base64 alphabet');
         }
         return $dest;
     }
-
     /**
      * @param string $encodedString
      * @return string
      */
-    public static function decodeNoPadding(string $encodedString): string
+    public static function decodeNoPadding(
+        #[SensitiveParameter]
+        string $encodedString
+    ): string
     {
         $srcLen = Binary::safeStrlen($encodedString);
         if ($srcLen === 0) {
             return '';
         }
         if (($srcLen & 3) === 0) {
-            if ($encodedString[$srcLen - 1] === '=') {
-                throw new InvalidArgumentException(
-                    "decodeNoPadding() doesn't tolerate padding"
-                );
-            }
-            if (($srcLen & 3) > 1) {
-                if ($encodedString[$srcLen - 2] === '=') {
-                    throw new InvalidArgumentException(
-                        "decodeNoPadding() doesn't tolerate padding"
-                    );
-                }
+            // If $strLen is not zero, and it is divisible by 4, then it's at least 4.
+            if ($encodedString[$srcLen - 1] === '=' || $encodedString[$srcLen - 2] === '=') {
+                throw new InvalidArgumentException("decodeNoPadding() doesn't tolerate padding");
             }
         }
-        return static::decode(
-            $encodedString,
-            true
-        );
+        return static::decode($encodedString, \true);
     }
-
     /**
      * Uses bitwise operators instead of table-lookups to turn 6-bit integers
      * into 8-bit integers.
@@ -267,25 +303,18 @@ abstract class Base64 implements EncoderInterface
     protected static function decode6Bits(int $src): int
     {
         $ret = -1;
-
         // if ($src > 0x40 && $src < 0x5b) $ret += $src - 0x41 + 1; // -64
-        $ret += (((0x40 - $src) & ($src - 0x5b)) >> 8) & ($src - 64);
-
+        $ret += (0x40 - $src & $src - 0x5b) >> 8 & $src - 64;
         // if ($src > 0x60 && $src < 0x7b) $ret += $src - 0x61 + 26 + 1; // -70
-        $ret += (((0x60 - $src) & ($src - 0x7b)) >> 8) & ($src - 70);
-
+        $ret += (0x60 - $src & $src - 0x7b) >> 8 & $src - 70;
         // if ($src > 0x2f && $src < 0x3a) $ret += $src - 0x30 + 52 + 1; // 5
-        $ret += (((0x2f - $src) & ($src - 0x3a)) >> 8) & ($src + 5);
-
+        $ret += (0x2f - $src & $src - 0x3a) >> 8 & $src + 5;
         // if ($src == 0x2b) $ret += 62 + 1;
-        $ret += (((0x2a - $src) & ($src - 0x2c)) >> 8) & 63;
-
+        $ret += (0x2a - $src & $src - 0x2c) >> 8 & 63;
         // if ($src == 0x2f) ret += 63 + 1;
-        $ret += (((0x2e - $src) & ($src - 0x30)) >> 8) & 64;
-
+        $ret += (0x2e - $src & $src - 0x30) >> 8 & 64;
         return $ret;
     }
-
     /**
      * Uses bitwise operators instead of table-lookups to turn 8-bit integers
      * into 6-bit integers.
@@ -296,19 +325,14 @@ abstract class Base64 implements EncoderInterface
     protected static function encode6Bits(int $src): string
     {
         $diff = 0x41;
-
         // if ($src > 25) $diff += 0x61 - 0x41 - 26; // 6
-        $diff += ((25 - $src) >> 8) & 6;
-
+        $diff += 25 - $src >> 8 & 6;
         // if ($src > 51) $diff += 0x30 - 0x61 - 26; // -75
-        $diff -= ((51 - $src) >> 8) & 75;
-
+        $diff -= 51 - $src >> 8 & 75;
         // if ($src > 61) $diff += 0x2b - 0x30 - 10; // -15
-        $diff -= ((61 - $src) >> 8) & 15;
-
+        $diff -= 61 - $src >> 8 & 15;
         // if ($src > 62) $diff += 0x2f - 0x2b - 1; // 3
-        $diff += ((62 - $src) >> 8) & 3;
-
-        return \pack('C', $src + $diff);
+        $diff += 62 - $src >> 8 & 3;
+        return pack('C', $src + $diff);
     }
 }

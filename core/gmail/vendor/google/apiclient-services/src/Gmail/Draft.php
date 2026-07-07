@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,47 +15,44 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class Draft extends \Google\Model
+class Draft extends \Arforms\Google\Model
 {
-  /**
-   * @var string
-   */
-  public $id;
-  protected $messageType = Message::class;
-  protected $messageDataType = '';
-
-  /**
-   * @param string
-   */
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  /**
-   * @return string
-   */
-  public function getId()
-  {
-    return $this->id;
-  }
-  /**
-   * @param Message
-   */
-  public function setMessage(Message $message)
-  {
-    $this->message = $message;
-  }
-  /**
-   * @return Message
-   */
-  public function getMessage()
-  {
-    return $this->message;
-  }
+    /**
+     * @var string
+     */
+    public $id;
+    protected $messageType = Message::class;
+    protected $messageDataType = '';
+    /**
+     * @param string
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+    /**
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+    /**
+     * @param Message
+     */
+    public function setMessage(Message $message)
+    {
+        $this->message = $message;
+    }
+    /**
+     * @return Message
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Draft::class, 'Google_Service_Gmail_Draft');
+class_alias(Draft::class, 'Arforms\Google_Service_Gmail_Draft');

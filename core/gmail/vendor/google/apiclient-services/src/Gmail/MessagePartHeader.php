@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,49 +15,46 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class MessagePartHeader extends \Google\Model
+class MessagePartHeader extends \Arforms\Google\Model
 {
-  /**
-   * @var string
-   */
-  public $name;
-  /**
-   * @var string
-   */
-  public $value;
-
-  /**
-   * @param string
-   */
-  public function setName($name)
-  {
-    $this->name = $name;
-  }
-  /**
-   * @return string
-   */
-  public function getName()
-  {
-    return $this->name;
-  }
-  /**
-   * @param string
-   */
-  public function setValue($value)
-  {
-    $this->value = $value;
-  }
-  /**
-   * @return string
-   */
-  public function getValue()
-  {
-    return $this->value;
-  }
+    /**
+     * @var string
+     */
+    public $name;
+    /**
+     * @var string
+     */
+    public $value;
+    /**
+     * @param string
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    }
+    /**
+     * @return string
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
+    /**
+     * @param string
+     */
+    public function setValue($value)
+    {
+        $this->value = $value;
+    }
+    /**
+     * @return string
+     */
+    public function getValue()
+    {
+        return $this->value;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MessagePartHeader::class, 'Google_Service_Gmail_MessagePartHeader');
+class_alias(MessagePartHeader::class, 'Arforms\Google_Service_Gmail_MessagePartHeader');

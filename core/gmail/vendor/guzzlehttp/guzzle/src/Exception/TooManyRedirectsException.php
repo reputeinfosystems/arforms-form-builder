@@ -1,6 +1,6 @@
 <?php
 
-namespace GuzzleHttp\Exception;
+namespace Arforms\GuzzleHttp\Exception;
 
 class TooManyRedirectsException extends RequestException
 {

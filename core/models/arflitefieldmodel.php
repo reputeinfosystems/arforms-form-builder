@@ -34,11 +34,6 @@ class arflitefieldmodel {
 		if ( $return ) {
 			if ( $query_results ) {
 				$return_insert_id = $wpdb->insert_id;
-				if ( $template ) {
-					if ( $res_field_id != '' ) {
-						 $_SESSION['arf_fields'][ intval( $res_field_id ) ] = intval( $return_insert_id );
-					}
-				}
 				return $return_insert_id;
 			} else {
 				return false;
@@ -46,11 +41,6 @@ class arflitefieldmodel {
 		} else {
 			if ( $query_results ) {
 				$return_insert_id = $wpdb->insert_id;
-				if ( $template ) {
-					if ( $res_field_id != '' ) {
-						 $_SESSION['arf_fields'][ intval( $res_field_id ) ] = intval( $return_insert_id );
-					}
-				}
 			}
 		}
 	}
@@ -72,6 +62,7 @@ class arflitefieldmodel {
 			}
 		}
 		$new_field_order = array();
+		$field_mapping   = array();
 		$n               = 1;
 		if ( ! empty( $new_field_order ) ) {
 			$form_fields = $new_form_fields;
@@ -93,10 +84,14 @@ class arflitefieldmodel {
 				}
 			}
 			$new_field_id                     = $this->arflitecreate( $values, true, $template, $res_field_id );
+			if ( $template && $res_field_id != '' ) {
+				$field_mapping[ intval( $res_field_id ) ] = intval( $new_field_id );
+			}
 			$new_field_order[ $new_field_id ] = $n;
 			$n++;
 			unset( $field );
 		}
+			return $field_mapping;
 	}
 
 	function arfliteupdate( $id, $values ) {

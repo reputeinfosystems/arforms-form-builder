@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,49 +15,46 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class Delegate extends \Google\Model
+class Delegate extends \Arforms\Google\Model
 {
-  /**
-   * @var string
-   */
-  public $delegateEmail;
-  /**
-   * @var string
-   */
-  public $verificationStatus;
-
-  /**
-   * @param string
-   */
-  public function setDelegateEmail($delegateEmail)
-  {
-    $this->delegateEmail = $delegateEmail;
-  }
-  /**
-   * @return string
-   */
-  public function getDelegateEmail()
-  {
-    return $this->delegateEmail;
-  }
-  /**
-   * @param string
-   */
-  public function setVerificationStatus($verificationStatus)
-  {
-    $this->verificationStatus = $verificationStatus;
-  }
-  /**
-   * @return string
-   */
-  public function getVerificationStatus()
-  {
-    return $this->verificationStatus;
-  }
+    /**
+     * @var string
+     */
+    public $delegateEmail;
+    /**
+     * @var string
+     */
+    public $verificationStatus;
+    /**
+     * @param string
+     */
+    public function setDelegateEmail($delegateEmail)
+    {
+        $this->delegateEmail = $delegateEmail;
+    }
+    /**
+     * @return string
+     */
+    public function getDelegateEmail()
+    {
+        return $this->delegateEmail;
+    }
+    /**
+     * @param string
+     */
+    public function setVerificationStatus($verificationStatus)
+    {
+        $this->verificationStatus = $verificationStatus;
+    }
+    /**
+     * @return string
+     */
+    public function getVerificationStatus()
+    {
+        return $this->verificationStatus;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Delegate::class, 'Google_Service_Gmail_Delegate');
+class_alias(Delegate::class, 'Arforms\Google_Service_Gmail_Delegate');

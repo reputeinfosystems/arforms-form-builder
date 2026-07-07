@@ -17,14 +17,12 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
+namespace Arforms\phpseclib3\Crypt\RSA\Formats\Keys;
 
-namespace phpseclib3\Crypt\RSA\Formats\Keys;
-
-use phpseclib3\Common\Functions\Strings;
-use phpseclib3\Exception\BadConfigurationException;
-use phpseclib3\Exception\UnsupportedFormatException;
-use phpseclib3\Math\BigInteger;
-
+use Arforms\phpseclib3\Common\Functions\Strings;
+use Arforms\phpseclib3\Exception\BadConfigurationException;
+use Arforms\phpseclib3\Exception\UnsupportedFormatException;
+use Arforms\phpseclib3\Math\BigInteger;
 /**
  * XML Formatted RSA Key Handler
  *
@@ -44,20 +42,11 @@ abstract class XML
         if (!Strings::is_stringable($key)) {
             throw new \UnexpectedValueException('Key should be a string - not a ' . gettype($key));
         }
-
         if (!class_exists('DOMDocument')) {
             throw new BadConfigurationException('The dom extension is not setup correctly on this system');
         }
-
-        $components = [
-            'isPublicKey' => false,
-            'primes' => [],
-            'exponents' => [],
-            'coefficients' => []
-        ];
-
-        $use_errors = libxml_use_internal_errors(true);
-
+        $components = ['isPublicKey' => \false, 'primes' => [], 'exponents' => [], 'coefficients' => []];
+        $use_errors = libxml_use_internal_errors(\true);
         $dom = new \DOMDocument();
         if (substr($key, 0, 5) != '<?xml') {
             $key = '<xml>' . $key . '</xml>';
@@ -70,7 +59,7 @@ abstract class XML
         $keys = ['modulus', 'exponent', 'p', 'q', 'dp', 'dq', 'inverseq', 'd'];
         foreach ($keys as $key) {
             // $dom->getElementsByTagName($key) is case-sensitive
-            $temp = $xpath->query("//*[translate(local-name(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='$key']");
+            $temp = $xpath->query("//*[translate(local-name(), 'ABCDEFGHIJKLMNOPQRSTUVWXYZ','abcdefghijklmnopqrstuvwxyz')='{$key}']");
             if (!$temp->length) {
                 continue;
             }
@@ -101,31 +90,26 @@ abstract class XML
                     $components['privateExponent'] = $value;
             }
         }
-
         libxml_use_internal_errors($use_errors);
-
         foreach ($components as $key => $value) {
             if (is_array($value) && !count($value)) {
                 unset($components[$key]);
             }
         }
-
         if (isset($components['modulus']) && isset($components['publicExponent'])) {
             if (count($components) == 3) {
-                $components['isPublicKey'] = true;
+                $components['isPublicKey'] = \true;
             }
             return $components;
         }
-
         throw new \UnexpectedValueException('Modulus / exponent not present');
     }
-
     /**
      * Convert a private key to the appropriate format.
      *
-     * @param \phpseclib3\Math\BigInteger $n
-     * @param \phpseclib3\Math\BigInteger $e
-     * @param \phpseclib3\Math\BigInteger $d
+     * @param BigInteger $n
+     * @param BigInteger $e
+     * @param BigInteger $d
      * @param array $primes
      * @param array $exponents
      * @param array $coefficients
@@ -137,35 +121,20 @@ abstract class XML
         if (count($primes) != 2) {
             throw new \InvalidArgumentException('XML does not support multi-prime RSA keys');
         }
-
         if (!empty($password) && is_string($password)) {
             throw new UnsupportedFormatException('XML private keys do not support encryption');
         }
-
-        return "<RSAKeyPair>\r\n" .
-               '  <Modulus>' . Strings::base64_encode($n->toBytes()) . "</Modulus>\r\n" .
-               '  <Exponent>' . Strings::base64_encode($e->toBytes()) . "</Exponent>\r\n" .
-               '  <P>' . Strings::base64_encode($primes[1]->toBytes()) . "</P>\r\n" .
-               '  <Q>' . Strings::base64_encode($primes[2]->toBytes()) . "</Q>\r\n" .
-               '  <DP>' . Strings::base64_encode($exponents[1]->toBytes()) . "</DP>\r\n" .
-               '  <DQ>' . Strings::base64_encode($exponents[2]->toBytes()) . "</DQ>\r\n" .
-               '  <InverseQ>' . Strings::base64_encode($coefficients[2]->toBytes()) . "</InverseQ>\r\n" .
-               '  <D>' . Strings::base64_encode($d->toBytes()) . "</D>\r\n" .
-               '</RSAKeyPair>';
+        return "<RSAKeyPair>\r\n" . '  <Modulus>' . Strings::base64_encode($n->toBytes()) . "</Modulus>\r\n" . '  <Exponent>' . Strings::base64_encode($e->toBytes()) . "</Exponent>\r\n" . '  <P>' . Strings::base64_encode($primes[1]->toBytes()) . "</P>\r\n" . '  <Q>' . Strings::base64_encode($primes[2]->toBytes()) . "</Q>\r\n" . '  <DP>' . Strings::base64_encode($exponents[1]->toBytes()) . "</DP>\r\n" . '  <DQ>' . Strings::base64_encode($exponents[2]->toBytes()) . "</DQ>\r\n" . '  <InverseQ>' . Strings::base64_encode($coefficients[2]->toBytes()) . "</InverseQ>\r\n" . '  <D>' . Strings::base64_encode($d->toBytes()) . "</D>\r\n" . '</RSAKeyPair>';
     }
-
     /**
      * Convert a public key to the appropriate format
      *
-     * @param \phpseclib3\Math\BigInteger $n
-     * @param \phpseclib3\Math\BigInteger $e
+     * @param BigInteger $n
+     * @param BigInteger $e
      * @return string
      */
     public static function savePublicKey(BigInteger $n, BigInteger $e)
     {
-        return "<RSAKeyValue>\r\n" .
-               '  <Modulus>' . Strings::base64_encode($n->toBytes()) . "</Modulus>\r\n" .
-               '  <Exponent>' . Strings::base64_encode($e->toBytes()) . "</Exponent>\r\n" .
-               '</RSAKeyValue>';
+        return "<RSAKeyValue>\r\n" . '  <Modulus>' . Strings::base64_encode($n->toBytes()) . "</Modulus>\r\n" . '  <Exponent>' . Strings::base64_encode($e->toBytes()) . "</Exponent>\r\n" . '</RSAKeyValue>';
     }
 }

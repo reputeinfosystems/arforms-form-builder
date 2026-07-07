@@ -10,8 +10,7 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
-
-namespace phpseclib3\Exception;
+namespace Arforms\phpseclib3\Exception;
 
 /**
  * BadModeException

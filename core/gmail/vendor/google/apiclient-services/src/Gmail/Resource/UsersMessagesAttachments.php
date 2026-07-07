@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,11 +15,9 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail\Resource;
 
-namespace Google\Service\Gmail\Resource;
-
-use Google\Service\Gmail\MessagePartBody;
-
+use Arforms\Google\Service\Gmail\MessagePartBody;
 /**
  * The "attachments" collection of methods.
  * Typical usage is:
@@ -27,25 +26,27 @@ use Google\Service\Gmail\MessagePartBody;
  *   $attachments = $gmailService->users_messages_attachments;
  *  </code>
  */
-class UsersMessagesAttachments extends \Google\Service\Resource
+class UsersMessagesAttachments extends \Arforms\Google\Service\Resource
 {
-  /**
-   * Gets the specified message attachment. (attachments.get)
-   *
-   * @param string $userId The user's email address. The special value `me` can be
-   * used to indicate the authenticated user.
-   * @param string $messageId The ID of the message containing the attachment.
-   * @param string $id The ID of the attachment.
-   * @param array $optParams Optional parameters.
-   * @return MessagePartBody
-   */
-  public function get($userId, $messageId, $id, $optParams = [])
-  {
-    $params = ['userId' => $userId, 'messageId' => $messageId, 'id' => $id];
-    $params = array_merge($params, $optParams);
-    return $this->call('get', [$params], MessagePartBody::class);
-  }
+    /**
+     * Gets the specified message attachment. (attachments.get)
+     *
+     * @param string $userId The user's email address. The special value `me` can be
+     * used to indicate the authenticated user.
+     * @param string $messageId The ID of the message containing the attachment.
+     * @param string $id The ID of the attachment.
+     * @param array $optParams Optional parameters.
+     *
+     * @opt_param bool temporaryEeccBypass
+     * @return MessagePartBody
+     * @throws \Google\Service\Exception
+     */
+    public function get($userId, $messageId, $id, $optParams = [])
+    {
+        $params = ['userId' => $userId, 'messageId' => $messageId, 'id' => $id];
+        $params = array_merge($params, $optParams);
+        return $this->call('get', [$params], MessagePartBody::class);
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(UsersMessagesAttachments::class, 'Google_Service_Gmail_Resource_UsersMessagesAttachments');
+class_alias(UsersMessagesAttachments::class, 'Arforms\Google_Service_Gmail_Resource_UsersMessagesAttachments');

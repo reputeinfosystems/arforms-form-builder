@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,63 +15,60 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class Filter extends \Google\Model
+class Filter extends \Arforms\Google\Model
 {
-  protected $actionType = FilterAction::class;
-  protected $actionDataType = '';
-  protected $criteriaType = FilterCriteria::class;
-  protected $criteriaDataType = '';
-  /**
-   * @var string
-   */
-  public $id;
-
-  /**
-   * @param FilterAction
-   */
-  public function setAction(FilterAction $action)
-  {
-    $this->action = $action;
-  }
-  /**
-   * @return FilterAction
-   */
-  public function getAction()
-  {
-    return $this->action;
-  }
-  /**
-   * @param FilterCriteria
-   */
-  public function setCriteria(FilterCriteria $criteria)
-  {
-    $this->criteria = $criteria;
-  }
-  /**
-   * @return FilterCriteria
-   */
-  public function getCriteria()
-  {
-    return $this->criteria;
-  }
-  /**
-   * @param string
-   */
-  public function setId($id)
-  {
-    $this->id = $id;
-  }
-  /**
-   * @return string
-   */
-  public function getId()
-  {
-    return $this->id;
-  }
+    protected $actionType = FilterAction::class;
+    protected $actionDataType = '';
+    protected $criteriaType = FilterCriteria::class;
+    protected $criteriaDataType = '';
+    /**
+     * @var string
+     */
+    public $id;
+    /**
+     * @param FilterAction
+     */
+    public function setAction(FilterAction $action)
+    {
+        $this->action = $action;
+    }
+    /**
+     * @return FilterAction
+     */
+    public function getAction()
+    {
+        return $this->action;
+    }
+    /**
+     * @param FilterCriteria
+     */
+    public function setCriteria(FilterCriteria $criteria)
+    {
+        $this->criteria = $criteria;
+    }
+    /**
+     * @return FilterCriteria
+     */
+    public function getCriteria()
+    {
+        return $this->criteria;
+    }
+    /**
+     * @param string
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+    /**
+     * @return string
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(Filter::class, 'Google_Service_Gmail_Filter');
+class_alias(Filter::class, 'Arforms\Google_Service_Gmail_Filter');

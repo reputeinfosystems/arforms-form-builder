@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,49 +15,62 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class CseIdentity extends \Google\Model
+class CseIdentity extends \Arforms\Google\Model
 {
-  /**
-   * @var string
-   */
-  public $emailAddress;
-  /**
-   * @var string
-   */
-  public $primaryKeyPairId;
-
-  /**
-   * @param string
-   */
-  public function setEmailAddress($emailAddress)
-  {
-    $this->emailAddress = $emailAddress;
-  }
-  /**
-   * @return string
-   */
-  public function getEmailAddress()
-  {
-    return $this->emailAddress;
-  }
-  /**
-   * @param string
-   */
-  public function setPrimaryKeyPairId($primaryKeyPairId)
-  {
-    $this->primaryKeyPairId = $primaryKeyPairId;
-  }
-  /**
-   * @return string
-   */
-  public function getPrimaryKeyPairId()
-  {
-    return $this->primaryKeyPairId;
-  }
+    /**
+     * @var string
+     */
+    public $emailAddress;
+    /**
+     * @var string
+     */
+    public $primaryKeyPairId;
+    protected $signAndEncryptKeyPairsType = SignAndEncryptKeyPairs::class;
+    protected $signAndEncryptKeyPairsDataType = '';
+    /**
+     * @param string
+     */
+    public function setEmailAddress($emailAddress)
+    {
+        $this->emailAddress = $emailAddress;
+    }
+    /**
+     * @return string
+     */
+    public function getEmailAddress()
+    {
+        return $this->emailAddress;
+    }
+    /**
+     * @param string
+     */
+    public function setPrimaryKeyPairId($primaryKeyPairId)
+    {
+        $this->primaryKeyPairId = $primaryKeyPairId;
+    }
+    /**
+     * @return string
+     */
+    public function getPrimaryKeyPairId()
+    {
+        return $this->primaryKeyPairId;
+    }
+    /**
+     * @param SignAndEncryptKeyPairs
+     */
+    public function setSignAndEncryptKeyPairs(SignAndEncryptKeyPairs $signAndEncryptKeyPairs)
+    {
+        $this->signAndEncryptKeyPairs = $signAndEncryptKeyPairs;
+    }
+    /**
+     * @return SignAndEncryptKeyPairs
+     */
+    public function getSignAndEncryptKeyPairs()
+    {
+        return $this->signAndEncryptKeyPairs;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(CseIdentity::class, 'Google_Service_Gmail_CseIdentity');
+class_alias(CseIdentity::class, 'Arforms\Google_Service_Gmail_CseIdentity');

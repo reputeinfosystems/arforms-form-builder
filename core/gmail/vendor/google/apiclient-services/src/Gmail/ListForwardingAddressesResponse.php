@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,30 +15,27 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class ListForwardingAddressesResponse extends \Google\Collection
+class ListForwardingAddressesResponse extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'forwardingAddresses';
-  protected $forwardingAddressesType = ForwardingAddress::class;
-  protected $forwardingAddressesDataType = 'array';
-
-  /**
-   * @param ForwardingAddress[]
-   */
-  public function setForwardingAddresses($forwardingAddresses)
-  {
-    $this->forwardingAddresses = $forwardingAddresses;
-  }
-  /**
-   * @return ForwardingAddress[]
-   */
-  public function getForwardingAddresses()
-  {
-    return $this->forwardingAddresses;
-  }
+    protected $collection_key = 'forwardingAddresses';
+    protected $forwardingAddressesType = ForwardingAddress::class;
+    protected $forwardingAddressesDataType = 'array';
+    /**
+     * @param ForwardingAddress[]
+     */
+    public function setForwardingAddresses($forwardingAddresses)
+    {
+        $this->forwardingAddresses = $forwardingAddresses;
+    }
+    /**
+     * @return ForwardingAddress[]
+     */
+    public function getForwardingAddresses()
+    {
+        return $this->forwardingAddresses;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ListForwardingAddressesResponse::class, 'Google_Service_Gmail_ListForwardingAddressesResponse');
+class_alias(ListForwardingAddressesResponse::class, 'Arforms\Google_Service_Gmail_ListForwardingAddressesResponse');

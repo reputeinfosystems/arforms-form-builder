@@ -1,11 +1,9 @@
 <?php
 
-declare(strict_types=1);
+declare (strict_types=1);
+namespace Arforms\GuzzleHttp\Psr7;
 
-namespace GuzzleHttp\Psr7;
-
-use Psr\Http\Message\UriInterface;
-
+use Arforms\Psr\Http\Message\UriInterface;
 /**
  * Provides methods to determine if a modified URL should be considered cross-origin.
  *
@@ -20,31 +18,30 @@ final class UriComparator
     public static function isCrossOrigin(UriInterface $original, UriInterface $modified): bool
     {
         if (\strcasecmp($original->getHost(), $modified->getHost()) !== 0) {
-            return true;
+            return \true;
         }
-
         if ($original->getScheme() !== $modified->getScheme()) {
-            return true;
+            return \true;
         }
-
         if (self::computePort($original) !== self::computePort($modified)) {
-            return true;
+            return \true;
         }
-
-        return false;
+        return \false;
     }
-
-    private static function computePort(UriInterface $uri): int
+    private static function computePort(UriInterface $uri): ?int
     {
         $port = $uri->getPort();
-
         if (null !== $port) {
             return $port;
         }
-
-        return 'https' === $uri->getScheme() ? 443 : 80;
+        if ('http' === $uri->getScheme()) {
+            return 80;
+        }
+        if ('https' === $uri->getScheme()) {
+            return 443;
+        }
+        return null;
     }
-
     private function __construct()
     {
         // cannot be instantiated

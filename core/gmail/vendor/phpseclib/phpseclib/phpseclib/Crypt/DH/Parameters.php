@@ -8,11 +8,9 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
+namespace Arforms\phpseclib3\Crypt\DH;
 
-namespace phpseclib3\Crypt\DH;
-
-use phpseclib3\Crypt\DH;
-
+use Arforms\phpseclib3\Crypt\DH;
 /**
  * DH Parameters
  *
@@ -30,7 +28,6 @@ final class Parameters extends DH
     public function toString($type = 'PKCS1', array $options = [])
     {
         $type = self::validatePlugin('Keys', 'PKCS1', 'saveParameters');
-
         return $type::saveParameters($this->prime, $this->base, $options);
     }
 }

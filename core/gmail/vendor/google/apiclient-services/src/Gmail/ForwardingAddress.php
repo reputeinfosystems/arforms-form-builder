@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,49 +15,46 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class ForwardingAddress extends \Google\Model
+class ForwardingAddress extends \Arforms\Google\Model
 {
-  /**
-   * @var string
-   */
-  public $forwardingEmail;
-  /**
-   * @var string
-   */
-  public $verificationStatus;
-
-  /**
-   * @param string
-   */
-  public function setForwardingEmail($forwardingEmail)
-  {
-    $this->forwardingEmail = $forwardingEmail;
-  }
-  /**
-   * @return string
-   */
-  public function getForwardingEmail()
-  {
-    return $this->forwardingEmail;
-  }
-  /**
-   * @param string
-   */
-  public function setVerificationStatus($verificationStatus)
-  {
-    $this->verificationStatus = $verificationStatus;
-  }
-  /**
-   * @return string
-   */
-  public function getVerificationStatus()
-  {
-    return $this->verificationStatus;
-  }
+    /**
+     * @var string
+     */
+    public $forwardingEmail;
+    /**
+     * @var string
+     */
+    public $verificationStatus;
+    /**
+     * @param string
+     */
+    public function setForwardingEmail($forwardingEmail)
+    {
+        $this->forwardingEmail = $forwardingEmail;
+    }
+    /**
+     * @return string
+     */
+    public function getForwardingEmail()
+    {
+        return $this->forwardingEmail;
+    }
+    /**
+     * @param string
+     */
+    public function setVerificationStatus($verificationStatus)
+    {
+        $this->verificationStatus = $verificationStatus;
+    }
+    /**
+     * @return string
+     */
+    public function getVerificationStatus()
+    {
+        return $this->verificationStatus;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(ForwardingAddress::class, 'Google_Service_Gmail_ForwardingAddress');
+class_alias(ForwardingAddress::class, 'Arforms\Google_Service_Gmail_ForwardingAddress');

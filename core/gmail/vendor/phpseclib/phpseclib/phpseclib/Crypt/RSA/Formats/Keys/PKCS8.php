@@ -22,13 +22,11 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
+namespace Arforms\phpseclib3\Crypt\RSA\Formats\Keys;
 
-namespace phpseclib3\Crypt\RSA\Formats\Keys;
-
-use phpseclib3\Crypt\Common\Formats\Keys\PKCS8 as Progenitor;
-use phpseclib3\File\ASN1;
-use phpseclib3\Math\BigInteger;
-
+use Arforms\phpseclib3\Crypt\Common\Formats\Keys\PKCS8 as Progenitor;
+use Arforms\phpseclib3\File\ASN1;
+use Arforms\phpseclib3\Math\BigInteger;
 /**
  * PKCS#8 Formatted RSA Key Handler
  *
@@ -42,21 +40,18 @@ abstract class PKCS8 extends Progenitor
      * @var string
      */
     const OID_NAME = 'rsaEncryption';
-
     /**
      * OID Value
      *
      * @var string
      */
     const OID_VALUE = '1.2.840.113549.1.1.1';
-
     /**
      * Child OIDs loaded
      *
      * @var bool
      */
-    protected static $childOIDsLoaded = false;
-
+    protected static $childOIDsLoaded = \false;
     /**
      * Break a public or private key down into its constituent components
      *
@@ -67,30 +62,25 @@ abstract class PKCS8 extends Progenitor
     public static function load($key, $password = '')
     {
         $key = parent::load($key, $password);
-
         if (isset($key['privateKey'])) {
-            $components['isPublicKey'] = false;
+            $components['isPublicKey'] = \false;
             $type = 'private';
         } else {
-            $components['isPublicKey'] = true;
+            $components['isPublicKey'] = \true;
             $type = 'public';
         }
-
         $result = $components + PKCS1::load($key[$type . 'Key']);
-
         if (isset($key['meta'])) {
             $result['meta'] = $key['meta'];
         }
-
         return $result;
     }
-
     /**
      * Convert a private key to the appropriate format.
      *
-     * @param \phpseclib3\Math\BigInteger $n
-     * @param \phpseclib3\Math\BigInteger $e
-     * @param \phpseclib3\Math\BigInteger $d
+     * @param BigInteger $n
+     * @param BigInteger $e
+     * @param BigInteger $d
      * @param array $primes
      * @param array $exponents
      * @param array $coefficients
@@ -104,12 +94,11 @@ abstract class PKCS8 extends Progenitor
         $key = ASN1::extractBER($key);
         return self::wrapPrivateKey($key, [], null, $password, null, '', $options);
     }
-
     /**
      * Convert a public key to the appropriate format
      *
-     * @param \phpseclib3\Math\BigInteger $n
-     * @param \phpseclib3\Math\BigInteger $e
+     * @param BigInteger $n
+     * @param BigInteger $e
      * @param array $options optional
      * @return string
      */
@@ -117,6 +106,6 @@ abstract class PKCS8 extends Progenitor
     {
         $key = PKCS1::savePublicKey($n, $e);
         $key = ASN1::extractBER($key);
-        return self::wrapPublicKey($key, null);
+        return self::wrapPublicKey($key, null, null, $options);
     }
 }

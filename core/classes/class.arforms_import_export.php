@@ -33,6 +33,20 @@ class arforms_import_export_settings{
         $browser_info = $arfliterecordcontroller->arflitegetBrowser( $arf_import_export_useragent );
         $allowed_html = arflite_retrieve_attrs_for_wp_kses();
 
+        $arf_import_data = array(
+            'ar_email_subject_org'       => '',
+            'ar_email_message_org'       => '',
+            'ar_admin_email_message_org' => '',
+            'ar_email_to_org'            => '',
+            'ar_admin_from_email'        => '',
+            'ar_user_from_email'         => '',
+            'arf_admin_from_name'        => '',
+            'admin_email_subject'        => '',
+            'reply_to'                   => '',
+            'arf_pre_dup_field'          => '',
+            'arf_conditional_mail_rules' => array(),
+        );
+
         @ini_set( 'max_execution_time', 0 );
 
         $upload_dir   = ARFLITE_UPLOAD_DIR . '/css/';
@@ -186,34 +200,34 @@ class arforms_import_export_settings{
                                     if ( $options_key == 'before_html' ) {
                                         $option_arr_new[ $options_key ] = $arfliteformhelper->arflite_get_default_html( 'before' );
                                     } elseif ( $options_key == 'ar_email_subject' ) {
-                                            $_SESSION['ar_email_subject_org'] = $options_val;
+                                            $arf_import_data['ar_email_subject_org'] = $options_val;
                                         $option_arr_new[ $options_key ]    = $options_val;
                                     } elseif ( $options_key == 'ar_email_message' ) {
-                                            $_SESSION['ar_email_message_org'] = $options_val;
+                                            $arf_import_data['ar_email_message_org'] = $options_val;
                                         $option_arr_new[ $options_key ]    = $options_val;
                                     } elseif ( $options_key == 'ar_admin_email_message' ) {
-                                            $_SESSION['ar_admin_email_message_org'] = $options_val;
+                                            $arf_import_data['ar_admin_email_message_org'] = $options_val;
                                         $option_arr_new[ $options_key ]          = $options_val;
                                     } elseif ( $options_key == 'ar_email_to' ) {
-                                            $_SESSION['ar_email_to_org']   = $options_val;
+                                            $arf_import_data['ar_email_to_org']   = $options_val;
                                         $option_arr_new[ $options_key ] = $options_val;
                                     } elseif ( $options_key == 'ar_admin_from_email' ) {
-                                            $_SESSION['ar_admin_from_email'] = $options_val;
+                                            $arf_import_data['ar_admin_from_email'] = $options_val;
                                         $option_arr_new[ $options_key ]   = $options_val;
                                     } elseif ( $options_key == 'ar_user_from_email' ) {
-                                            $_SESSION['ar_user_from_email'] = $options_val;
+                                            $arf_import_data['ar_user_from_email'] = $options_val;
                                         $option_arr_new[ $options_key ]  = $options_val;
                                     } elseif ( $options_key == 'ar_admin_from_name' ) {
-                                            $_SESSION['arf_admin_from_name'] = $options_val;
+                                            $arf_import_data['arf_admin_from_name'] = $options_val;
                                         $option_arr_new[ $options_key ]   = $options_val;
                                     } elseif ( $options_key == 'admin_email_subject' ) {
-                                            $_SESSION['admin_email_subject'] = $options_val;
+                                            $arf_import_data['admin_email_subject'] = $options_val;
                                         $option_arr_new[ $options_key ]   = $options_val;
                                     } elseif ( $options_key == 'reply_to' ) {
-                                            $_SESSION['reply_to']          = $options_val;
+                                            $arf_import_data['reply_to']          = $options_val;
                                         $option_arr_new[ $options_key ] = $options_val;
                                     } elseif ( $options_key == 'arf_pre_dup_field' ) {
-                                            $_SESSION['arf_pre_dup_field'] = $options_val;
+                                            $arf_import_data['arf_pre_dup_field'] = $options_val;
                                         $option_arr_new[ $options_key ] = $options_val;
                                     } elseif ( $options_key == 'arf_field_order' ) {
                                         $old_field_orders               = json_decode( $options_val, true );
@@ -469,7 +483,7 @@ class arforms_import_export_settings{
 
                             $ar_email_subject = isset( $ar_email_subject ) ? $ar_email_subject : '';
                             if ( $ar_email_subject == '' ) {
-                                $ar_email_subject = esc_html( $_SESSION['ar_email_subject_org'] );
+                                $ar_email_subject = esc_html( $arf_import_data['ar_email_subject_org'] );
                             } else {
                                 $ar_email_subject = $ar_email_subject;
                             }
@@ -479,7 +493,7 @@ class arforms_import_export_settings{
 
                             $ar_email_message = isset( $ar_email_message ) ? $ar_email_message : '';
                             if ( $ar_email_message == '' ) {
-                                $ar_email_message = isset( $_SESSION['ar_email_message_org'] ) ? wp_kses( $_SESSION['ar_email_message_org'], $allowed_html ) : '';
+                                $ar_email_message = isset( $arf_import_data['ar_email_message_org'] ) ? wp_kses( $arf_import_data['ar_email_message_org'], $allowed_html ) : '';
                             } else {
                                 $ar_email_message = $ar_email_message;
                             }
@@ -489,7 +503,7 @@ class arforms_import_export_settings{
 
                             $arf_pre_dup_field = isset( $arf_pre_dup_field ) ? $arf_pre_dup_field : '';
                             if ( $arf_pre_dup_field == '' ) {
-                                $arf_pre_dup_field = isset( $_SESSION['arf_pre_dup_field'] ) ? esc_html( $_SESSION['arf_pre_dup_field'] ) : '';
+                                $arf_pre_dup_field = isset( $arf_import_data['arf_pre_dup_field'] ) ? esc_html( $arf_import_data['arf_pre_dup_field'] ) : '';
                             } else {
                                 $arf_pre_dup_field = $arf_pre_dup_field;
                             }
@@ -499,7 +513,7 @@ class arforms_import_export_settings{
 
                             $ar_admin_email_message = isset( $ar_admin_email_message ) ? $ar_admin_email_message : '';
                             if ( $ar_admin_email_message == '' ) {
-                                $ar_admin_email_message = isset( $_SESSION['ar_admin_email_message_org'] ) ? wp_kses( $_SESSION['ar_admin_email_message_org'], $allowed_html ) : '';
+                                $ar_admin_email_message = isset( $arf_import_data['ar_admin_email_message_org'] ) ? wp_kses( $arf_import_data['ar_admin_email_message_org'], $allowed_html ) : '';
                             } else {
                                 $ar_admin_email_message = $ar_admin_email_message;
                             }
@@ -509,7 +523,7 @@ class arforms_import_export_settings{
 
                             $ar_admin_from_name = isset( $ar_admin_from_name ) ? $ar_admin_from_name : '';
                             if ( $ar_admin_from_name == '' ) {
-                                $ar_admin_from_name = isset( $_SESSION['arf_admin_from_name'] ) ? esc_html( $_SESSION['arf_admin_from_name'] ) : '';
+                                $ar_admin_from_name = isset( $arf_import_data['arf_admin_from_name'] ) ? esc_html( $arf_import_data['arf_admin_from_name'] ) : '';
                             } else {
                                 $ar_admin_from_name = $ar_admin_from_name;
                             }
@@ -518,7 +532,7 @@ class arforms_import_export_settings{
 
                             $admin_email_subject = isset( $admin_email_subject ) ? $admin_email_subject : '';
                             if ( $admin_email_subject == '' ) {
-                                $admin_email_subject = isset( $_SESSION['admin_email_subject'] ) ? esc_html( $_SESSION['admin_email_subject'] ) : '';
+                                $admin_email_subject = isset( $arf_import_data['admin_email_subject'] ) ? esc_html( $arf_import_data['admin_email_subject'] ) : '';
                             } else {
                                 $admin_email_subject = $admin_email_subject;
                             }
@@ -528,7 +542,7 @@ class arforms_import_export_settings{
 
                             $reply_to = isset( $reply_to ) ? $reply_to : '';
                             if ( $reply_to == '' ) {
-                                $reply_to = isset( $_SESSION['reply_to'] ) ? esc_html( $_SESSION['reply_to'] ) : '';
+                                $reply_to = isset( $arf_import_data['reply_to'] ) ? esc_html( $arf_import_data['reply_to'] ) : '';
                             } else {
                                 $reply_to = $reply_to;
                             }
@@ -537,14 +551,14 @@ class arforms_import_export_settings{
 
                             $ar_email_to = isset( $ar_email_to ) ? $ar_email_to : '';
                             if ( $ar_email_to == '' ) {
-                                $ar_email_to = isset( $_SESSION['ar_email_to_org'] ) ? esc_html( $_SESSION['ar_email_to_org'] ) : '';
+                                $ar_email_to = isset( $arf_import_data['ar_email_to_org'] ) ? esc_html( $arf_import_data['ar_email_to_org'] ) : '';
                             } else {
                                 $ar_email_to = $ar_email_to;
                             }
 
                             $ar_admin_from_email = isset( $ar_admin_from_email ) ? $ar_admin_from_email : '';
                             if ( $ar_admin_from_email == '' ) {
-                                $ar_admin_from_email = isset( $_SESSION['ar_admin_from_email'] ) ? esc_html( $_SESSION['ar_admin_from_email'] ) : '';
+                                $ar_admin_from_email = isset( $arf_import_data['ar_admin_from_email'] ) ? esc_html( $arf_import_data['ar_admin_from_email'] ) : '';
                             } else {
                                 $ar_admin_from_email = $ar_admin_from_email;
                             }
@@ -554,7 +568,7 @@ class arforms_import_export_settings{
 
                             $ar_user_from_email = isset( $ar_user_from_email ) ? $ar_user_from_email : '';
                             if ( $ar_user_from_email == '' ) {
-                                $ar_user_from_email = isset( $_SESSION['ar_user_from_email'] ) ? esc_html( $_SESSION['ar_user_from_email'] ) : '';
+                                $ar_user_from_email = isset( $arf_import_data['ar_user_from_email'] ) ? esc_html( $arf_import_data['ar_user_from_email'] ) : '';
                             } else {
                                 $ar_user_from_email = $ar_user_from_email;
                             }

@@ -10,15 +10,13 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
+namespace Arforms\phpseclib3\Crypt;
 
-namespace phpseclib3\Crypt;
-
-use phpseclib3\Crypt\Common\AsymmetricKey;
-use phpseclib3\Crypt\Common\PrivateKey;
-use phpseclib3\Crypt\Common\PublicKey;
-use phpseclib3\Exception\NoKeyLoadedException;
-use phpseclib3\File\X509;
-
+use Arforms\phpseclib3\Crypt\Common\AsymmetricKey;
+use Arforms\phpseclib3\Crypt\Common\PrivateKey;
+use Arforms\phpseclib3\Crypt\Common\PublicKey;
+use Arforms\phpseclib3\Exception\NoKeyLoadedException;
+use Arforms\phpseclib3\File\X509;
 /**
  * PublicKeyLoader
  *
@@ -32,24 +30,22 @@ abstract class PublicKeyLoader
      * @return AsymmetricKey
      * @param string|array $key
      * @param string $password optional
+     * @throws NoKeyLoadedException if key is not valid
      */
-    public static function load($key, $password = false)
+    public static function load($key, $password = \false)
     {
         try {
             return EC::load($key, $password);
         } catch (NoKeyLoadedException $e) {
         }
-
         try {
             return RSA::load($key, $password);
         } catch (NoKeyLoadedException $e) {
         }
-
         try {
             return DSA::load($key, $password);
         } catch (NoKeyLoadedException $e) {
         }
-
         try {
             $x509 = new X509();
             $x509->loadX509($key);
@@ -59,10 +55,8 @@ abstract class PublicKeyLoader
             }
         } catch (\Exception $e) {
         }
-
         throw new NoKeyLoadedException('Unable to read key');
     }
-
     /**
      * Loads a private key
      *
@@ -70,7 +64,7 @@ abstract class PublicKeyLoader
      * @param string|array $key
      * @param string $password optional
      */
-    public static function loadPrivateKey($key, $password = false)
+    public static function loadPrivateKey($key, $password = \false)
     {
         $key = self::load($key, $password);
         if (!$key instanceof PrivateKey) {
@@ -78,7 +72,6 @@ abstract class PublicKeyLoader
         }
         return $key;
     }
-
     /**
      * Loads a public key
      *
@@ -93,7 +86,6 @@ abstract class PublicKeyLoader
         }
         return $key;
     }
-
     /**
      * Loads parameters
      *

@@ -1,6 +1,6 @@
 <?php
 
-namespace Psr\Cache;
+namespace Arforms\Psr\Cache;
 
 /**
  * Exception interface for invalid cache arguments.

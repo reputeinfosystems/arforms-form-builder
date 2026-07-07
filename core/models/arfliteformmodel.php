@@ -137,7 +137,7 @@ class arfliteformmodel {
 			if ( $is_from_edit ) {
 				$arflitefield->arfliteduplicate( $id, $form_id, $copy_keys, $blog_id );
 			} else {
-				$arflitefield->arfliteduplicate( $id, $form_id, $copy_keys, $blog_id, true );
+				$arf_fields_mapping = $arflitefield->arfliteduplicate( $id, $form_id, $copy_keys, $blog_id, true );
 				$form_options_sql = $wpdb->get_results( $wpdb->prepare( 'SELECT options FROM `' . $tbl_arf_forms . '` WHERE id = %d', $form_id ) ); //phpcs:ignore
 				$form_options     = maybe_unserialize( $form_options_sql[0]->options );
 
@@ -147,9 +147,9 @@ class arfliteformmodel {
 					$form_options['success_msg'] = !empty( $success_msg ) ? $success_msg : esc_html__('Form is successfully submitted. Thank you!','arforms-form-builder');
 				}
 				$new_field_order = array();
-				if ( isset( $_SESSION['arf_fields'] ) && is_array( $_SESSION['arf_fields'] ) && count( $_SESSION['arf_fields'] ) > 0 ) {
+				if ( isset( $arf_fields_mapping ) && is_array( $arf_fields_mapping ) && count( $arf_fields_mapping ) > 0 ) {
 					$fields_array = $arflitefield->arflitegetAll( array( 'fi.form_id' => $form_id ), 'id' );
-					foreach ( $_SESSION['arf_fields']  as $original_id => $field_new_id ) {
+					foreach ( $arf_fields_mapping  as $original_id => $field_new_id ) {
 						if ( $original_id == $form_options['ar_email_to'] ) {
 							$form_options['ar_email_to'] = $field_new_id;
 						}
@@ -197,7 +197,7 @@ class arfliteformmodel {
 
 					$form_options_new = maybe_serialize( $form_options );
 					$wpdb->update( $tbl_arf_forms, array( 'options' => $form_options_new ), array( 'id' => $form_id ) );
-					do_action( 'arflite_afterduplicate_update_fields', $form_options, $_SESSION['arf_fields'], $form_id );
+					do_action( 'arflite_afterduplicate_update_fields', $form_options, $arf_fields_mapping, $form_id );
 				}
 			}
 			return $form_id;

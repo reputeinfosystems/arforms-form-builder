@@ -1,9 +1,8 @@
 <?php
 
-namespace GuzzleHttp;
+namespace Arforms\GuzzleHttp;
 
-use Psr\Http\Message\MessageInterface;
-
+use Arforms\Psr\Http\Message\MessageInterface;
 interface BodySummarizerInterface
 {
     /**

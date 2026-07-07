@@ -10,14 +10,12 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://phpseclib.sourceforge.net
  */
+namespace Arforms\phpseclib3\Crypt\EC\Formats\Keys;
 
-namespace phpseclib3\Crypt\EC\Formats\Keys;
-
-use phpseclib3\Crypt\EC\BaseCurves\Montgomery as MontgomeryCurve;
-use phpseclib3\Crypt\EC\Curves\Curve25519;
-use phpseclib3\Crypt\EC\Curves\Curve448;
-use phpseclib3\Math\BigInteger;
-
+use Arforms\phpseclib3\Crypt\EC\BaseCurves\Montgomery as MontgomeryCurve;
+use Arforms\phpseclib3\Crypt\EC\Curves\Curve25519;
+use Arforms\phpseclib3\Crypt\EC\Curves\Curve448;
+use Arforms\phpseclib3\Math\BigInteger;
 /**
  * Montgomery Public Key Handler
  *
@@ -29,8 +27,7 @@ abstract class MontgomeryPublic
      * Is invisible flag
      *
      */
-    const IS_INVISIBLE = true;
-
+    const IS_INVISIBLE = \true;
     /**
      * Break a public or private key down into its constituent components
      *
@@ -50,17 +47,14 @@ abstract class MontgomeryPublic
             default:
                 throw new \LengthException('The only supported lengths are 32 and 56');
         }
-
         $components = ['curve' => $curve];
         $components['QA'] = [$components['curve']->convertInteger(new BigInteger(strrev($key), 256))];
-
         return $components;
     }
-
     /**
      * Convert an EC public key to the appropriate format
      *
-     * @param \phpseclib3\Crypt\EC\BaseCurves\Montgomery $curve
+     * @param MontgomeryCurve $curve
      * @param \phpseclib3\Math\Common\FiniteField\Integer[] $publicKey
      * @return string
      */

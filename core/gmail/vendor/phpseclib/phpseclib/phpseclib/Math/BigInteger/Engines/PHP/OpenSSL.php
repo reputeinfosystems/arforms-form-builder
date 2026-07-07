@@ -10,11 +10,9 @@
  * @license   http://www.opensource.org/licenses/mit-license.html  MIT License
  * @link      http://pear.php.net/package/Math_BigInteger
  */
+namespace Arforms\phpseclib3\Math\BigInteger\Engines\PHP;
 
-namespace phpseclib3\Math\BigInteger\Engines\PHP;
-
-use phpseclib3\Math\BigInteger\Engines\OpenSSL as Progenitor;
-
+use Arforms\phpseclib3\Math\BigInteger\Engines\OpenSSL as Progenitor;
 /**
  * OpenSSL Modular Exponentiation Engine
  *

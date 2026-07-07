@@ -1,10 +1,9 @@
 <?php
 
-namespace GuzzleHttp;
+namespace Arforms\GuzzleHttp;
 
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
-
+use Arforms\Psr\Http\Message\RequestInterface;
+use Arforms\Psr\Http\Message\ResponseInterface;
 interface MessageFormatterInterface
 {
     /**

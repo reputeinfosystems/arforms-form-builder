@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,48 +15,45 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class HistoryLabelAdded extends \Google\Collection
+class HistoryLabelAdded extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'labelIds';
-  /**
-   * @var string[]
-   */
-  public $labelIds;
-  protected $messageType = Message::class;
-  protected $messageDataType = '';
-
-  /**
-   * @param string[]
-   */
-  public function setLabelIds($labelIds)
-  {
-    $this->labelIds = $labelIds;
-  }
-  /**
-   * @return string[]
-   */
-  public function getLabelIds()
-  {
-    return $this->labelIds;
-  }
-  /**
-   * @param Message
-   */
-  public function setMessage(Message $message)
-  {
-    $this->message = $message;
-  }
-  /**
-   * @return Message
-   */
-  public function getMessage()
-  {
-    return $this->message;
-  }
+    protected $collection_key = 'labelIds';
+    /**
+     * @var string[]
+     */
+    public $labelIds;
+    protected $messageType = Message::class;
+    protected $messageDataType = '';
+    /**
+     * @param string[]
+     */
+    public function setLabelIds($labelIds)
+    {
+        $this->labelIds = $labelIds;
+    }
+    /**
+     * @return string[]
+     */
+    public function getLabelIds()
+    {
+        return $this->labelIds;
+    }
+    /**
+     * @param Message
+     */
+    public function setMessage(Message $message)
+    {
+        $this->message = $message;
+    }
+    /**
+     * @return Message
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(HistoryLabelAdded::class, 'Google_Service_Gmail_HistoryLabelAdded');
+class_alias(HistoryLabelAdded::class, 'Arforms\Google_Service_Gmail_HistoryLabelAdded');

@@ -1,10 +1,9 @@
 <?php
 
-namespace GuzzleHttp\Cookie;
+namespace Arforms\GuzzleHttp\Cookie;
 
-use Psr\Http\Message\RequestInterface;
-use Psr\Http\Message\ResponseInterface;
-
+use Arforms\Psr\Http\Message\RequestInterface;
+use Arforms\Psr\Http\Message\ResponseInterface;
 /**
  * Stores HTTP cookies.
  *
@@ -13,7 +12,8 @@ use Psr\Http\Message\ResponseInterface;
  * necessary. Subclasses are also responsible for storing and retrieving
  * cookies from a file, database, etc.
  *
- * @link https://docs.python.org/2/library/cookielib.html Inspiration
+ * @see https://docs.python.org/2/library/cookielib.html Inspiration
+ *
  * @extends \IteratorAggregate<SetCookie>
  */
 interface CookieJarInterface extends \Countable, \IteratorAggregate
@@ -29,7 +29,6 @@ interface CookieJarInterface extends \Countable, \IteratorAggregate
      * @return RequestInterface returns the modified request.
      */
     public function withCookieHeader(RequestInterface $request): RequestInterface;
-
     /**
      * Extract cookies from an HTTP response and store them in the CookieJar.
      *
@@ -37,7 +36,6 @@ interface CookieJarInterface extends \Countable, \IteratorAggregate
      * @param ResponseInterface $response Response that was received
      */
     public function extractCookies(RequestInterface $request, ResponseInterface $response): void;
-
     /**
      * Sets a cookie in the cookie jar.
      *
@@ -46,7 +44,6 @@ interface CookieJarInterface extends \Countable, \IteratorAggregate
      * @return bool Returns true on success or false on failure
      */
     public function setCookie(SetCookie $cookie): bool;
-
     /**
      * Remove cookies currently held in the cookie jar.
      *
@@ -62,7 +59,6 @@ interface CookieJarInterface extends \Countable, \IteratorAggregate
      * @param string|null $name   Clears cookies matching a domain, path, and name
      */
     public function clear(?string $domain = null, ?string $path = null, ?string $name = null): void;
-
     /**
      * Discard all sessions cookies.
      *
@@ -71,7 +67,6 @@ interface CookieJarInterface extends \Countable, \IteratorAggregate
      * to RFC 2965.
      */
     public function clearSessionCookies(): void;
-
     /**
      * Converts the cookie jar to an array.
      */

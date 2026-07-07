@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,67 +15,64 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class AutoForwarding extends \Google\Model
+class AutoForwarding extends \Arforms\Google\Model
 {
-  /**
-   * @var string
-   */
-  public $disposition;
-  /**
-   * @var string
-   */
-  public $emailAddress;
-  /**
-   * @var bool
-   */
-  public $enabled;
-
-  /**
-   * @param string
-   */
-  public function setDisposition($disposition)
-  {
-    $this->disposition = $disposition;
-  }
-  /**
-   * @return string
-   */
-  public function getDisposition()
-  {
-    return $this->disposition;
-  }
-  /**
-   * @param string
-   */
-  public function setEmailAddress($emailAddress)
-  {
-    $this->emailAddress = $emailAddress;
-  }
-  /**
-   * @return string
-   */
-  public function getEmailAddress()
-  {
-    return $this->emailAddress;
-  }
-  /**
-   * @param bool
-   */
-  public function setEnabled($enabled)
-  {
-    $this->enabled = $enabled;
-  }
-  /**
-   * @return bool
-   */
-  public function getEnabled()
-  {
-    return $this->enabled;
-  }
+    /**
+     * @var string
+     */
+    public $disposition;
+    /**
+     * @var string
+     */
+    public $emailAddress;
+    /**
+     * @var bool
+     */
+    public $enabled;
+    /**
+     * @param string
+     */
+    public function setDisposition($disposition)
+    {
+        $this->disposition = $disposition;
+    }
+    /**
+     * @return string
+     */
+    public function getDisposition()
+    {
+        return $this->disposition;
+    }
+    /**
+     * @param string
+     */
+    public function setEmailAddress($emailAddress)
+    {
+        $this->emailAddress = $emailAddress;
+    }
+    /**
+     * @return string
+     */
+    public function getEmailAddress()
+    {
+        return $this->emailAddress;
+    }
+    /**
+     * @param bool
+     */
+    public function setEnabled($enabled)
+    {
+        $this->enabled = $enabled;
+    }
+    /**
+     * @return bool
+     */
+    public function getEnabled()
+    {
+        return $this->enabled;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(AutoForwarding::class, 'Google_Service_Gmail_AutoForwarding');
+class_alias(AutoForwarding::class, 'Arforms\Google_Service_Gmail_AutoForwarding');

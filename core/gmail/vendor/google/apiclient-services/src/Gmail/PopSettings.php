@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,49 +15,46 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class PopSettings extends \Google\Model
+class PopSettings extends \Arforms\Google\Model
 {
-  /**
-   * @var string
-   */
-  public $accessWindow;
-  /**
-   * @var string
-   */
-  public $disposition;
-
-  /**
-   * @param string
-   */
-  public function setAccessWindow($accessWindow)
-  {
-    $this->accessWindow = $accessWindow;
-  }
-  /**
-   * @return string
-   */
-  public function getAccessWindow()
-  {
-    return $this->accessWindow;
-  }
-  /**
-   * @param string
-   */
-  public function setDisposition($disposition)
-  {
-    $this->disposition = $disposition;
-  }
-  /**
-   * @return string
-   */
-  public function getDisposition()
-  {
-    return $this->disposition;
-  }
+    /**
+     * @var string
+     */
+    public $accessWindow;
+    /**
+     * @var string
+     */
+    public $disposition;
+    /**
+     * @param string
+     */
+    public function setAccessWindow($accessWindow)
+    {
+        $this->accessWindow = $accessWindow;
+    }
+    /**
+     * @return string
+     */
+    public function getAccessWindow()
+    {
+        return $this->accessWindow;
+    }
+    /**
+     * @param string
+     */
+    public function setDisposition($disposition)
+    {
+        $this->disposition = $disposition;
+    }
+    /**
+     * @return string
+     */
+    public function getDisposition()
+    {
+        return $this->disposition;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(PopSettings::class, 'Google_Service_Gmail_PopSettings');
+class_alias(PopSettings::class, 'Arforms\Google_Service_Gmail_PopSettings');

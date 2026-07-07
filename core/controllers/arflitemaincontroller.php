@@ -22,8 +22,6 @@ class arflitemaincontroller {
 
 		add_action( 'init', array( $this, 'arflite_parse_standalone_request' ) );
 
-		add_action( 'init', array( $this, 'arflite_start_session' ), 1 );
-
 		add_action( 'init', array( $this, 'arflite_template_install' ), 1 );
 
 		add_shortcode( 'ARFormslite', array( $this, 'arflite_get_form_shortcode_legacy' ) );
@@ -1844,28 +1842,6 @@ class arflitemaincontroller {
 		}
 	}
 
-	
-
-	function arflite_start_session( $force = false ) {
-		if ( version_compare( PHP_VERSION, '7.0.0' ) >= 0 ) {
-			if ( ( function_exists( 'session_status' ) && session_status() == PHP_SESSION_NONE && ! is_admin() ) || $force == true ) {
-				@session_start(
-					array(
-						'read_and_close' => false,
-					)
-				);
-			}
-		} elseif ( version_compare( PHP_VERSION, '5.4.0' ) >= 0 ) {
-			if ( ( function_exists( 'session_status' ) && session_status() == PHP_SESSION_NONE && ! is_admin() ) || $force == true ) {
-				@session_start();
-			}
-		} else {
-			if ( ( session_id() == '' && ! is_admin() ) || $force == true ) {
-				@session_start();
-			}
-		}
-	}
-
 	function arflite_parse_standalone_request() {
 
 		$plugin = $this->arflite_get_param( 'plugin' );
@@ -2647,7 +2623,7 @@ class arflitemaincontroller {
 			$arflitenewdbversion = get_option( 'arflite_db_version' );
 		}
 
-		if ( version_compare( $arflitenewdbversion, '1.8.4', '<' ) ) {
+		if ( version_compare( $arflitenewdbversion, '1.8.5', '<' ) ) {
 			$path = ARFLITE_FORMPATH . '/core/views/arflite_upgrade_latest_data.php';
 			include $path;
 			$this->arforms_send_anonymous_data_cron();

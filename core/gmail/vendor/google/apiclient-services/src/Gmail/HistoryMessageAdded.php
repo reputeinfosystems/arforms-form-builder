@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,29 +15,26 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class HistoryMessageAdded extends \Google\Model
+class HistoryMessageAdded extends \Arforms\Google\Model
 {
-  protected $messageType = Message::class;
-  protected $messageDataType = '';
-
-  /**
-   * @param Message
-   */
-  public function setMessage(Message $message)
-  {
-    $this->message = $message;
-  }
-  /**
-   * @return Message
-   */
-  public function getMessage()
-  {
-    return $this->message;
-  }
+    protected $messageType = Message::class;
+    protected $messageDataType = '';
+    /**
+     * @param Message
+     */
+    public function setMessage(Message $message)
+    {
+        $this->message = $message;
+    }
+    /**
+     * @return Message
+     */
+    public function getMessage()
+    {
+        return $this->message;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(HistoryMessageAdded::class, 'Google_Service_Gmail_HistoryMessageAdded');
+class_alias(HistoryMessageAdded::class, 'Arforms\Google_Service_Gmail_HistoryMessageAdded');

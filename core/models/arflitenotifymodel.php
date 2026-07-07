@@ -81,9 +81,6 @@ class arflitenotifymodel {
 			return;
 		}
 
-		if ( $_SESSION['arf_payment_check_form_id'] === '' ) {
-			$_SESSION['arf_payment_check_form_id'] = $form_id;
-		}
 		global $arfliteform, $arflite_db_record, $arfliterecordmeta;
 		$arfblogname   = wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES );
 		$entry         = $arflite_db_record->arflitegetOne( $entry_id );
@@ -449,7 +446,7 @@ class arflitenotifymodel {
 			extract( $gmail_oauth_settings );
 			$arflite_gmail_oauth_data = json_decode($arf_gmail_api_response_data, true);
 
-            $client = new Google_Client();
+            $client = new \Arforms\Google\Client();
             $client->setClientId($gmail_api_clientid);
             $client->setClientSecret( $gmail_api_clientsecret );
             $client->setRedirectUri( $arformslite_redirect_url);
@@ -501,7 +498,7 @@ class arflitenotifymodel {
                     update_option('arformslite_gmail_invalid_auth_token',0);
                 }
             }
-            $service = new Google\Service\Gmail( $client );
+            $service = new \Arforms\Google\Service\Gmail( $client );
             $user = 'me';
             $subjectCharset = $charset = 'utf-8';
             $boundary = uniqid(rand(), true);
@@ -544,7 +541,7 @@ class arflitenotifymodel {
 
 			$mime = rtrim(strtr(base64_encode($arformslite_email_content_data), '+/', '-_'), '=');
 
-            $msg = new Google_Service_Gmail_Message();
+            $msg = new \Arforms\Google\Service\Gmail\Message();
             $msg->setRaw($mime);
             try {
 				$arf_message = $service->users_messages->send('me', $msg);
@@ -599,7 +596,6 @@ class arflitenotifymodel {
 		if ( defined( 'WP_IMPORTING' ) ) {
 			return;
 		}
-		$_SESSION['arf_payment_check_form_id'] = $form_id;
 		global $arfliteform, $arflite_db_record, $arfliterecordmeta, $arflite_style_settings, $arflitemainhelper, $arflitefieldhelper, $arflitenotifymodel,$arfliteformcontroller, $arformsmain;
 		if ( ! isset( $form_id ) ) {
 			return;
@@ -1082,16 +1078,8 @@ class arflitenotifymodel {
 		$mail_body                             = apply_filters( 'arflitebefore_admin_send_mail_body', $mail_body, $entry_id, $form_id );
 		$mail_body                             = nl2br( $mail_body );
 		$to_emails                             = apply_filters( 'arflitetoemail', $to_emails, $values, $form_id );
-		$_SESSION['arf_admin_emails']         = (array) $to_emails;
-		$_SESSION['arf_admin_subject']        = $subject;
-		$_SESSION['arf_admin_mail_body']      = $mail_body;
-		$_SESSION['arf_admin_reply_to']       = $reply_to;
-		$_SESSION['arf_admin_reply_to_email'] = $admin_nreplyto;
-		$_SESSION['arf_admin_reply_to_name']  = $reply_to_name;
-		$_SESSION['arf_admin_plain_text']     = $plain_text;
-		$_SESSION['arf_admin_attachments']    = $attachments;
-
-		$admin_email_notification_data = array(
+		
+	     $admin_email_notification_data = array(
             'arf_admin_emails' => (array) $to_emails,
             'arf_admin_subject' => $subject,
             'arf_admin_mail_body' => $mail_body,
@@ -1543,8 +1531,8 @@ class arflitenotifymodel {
 		$mail_body   = apply_filters( 'arflitebefore_autoresponse_send_mail_body', $mail_body, $entry_id, $form_id );
 		$attachments = apply_filters( 'arfliteautoresponderattachment', $attachments, $form, array( 'entry' => $entry ) );
 		$mail_body   = nl2br( $mail_body );
-
-		$arflitenotifymodel->arflite_send_notification_email_user( $to_email, $subject, $mail_body, $reply_to, $reply_to_name, $plain_text, $attachments, false, false, false, false, $user_nreplyto );
+		
+		$arflitenotifymodel->arflite_send_notification_email_user( $to_email, $subject, $mail_body, $reply_to, $reply_to_name, $plain_text, $attachments, false, false, false, false, $user_nreplyto, '', '', $entry_id, $form_id );
 
 		return $to_email;
 	}

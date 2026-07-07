@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,32 +15,29 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class BatchDeleteMessagesRequest extends \Google\Collection
+class BatchDeleteMessagesRequest extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'ids';
-  /**
-   * @var string[]
-   */
-  public $ids;
-
-  /**
-   * @param string[]
-   */
-  public function setIds($ids)
-  {
-    $this->ids = $ids;
-  }
-  /**
-   * @return string[]
-   */
-  public function getIds()
-  {
-    return $this->ids;
-  }
+    protected $collection_key = 'ids';
+    /**
+     * @var string[]
+     */
+    public $ids;
+    /**
+     * @param string[]
+     */
+    public function setIds($ids)
+    {
+        $this->ids = $ids;
+    }
+    /**
+     * @return string[]
+     */
+    public function getIds()
+    {
+        return $this->ids;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(BatchDeleteMessagesRequest::class, 'Google_Service_Gmail_BatchDeleteMessagesRequest');
+class_alias(BatchDeleteMessagesRequest::class, 'Arforms\Google_Service_Gmail_BatchDeleteMessagesRequest');

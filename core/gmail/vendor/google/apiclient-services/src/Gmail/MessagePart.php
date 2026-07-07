@@ -1,4 +1,5 @@
 <?php
+
 /*
  * Copyright 2014 Google Inc.
  *
@@ -14,116 +15,113 @@
  * License for the specific language governing permissions and limitations under
  * the License.
  */
+namespace Arforms\Google\Service\Gmail;
 
-namespace Google\Service\Gmail;
-
-class MessagePart extends \Google\Collection
+class MessagePart extends \Arforms\Google\Collection
 {
-  protected $collection_key = 'parts';
-  protected $bodyType = MessagePartBody::class;
-  protected $bodyDataType = '';
-  /**
-   * @var string
-   */
-  public $filename;
-  protected $headersType = MessagePartHeader::class;
-  protected $headersDataType = 'array';
-  /**
-   * @var string
-   */
-  public $mimeType;
-  /**
-   * @var string
-   */
-  public $partId;
-  protected $partsType = MessagePart::class;
-  protected $partsDataType = 'array';
-
-  /**
-   * @param MessagePartBody
-   */
-  public function setBody(MessagePartBody $body)
-  {
-    $this->body = $body;
-  }
-  /**
-   * @return MessagePartBody
-   */
-  public function getBody()
-  {
-    return $this->body;
-  }
-  /**
-   * @param string
-   */
-  public function setFilename($filename)
-  {
-    $this->filename = $filename;
-  }
-  /**
-   * @return string
-   */
-  public function getFilename()
-  {
-    return $this->filename;
-  }
-  /**
-   * @param MessagePartHeader[]
-   */
-  public function setHeaders($headers)
-  {
-    $this->headers = $headers;
-  }
-  /**
-   * @return MessagePartHeader[]
-   */
-  public function getHeaders()
-  {
-    return $this->headers;
-  }
-  /**
-   * @param string
-   */
-  public function setMimeType($mimeType)
-  {
-    $this->mimeType = $mimeType;
-  }
-  /**
-   * @return string
-   */
-  public function getMimeType()
-  {
-    return $this->mimeType;
-  }
-  /**
-   * @param string
-   */
-  public function setPartId($partId)
-  {
-    $this->partId = $partId;
-  }
-  /**
-   * @return string
-   */
-  public function getPartId()
-  {
-    return $this->partId;
-  }
-  /**
-   * @param MessagePart[]
-   */
-  public function setParts($parts)
-  {
-    $this->parts = $parts;
-  }
-  /**
-   * @return MessagePart[]
-   */
-  public function getParts()
-  {
-    return $this->parts;
-  }
+    protected $collection_key = 'parts';
+    protected $bodyType = MessagePartBody::class;
+    protected $bodyDataType = '';
+    /**
+     * @var string
+     */
+    public $filename;
+    protected $headersType = MessagePartHeader::class;
+    protected $headersDataType = 'array';
+    /**
+     * @var string
+     */
+    public $mimeType;
+    /**
+     * @var string
+     */
+    public $partId;
+    protected $partsType = MessagePart::class;
+    protected $partsDataType = 'array';
+    /**
+     * @param MessagePartBody
+     */
+    public function setBody(MessagePartBody $body)
+    {
+        $this->body = $body;
+    }
+    /**
+     * @return MessagePartBody
+     */
+    public function getBody()
+    {
+        return $this->body;
+    }
+    /**
+     * @param string
+     */
+    public function setFilename($filename)
+    {
+        $this->filename = $filename;
+    }
+    /**
+     * @return string
+     */
+    public function getFilename()
+    {
+        return $this->filename;
+    }
+    /**
+     * @param MessagePartHeader[]
+     */
+    public function setHeaders($headers)
+    {
+        $this->headers = $headers;
+    }
+    /**
+     * @return MessagePartHeader[]
+     */
+    public function getHeaders()
+    {
+        return $this->headers;
+    }
+    /**
+     * @param string
+     */
+    public function setMimeType($mimeType)
+    {
+        $this->mimeType = $mimeType;
+    }
+    /**
+     * @return string
+     */
+    public function getMimeType()
+    {
+        return $this->mimeType;
+    }
+    /**
+     * @param string
+     */
+    public function setPartId($partId)
+    {
+        $this->partId = $partId;
+    }
+    /**
+     * @return string
+     */
+    public function getPartId()
+    {
+        return $this->partId;
+    }
+    /**
+     * @param MessagePart[]
+     */
+    public function setParts($parts)
+    {
+        $this->parts = $parts;
+    }
+    /**
+     * @return MessagePart[]
+     */
+    public function getParts()
+    {
+        return $this->parts;
+    }
 }
-
 // Adding a class alias for backwards compatibility with the previous class name.
-class_alias(MessagePart::class, 'Google_Service_Gmail_MessagePart');
+class_alias(MessagePart::class, 'Arforms\Google_Service_Gmail_MessagePart');
