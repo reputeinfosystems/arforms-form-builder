@@ -110,7 +110,7 @@ $preset_options = array(
 
 array_unshift( $preset_options[ __( 'Countries', 'arforms-form-builder' ) ], '' );
 
-$arf_preset_values = maybe_unserialize( get_option( 'arflite_preset_values' ) );
+$arf_preset_values = arf_safe_maybe_unserialize( get_option( 'arflite_preset_values' ) );
 
 if ( ! empty( $arf_preset_values ) && is_array( $arf_preset_values ) ) {
 	$file_preset_arr = '';

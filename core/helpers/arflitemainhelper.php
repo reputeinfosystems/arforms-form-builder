@@ -1014,7 +1014,7 @@ class arflitemainhelper {
 
 			if ( ! isset( $field['taxonomy'] ) ) {
 
-				$field['field_options'] = maybe_unserialize( $field['field_options'] );
+				$field['field_options'] = arf_safe_maybe_unserialize( $field['field_options'] );
 
 				$field['taxonomy'] = $field['field_options']['taxonomy'];
 			}
@@ -1165,7 +1165,7 @@ class arflitemainhelper {
 			}
 		} else {
 
-			$value = ( isset( $_POST[ $param ] ) ? stripslashes_deep( maybe_unserialize( sanitize_text_field( $_POST[ $param ] ) ) ) : isset( $str[ $param ] ) ) ? stripslashes_deep( maybe_unserialize( $str[ $param ] ) ) : $default; //phpcs:ignore
+			$value = ( isset( $_POST[ $param ] ) ? stripslashes_deep( arf_safe_maybe_unserialize( sanitize_text_field( $_POST[ $param ] ) ) ) : isset( $str[ $param ] ) ) ? stripslashes_deep( arf_safe_maybe_unserialize( $str[ $param ] ) ) : $default; //phpcs:ignore
 		}
 
 		if ( isset( $params ) && is_array( $value ) && ! empty( $value ) ) {
@@ -1210,7 +1210,7 @@ class arflitemainhelper {
 
 	function arflite_get_post_param( $param, $default = '' ) {
 
-		return isset( $_POST[ $param ] ) ? stripslashes_deep( maybe_unserialize( sanitize_text_field( $_POST[ $param ] ) ) ) : $default; //phpcs:ignore
+		return isset( $_POST[ $param ] ) ? stripslashes_deep( arf_safe_maybe_unserialize( sanitize_text_field( $_POST[ $param ] ) ) ) : $default; //phpcs:ignore
 	}
 
 	function arflite_load_scripts( $scripts ) {

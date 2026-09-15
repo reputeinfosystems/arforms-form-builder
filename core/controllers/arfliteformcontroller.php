@@ -154,7 +154,7 @@ class arfliteformcontroller {
 
 		$form_options = $form_data->options;
 		if ( ! is_array( $form_data->options ) ) {
-			$form_options = maybe_unserialize( $form_data->options );
+			$form_options = arf_safe_maybe_unserialize( $form_data->options );
 		}
 
 		$arf_disable_form  = false;
@@ -1687,7 +1687,7 @@ class arfliteformcontroller {
 					$field_opt = arflite_json_decode( $field_options, true );
 
 					if ( json_last_error() != JSON_ERROR_NONE ) {
-						$field_opt = maybe_unserialize( $field_options );
+						$field_opt = arf_safe_maybe_unserialize( $field_options );
 					}
 					if ( ! $is_preview ) {
 						$changed_field_value[] = $new_field_id = $field_id_all = $wpdb->insert_id;
@@ -1994,7 +1994,7 @@ class arfliteformcontroller {
 
 			$form = $arfliteform->arflitegetOne( $form_id );
 
-			$form->form_css = maybe_unserialize( $form->form_css );
+			$form->form_css = arf_safe_maybe_unserialize( $form->form_css );
 
 			$css_common_filename = ARFLITE_FORMPATH . '/core/arflite_css_create_common.php';
 
@@ -2180,12 +2180,12 @@ class arfliteformcontroller {
 				if ( $k == 'options' ) {
 					$arf_all_fields[ $key ][ $k ] = json_decode( $field_val, true );
 					if ( json_last_error() != JSON_ERROR_NONE ) {
-						$arf_all_fields[ $key ][ $k ] = maybe_unserialize( $field_val );
+						$arf_all_fields[ $key ][ $k ] = arf_safe_maybe_unserialize( $field_val );
 					}
 				} elseif ( $k == 'field_options' ) {
 					$field_opts = json_decode( $field_val, true );
 					if ( json_last_error() != JSON_ERROR_NONE ) {
-						$field_opts = maybe_unserialize( $field_val );
+						$field_opts = arf_safe_maybe_unserialize( $field_val );
 					}
 					foreach ( $field_opts as $ki => $val_ ) {
 						$arf_all_fields[ $key ][ $ki ] = $val_;
@@ -2233,7 +2233,7 @@ class arfliteformcontroller {
 
 			$field_resize_width = json_decode( $options['arf_field_resize_width'], true );
 			$data['form_css']   = $db_data['form_css'];
-			$frm_css            = maybe_unserialize( $data['form_css'] );
+			$frm_css            = arf_safe_maybe_unserialize( $data['form_css'] );
 			$newarr             = array();
 			$arr                = $frm_css;
 			if ( isset( $arr ) && ! empty( $arr ) && is_array( $arr ) ) {
@@ -2279,7 +2279,7 @@ class arfliteformcontroller {
 
 					$field_opt = json_decode( $field['field_options'], true );
 					if ( json_last_error() != JSON_ERROR_NONE ) {
-						$field_opt = maybe_unserialize( $field['field_options'] );
+						$field_opt = arf_safe_maybe_unserialize( $field['field_options'] );
 					}
 					  $class = $field_opt['inner_class'];
 					array_push( $class_array, $field_opt['inner_class'] );
@@ -2290,7 +2290,7 @@ class arfliteformcontroller {
 						$has_options  = true;
 						$field_opt_db = json_decode( $field['options'], true );
 						if ( json_last_error() != JSON_ERROR_NONE ) {
-							$field_opt_db = maybe_unserialize( $field['optinos'] );
+							$field_opt_db = arf_safe_maybe_unserialize( $field['optinos'] );
 						}
 					}
 
@@ -2361,7 +2361,7 @@ class arfliteformcontroller {
 			global $wpdb;
 			$res1 = $wpdb->get_results( 'SELECT * FROM ' . $wpdb->prefix . "options WHERE option_name = 'arflite_options' ", OBJECT_K );
 			foreach ( $res1 as $key1 => $val1 ) {
-				$mynewarr = maybe_unserialize( $val1->option_value );
+				$mynewarr = arf_safe_maybe_unserialize( $val1->option_value );
 			}
 
 			update_option( 'arflite_options', $mynewarr );
@@ -3331,7 +3331,7 @@ class arfliteformcontroller {
 
 		$hidden_fields .= '<input type="hidden" data-jqvalidate="false" name="arf_is_resetform_outside_' . esc_attr( $form->id ) . '" data-id="arf_is_resetform_outside_' . esc_attr( $form->id ) . '" value="' . ( ( apply_filters( 'arflite_is_resetform_outside', false, $form ) ) ? 1 : 0 ) . '" />';
 
-		$form->form_css            = maybe_unserialize( $form->form_css );
+		$form->form_css            = arf_safe_maybe_unserialize( $form->form_css );
 		$arf_field_tooltipposition = isset( $form->form_css['arftooltipposition'] ) ? $form->form_css['arftooltipposition'] : 'top';
 		$hidden_fields            .= '<input type="hidden" data-jqvalidate="false" name="arf_tooltip_settings_' . esc_attr( $form->id ) . '" data-id="arf_tooltip_settings_' . esc_attr( $form->id ) . '" class="arf_front_tooltip_settings" data-form-id="' . esc_attr( $form->id ) . '" data-color="' . esc_attr( $form->form_css['arf_tooltip_font_color'] ) . '" data-position="' . esc_attr( $arf_field_tooltipposition ) . '" data-width="' . esc_attr( $form->form_css['arf_tooltip_width'] ) . '" data-bg-color="' . esc_attr( $form->form_css['arf_tooltip_bg_color'] ) . '" />';
 
@@ -3467,7 +3467,7 @@ class arfliteformcontroller {
 		$form_data->id       = $form->id;
 		$form_data->form_key = $form->form_key;
 		$form_data->options  = maybe_serialize( $form->options );
-		$form_temp_fields    = maybe_unserialize( $form->temp_fields );
+		$form_temp_fields    = arf_safe_maybe_unserialize( $form->temp_fields );
 
 		if ( ! is_array( $form_temp_fields ) ) {
 			$form_temp_fields = arflite_json_decode( wp_json_encode( $form_temp_fields ), true );
@@ -3483,7 +3483,7 @@ class arfliteformcontroller {
 			$res_data[ $key ]->field_options = wp_json_encode( $value->field_options );
 		}
 		$css_data_arr = $form->form_css;
-		$arr          = maybe_unserialize( $css_data_arr );
+		$arr          = arf_safe_maybe_unserialize( $css_data_arr );
 		$newarr       = array();
 
 		$newarr                     = $arr;
@@ -3621,7 +3621,7 @@ class arfliteformcontroller {
 				} else {
 					$field_opt = isset( $field['field_options'] ) ? json_decode( $field['field_options'], true ) : json_decode( wp_json_encode( array() ), true );
 					if ( json_last_error() != JSON_ERROR_NONE ) {
-						$field_opt = maybe_unserialize( $field['field_options'] );
+						$field_opt = arf_safe_maybe_unserialize( $field['field_options'] );
 					}
 					if ( is_array( $field_opt ) && ! empty( $field_opt ) ) {
 						foreach ( $field_opt as $k => $fieldOpt ) {
@@ -4115,7 +4115,7 @@ class arfliteformcontroller {
 				$arf_input_field_html .= $arflitefieldcontroller->arflite_input_fieldhtml( $field, false );
 				$arf_input_field_html .= $arflitefieldcontroller->arflite_input_html( $field, false );
 
-				$frm_opt = maybe_unserialize( $form_data->options );
+				$frm_opt = arf_safe_maybe_unserialize( $form_data->options );
 
 				$required_class .= " arf_field_type_{$field['type']} ";
 
@@ -6654,16 +6654,16 @@ class arfliteformcontroller {
 			return;
 		}
 
-		$form->options = maybe_unserialize( $form->options );
+		$form->options = arf_safe_maybe_unserialize( $form->options );
 		$css_data_arr  = $form->form_css;
 
-		$arr = maybe_unserialize( $css_data_arr );
+		$arr = arf_safe_maybe_unserialize( $css_data_arr );
 
 		$newarr      = array();
 		$newarr      = $arr;
 		$return_css .= '<style type="text/css" id="' . $id . '" data-form-unique-id="' . $arflite_data_uniq_id . '" >';
 
-		$form->form_css = maybe_unserialize( $form->form_css );
+		$form->form_css = arf_safe_maybe_unserialize( $form->form_css );
 
 		$loaded_field = isset( $form->options['arf_loaded_field'] ) ? $form->options['arf_loaded_field'] : array();
 		
@@ -6883,14 +6883,14 @@ class arfliteformcontroller {
 
 		$css_data_arr = $form->form_css;
 
-		$arr = maybe_unserialize( $css_data_arr );
+		$arr = arf_safe_maybe_unserialize( $css_data_arr );
 
 		$newarr = array();
 		$newarr = $arr;
 
 		$return_css .= '<style type="text/css" id="arf_form_' . $id . '" data-form-unique-id="' . $arflite_data_uniq_id . '" >';
 
-			$form->form_css = maybe_unserialize( $form->form_css );
+			$form->form_css = arf_safe_maybe_unserialize( $form->form_css );
 
 			$loaded_field = isset( $form->options['arf_loaded_field'] ) ? $form->options['arf_loaded_field'] : array();
 
@@ -7281,7 +7281,7 @@ class arfliteformcontroller {
 			foreach ( $unsaved_fields as $key => $value ) {
 				$opts = json_decode( $value, true );
 				if ( json_last_error() != JSON_ERROR_NONE ) {
-					$opts = maybe_unserialize( $value );
+					$opts = arf_safe_maybe_unserialize( $value );
 				}
 				foreach ( $opts as $k => $val ) {
 					if ( $k == 'key' ) {
@@ -7618,7 +7618,7 @@ class arfliteformcontroller {
 					$has_field_opt    = true;
 					$field_options_db = @json_decode( $field['options'], true );
 					if ( json_last_error() != JSON_ERROR_NONE ) {
-						$field_options_db = maybe_unserialize( $field['options'], true );
+						$field_options_db = arf_safe_maybe_unserialize( $field['options'], true );
 					}
 				}
 
@@ -7627,7 +7627,7 @@ class arfliteformcontroller {
 				array_push( $class_array, $field_opt['inner_class'] );
 
 				if ( json_last_error() != JSON_ERROR_NONE ) {
-					$field_opt = maybe_unserialize( $field['field_options'] );
+					$field_opt = arf_safe_maybe_unserialize( $field['field_options'] );
 				}
 
 				if ( isset( $field_opt ) && ! empty( $field_opt ) ) {
@@ -8023,10 +8023,12 @@ class arfliteformcontroller {
 			$materialize_css = 'materialize_';
 			$is_material     = true;
 		}
+		$css_file_path = ARFLITE_UPLOAD_DIR . '/maincss/maincss_' . $materialize_css . $form_id . '.css';
+		$css_version = file_exists( $css_file_path ) ? filemtime( $css_file_path ) : $arflite_jscss_version;
 		if ( is_ssl() ) {
-			$fid = str_replace( 'http://', 'https://', $upload_main_url . '/maincss_' . $materialize_css . $form_id . '.css?ver=' . $arflite_jscss_version );
+			$fid = str_replace( 'http://', 'https://', $upload_main_url . '/maincss_' . $materialize_css . $form_id . '.css?ver=' . $css_version );
 		} else {
-			$fid = $upload_main_url . '/maincss_' . $materialize_css . $form_id . '.css?ver=' . $arflite_jscss_version;
+			$fid = $upload_main_url . '/maincss_' . $materialize_css . $form_id . '.css?ver=' . $css_version;
 		}
 
 		$fid = esc_url_raw( $fid );
@@ -8063,7 +8065,7 @@ class arfliteformcontroller {
 			$arfmainformloadjscss = $arformsmain->arforms_get_settings('arfmainformloadjscss','general_settings');
 			$arfmainformloadjscss = !empty( $arfmainformloadjscss ) ? $arfmainformloadjscss : 0;
 			if ( $arfmainformloadjscss != 1 ) {
-				wp_enqueue_style( $stylesheet_handler, $fid, array(), $arflite_jscss_version );
+				wp_enqueue_style( $stylesheet_handler, $fid, array(), $css_version );
 			} else {
 				$new_key = '';
 				global $ARFLiteMdlDb,$arflitemainhelper, $tbl_arf_forms;
@@ -8184,7 +8186,7 @@ class arfliteformcontroller {
 			require_once ABSPATH . 'wp-admin/includes/file.php';
 		}
 
-		$form_css = maybe_unserialize( $frm_css );
+		$form_css = arf_safe_maybe_unserialize( $frm_css );
 
 		WP_Filesystem();
 		global $wp_filesystem;
@@ -8207,9 +8209,9 @@ class arfliteformcontroller {
 
 		$form = $arfliteform->arflitegetOne( (int) $form_id );
 
-		$form->form_css = maybe_unserialize( $form->form_css );
+		$form->form_css = arf_safe_maybe_unserialize( $form->form_css );
 
-		$form_options = maybe_unserialize( $form->options );
+		$form_options = arf_safe_maybe_unserialize( $form->options );
 
 		$is_prefix_suffix_enable = false;
 		$is_checkbox_img_enable  = false;

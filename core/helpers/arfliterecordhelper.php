@@ -16,7 +16,7 @@ class arfliterecordhelper {
 		if ( ! $field ) {
 			return $value;
 		}
-		$field->field_options = maybe_unserialize( $field->field_options );
+		$field->field_options = arf_safe_maybe_unserialize( $field->field_options );
 		switch ( $field->type ) {
 			case 'date':
 				$value = $arflitefieldhelper->arfliteget_date_entry( $value, $field->form_id, $field->field_options['show_time_calendar'], $field->field_options['clock'], $field->field_options['locale'] );
@@ -129,7 +129,7 @@ class arfliterecordhelper {
 					'required'     => $field->required,
 					'field_key'    => $field->field_key,
 					'form_id'      => $field->form_id,
-					'option_order' => maybe_unserialize( $field->option_order ),
+					'option_order' => arf_safe_maybe_unserialize( $field->option_order ),
 				);
 
 				$opt_defaults = $arflitefieldhelper->arflite_get_default_field_options( $field_array['type'], $field, true );
@@ -174,7 +174,7 @@ class arfliterecordhelper {
 				}
 			}
 
-			$form_options = isset( $form->options ) ? maybe_unserialize( $form->options ) : '';
+			$form_options = isset( $form->options ) ? arf_safe_maybe_unserialize( $form->options ) : '';
 
 			if ( is_array( $form_options ) ) {
 
@@ -388,7 +388,7 @@ class arfliterecordhelper {
 
 		$atts = wp_parse_args( $atts, $defaults );
 
-		$field->field_options = maybe_unserialize( $field->field_options );
+		$field->field_options = arf_safe_maybe_unserialize( $field->field_options );
 
 		if ( ! isset( $field->field_options['post_field'] ) ) {
 			$field->field_options['post_field'] = '';
@@ -403,7 +403,7 @@ class arfliterecordhelper {
 			return $value;
 		}
 
-		$value = maybe_unserialize( $value );
+		$value = arf_safe_maybe_unserialize( $value );
 
 		if ( is_array( $value ) ) {
 			$value = stripslashes_deep( $value );
@@ -482,7 +482,7 @@ class arfliterecordhelper {
 			$field_opts = $wpdb->get_row( $wpdb->prepare( 'SELECT entry_value FROM ' . $entry_meta_table . " WHERE field_id='%d' AND entry_id='%d'", '-' . $field->id, $atts['entry_id'] ) ); //phpcs:ignore
 
 			if ( ! empty( $field_opts ) ) {
-				$field_opts = maybe_unserialize( $field_opts->entry_value );
+				$field_opts = arf_safe_maybe_unserialize( $field_opts->entry_value );
 
 				if ( $field->type == 'checkbox' ) {
 					if ( $field_opts && count( $field_opts ) > 0 ) {
@@ -518,7 +518,7 @@ class arfliterecordhelper {
 			$entry = $arflite_db_record->arflitegetOne( $entry );
 		}
 
-		$field->field_options = maybe_unserialize( $field->field_options );
+		$field->field_options = arf_safe_maybe_unserialize( $field->field_options );
 
 		if ( $entry->attachment_id ) {
 

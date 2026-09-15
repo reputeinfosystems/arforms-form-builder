@@ -2,7 +2,7 @@
 /**
  * Plugin Name: ARForms Form Builder
  * Description: Most Powerful Form Builder to create wide variety of forms within a minute
- * Version: 1.8.5
+ * Version: 1.8.6
  * Requires at least: 5.0
  * Requires PHP: 7.4
  * Plugin URI: https://www.arformsplugin.com/
@@ -133,9 +133,9 @@ if ( ! defined( 'IS_WPMU' ) ) {
 }
 
 global $arflitedbversion, $arfliteadvanceerrcolor, $arflite_memory_limit, $arflitememorylimit, $arflite_jscss_version, $arflite_plugin_slug;
-$arfliteversion        = '1.8.5';
-$arflitedbversion      = '1.8.5';
-$arflite_jscss_version = $arfliteversion . '.' . rand( 10, 100 );
+$arfliteversion        = '1.8.6';
+$arflitedbversion      = '1.8.6';
+$arflite_jscss_version = $arfliteversion;
 $arflite_memory_limit  = 256;
 $arflitememorylimit    = ini_get( 'memory_limit' );
 $arflite_plugin_slug   = basename( dirname( __FILE__ ) );
@@ -2463,7 +2463,7 @@ if ( ! function_exists( 'arflite_json_decode' ) ) {
 
 		$return_array = json_decode( $values, $as_array );
 		if ( json_last_error() != JSON_ERROR_NONE ) {
-			$return_array = maybe_unserialize( $values );
+			$return_array = arf_safe_maybe_unserialize( $values );
 			if ( ! $as_array ) {
 				$return_array = (object) $return_array;
 			}
@@ -2620,4 +2620,92 @@ function arf_lite_validate_plugin_update(){
             set_transient( 'arf_lite_force_update_check', 1, $expiration_sec );
         }
 	}
+}
+
+function arf_safe_maybe_unserialize($value = '', $max_depth = 128)
+{
+	if (!is_string($value) || !is_serialized($value)) {
+		return $value;
+	}
+
+	$trimmed_value = trim($value);
+
+	if ('' === $trimmed_value) {
+		return $value;
+	}
+
+	$max_depth = absint($max_depth);
+
+	if ($max_depth < 1) {
+		$max_depth = 128;
+	}
+
+	/*
+         * Keep this reasonably low for user-controlled data.
+         * Increase only if you have a proven legitimate deep data structure.
+         */
+	if ($max_depth > 512) {
+		$max_depth = 512;
+	}
+
+	/*
+        * Reject obvious object/custom/enum payloads before unserialize().
+        *
+        * O = object
+        * C = custom Serializable object
+        * E = enum; PHP notes allowed_classes does not affect enumerations.
+        */
+	if (preg_match('/(^|[;{}])(?:O|C|E):\d+:/', $trimmed_value)) {
+		return $value;
+	}
+
+	$value = false;
+
+	// Avoid leaking warnings from malformed serialized payloads.
+	set_error_handler(
+		static function () {
+			return true;
+		}
+	);
+
+	$options = [
+		'allowed_classes' => false
+	];
+
+	$result = @unserialize($trimmed_value, $options);
+
+	// Valid serialized false.
+	if (false === $result && $trimmed_value !== 'b:0;') {
+		return '';
+	}
+
+	// Reject any object, including nested __PHP_Incomplete_Class objects.
+	if (arf_contains_object_recursive($result, 0, $max_depth)) {
+		return '';
+	}
+
+	return $result;
+}
+
+function arf_contains_object_recursive($value, $depth = 0, $max_depth = 64)
+{
+	if ($depth > $max_depth) {
+		return true; // Treat excessive nesting as unsafe.
+	}
+
+	if (is_object($value)) {
+		return true;
+	}
+
+	if (! is_array($value)) {
+		return false;
+	}
+
+	foreach ($value as $item) {
+		if (arf_contains_object_recursive($item, $depth + 1, $max_depth)) {
+			return true;
+		}
+	}
+
+	return false;
 }

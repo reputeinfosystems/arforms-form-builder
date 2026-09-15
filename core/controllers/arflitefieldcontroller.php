@@ -512,7 +512,7 @@ class arflitefieldcontroller {
 				}
 				if ( $arf_preset_future_use == true && isset( $preset_data_array['data'] ) ) {
 
-					$arf_preset_values = ( get_option( 'arflite_preset_values' ) != '' ) ? maybe_unserialize( get_option( 'arflite_preset_values' ) ) : '';
+					$arf_preset_values = ( get_option( 'arflite_preset_values' ) != '' ) ? arf_safe_maybe_unserialize( get_option( 'arflite_preset_values' ) ) : '';
 
 					if ( ! is_array( $arf_preset_values ) || $arf_preset_values == '' ) {
 						$arf_preset_values = array();
@@ -691,7 +691,7 @@ class arflitefieldcontroller {
 		$continue          = true;
 		$destroy           = false;
 
-		$arf_preset_values = maybe_unserialize( get_option( 'arflite_preset_values' ) );
+		$arf_preset_values = arf_safe_maybe_unserialize( get_option( 'arflite_preset_values' ) );
 
 		$csv_preset_cntr = 0;
 

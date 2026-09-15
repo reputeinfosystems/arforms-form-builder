@@ -6,8 +6,6 @@ class arflitemaincontroller {
 
 		global $arflite_is_active_cornorstone;
 
-		//add_action( 'admin_menu', array( $this, 'arflitemenu' ) );
-
 		add_action( 'admin_head', array( $this, 'arflite_menu_css' ) );
 
 		add_filter( 'plugin_action_links_arforms-form-builder/arforms-form-builder.php', array( $this, 'arflite_settings_link' ), 10, 2 );
@@ -21,6 +19,7 @@ class arflitemaincontroller {
 		register_activation_hook( ARFLITE_FORMPATH . '/arforms-form-builder.php', array( $this, 'arfliteforms_check_network_activation' ) );
 
 		add_action( 'init', array( $this, 'arflite_parse_standalone_request' ) );
+
 
 		add_action( 'init', array( $this, 'arflite_template_install' ), 1 );
 
@@ -1524,8 +1523,8 @@ class arflitemaincontroller {
 				wp_register_script( 'wp-hooks', ARFLITEURL . '/js/hooks.js', array( 'jquery' ), $arfliteversion );
 			}
 			wp_register_script( 'arformslite_hooks', ARFLITEURL . '/js/arformslite_hooks.js', array( 'jquery' ), $arfliteversion );
-			wp_register_script( 'arformslite-js', ARFLITEURL . '/js/arformslite.js', array( 'jquery' ), $arfliteversion . '_' . rand( 1, 5 ), true );
-			wp_register_script( 'arforms-control', ARFLITEURL . '/js/arforms_controls.js', array( 'wp-hooks', 'jquery' ), $arfliteversion . '_'. rand( 1, 5 ), true );
+			wp_register_script( 'arformslite-js', ARFLITEURL . '/js/arformslite.js', array( 'jquery' ), $arfliteversion, true );
+			wp_register_script( 'arforms-control', ARFLITEURL . '/js/arforms_controls.js', array( 'wp-hooks', 'jquery' ), $arfliteversion, true );
 		}
 
 		wp_register_script( 'recaptcha-ajax', ARFLITEURL . '/js/recaptcha_ajax.js', array(), $arfliteversion );
@@ -1775,24 +1774,28 @@ class arflitemaincontroller {
 					if ( isset( $res['is_template'] ) && isset( $res['status'] ) && $res['is_template'] == '0' && $res['status'] == 'published' ) {
 						$arflite_func_val = apply_filters( 'arflite_hide_forms', $arfliteformcontroller->arflite_class_to_hide_form( $newval ), $newval );
 
-						$form_css = maybe_unserialize( $res['form_css'] );
+						$form_css = arf_safe_maybe_unserialize( $res['form_css'] );
 						if ( $arflite_func_val == '' ) {
 							if ( isset( $form_css['arfinputstyle'] ) && $form_css['arfinputstyle'] != 'material' && file_exists( $fid_dir ) ) {
-								wp_enqueue_style( 'arfliteformscss_' . $newval, $fid, array(), $arflite_jscss_version );
+								$css_version = file_exists( $fid_dir ) ? filemtime( $fid_dir ) : $arflite_jscss_version;
+								wp_enqueue_style( 'arfliteformscss_' . $newval, $fid, array(), $css_version );
 							}
 
 							if ( isset( $form_css['arfinputstyle'] ) && $form_css['arfinputstyle'] == 'material' && file_exists( $fid_material_dir ) ) {
-								wp_enqueue_style( 'arfliteformscss_materialize_' . $newval, $fid_material, array(), $arflite_jscss_version );
+								$css_version = file_exists( $fid_material_dir ) ? filemtime( $fid_material_dir ) : $arflite_jscss_version;
+								wp_enqueue_style( 'arfliteformscss_materialize_' . $newval, $fid_material, array(), $css_version );
 							}
 							wp_enqueue_style( 'arflitedisplaycss' );
 							wp_enqueue_style( 'flag_icon' );
 						} else {
 							if ( isset( $form_css['arfinputstyle'] ) && $form_css['arfinputstyle'] != 'material' && file_exists( $fid_dir ) ) {
-								wp_enqueue_style( 'arfliteformscss_' . $newval, $fid, array(), $arflite_jscss_version );
+								$css_version = file_exists( $fid_dir ) ? filemtime( $fid_dir ) : $arflite_jscss_version;
+								wp_enqueue_style( 'arfliteformscss_' . $newval, $fid, array(), $css_version );
 							}
 
 							if ( isset( $form_css['arfinputstyle'] ) && $form_css['arfinputstyle'] == 'material' && file_exists( $fid_material_dir ) ) {
-								wp_enqueue_style( 'arfliteformscss_materialize_' . $newval, $fid_material, array(), $arflite_jscss_version );
+								$css_version = file_exists( $fid_material_dir ) ? filemtime( $fid_material_dir ) : $arflite_jscss_version;
+								wp_enqueue_style( 'arfliteformscss_materialize_' . $newval, $fid_material, array(), $css_version );
 
 							}
 						}
@@ -1966,7 +1969,7 @@ class arflitemaincontroller {
 			}
 		}
 
-		$values = isset( $res['options'] ) ? maybe_unserialize( $res['options'] ) : '';
+		$values = isset( $res['options'] ) ? arf_safe_maybe_unserialize( $res['options'] ) : '';
 
 		if ( isset( $values['display_title_form'] ) && $values['display_title_form'] == '0' ) {
 			$is_title    = false;
@@ -2049,7 +2052,7 @@ class arflitemaincontroller {
 		}
 
 		$upload_main_url = ARFLITE_UPLOAD_URL . '/maincss';
-		$temp_opts       = maybe_unserialize( $temp_form_opts->form_css );
+		$temp_opts       = arf_safe_maybe_unserialize( $temp_form_opts->form_css );
 		$inputStyle      = isset( $temp_opts['arfinputstyle'] ) ? $temp_opts['arfinputstyle'] : 'material';
 
 		$materialize_css = '';
@@ -2623,7 +2626,7 @@ class arflitemaincontroller {
 			$arflitenewdbversion = get_option( 'arflite_db_version' );
 		}
 
-		if ( version_compare( $arflitenewdbversion, '1.8.5', '<' ) ) {
+		if ( version_compare( $arflitenewdbversion, '1.8.6', '<' ) ) {
 			$path = ARFLITE_FORMPATH . '/core/views/arflite_upgrade_latest_data.php';
 			include $path;
 			$this->arforms_send_anonymous_data_cron();

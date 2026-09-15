@@ -257,7 +257,7 @@ if ( ! function_exists( 'arflite_display_form_preview' ) ) {
 				$frm_css_arr = '';
 				$frm_css_arr = $form->form_css;
 
-				$arr = maybe_unserialize( $frm_css_arr );
+				$arr = arf_safe_maybe_unserialize( $frm_css_arr );
 
 				$newarr = array();
 				foreach ( $arr as $k => $v ) {

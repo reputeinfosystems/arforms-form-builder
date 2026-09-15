@@ -8,7 +8,7 @@ if ( isset( $_REQUEST['arfaction'] ) && 'edit' == $_REQUEST['arfaction'] ) {
 	if ( count( $form_data ) > 0 ) {
 		$form_data = $form_data[0];
 
-		$options = maybe_unserialize( $form_data->options );
+		$options = arf_safe_maybe_unserialize( $form_data->options );
 
 		$values = array();
 
@@ -24,7 +24,7 @@ if ( isset( $_REQUEST['arfaction'] ) && 'edit' == $_REQUEST['arfaction'] ) {
 
 		$form_data_new = $arfliteform->arflitegetOne( $form_data->form_id );
 
-		$form_options = maybe_unserialize( $form_data_new->options );
+		$form_options = arf_safe_maybe_unserialize( $form_data_new->options );
 
 		$values['success_action'] = $form_options['success_action'];
 

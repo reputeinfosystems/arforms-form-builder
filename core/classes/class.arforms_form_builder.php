@@ -172,16 +172,16 @@ class arforms_form_builder{
 					$lite_form_desc = $lite_frm->description;
 					$lite_form_template = 0;
 					$lite_form_status = 'published';
-					$lite_form_opts = maybe_unserialize( $lite_frm->options );
+					$lite_form_opts = arf_safe_maybe_unserialize( $lite_frm->options );
 
-					$lite_form_css = maybe_unserialize( $lite_frm->form_css );
+					$lite_form_css = arf_safe_maybe_unserialize( $lite_frm->form_css );
 
 					$lite_form_css['arfsectionpaddingsetting_1'] = 20;
 					$lite_form_css['arfsectionpaddingsetting_2'] = 0;
 					$lite_form_css['arfsectionpaddingsetting_3'] = 20;
 					$lite_form_css['arfsectionpaddingsetting_4'] = 20;
 
-					$lite_temp_fields = maybe_unserialize( $lite_frm->temp_fields );
+					$lite_temp_fields = arf_safe_maybe_unserialize( $lite_frm->temp_fields );
 
 					$wpdb->insert(
 						$tbl_arf_forms,

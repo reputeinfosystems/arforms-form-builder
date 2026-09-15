@@ -23,7 +23,7 @@ class arfliterecordmodel {
 		}
 
 		$form    = $form_options[0];
-		$options = maybe_unserialize( $form->options );
+		$options = arf_safe_maybe_unserialize( $form->options );
 
 		$field_order = json_decode( $options['arf_field_order'], true );
 
@@ -374,11 +374,11 @@ class arfliterecordmodel {
 					$entry_metas_arr = explode( '[ARF_JOIN]', $meta_val->entry_value );
 					$x               = 0;
 					foreach ( $entry_metas_arr as $emeta_arr ) {
-						$entry_metas[ $meta_val->field_id ][ $x ] = $entry_metas[ $meta_val->field_key ][ $x ] = maybe_unserialize( $emeta_arr );
+						$entry_metas[ $meta_val->field_id ][ $x ] = $entry_metas[ $meta_val->field_key ][ $x ] = arf_safe_maybe_unserialize( $emeta_arr );
 						$x++;
 					}
 				} else {
-					$entry_metas[ $meta_val->field_id ] = $entry_metas[ $meta_val->field_key ] = maybe_unserialize( $meta_val->entry_value );
+					$entry_metas[ $meta_val->field_id ] = $entry_metas[ $meta_val->field_key ] = arf_safe_maybe_unserialize( $meta_val->entry_value );
 				}
 			}
 
@@ -480,7 +480,7 @@ class arfliterecordmodel {
 						$entries[ $meta_val->entry_id ]->metas = array();
 					}
 
-					$entries[ $meta_val->entry_id ]->metas[ $meta_val->field_id ] = $entries[ $meta_val->entry_id ]->metas[ $meta_val->field_key ] = maybe_unserialize( $meta_val->entry_value );
+					$entries[ $meta_val->entry_id ]->metas[ $meta_val->field_id ] = $entries[ $meta_val->entry_id ]->metas[ $meta_val->field_key ] = arf_safe_maybe_unserialize( $meta_val->entry_value );
 				}
 			}
 		}
@@ -618,7 +618,7 @@ class arfliterecordmodel {
 			$form = $arfliteform->arflitegetOne( $form );
 		}
 
-		$form->options = maybe_unserialize( $form->options );
+		$form->options = arf_safe_maybe_unserialize( $form->options );
 
 		if ( is_object( $entry ) ) {
 

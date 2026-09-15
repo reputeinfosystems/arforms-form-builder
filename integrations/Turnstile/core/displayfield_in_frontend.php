@@ -7,7 +7,7 @@ $aweber_arr     = $form->form_css;
 $newarr         = array();
 
 if ( '' != $aweber_arr ) {
-	$arr = maybe_unserialize( $aweber_arr );
+	$arr = arf_safe_maybe_unserialize( $aweber_arr );
 	foreach ( $arr as $k => $v ) {
 		$newarr[ $k ] = $v;
 	}

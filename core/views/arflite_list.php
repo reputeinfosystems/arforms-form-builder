@@ -19,8 +19,8 @@ $default_hide = array(
 	'6' => 'Action',
 );
 
-//$columns_list   = ( get_option( 'arfliteformcolumnlist' ) != '' ) ? maybe_unserialize( get_option( 'arfliteformcolumnlist' ) ) : array();
-$columns_list   = ( get_option( 'arfformcolumnlist' ) != '' ) ? maybe_unserialize( get_option( 'arfformcolumnlist' ) ) : array();
+//$columns_list   = ( get_option( 'arfliteformcolumnlist' ) != '' ) ? arf_safe_maybe_unserialize( get_option( 'arfliteformcolumnlist' ) ) : array();
+$columns_list   = ( get_option( 'arfformcolumnlist' ) != '' ) ? arf_safe_maybe_unserialize( get_option( 'arfformcolumnlist' ) ) : array();
 $is_colmn_array = is_array( $columns_list );
 
 $exclude = '';

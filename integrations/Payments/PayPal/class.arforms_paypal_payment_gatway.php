@@ -243,7 +243,7 @@ class ARForms_Paypal_payment_gatway {
 	    	$ai = 0;
     		foreach ( $forms as $form_data ) {
 				
-    			$options     = maybe_unserialize( $form_data->options );
+    			$options     = arf_safe_maybe_unserialize( $form_data->options );
 				$data[$ai][0] = "<div class='arf_custom_checkbox_wrapper arfmarginl15'>
 					<input id='cb-item-action-'" . esc_html( $form_data->id ) ."' class='' type='checkbox' value='". esc_html( $form_data->id ) ."' name='item-action[]' />
 					<svg width='18px' height='18px'>". ARFLITE_CUSTOM_UNCHECKED_ICON . ARFLITE_CUSTOM_CHECKED_ICON ."</svg>
@@ -831,7 +831,7 @@ class ARForms_Paypal_payment_gatway {
 
 			$form_data = $form_data[0];
 
-			$options = maybe_unserialize( $form_data->options );
+			$options = arf_safe_maybe_unserialize( $form_data->options );
 
 			$paypal_field_amount = '';
 
@@ -1063,7 +1063,7 @@ class ARForms_Paypal_payment_gatway {
 		if( $is_paypal_form > 0 ){
 
 			$paypal_form_data = $wpdb->get_results( $wpdb->prepare('SELECT * FROM `'.$arf_paypal->db_paypal_forms.'` WHERE form_id = %d', (int)$form_id ));
-			$options = isset($paypal_form_data[0]->options) ? maybe_unserialize($paypal_form_data[0]->options) : array();
+			$options = isset($paypal_form_data[0]->options) ? arf_safe_maybe_unserialize($paypal_form_data[0]->options) : array();
 			
 			$paypal_field_amount = '';
 
@@ -1627,7 +1627,7 @@ class ARForms_Paypal_payment_gatway {
 		if ( count( $forms ) > 0 ) {
 			$n = 0;
 			foreach ( $forms as $form ) {
-				$options = maybe_unserialize( $form->options );
+				$options = arf_safe_maybe_unserialize( $form->options );
 				if ( ! isset( $rowData[ $n ] ) ) {
 					$rowData[ $n ] = array();
 				}
@@ -1823,7 +1823,7 @@ class ARForms_Paypal_payment_gatway {
 
 					$options['paypal_trial_recurring_type'] = ( isset( $_REQUEST['arf_paypal_trial_recurring_type'] ) ) ? esc_attr( sanitize_text_field($_REQUEST['arf_paypal_trial_recurring_type'] )) : 'M';
 
-					$form_options                    = maybe_unserialize( $form_data->options );
+					$form_options                    = arf_safe_maybe_unserialize( $form_data->options );
 					$form_options['success_action']  = isset($_REQUEST['success_action']) ? esc_attr( sanitize_text_field($_REQUEST['success_action'] )) : '';
 					$form_options['success_msg']     = isset($_REQUEST['success_msg']) ? esc_attr( sanitize_text_field($_REQUEST['success_msg'] )) : '';
 					$form_options['success_url']     = isset($_REQUEST['success_url']) ? esc_attr( sanitize_text_field($_REQUEST['success_url'] )) : '';
@@ -1834,7 +1834,7 @@ class ARForms_Paypal_payment_gatway {
 						'options' => $new_form_options,
 					);
 					
-					$form_options = maybe_unserialize( $form_data->arf_mapped_addon );
+					$form_options = arf_safe_maybe_unserialize( $form_data->arf_mapped_addon );
 					if ( isset( $form_options['arf_mapped_addon'] ) && ! empty( $form_options['arf_mapped_addon'] ) ) {
 						if ( ! in_array( 'paypal', $form_options['arf_mapped_addon'] ) ) {
 							array_push( $form_options['arf_mapped_addon'], 'paypal' );
@@ -1949,7 +1949,7 @@ class ARForms_Paypal_payment_gatway {
 
 				$options['shipping_info'] = ( isset( $_REQUEST['shipping_info'] ) ) ? esc_attr( sanitize_text_field($_REQUEST['shipping_info'] )) : 0;
 
-				$form_options                    = maybe_unserialize( $form_data->options );
+				$form_options                    = arf_safe_maybe_unserialize( $form_data->options );
 				$form_options['success_action']  = esc_attr( sanitize_text_field($_REQUEST['success_action']) );
 				$form_options['success_msg']     = esc_attr( sanitize_text_field($_REQUEST['success_msg'] ));
 				$form_options['success_url']     = esc_attr( sanitize_text_field($_REQUEST['success_url'] ));
@@ -1961,7 +1961,7 @@ class ARForms_Paypal_payment_gatway {
 					'options' => $new_form_options,
 				);
 				
-				$form_arf_mapped_addon = maybe_unserialize( $form_data->arf_mapped_addon );
+				$form_arf_mapped_addon = arf_safe_maybe_unserialize( $form_data->arf_mapped_addon );
 				if ( isset( $form_arf_mapped_addon['arf_mapped_addon'] ) && ! empty( $form_arf_mapped_addon['arf_mapped_addon'] ) ) {
 					if ( ! in_array( 'paypal', $form_arf_mapped_addon['arf_mapped_addon'] ) ) {
 						array_push( $form_arf_mapped_addon['arf_mapped_addon'], 'paypal' );
@@ -2259,7 +2259,7 @@ class ARForms_Paypal_payment_gatway {
 			}
 
 			$form_data = $form_data[0];
-			$options   = maybe_unserialize( $form_data->options );
+			$options   = arf_safe_maybe_unserialize( $form_data->options );
 
 			$sandbox = ( isset( $options['paypal_mode'] ) and $options['paypal_mode'] == 0 ) ? 'sandbox.' : '';
 
@@ -2433,7 +2433,7 @@ class ARForms_Paypal_payment_gatway {
 
 					$arf_form_data = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM ' . $tbl_arf_forms . ' WHERE id = %d', $form_id ) );//phpcs:ignore
 					$arf_form_data = $arf_form_data[0];
-					$arf_options   = maybe_unserialize( $arf_form_data->options );
+					$arf_options   = arf_safe_maybe_unserialize( $arf_form_data->options );
 
 					$arfblogname = wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES );
 
@@ -2655,7 +2655,7 @@ class ARForms_Paypal_payment_gatway {
 
 			$arf_form_data = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM ' . $tbl_arf_forms . ' WHERE id = %d', $form_id ) );//phpcs:ignore
 			$arf_form_data = $arf_form_data[0];
-			$arf_options   = maybe_unserialize( $arf_form_data->options );
+			$arf_options   = arf_safe_maybe_unserialize( $arf_form_data->options );
 
 			if ( $arf_options['success_action'] == 'redirect' and isset( $arf_options['success_url'] ) and $arf_options['success_url'] != '' ) {
 				if ( isset( $arf_options['arf_data_with_url'] ) && $arf_options['arf_data_with_url'] == 1 ) {
@@ -2767,7 +2767,7 @@ class ARForms_Paypal_payment_gatway {
 
 				$arf_form_data = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM ' . $tbl_arf_forms . ' WHERE id = %d', $form_id ) );//phpcs:ignore
 				$arf_form_data = $arf_form_data[0];
-				$arf_options   = maybe_unserialize( $arf_form_data->options );
+				$arf_options   = arf_safe_maybe_unserialize( $arf_form_data->options );
 
 				if ( $arf_options['success_action'] == 'redirect' and isset( $arf_options['success_url'] ) && $arf_options['success_url'] != '' ) {
 
@@ -3094,7 +3094,7 @@ class ARForms_Paypal_payment_gatway {
 
 					$entry_id = $response['entry_id'];
 
-					$options = maybe_unserialize($paypal_form_data[0]->options);
+					$options = arf_safe_maybe_unserialize($paypal_form_data[0]->options);
 					$is_submit = false;
 
 					$paypal_field_amount = '';
@@ -3160,7 +3160,7 @@ class ARForms_Paypal_payment_gatway {
 			$table     = $tbl_arf_forms;
 			$form_data = $wpdb->get_row( $wpdb->prepare( 'SELECT `options` FROM ' . $tbl_arf_forms . " WHERE `id` = '%d'", $form_id ) );//phpcs:ignore
 			
-			$options = maybe_unserialize( $form_data->options );
+			$options = arf_safe_maybe_unserialize( $form_data->options );
 			$success_msg = $options['success_msg'];
 
 			$msg  = "<div class='arf_form arflite_main_div_{$form_id}' id='arffrm_{$form_id}_container'><div id='arf_message_success'><div class='msg-detail'><div class='msg-description-success arf_pp_text_align_center'>{$success_msg}</div></div></div>";

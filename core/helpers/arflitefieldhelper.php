@@ -105,11 +105,11 @@ class arflitefieldhelper {
 	}
 
 	function arflite_get_default_value( $value, $field, $dynamic_default = true, $return_array = false ) {
-		if ( is_array( maybe_unserialize( $value ) ) ) {
+		if ( is_array( arf_safe_maybe_unserialize( $value ) ) ) {
 			return $value;
 		}
 		if ( $field && $dynamic_default ) {
-			$field->field_options = maybe_unserialize( $field->field_options );
+			$field->field_options = arf_safe_maybe_unserialize( $field->field_options );
 			if ( isset( $field->field_options['dyn_default_value'] ) && ! empty( $field->field_options['dyn_default_value'] ) ) {
 				$prev_val = $value;
 				$value    = $field->field_options['dyn_default_value'];
@@ -286,7 +286,7 @@ class arflitefieldhelper {
 
 		$values['use_key'] = false;
 
-		$field->field_options = maybe_unserialize( $field->field_options );
+		$field->field_options = arf_safe_maybe_unserialize( $field->field_options );
 		foreach ( $this->arflite_get_default_field_opts( $values, $field ) as $opt => $default ) {
 			$values[ $opt ] = ( isset( $field->field_options[ $opt ] ) && $field->field_options[ $opt ] != '' ) ? $field->field_options[ $opt ] : $default;
 		}
@@ -689,7 +689,7 @@ class arflitefieldhelper {
 		if ( ! $selected_field ) {
 			return array();
 		}
-		$selected_field->field_options = maybe_unserialize( $selected_field->field_options );
+		$selected_field->field_options = arf_safe_maybe_unserialize( $selected_field->field_options );
 
 		$attach_ids = array();
 		if ( $values['restrict'] && $user_ID ) {
@@ -914,10 +914,6 @@ class arflitefieldhelper {
 		);
 	}
 
-	function arflite_show_onfocus_js( $field_id, $clear_on_focus ) {
-
-	}
-
 	function arflite_get_default_html( $default_html, $type ) {
 
 		global $arflite_data_uniq_id;
@@ -930,7 +926,7 @@ class arflitefieldhelper {
 	function arflite_before_replace_shortcodes( $html, $field, $error, $form ) {
 
 		if ( $form != '' ) {
-			$form_css = maybe_unserialize( $form->form_css );
+			$form_css = arf_safe_maybe_unserialize( $form->form_css );
 			if ( is_array( $form_css ) ) {
 				$arfcheckboxalignsetting = $form_css['arfcheckboxalignsetting'];
 				$arfradioalignsetting    = $form_css['arfradioalignsetting'];
@@ -987,7 +983,7 @@ class arflitefieldhelper {
 			wp_cache_set( 'arflite_form_css_' . $form_id, $form_data );
 		}
 
-		$form_data_unserialize = maybe_unserialize( $form_data[0]->form_css );
+		$form_data_unserialize = arf_safe_maybe_unserialize( $form_data[0]->form_css );
 		$formate               = $form_data_unserialize['date_format'];
 		if ( $formate == 'MM/DD/YYYY' ) {
 			$formate = 'm/d/Y';
@@ -1140,7 +1136,7 @@ class arflitefieldhelper {
 		$fielddata    = $arflitefield->arflitegetOne( $field_id );
 		$fieldoptions = array();
 		if ( isset( $fielddata->field_options ) ) {
-			$fieldoptions = maybe_unserialize( $fielddata->field_options );
+			$fieldoptions = arf_safe_maybe_unserialize( $fielddata->field_options );
 		}
 
 		$show_time_calendar = isset( $fieldoptions['show_time_calendar'] ) ? $fieldoptions['show_time_calendar'] : '';
@@ -1175,7 +1171,7 @@ class arflitefieldhelper {
 		global $arflitefield, $arflitemainhelper;
 		$fields = $arflitefield->arflitegetAll( "fi.type $include in ($types) and fi.form_id=" . (int) $form_id, 'fi.id' );
 		foreach ( $fields as $field ) {
-			$field->field_options = maybe_unserialize( $field->field_options );
+			$field->field_options = arf_safe_maybe_unserialize( $field->field_options );
 			?>
 			<option value="<?php echo esc_attr( $field->id ); ?>" <?php selected( $value, $field->id ); ?>><?php echo $arflitemainhelper->arflitetruncate( $field->name, 50 ); //phpcs:ignore ?></option>
 			<?php
@@ -1229,7 +1225,7 @@ class arflitefieldhelper {
 
 					case 'user_agent':
 					case 'user-agent':
-						$entry->description = maybe_unserialize( $entry->description );
+						$entry->description = arf_safe_maybe_unserialize( $entry->description );
 						$content            = str_replace( $shortcodes[0][ $short_key ], $entry->description['browser'], $content );
 						break;
 
@@ -1276,9 +1272,9 @@ class arflitefieldhelper {
 						}
 
 						if ( $field ) {
-							$field->field_options  = maybe_unserialize( $field->field_options );
+							$field->field_options  = arf_safe_maybe_unserialize( $field->field_options );
 							$replace_with          = $arfliterecordhelper->arflite_get_post_or_entry_value( $entry, $field, $atts );
-							$replace_with          = maybe_unserialize( $replace_with );
+							$replace_with          = arf_safe_maybe_unserialize( $replace_with );
 							$atts['entry_id']      = $entry->id;
 							$atts['entry_key']     = $entry->entry_key;
 							$atts['attachment_id'] = $entry->attachment_id;
@@ -1462,10 +1458,6 @@ class arflitefieldhelper {
 		return $field_options;
 	}
 
-	function arflite_show_default_blank_js( $field_id, $default_blank ) {
-
-	}
-
 	function arfliteget_actual_id( $field_id ) {
 		global $wpdb, $ARFLiteMdlDb;
 		return $field_id;
@@ -1510,12 +1502,12 @@ class arflitefieldhelper {
 			} else {
 				$field_options = json_decode( $data->field_options, true );
 				if ( json_last_error() != JSON_ERROR_NONE ) {
-					$field_options = maybe_unserialize( $data->field_options );
+					$field_options = arf_safe_maybe_unserialize( $data->field_options );
 				}
 			}
 		}
 
-		$formoptions = isset( $form->options ) ? maybe_unserialize( $form->options ) : array();
+		$formoptions = isset( $form->options ) ? arf_safe_maybe_unserialize( $form->options ) : array();
 
 		if ( ! isset( $form ) || $form == '' ) {
 			$form = new stdClass();
@@ -1556,7 +1548,7 @@ class arflitefieldhelper {
 
 		$value1 = '';
 
-		$field_options          = maybe_unserialize( $field['field_options'] );
+		$field_options          = arf_safe_maybe_unserialize( $field['field_options'] );
 		$field['default_value'] = isset( $field['default_value'] ) ? $field['default_value'] : '';
 
 		$field_options['default_blank'] = isset( $field_options['default_blank'] ) ? $field_options['default_blank'] : '';
@@ -1575,8 +1567,8 @@ class arflitefieldhelper {
 
 		if ( $field['type'] == 'radio' || $field['type'] == 'select' ) {
 
-			$field_options       = maybe_unserialize( $field['options'] );
-			$field_options_other = maybe_unserialize( $field['field_options'] );
+			$field_options       = arf_safe_maybe_unserialize( $field['options'] );
+			$field_options_other = arf_safe_maybe_unserialize( $field['field_options'] );
 
 			foreach ( $field_options as $opt_key => $opt ) {
 				$field_val = $opt;
@@ -1593,9 +1585,9 @@ class arflitefieldhelper {
 
 		if ( $field['type'] == 'checkbox' ) {
 
-			$field_options = maybe_unserialize( $field['options'] );
+			$field_options = arf_safe_maybe_unserialize( $field['options'] );
 
-			$default_value = maybe_unserialize( $field['default_value'] );
+			$default_value = arf_safe_maybe_unserialize( $field['default_value'] );
 
 			foreach ( $field_options as $opt_key => $opt ) {
 				$field_val = $opt;
@@ -1641,7 +1633,7 @@ class arflitefieldhelper {
 	function arflite_get_display_style_new( $field, $fields, $form ) {
 		global $wpdb, $ARFLiteMdlDb, $arflitefieldhelper, $arfliteformcontroller;
 
-		$arf_form_options = maybe_unserialize( $form->options );
+		$arf_form_options = arf_safe_maybe_unserialize( $form->options );
 
 		$confirm_email       = 0;
 		$confirm_email_style = '';
@@ -1661,7 +1653,7 @@ class arflitefieldhelper {
 					} else {
 						$data_opts = json_decode( $data->field_options, true );
 						if ( json_last_error() != JSON_ERROR_NONE ) {
-							$data_opts = maybe_unserialize( $data->field_options );
+							$data_opts = arf_safe_maybe_unserialize( $data->field_options );
 						}
 					}
 				}
@@ -1701,7 +1693,7 @@ class arflitefieldhelper {
 		} else {
 			$field_options = json_decode( $field['field_options'], true );
 			if ( json_last_error() != JSON_ERROR_NONE ) {
-				$field_options = maybe_unserialize( $field['field_options'] );
+				$field_options = arf_safe_maybe_unserialize( $field['field_options'] );
 			}
 		}
 
@@ -1728,7 +1720,7 @@ class arflitefieldhelper {
 				} else {
 					$fieldoptions = json_decode( $field['options'], true );
 					if ( json_last_error() != JSON_ERROR_NONE ) {
-						$fieldoptions = maybe_unserialize( $field['options'] );
+						$fieldoptions = arf_safe_maybe_unserialize( $field['options'] );
 					}
 				}
 
@@ -1751,7 +1743,7 @@ class arflitefieldhelper {
 				} else {
 					$fieldoptions = json_decode( $field['options'], true );
 					if ( json_last_error() != JSON_ERROR_NONE ) {
-						$fieldoptions = maybe_unserialize( $field['options'] );
+						$fieldoptions = arf_safe_maybe_unserialize( $field['options'] );
 					}
 				}
 				if ( is_array( $field['default_value'] ) ) {
@@ -1759,7 +1751,7 @@ class arflitefieldhelper {
 				} else {
 					$default_value = json_decode( $field['default_value'], true );
 					if ( json_last_error() != JSON_ERROR_NONE ) {
-						$default_value = maybe_unserialize( $field['default_value'] );
+						$default_value = arf_safe_maybe_unserialize( $field['default_value'] );
 					}
 				}
 
@@ -1898,7 +1890,7 @@ class arflitefieldhelper {
 		if ( ! empty( $field_list ) ) {
 
 			foreach ( $field_list as $field ) {
-				$field->field_options = maybe_unserialize( $field->field_options );
+				$field->field_options = arf_safe_maybe_unserialize( $field->field_options );
 
 				if ( $type == 'email' && $target_id != 'options_admin_reply_to_notification' && $target_id != 'ar_admin_from_email' && $target_id != 'ar_user_from_email' && $target_id != 'admin_email_subject' && $target_id != 'options_ar_admin_from_name' && $target_id != 'options_admin_cc_email_notification' && $target_id != 'options_admin_bcc_email_notification' ) {
 					if ( ( ! isset( $field->field_options['parent_field_type'] ) ) && ( $field->type == 'email' || $field->type == 'text' || $field->type == 'radio' || $field->type == 'select' ) ) {
@@ -2014,9 +2006,9 @@ class arflitefieldhelper {
 				}
 
 				if ( $field->type == 'checkbox' ) {
-					$choices = maybe_unserialize( $field->options );
+					$choices = arf_safe_maybe_unserialize( $field->options );
 
-					$field_opts = maybe_unserialize( $field->field_options );
+					$field_opts = arf_safe_maybe_unserialize( $field->field_options );
 
 					$is_sep_val = $field_opts['separate_value'];
 					?>
@@ -2072,7 +2064,7 @@ class arflitefieldhelper {
 						$inc++;
 					}
 				} elseif ( $field->type == 'arfslider' ) {
-					$field->field_options = maybe_unserialize( $field->field_options );
+					$field->field_options = arf_safe_maybe_unserialize( $field->field_options );
 					$slider_custom_class  = '';
 					if ( isset( $field->field_options['arf_range_selector'] ) && $field->field_options['arf_range_selector'] == '1' ) {
 						$slider_custom_class = ' arf_slider_li arf_hidden_slider_li';
@@ -2092,7 +2084,7 @@ class arflitefieldhelper {
 					<div class="modal_field_val <?php echo esc_attr( $slider_custom_class ); ?>" id="arfmodalfieldval_<?php echo esc_attr( $field->id ); ?>" onclick="arfliteaddtotalfield(this, '<?php echo esc_js( $field->id ); ?>', '')"><?php echo $field_name = $arflitemainhelper->arflitetruncate( $arflitefieldhelper->arflite_execute_function( $field->name, 'strip_tags' ), 40 ); //phpcs:ignore ?></div>
 					<?php
 				} else {
-					$field->field_options = maybe_unserialize( $field->field_options );
+					$field->field_options = arf_safe_maybe_unserialize( $field->field_options );
 					?>
 
 					<?php
@@ -2369,11 +2361,11 @@ class arflitefieldhelper {
 					if ( $field ) {
 
 						global $arflitefieldhelper, $arfliterecordhelper;
-						$field->field_options = maybe_unserialize( $field->field_options );
+						$field->field_options = arf_safe_maybe_unserialize( $field->field_options );
 
 						$replace_with = $arfliterecordhelper->arflite_get_post_or_entry_value( $entry, $field, array(), $is_for_mail );
 
-						$replace_with = maybe_unserialize( $replace_with );
+						$replace_with = arf_safe_maybe_unserialize( $replace_with );
 
 						$atts['entry_id']      = $entry->id;
 						$atts['entry_key']     = $entry->entry_key;
@@ -2432,7 +2424,7 @@ class arflitefieldhelper {
 			return $field['options'];
 		}
 
-		$option_order = maybe_unserialize( $field['option_order'] );
+		$option_order = arf_safe_maybe_unserialize( $field['option_order'] );
 
 		if ( is_array( $option_order ) ) {
 			$options     = $field['options'];

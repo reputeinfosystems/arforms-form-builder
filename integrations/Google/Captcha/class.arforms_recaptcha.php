@@ -352,7 +352,7 @@ class ARForms_Google_Captcha {
 	                continue;
 	            }
 
-	            $form->options = maybe_unserialize($form->options);
+	            $form->options = arf_safe_maybe_unserialize($form->options);
 
 	            if(isset($form->options['arf_enable_recaptcha']) && '1' == $form->options['arf_enable_recaptcha']){
 
@@ -396,7 +396,7 @@ class ARForms_Google_Captcha {
 	                continue;
 	            }
 	            
-	            $form->options = maybe_unserialize($form->options);
+	            $form->options = arf_safe_maybe_unserialize($form->options);
 
 	            if(isset($form->options['arf_enable_recaptcha']) && '1' == $form->options['arf_enable_recaptcha']){
 

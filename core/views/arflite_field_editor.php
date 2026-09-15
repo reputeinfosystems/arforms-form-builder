@@ -160,7 +160,7 @@ if ( is_array( $field ) ) {
 	$arf_form_css = '';
 	$arf_form_css = $data['form_css'];
 
-	$arr    = maybe_unserialize( $arf_form_css );
+	$arr    = arf_safe_maybe_unserialize( $arf_form_css );
 	$newarr = array();
 	if ( isset( $arr ) && is_array( $arr ) && ! empty( $arr ) ) {
 		foreach ( $arr as $k => $v ) {
@@ -510,7 +510,7 @@ if ( is_array( $field ) ) {
 				}
 				$unserialize_field_optins = $arfliteformcontroller->arfliteHtmlEntities( json_decode( $field['field_options'], true ) );
 				if ( json_last_error() != JSON_ERROR_NONE ) {
-					$unserialize_field_optins = maybe_unserialize( $field['field_options'] );
+					$unserialize_field_optins = arf_safe_maybe_unserialize( $field['field_options'] );
 				}
 				$placeholder_text = isset( $unserialize_field_optins['placeholdertext'] ) ? $unserialize_field_optins['placeholdertext'] : ( isset( $unserialize_field_optins['placehodertext'] ) ? $unserialize_field_optins['placehodertext'] : '' );
 
@@ -703,7 +703,7 @@ if ( is_array( $field ) ) {
 
 							$field_opts = $arfliteformcontroller->arfliteHtmlEntities( json_decode( $field['field_options'], true ) );
 							if ( json_last_error() != JSON_ERROR_NONE ) {
-								$field_opts = maybe_unserialize( $field['field_options'] );
+								$field_opts = arf_safe_maybe_unserialize( $field['field_options'] );
 							}
 							$field_opts['default_value'] = html_entity_decode( htmlentities( $field_opts['default_value'] ) );
 
@@ -1335,7 +1335,7 @@ if ( is_array( $field ) ) {
 					} elseif ( isset( $field['field_options']['description'] ) && ! is_array( $field['field_options'] ) ) {
 						$tmp_field_options = json_decode( $field['field_options'], true );
 						if ( json_last_error() != JSON_ERROR_NONE ) {
-							$tmp_field_options = maybe_unserialize( $field['field_options'] );
+							$tmp_field_options = arf_safe_maybe_unserialize( $field['field_options'] );
 						}
 						$field_description = isset( $tmp_field_options['description'] ) ? $tmp_field_options['description'] : '';
 					}
@@ -1383,7 +1383,7 @@ if ( is_array( $field ) ) {
 					if ( ! is_array( $field['field_options'] ) ) {
 						$field['field_options'] = json_decode( $field['field_options'], true );
 						if ( json_last_error() != JSON_ERROR_NONE ) {
-							$field['field_options'] = maybe_unserialize( $field['field_options'] );
+							$field['field_options'] = arf_safe_maybe_unserialize( $field['field_options'] );
 						}
 					}
 					if ( isset( $field['field_options']['custom_html'] ) ) {
@@ -1395,7 +1395,7 @@ if ( is_array( $field ) ) {
 					if ( ! is_array( $field['field_options'] ) ) {
 						$field['field_options'] = json_decode( $field['field_options'], true );
 						if ( json_last_error() != JSON_ERROR_NONE ) {
-							$field['field_options'] = maybe_unserialize( $field['field_options'] );
+							$field['field_options'] = arf_safe_maybe_unserialize( $field['field_options'] );
 						}
 					}
 					if ( isset( $field['field_options']['custom_html'] ) ) {

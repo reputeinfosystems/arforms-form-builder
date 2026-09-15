@@ -95,7 +95,7 @@ class arfliterecordmeta {
 
 				$result = $result[0];
 
-				$form_options = maybe_unserialize( $result->options );
+				$form_options = arf_safe_maybe_unserialize( $result->options );
 			}
 		}
 	}
@@ -115,18 +115,18 @@ class arfliterecordmeta {
 
 				$options_arr = json_decode( $fielddata->options, true );
 				if ( json_last_error() != JSON_ERROR_NONE ) {
-					  $options_arr = maybe_unserialize( $fielddata->options );
+					  $options_arr = arf_safe_maybe_unserialize( $fielddata->options );
 				}
 
 				$field_options = json_decode( $fielddata->field_options, true );
 				if ( json_last_error() != JSON_ERROR_NONE ) {
-						$field_options = maybe_unserialize( $fielddata->field_options );
+						$field_options = arf_safe_maybe_unserialize( $fielddata->field_options );
 				}
 
 				if ( isset( $field_options['separate_value'] ) && $field_options['separate_value'] == 1 ) {
 					$new_entry_value = array();
 
-					$entry_value = maybe_unserialize( $entry_value );
+					$entry_value = arf_safe_maybe_unserialize( $entry_value );
 					if ( $fielddata->type == 'checkbox' ) {
 						if ( is_array( $entry_value ) ) {
 							foreach ( $entry_value as $k => $field_value ) {
@@ -245,7 +245,7 @@ class arfliterecordmeta {
 
 		if ( $return_var ) {
 
-			$result = maybe_unserialize( $wpdb->get_var( "{$query} LIMIT 1" ) ); //phpcs:ignore
+			$result = arf_safe_maybe_unserialize( $wpdb->get_var( "{$query} LIMIT 1" ) ); //phpcs:ignore
 
 			$result = stripslashes_deep( $result );
 
@@ -295,7 +295,7 @@ class arfliterecordmeta {
 					$field_opts = $wpdb->get_row( $wpdb->prepare( 'SELECT entry_value FROM ' . $tbl_arf_entry_values . " WHERE field_id='%d' AND entry_id='%d'", '-' . $field_id, $entry_id ) ); //phpcs:ignore
 
 					if ( $field_opts ) {
-						$field_opts = maybe_unserialize( $field_opts->entry_value );
+						$field_opts = arf_safe_maybe_unserialize( $field_opts->entry_value );
 
 						if ( $fields[0]->type == 'checkbox' ) {
 							if ( $field_opts && count( $field_opts ) > 0 ) {
@@ -325,7 +325,7 @@ class arfliterecordmeta {
 
 					if ( $return_var ) {
 
-						$result = maybe_unserialize( $wpdb->get_var( "{$query} LIMIT 1" ) ); //phpcs:ignore
+						$result = arf_safe_maybe_unserialize( $wpdb->get_var( "{$query} LIMIT 1" ) ); //phpcs:ignore
 
 						$result = stripslashes_deep( $result );
 
@@ -370,7 +370,7 @@ class arfliterecordmeta {
 
 			foreach ( $results as $k => $result ) {
 
-				$results[ $k ]->entry_value = maybe_unserialize( $result->entry_value );
+				$results[ $k ]->entry_value = arf_safe_maybe_unserialize( $result->entry_value );
 
 				unset( $k );
 

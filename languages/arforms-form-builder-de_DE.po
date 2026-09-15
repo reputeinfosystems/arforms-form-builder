@@ -1,10 +1,10 @@
 #@ arforms-form-builder
 msgid ""
 msgstr ""
-"Project-Id-Version: ARForms Form Builder v1.8.5\n"
+"Project-Id-Version: ARForms Form Builder v1.8.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: \n"
-"PO-Revision-Date: 2026-06-30 10:50:14+0000\n"
+"PO-Revision-Date: 2026-08-04 07:58:37+0000\n"
 "Last-Translator: admin <testrepute123@gmail.com>\n"
 "Language-Team: German\n"
 "MIME-Version: 1.0\n"
@@ -39,7 +39,7 @@ msgstr "%1$s Formular wurde auf %2$s gesendet."
 msgid "%1$s Form submitted on %2$s"
 msgstr "%1$s Formular gesendet auf %2$s"
 
-#: core/controllers/arflitemaincontroller.php:1251
+#: core/controllers/arflitemaincontroller.php:1250
 #: core/controllers/arfliteprocontroller.php:273
 #, php-format
 #@ arforms-form-builder
@@ -51,12 +51,12 @@ msgstr "%s Senden und%s Deaktivieren"
 msgid "( Not recommended - If you have any js/css loading issue in your theme, only in that case you should enable this settings )"
 msgstr "(Nicht empfohlen - Wenn Sie Probleme beim Laden von js / css in Ihrem Design haben, sollten Sie diese Einstellungen nur in diesem Fall aktivieren.)"
 
-#: core/controllers/arflitemaincontroller.php:2347
+#: core/controllers/arflitemaincontroller.php:2350
 #@ arforms-form-builder
 msgid "(Click here to add description or instructions)"
 msgstr "(Klicken Sie hier, um eine Beschreibung oder Anleitung hinzuzufügen.)"
 
-#: core/controllers/arflitemaincontroller.php:2345
+#: core/controllers/arflitemaincontroller.php:2348
 #@ arforms-form-builder
 msgid "(Click here to add text)"
 msgstr "(Klicken Sie hier, um Text hinzuzufügen.)"
@@ -331,7 +331,7 @@ msgstr "Aktiv"
 msgid "Active State Background"
 msgstr "Aktiver Status Hintergrund"
 
-#: core/controllers/arflitemaincontroller.php:2375
+#: core/controllers/arflitemaincontroller.php:2378
 #@ arforms-form-builder
 msgid "Add"
 msgstr "Hinzufügen"
@@ -378,7 +378,7 @@ msgstr "Einträge aus dem Admin-Bereich hinzufügen"
 msgid "Add Field"
 msgstr "Feld hinzufügen"
 
-#: core/controllers/arflitemaincontroller.php:2403
+#: core/controllers/arflitemaincontroller.php:2406
 #@ arforms-form-builder
 msgid "Add Icon"
 msgstr "Symbol hinzufügen"
@@ -388,8 +388,8 @@ msgstr "Symbol hinzufügen"
 msgid "Add icon (Bootstrap style)"
 msgstr "Symbol hinzufügen (Bootstrap-Stil)"
 
-#: core/controllers/arflitemaincontroller.php:2296
-#: core/controllers/arflitemaincontroller.php:2393
+#: core/controllers/arflitemaincontroller.php:2299
+#: core/controllers/arflitemaincontroller.php:2396
 #@ arforms-form-builder
 msgid "Add Image"
 msgstr "Bild hinzufügen"
@@ -539,7 +539,7 @@ msgstr "Algerien"
 msgid "Alignment"
 msgstr "Ausrichtung"
 
-#: core/controllers/arflitemaincontroller.php:2379
+#: core/controllers/arflitemaincontroller.php:2382
 #: core/views/arf_debug_log.php:100
 #@ arforms-form-builder
 msgid "All"
@@ -619,7 +619,7 @@ msgstr "Antarktis"
 msgid "Antigua and Barbuda"
 msgstr "Antigua und Barbuda"
 
-#: core/controllers/arflitemaincontroller.php:2380
+#: core/controllers/arflitemaincontroller.php:2383
 #@ arforms-form-builder
 msgid "Any"
 msgstr "Irgendein"
@@ -663,22 +663,22 @@ msgstr "April"
 msgid "Arabic"
 msgstr "Arabisch"
 
-#: core/controllers/arflitemaincontroller.php:2320
+#: core/controllers/arflitemaincontroller.php:2323
 #@ arforms-form-builder
 msgid "Are you sure to delete configuration?"
 msgstr "Sind Sie sicher, die Konfiguration zu löschen?"
 
-#: core/controllers/arflitemaincontroller.php:2293
+#: core/controllers/arflitemaincontroller.php:2296
 #@ arforms-form-builder
 msgid "Are you sure want to reset style?"
 msgstr "Möchten Sie den Stil wirklich zurücksetzen?"
 
-#: core/controllers/arflitemaincontroller.php:2321
+#: core/controllers/arflitemaincontroller.php:2324
 #@ arforms-form-builder
 msgid "Are you sure you want to  delete this field?"
 msgstr "Möchten Sie dieses Feld wirklich löschen?"
 
-#: core/controllers/arflitemaincontroller.php:2368
+#: core/controllers/arflitemaincontroller.php:2371
 #@ arforms-form-builder
 msgid "Are you sure you want to delete image?"
 msgstr "Möchten Sie das Bild wirklich löschen?"
@@ -688,29 +688,29 @@ msgstr "Möchten Sie das Bild wirklich löschen?"
 msgid "Are you sure you want to delete this entries?"
 msgstr "Möchten Sie diese Einträge wirklich löschen?"
 
-#: core/controllers/arflitemaincontroller.php:2289
+#: core/controllers/arflitemaincontroller.php:2292
 #: core/views/arf_view_records.php:512
 #: core/views/arflite_list.php:177
 #@ arforms-form-builder
 msgid "Are you sure you want to delete this entry?"
 msgstr "Möchten Sie diesen Eintrag wirklich löschen?"
 
-#: core/controllers/arflitemaincontroller.php:2291
+#: core/controllers/arflitemaincontroller.php:2294
 #@ arforms-form-builder
 msgid "Are you sure you want to delete this file?"
 msgstr "Möchten Sie diese Datei wirklich löschen?"
 
-#: core/controllers/arflitemaincontroller.php:2287
+#: core/controllers/arflitemaincontroller.php:2290
 #@ arforms-form-builder
 msgid "Are you sure you want to delete this form?"
 msgstr "Möchten Sie dieses Formular wirklich löschen?"
 
-#: core/controllers/arflitemaincontroller.php:2313
+#: core/controllers/arflitemaincontroller.php:2316
 #@ arforms-form-builder
 msgid "Are you sure you want to delete this image?"
 msgstr "Möchten Sie dieses Bild wirklich löschen?"
 
-#: core/controllers/arflitemaincontroller.php:1204
+#: core/controllers/arflitemaincontroller.php:1203
 #@ arforms-form-builder
 msgid "ARForm Lite plugin Deactivation"
 msgstr "Deaktivierung des ARForm Lite-Plugins"
@@ -738,7 +738,7 @@ msgstr "ARForms wurde aktualisiert! Um einen reibungslosen Ablauf zu gewährleis
 msgid "ARForms Lite"
 msgstr "ARForms Lite"
 
-#: core/controllers/arflitemaincontroller.php:1221
+#: core/controllers/arflitemaincontroller.php:1220
 #: core/controllers/arfliteprocontroller.php:242
 #@ arforms-form-builder
 msgid "ARForms Lite - Sorry to see you go"
@@ -749,7 +749,7 @@ msgstr "ARForms Lite - Tut mir leid, dass Sie gehen"
 msgid "ARForms Lite Form"
 msgstr "ARForms Lite Form"
 
-#: core/controllers/arflitemaincontroller.php:686
+#: core/controllers/arflitemaincontroller.php:685
 #@ arforms-form-builder
 msgid "ARForms Lite is a WordPress Free Form Builder Plugin to create stylish and modern style form withing few clicks."
 msgstr "ARForms Lite ist ein WordPress Free Form Builder-Plugin, mit dem Sie mit wenigen Klicks ein stilvolles und modernes Formular erstellen können."
@@ -759,12 +759,12 @@ msgstr "ARForms Lite ist ein WordPress Free Form Builder-Plugin, mit dem Sie mit
 msgid "ARForms Lite Shortcode"
 msgstr "ARForms Lite Shortcode"
 
-#: core/controllers/arflitemaincontroller.php:692
+#: core/controllers/arflitemaincontroller.php:691
 #@ arforms-form-builder
 msgid "ARForms Lite will also store the all type of data (this may contain personal data) in the database which plugin user has included in the form. These data cannot be editable but can be removed from form entry section of ARForms."
 msgstr "ARForms Lite speichert auch alle Arten von Daten (diese können persönliche Daten enthalten) in der Datenbank, die der Plugin-Benutzer in das Formular aufgenommen hat. Diese Daten können nicht bearbeitet werden, können jedoch aus dem Formulareintragsabschnitt von ARForms entfernt werden."
 
-#: core/controllers/arflitemaincontroller.php:690
+#: core/controllers/arflitemaincontroller.php:689
 #@ arforms-form-builder
 msgid "ARForms Lite will not store any personal data except user_id (only if user is logged in), ip address, country, browser user_agent, referrer only when submit the form."
 msgstr "ARForms Lite speichert keine persönlichen Daten außer user_id (nur wenn der Benutzer angemeldet ist), IP-Adresse, Land, Browser user_agent und Verweis nur beim Senden des Formulars."
@@ -861,7 +861,7 @@ msgstr "Autorisierter Weiterleitungs-URI"
 msgid "Autocomplete"
 msgstr "Autocomplete"
 
-#: core/controllers/arflitemaincontroller.php:2904
+#: core/controllers/arflitemaincontroller.php:2907
 #@ arforms-form-builder
 msgid "Available Add-ons"
 msgstr "Verfügbare Add-Ons"
@@ -955,13 +955,13 @@ msgstr "Grundlegende Styling-Optionen"
 msgid "Basque"
 msgstr "baskisch"
 
-#: core/controllers/arflitemaincontroller.php:1229
+#: core/controllers/arflitemaincontroller.php:1228
 #: core/controllers/arfliteprocontroller.php:250
 #@ arforms-form-builder
 msgid "Before you deactivate the ARForms Lite plugin, would you quickly give us your reason for doing so?"
 msgstr "Würden Sie uns schnell Ihren Grund dafür mitteilen, bevor Sie das ARForms Lite-Plugin deaktivieren?"
 
-#: core/controllers/arflitemaincontroller.php:2401
+#: core/controllers/arflitemaincontroller.php:2404
 #@ arforms-form-builder
 msgid "begin"
 msgstr "Start"
@@ -1227,7 +1227,7 @@ msgstr "Kamerun"
 msgid "Campaign Name"
 msgstr "Kampagnenname"
 
-#: core/controllers/arflitemaincontroller.php:2170
+#: core/controllers/arflitemaincontroller.php:2173
 #: core/controllers/arfliteprocontroller.php:297
 #@ arforms-form-builder
 msgid "Can you mention it?"
@@ -1239,9 +1239,9 @@ msgstr "Kannst du es erwähnen?"
 msgid "Canada"
 msgstr "Kanada"
 
-#: core/controllers/arflitemaincontroller.php:1215
-#: core/controllers/arflitemaincontroller.php:2309
-#: core/controllers/arflitemaincontroller.php:2397
+#: core/controllers/arflitemaincontroller.php:1214
+#: core/controllers/arflitemaincontroller.php:2312
+#: core/controllers/arflitemaincontroller.php:2400
 #: core/views/arf_debug_log.php:149
 #: core/views/arf_view_records.php:516
 #: core/views/arf_view_records.php:538
@@ -1350,7 +1350,7 @@ msgstr "Alle überprüfen"
 msgid "Check Full Log"
 msgstr "Überprüfen Sie das vollständige Protokoll"
 
-#: core/controllers/arflitemaincontroller.php:2269
+#: core/controllers/arflitemaincontroller.php:2272
 #: core/views/arflite_field_type_conversion.php:124
 #@ arforms-form-builder
 msgid "Checkbox"
@@ -1433,7 +1433,7 @@ msgstr "Wähle eine Farbe"
 msgid "Choose File"
 msgstr "Datei wählen"
 
-#: core/controllers/arflitemaincontroller.php:3253
+#: core/controllers/arflitemaincontroller.php:3256
 #@ arforms-form-builder
 msgid "Choose Option"
 msgstr "Option wählen"
@@ -1448,7 +1448,7 @@ msgstr "Weihnachtsinsel"
 msgid "Clear default text on focus"
 msgstr "Standardtext im Fokus löschen"
 
-#: core/controllers/arflitemaincontroller.php:2417
+#: core/controllers/arflitemaincontroller.php:2420
 #@ arforms-form-builder
 msgid "Clear default text on focus."
 msgstr "Standardtext im Fokus löschen."
@@ -1464,30 +1464,30 @@ msgid "Click here to enter form title"
 msgstr "Klicken Sie hier, um den Formulartitel einzugeben"
 
 #: core/controllers/arfliteformcontroller.php:853
-#: core/controllers/arflitemaincontroller.php:2299
+#: core/controllers/arflitemaincontroller.php:2302
 #: core/controllers/arfliterecordcontroller.php:2475
 #: core/views/arflite_settings_form.php:394
 #@ arforms-form-builder
 msgid "Click to Copy"
 msgstr "Klicken Sie zum Kopieren"
 
-#: core/controllers/arflitemaincontroller.php:2423
+#: core/controllers/arflitemaincontroller.php:2426
 #@ arforms-form-builder
 msgid "Click to edit"
 msgstr "Zum Bearbeiten anklicken"
 
-#: core/helpers/arflitefieldhelper.php:2556
+#: core/helpers/arflitefieldhelper.php:2548
 #: core/views/arflite_field_editor.php:438
 #@ arforms-form-builder
 msgid "Click to mark as"
 msgstr "Klicken Sie, um als zu markieren"
 
-#: core/controllers/arflitemaincontroller.php:2339
+#: core/controllers/arflitemaincontroller.php:2342
 #@ arforms-form-builder
 msgid "Click to mark as compulsory field"
 msgstr "Klicken Sie, um als Pflichtfeld zu markieren"
 
-#: core/controllers/arflitemaincontroller.php:2337
+#: core/controllers/arflitemaincontroller.php:2340
 #: core/views/arflite_new_field_array.php:122
 #: core/views/arflite_new_field_array.php:123
 #: core/views/arflite_new_field_array.php:124
@@ -1584,7 +1584,7 @@ msgstr "Vollendet"
 msgid "Completed Date"
 msgstr "Abschlussdatum"
 
-#: core/helpers/arflitefieldhelper.php:2556
+#: core/helpers/arflitefieldhelper.php:2548
 #: core/views/arflite_field_editor.php:438
 #@ arforms-form-builder
 msgid "compulsory field."
@@ -1659,7 +1659,7 @@ msgstr "Kongo (DRC)"
 msgid "Congo (Republic)"
 msgstr "Kongo (Republik)"
 
-#: core/controllers/arflitemaincontroller.php:2358
+#: core/controllers/arflitemaincontroller.php:2361
 #@ arforms-form-builder
 msgid "contains"
 msgstr "enthält"
@@ -1691,7 +1691,7 @@ msgstr "In Feldtyp konvertieren"
 msgid "Cook Islands"
 msgstr "Cookinseln"
 
-#: core/controllers/arflitemaincontroller.php:2300
+#: core/controllers/arflitemaincontroller.php:2303
 #@ arforms-form-builder
 msgid "copied"
 msgstr "kopiert"
@@ -1850,7 +1850,7 @@ msgstr "Dunkel"
 msgid "Dashed"
 msgstr "Gestrichelt"
 
-#: core/controllers/arflitemaincontroller.php:2275
+#: core/controllers/arflitemaincontroller.php:2278
 #: core/helpers/arflitefieldhelper.php:440
 #@ arforms-form-builder
 msgid "Date"
@@ -1961,8 +1961,8 @@ msgid "Default Value"
 msgstr "Standardwert"
 
 #: core/controllers/arfliteformcontroller.php:902
-#: core/controllers/arflitemaincontroller.php:2307
-#: core/controllers/arflitemaincontroller.php:2376
+#: core/controllers/arflitemaincontroller.php:2310
+#: core/controllers/arflitemaincontroller.php:2379
 #: core/controllers/arfliterecordcontroller.php:2329
 #: core/controllers/arfliterecordcontroller.php:2535
 #: core/views/arf_debug_log.php:148
@@ -2016,7 +2016,7 @@ msgstr "Formulare und Vorlagen löschen"
 msgid "Denmark"
 msgstr "Dänemark"
 
-#: core/controllers/arflitemaincontroller.php:2365
+#: core/controllers/arflitemaincontroller.php:2368
 #@ arforms-form-builder
 msgid "Disable"
 msgstr "Deaktivieren"
@@ -2064,12 +2064,12 @@ msgstr "Titel und Beschreibung anzeigen"
 msgid "Djibouti"
 msgstr "Dschibuti"
 
-#: core/controllers/arflitemaincontroller.php:2415
+#: core/controllers/arflitemaincontroller.php:2418
 #@ arforms-form-builder
 msgid "Do not clear default text on focus."
 msgstr "Löschen Sie den Standardtext nicht im Fokus."
 
-#: core/controllers/arflitemaincontroller.php:2421
+#: core/controllers/arflitemaincontroller.php:2424
 #@ arforms-form-builder
 msgid "Do not pass the validation with default value."
 msgstr "Übergeben Sie die Validierung nicht mit dem Standardwert."
@@ -2096,7 +2096,7 @@ msgstr "Gepunktet"
 msgid "Drop Down"
 msgstr "Dropdown-Liste"
 
-#: core/controllers/arflitemaincontroller.php:2271
+#: core/controllers/arflitemaincontroller.php:2274
 #: core/helpers/arflitefieldhelper.php:355
 #: core/views/arflite_field_type_conversion.php:126
 #@ arforms-form-builder
@@ -2184,7 +2184,7 @@ msgstr "El Salvador"
 msgid "Email"
 msgstr "Email"
 
-#: core/controllers/arflitemaincontroller.php:2272
+#: core/controllers/arflitemaincontroller.php:2275
 #: core/helpers/arflitefieldhelper.php:428
 #: core/models/arflitetemplate.php:380
 #: core/models/arflitetemplate.php:820
@@ -2245,7 +2245,7 @@ msgstr "Inline-Formular einbetten"
 msgid "Embedded tags for youtube, map etc are supported."
 msgstr "Eingebettete Tags für YouTube, Karte usw. werden unterstützt."
 
-#: core/controllers/arflitemaincontroller.php:2364
+#: core/controllers/arflitemaincontroller.php:2367
 #: core/views/arflite_settings_form.php:823
 #@ arforms-form-builder
 msgid "Enable"
@@ -2373,7 +2373,7 @@ msgstr "Eingabeschlüssel"
 msgid "Entry not found for selected time period"
 msgstr "Eintrag für ausgewählten Zeitraum nicht gefunden"
 
-#: core/controllers/arflitemaincontroller.php:2353
+#: core/controllers/arflitemaincontroller.php:2356
 #@ arforms-form-builder
 msgid "equals"
 msgstr "gleich"
@@ -2455,7 +2455,7 @@ msgstr "Äthiopien"
 msgid "Even Row"
 msgstr "Gerade Reihe"
 
-#: core/controllers/arflitemaincontroller.php:455
+#: core/controllers/arflitemaincontroller.php:454
 #@ arforms-form-builder
 msgid "Every 12 hours"
 msgstr "Alle 12 Stunden"
@@ -2632,12 +2632,12 @@ msgstr "Feld-Tooltip"
 msgid "Field Transparency"
 msgstr "Feldtransparenz"
 
-#: core/controllers/arflitemaincontroller.php:2449
+#: core/controllers/arflitemaincontroller.php:2452
 #@ arforms-form-builder
 msgid "Field type changing also may affect email notification section, conditional rule section, payment gateways configuration and other add-ons configuration. So it is highly recommend to verify all these settings after changing field type"
 msgstr "Das Ändern des Feldtyps kann sich auch auf den Abschnitt für E-Mail-Benachrichtigungen, den Abschnitt für bedingte Regeln, die Konfiguration von Zahlungsgateways und andere Add-Ons auswirken. Es wird daher dringend empfohlen, alle diese Einstellungen nach dem Ändern des Feldtyps zu überprüfen"
 
-#: core/controllers/arflitemaincontroller.php:2442
+#: core/controllers/arflitemaincontroller.php:2445
 #@ arforms-form-builder
 msgid "Field values will be lost once converted to"
 msgstr "Feldwerte gehen nach der Konvertierung in verloren"
@@ -2723,7 +2723,7 @@ msgid "Finnish"
 msgstr "finnisch"
 
 #: core/classes/class.arforms_form_builder.php:986
-#: core/controllers/arflitemaincontroller.php:2431
+#: core/controllers/arflitemaincontroller.php:2434
 #@ arforms-form-builder
 msgid "First"
 msgstr "Zuerst"
@@ -2961,7 +2961,7 @@ msgstr "Formen :"
 msgid "Forms listing is currently unavailable. Please try again later."
 msgstr "Die Formularauflistung ist derzeit nicht verfügbar. Bitte versuchen Sie es später noch einmal."
 
-#: core/controllers/arflitemaincontroller.php:1198
+#: core/controllers/arflitemaincontroller.php:1197
 #: core/controllers/arfliteprocontroller.php:236
 #@ arforms-form-builder
 msgid "Found a better plugin"
@@ -3160,7 +3160,7 @@ msgstr "Google Fonts"
 msgid "Google/Gmail API"
 msgstr "Google/Gmail-API"
 
-#: core/controllers/arflitemaincontroller.php:2356
+#: core/controllers/arflitemaincontroller.php:2359
 #@ arforms-form-builder
 msgid "greater than"
 msgstr "größer als"
@@ -3269,7 +3269,7 @@ msgstr "Optionen für ausgeblendete Eingabefelder"
 msgid "Hidden Input Fields Setup"
 msgstr "Einrichtung versteckter Eingabefelder"
 
-#: core/controllers/arflitemaincontroller.php:2363
+#: core/controllers/arflitemaincontroller.php:2366
 #@ arforms-form-builder
 msgid "Hide"
 msgstr "Ausblenden"
@@ -3353,13 +3353,13 @@ msgstr "Std"
 msgid "Hover Background"
 msgstr "Hover Hintergrund"
 
-#: core/controllers/arflitemaincontroller.php:1235
+#: core/controllers/arflitemaincontroller.php:1234
 #: core/controllers/arfliteprocontroller.php:256
 #@ arforms-form-builder
 msgid "How could we improve ?"
 msgstr "Wie könnten wir uns verbessern?"
 
-#: core/controllers/arflitemaincontroller.php:2169
+#: core/controllers/arflitemaincontroller.php:2172
 #: core/controllers/arfliteprocontroller.php:296
 #@ arforms-form-builder
 msgid "How could we improve?"
@@ -3370,7 +3370,7 @@ msgstr "Wie könnten wir uns verbessern?"
 msgid "Hrs"
 msgstr "Std"
 
-#: core/controllers/arflitemaincontroller.php:2279
+#: core/controllers/arflitemaincontroller.php:2282
 #: core/helpers/arflitefieldhelper.php:461
 #: core/views/arflite_settings_form.php:345
 #@ arforms-form-builder
@@ -3390,18 +3390,18 @@ msgstr "ungarisch"
 msgid "Hungary"
 msgstr "Ungarn"
 
-#: core/controllers/arflitemaincontroller.php:2828
+#: core/controllers/arflitemaincontroller.php:2831
 #@ arforms-form-builder
 msgid "I already did"
 msgstr "Ich habe es bereits getan"
 
-#: core/controllers/arflitemaincontroller.php:1200
+#: core/controllers/arflitemaincontroller.php:1199
 #: core/controllers/arfliteprocontroller.php:238
 #@ arforms-form-builder
 msgid "I bought premium version of ARForms"
 msgstr "Ich habe eine Premium-Version von ARForms gekauft"
 
-#: core/controllers/arflitemaincontroller.php:1210
+#: core/controllers/arflitemaincontroller.php:1209
 #@ arforms-form-builder
 msgid "I understand the risk"
 msgstr "Ich verstehe das Risiko"
@@ -3439,12 +3439,12 @@ msgstr "Symbolfarbe"
 msgid "ID"
 msgstr "ICH WÜRDE"
 
-#: core/controllers/arflitemaincontroller.php:2378
+#: core/controllers/arflitemaincontroller.php:2381
 #@ arforms-form-builder
 msgid "IF"
 msgstr "WENN"
 
-#: core/controllers/arflitemaincontroller.php:1248
+#: core/controllers/arflitemaincontroller.php:1247
 #: core/controllers/arfliteprocontroller.php:270
 #@ arforms-form-builder
 msgid "If you UNCHECK this then your email address will be sent along with your feedback. This can be used by arflite to get back to you for more info or a solution."
@@ -3460,7 +3460,7 @@ msgstr "Bild"
 msgid "Image is invalid"
 msgstr "Bild ist ungültig"
 
-#: core/controllers/arflitemaincontroller.php:2278
+#: core/controllers/arflitemaincontroller.php:2281
 #: core/helpers/arflitefieldhelper.php:452
 #@ arforms-form-builder
 msgid "Image URL"
@@ -3510,7 +3510,7 @@ msgstr "Formulare importieren"
 msgid "In Process"
 msgstr "In Bearbeitung"
 
-#: core/controllers/arflitemaincontroller.php:1199
+#: core/controllers/arflitemaincontroller.php:1198
 #: core/controllers/arfliteprocontroller.php:237
 #@ arforms-form-builder
 msgid "Incompatible with theme or plugin"
@@ -3673,7 +3673,7 @@ msgstr "Irak"
 msgid "Ireland"
 msgstr "Irland"
 
-#: core/controllers/arflitemaincontroller.php:2385
+#: core/controllers/arflitemaincontroller.php:2388
 #@ arforms-form-builder
 msgid "is"
 msgstr "ist"
@@ -3839,7 +3839,7 @@ msgstr "Beschriftungstextfarbe"
 msgid "Label Width"
 msgstr "Etikettenbreite"
 
-#: core/controllers/arflitemaincontroller.php:1196
+#: core/controllers/arflitemaincontroller.php:1195
 #: core/controllers/arfliteprocontroller.php:234
 #@ arforms-form-builder
 msgid "Lack of documentation"
@@ -3852,7 +3852,7 @@ msgid "Laos"
 msgstr "Laos"
 
 #: core/classes/class.arforms_form_builder.php:985
-#: core/controllers/arflitemaincontroller.php:2429
+#: core/controllers/arflitemaincontroller.php:2432
 #@ arforms-form-builder
 msgid "Last"
 msgstr "Letzte"
@@ -3904,7 +3904,7 @@ msgstr "Links nach rechts"
 msgid "Lesotho"
 msgstr "Lesotho"
 
-#: core/controllers/arflitemaincontroller.php:2357
+#: core/controllers/arflitemaincontroller.php:2360
 #@ arforms-form-builder
 msgid "less than"
 msgstr "weniger als"
@@ -4400,7 +4400,7 @@ msgstr "Frau"
 msgid "Multi Select"
 msgstr "Mehrfachauswahl"
 
-#: core/controllers/arflitemaincontroller.php:2268
+#: core/controllers/arflitemaincontroller.php:2271
 #: core/helpers/arflitefieldhelper.php:343
 #: core/views/arflite_field_type_conversion.php:123
 #@ arforms-form-builder
@@ -4469,7 +4469,7 @@ msgid "New Zealand"
 msgstr "Neuseeland"
 
 #: core/classes/class.arforms_form_builder.php:984
-#: core/controllers/arflitemaincontroller.php:2427
+#: core/controllers/arflitemaincontroller.php:2430
 #: core/helpers/arflitefieldhelper.php:815
 #@ arforms-form-builder
 msgid "Next"
@@ -4594,7 +4594,7 @@ msgstr "Niemand! Sie haben keine Berechtigung"
 msgid "No plugin specified."
 msgstr "Kein Plugin angegeben."
 
-#: core/controllers/arflitemaincontroller.php:2827
+#: core/controllers/arflitemaincontroller.php:2830
 #@ arforms-form-builder
 msgid "No, Maybe later"
 msgstr "Nein, vielleicht später"
@@ -4651,17 +4651,17 @@ msgstr "Norwegen"
 msgid "Norwegian"
 msgstr "norwegisch"
 
-#: core/controllers/arflitemaincontroller.php:2359
+#: core/controllers/arflitemaincontroller.php:2362
 #@ arforms-form-builder
 msgid "not contains"
 msgstr "nicht enthält"
 
-#: core/controllers/arflitemaincontroller.php:2355
+#: core/controllers/arflitemaincontroller.php:2358
 #@ arforms-form-builder
 msgid "not equals"
 msgstr "nicht gleich"
 
-#: core/controllers/arflitemaincontroller.php:1197
+#: core/controllers/arflitemaincontroller.php:1196
 #: core/controllers/arfliteprocontroller.php:235
 #@ arforms-form-builder
 msgid "Not the features I wanted"
@@ -4705,7 +4705,7 @@ msgstr "Hinweis: Der Gmail-Mailer eignet sich gut für Websites, die nur wenige 
 msgid "Note: This field will not show in the form. Enter the value to be hidden."
 msgstr "Hinweis: Dieses Feld wird im Formular nicht angezeigt. Geben Sie den Wert ein, der ausgeblendet werden soll."
 
-#: core/controllers/arflitemaincontroller.php:2335
+#: core/controllers/arflitemaincontroller.php:2338
 #: core/views/arflite_autoresponder_settings.php:85
 #: core/views/arflite_autoresponder_settings.php:177
 #: core/views/arflite_autoresponder_settings.php:293
@@ -4720,7 +4720,7 @@ msgstr "Nichts ausgewählt"
 msgid "November"
 msgstr "November"
 
-#: core/controllers/arflitemaincontroller.php:2273
+#: core/controllers/arflitemaincontroller.php:2276
 #: core/helpers/arflitefieldhelper.php:432
 #: core/views/arflite_field_type_conversion.php:128
 #@ arforms-form-builder
@@ -4770,7 +4770,7 @@ msgstr "von"
 msgid "Off days"
 msgstr "Freie Tage"
 
-#: core/controllers/arflitemaincontroller.php:2930
+#: core/controllers/arflitemaincontroller.php:2933
 #: core/views/arflite_edit.php:4760
 #: core/views/arflite_edit.php:4780
 #: core/views/arflite_edit.php:4928
@@ -4818,7 +4818,7 @@ msgstr "Freie Tage"
 msgid "OK"
 msgstr "OK"
 
-#: core/controllers/arflitemaincontroller.php:2826
+#: core/controllers/arflitemaincontroller.php:2829
 #@ arforms-form-builder
 msgid "OK, you deserve it"
 msgstr "OK, du hast es verdient"
@@ -4886,7 +4886,7 @@ msgstr "Optional"
 msgid "Or"
 msgstr "Oder"
 
-#: core/controllers/arflitemaincontroller.php:1201
+#: core/controllers/arflitemaincontroller.php:1200
 #: core/controllers/arfliteprocontroller.php:239
 #@ arforms-form-builder
 msgid "Other"
@@ -4917,7 +4917,7 @@ msgstr "Andere Einstellungen"
 msgid "Overall Steps"
 msgstr "Gesamtschritte"
 
-#: core/controllers/arflitemaincontroller.php:2399
+#: core/controllers/arflitemaincontroller.php:2402
 #@ arforms-form-builder
 msgid "Page"
 msgstr "Seite"
@@ -4996,7 +4996,7 @@ msgstr "Paraguay"
 msgid "Partial Filled Form Entries"
 msgstr "Teilweise ausgefüllte Formulareinträge"
 
-#: core/controllers/arflitemaincontroller.php:2419
+#: core/controllers/arflitemaincontroller.php:2422
 #@ arforms-form-builder
 msgid "Pass the validation with default value."
 msgstr "Übergeben Sie die Validierung mit dem Standardwert."
@@ -5044,7 +5044,7 @@ msgstr "Telefonelemente"
 msgid "Phone is invalid"
 msgstr "Telefon ist ungültig"
 
-#: core/controllers/arflitemaincontroller.php:2274
+#: core/controllers/arflitemaincontroller.php:2277
 #: core/helpers/arflitefieldhelper.php:436
 #@ arforms-form-builder
 msgid "Phone Number"
@@ -5080,13 +5080,13 @@ msgstr "Platzhaltertext"
 msgid "Plain Text"
 msgstr "Klartext"
 
-#: core/controllers/arflitemaincontroller.php:2360
+#: core/controllers/arflitemaincontroller.php:2363
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:725
 #@ arforms-form-builder
 msgid "Please add one or more rules"
 msgstr "Bitte fügen Sie eine oder mehrere Regeln hinzu"
 
-#: core/controllers/arflitemaincontroller.php:2448
+#: core/controllers/arflitemaincontroller.php:2451
 #@ arforms-form-builder
 msgid "Please do needful"
 msgstr "Bitte tun Sie es nötig"
@@ -5106,13 +5106,13 @@ msgstr "Bitte geben Sie das Client-Geheimnis ein"
 msgid "Please enter content"
 msgstr "Bitte geben Sie den Inhalt ein"
 
-#: core/controllers/arflitemaincontroller.php:2315
+#: core/controllers/arflitemaincontroller.php:2318
 #: core/views/arflite_new-selection-modal.php:73
 #@ arforms-form-builder
 msgid "Please enter form title"
 msgstr "Bitte geben Sie den Formulartitel ein"
 
-#: core/controllers/arflitemaincontroller.php:2303
+#: core/controllers/arflitemaincontroller.php:2306
 #@ arforms-form-builder
 msgid "Please Enter preset title"
 msgstr "Bitte geben Sie den voreingestellten Titel ein"
@@ -5144,7 +5144,7 @@ msgstr "Bitte öffnen Sie Ihre exportierte Datei, kopieren Sie den gesamten Inha
 msgid "Please save form to generate shortcode."
 msgstr "Bitte speichern Sie das Formular, um einen Shortcode zu generieren."
 
-#: core/controllers/arflitemaincontroller.php:2475
+#: core/controllers/arflitemaincontroller.php:2478
 #@ arforms-form-builder
 msgid "Please select a custom display"
 msgstr "Bitte wählen Sie eine benutzerdefinierte Anzeige"
@@ -5155,7 +5155,7 @@ msgid "Please select a file to process"
 msgstr "Bitte wählen Sie eine zu verarbeitende Datei aus"
 
 #: core/classes/class.arforms_beaver_builder.php:31
-#: core/controllers/arflitemaincontroller.php:2474
+#: core/controllers/arflitemaincontroller.php:2477
 #: core/views/arf_view_records.php:396
 #: integrations/Divi/divi5/ArformsDiviModule.php:155
 #: integrations/Divi/modules/arforms-divi-module/arforms-divi-module.php:29
@@ -5176,7 +5176,7 @@ msgstr "Bitte wählen Sie ein gültiges Formular"
 msgid "Please select any Sample."
 msgstr "Bitte wählen Sie eine Probe aus."
 
-#: core/controllers/arflitemaincontroller.php:2298
+#: core/controllers/arflitemaincontroller.php:2301
 #@ arforms-form-builder
 msgid "Please Select Field"
 msgstr "Bitte Feld auswählen"
@@ -5188,7 +5188,7 @@ msgid "Please Select Form"
 msgstr "Bitte Formular auswählen"
 
 #: core/controllers/arflite_elm_widgets/arflite_element_add.php:68
-#: core/controllers/arflitemaincontroller.php:2327
+#: core/controllers/arflitemaincontroller.php:2330
 #@ arforms-form-builder
 msgid "Please select form"
 msgstr "Bitte Formular auswählen"
@@ -5199,8 +5199,8 @@ msgstr "Bitte Formular auswählen"
 msgid "Please select image file only."
 msgstr "Bitte wählen Sie nur Bilddatei."
 
-#: core/controllers/arflitemaincontroller.php:2295
-#: core/controllers/arflitemaincontroller.php:2333
+#: core/controllers/arflitemaincontroller.php:2298
+#: core/controllers/arflitemaincontroller.php:2336
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:724
 #@ arforms-form-builder
 msgid "Please select one or more record to perform action"
@@ -5211,7 +5211,7 @@ msgstr "Bitte wählen Sie einen oder mehrere Datensätze aus, um eine Aktion aus
 msgid "Please select one or more record to perform action."
 msgstr "Bitte wählen Sie einen oder mehrere Datensätze aus, um eine Aktion auszuführen."
 
-#: core/controllers/arfliterecordcontroller.php:3204
+#: core/controllers/arfliterecordcontroller.php:3206
 #@ arforms-form-builder
 msgid "Please select one or more record."
 msgstr "Bitte wählen Sie einen oder mehrere Datensätze aus."
@@ -5234,7 +5234,7 @@ msgstr "Bitte wählen Sie einen oder mehrere Datensätze aus."
 msgid "Please select options to send an automatic response to user."
 msgstr "Bitte wählen Sie Optionen aus, um eine automatische Antwort an den Benutzer zu senden."
 
-#: core/controllers/arflitemaincontroller.php:2305
+#: core/controllers/arflitemaincontroller.php:2308
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:723
 #@ arforms-form-builder
 msgid "Please select valid action"
@@ -5251,7 +5251,7 @@ msgstr "Bitte wählen Sie eine gültige Aktion aus."
 #: core/classes/class.arforms_block_widget.php:102
 #: core/controllers/arfliteformcontroller.php:7176
 #: core/controllers/arfliteformcontroller.php:7188
-#: core/controllers/arflitemaincontroller.php:1950
+#: core/controllers/arflitemaincontroller.php:1953
 #: core/views/arflite_form_preview.php:10
 #@ arforms-form-builder
 msgid "Please select valid form"
@@ -5272,24 +5272,24 @@ msgstr "Bitte legen Sie Erweiterungen fest, um die Datei zu validieren."
 msgid "Please setup site key and private key in Global Settings otherwise recaptcha will not appear"
 msgstr "Bitte richten Sie den Site-Schlüssel und den privaten Schlüssel in den globalen Einstellungen ein, da sonst keine erneute Erfassung angezeigt wird"
 
-#: core/controllers/arflitemaincontroller.php:2173
+#: core/controllers/arflitemaincontroller.php:2176
 #: core/controllers/arfliteprocontroller.php:300
 #@ arforms-form-builder
 msgid "Please specify"
 msgstr "Bitte angeben"
 
-#: core/controllers/arflitemaincontroller.php:2172
+#: core/controllers/arflitemaincontroller.php:2175
 #: core/controllers/arfliteprocontroller.php:299
 #@ arforms-form-builder
 msgid "Please specify experience"
 msgstr "Bitte geben Sie die Erfahrung an"
 
-#: core/controllers/arflitemaincontroller.php:2323
+#: core/controllers/arflitemaincontroller.php:2326
 #@ arforms-form-builder
 msgid "Please try again"
 msgstr "Bitte versuche es erneut"
 
-#: core/controllers/arflitemaincontroller.php:2301
+#: core/controllers/arflitemaincontroller.php:2304
 #@ arforms-form-builder
 msgid "Please upload csv file"
 msgstr "Bitte laden Sie eine CSV-Datei hoch"
@@ -5314,7 +5314,7 @@ msgstr "Bitte laden Sie eine durch Tabulatoren getrennte CSV-Datei hoch."
 msgid "Please wait while you are redirected."
 msgstr "Bitte warten Sie während Sie umgeleitet werden."
 
-#: core/controllers/arflitemaincontroller.php:2374
+#: core/controllers/arflitemaincontroller.php:2377
 #@ arforms-form-builder
 msgid "Please, Select appropriate option"
 msgstr "Bitte wählen Sie die entsprechende Option"
@@ -5394,7 +5394,7 @@ msgid "Preview"
 msgstr "Vorschau"
 
 #: core/classes/class.arforms_form_builder.php:987
-#: core/controllers/arflitemaincontroller.php:2433
+#: core/controllers/arflitemaincontroller.php:2436
 #: core/helpers/arflitefieldhelper.php:814
 #@ arforms-form-builder
 msgid "Previous"
@@ -5405,14 +5405,14 @@ msgstr "Bisherige"
 msgid "Previous Entry"
 msgstr "Vorheriger Eintrag"
 
-#: core/controllers/arflitemaincontroller.php:2912
+#: core/controllers/arflitemaincontroller.php:2915
 #: core/views/arflite_edit.php:932
 #: core/views/arflite_edit.php:1010
 #@ arforms-form-builder
 msgid "Pro"
 msgstr "Profi"
 
-#: core/controllers/arflitemaincontroller.php:1217
+#: core/controllers/arflitemaincontroller.php:1216
 #@ arforms-form-builder
 msgid "Proceed"
 msgstr "Fortfahren"
@@ -5429,7 +5429,7 @@ msgstr "Puerto Rico"
 msgid "Qatar"
 msgstr "Katar"
 
-#: core/controllers/arflitemaincontroller.php:2270
+#: core/controllers/arflitemaincontroller.php:2273
 #@ arforms-form-builder
 msgid "Radio"
 msgstr "Radio"
@@ -5487,7 +5487,7 @@ msgstr "Für reCAPTCHA ist ein API-Schlüssel erforderlich, der aus einem \\\"Si
 msgid "reCAPTCHA Theme"
 msgstr "reCAPTCHA-Thema"
 
-#: core/controllers/arfliterecordcontroller.php:3242
+#: core/controllers/arfliterecordcontroller.php:3244
 #@ arforms-form-builder
 msgid "Record could not be deleted"
 msgstr "Datensatz konnte nicht gelöscht werden"
@@ -5495,7 +5495,7 @@ msgstr "Datensatz konnte nicht gelöscht werden"
 #: core/controllers/arfliteformcontroller.php:240
 #: core/controllers/arfliteformcontroller.php:785
 #: core/controllers/arfliteformcontroller.php:7199
-#: core/controllers/arfliterecordcontroller.php:3230
+#: core/controllers/arfliterecordcontroller.php:3232
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1229
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1368
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1493
@@ -5567,7 +5567,7 @@ msgstr "Auf E-Mail antworten"
 msgid "Required"
 msgstr "Erforderlich"
 
-#: core/controllers/arflitemaincontroller.php:2311
+#: core/controllers/arflitemaincontroller.php:2314
 #: core/views/arflite_field_values_popup.php:184
 #@ arforms-form-builder
 msgid "Reset"
@@ -5853,7 +5853,7 @@ msgstr "Wählen Sie 1"
 msgid "Select a form to insert into page"
 msgstr "Wählen Sie ein Formular aus, das in die Seite eingefügt werden soll"
 
-#: core/controllers/arflitemaincontroller.php:2372
+#: core/controllers/arflitemaincontroller.php:2375
 #@ arforms-form-builder
 msgid "Select atleast one flag"
 msgstr "Wählen Sie mindestens eine Flagge aus"
@@ -5870,8 +5870,8 @@ msgstr "Wählen Sie Zeichensätze für Google-Schriftarten aus"
 msgid "Select Date"
 msgstr "Datum auswählen"
 
-#: core/controllers/arflitemaincontroller.php:2322
-#: core/controllers/arflitemaincontroller.php:2383
+#: core/controllers/arflitemaincontroller.php:2325
+#: core/controllers/arflitemaincontroller.php:2386
 #: core/views/arflite_edit.php:4103
 #: core/views/arflite_field_type_conversion.php:51
 #: core/views/arflite_field_type_conversion.php:57
@@ -5953,7 +5953,7 @@ msgstr "Senden Sie nach dem Absenden des Formulars eine automatische Antwort an 
 msgid "Send an automatic response to users after form submission."
 msgstr "Senden Sie nach dem Absenden des Formulars eine automatische Antwort an die Benutzer."
 
-#: core/controllers/arflitemaincontroller.php:1249
+#: core/controllers/arflitemaincontroller.php:1248
 #: core/controllers/arfliteprocontroller.php:271
 #@ arforms-form-builder
 msgid "Send anonymous"
@@ -6066,18 +6066,18 @@ msgstr "Stellen Sie den Timer ein"
 msgid "Set Transparent Background"
 msgstr "Transparenten Hintergrund festlegen"
 
-#: core/controllers/arflitemaincontroller.php:1195
+#: core/controllers/arflitemaincontroller.php:1194
 #: core/controllers/arfliteprocontroller.php:233
 #@ arforms-form-builder
 msgid "Set up is too difficult"
 msgstr "Das Einrichten ist zu schwierig"
 
-#: core/controllers/arflitemaincontroller.php:2366
+#: core/controllers/arflitemaincontroller.php:2369
 #@ arforms-form-builder
 msgid "Set Value of"
 msgstr "Stellen Sie den Wert von ein"
 
-#: core/controllers/arflitemaincontroller.php:1153
+#: core/controllers/arflitemaincontroller.php:1152
 #: core/views/arflite_edit_form.php:398
 #@ arforms-form-builder
 msgid "Settings"
@@ -6118,7 +6118,7 @@ msgstr "Schattenoptionen"
 msgid "Shortcodes"
 msgstr "Shortcodes"
 
-#: core/controllers/arflitemaincontroller.php:2362
+#: core/controllers/arflitemaincontroller.php:2365
 #: core/views/arf_view_records.php:417
 #: core/views/arflite_list.php:144
 #: integrations/Payments/PayPal/core/list_forms_3.0.php:164
@@ -6176,7 +6176,7 @@ msgstr "Abmelden erfolgreich."
 msgid "Singapore"
 msgstr "Singapur"
 
-#: core/controllers/arflitemaincontroller.php:2267
+#: core/controllers/arflitemaincontroller.php:2270
 #: core/helpers/arflitefieldhelper.php:339
 #: core/views/arflite_field_type_conversion.php:122
 #@ arforms-form-builder
@@ -6332,8 +6332,8 @@ msgstr "Leider konnte die Aktion \\\"Formular außerhalb zurücksetzen\\\" aus S
 msgid "Sorry, this file type is not permitted for security reasons"
 msgstr "Dieser Dateityp ist aus Sicherheitsgründen leider nicht zulässig"
 
-#: core/controllers/arflitemaincontroller.php:437
-#: core/controllers/arflitemaincontroller.php:2965
+#: core/controllers/arflitemaincontroller.php:436
+#: core/controllers/arflitemaincontroller.php:2968
 #: core/controllers/arflitesettingcontroller.php:586
 #@ arforms-form-builder
 msgid "Sorry, you are not allowed to install plugins on this site."
@@ -6357,14 +6357,14 @@ msgstr "Leider haben Sie nicht genügend Berechtigungen, um diese Aktion auszuf�
 #: core/classes/class.arforms_general_settings.php:186
 #: core/classes/class.arforms_general_settings.php:301
 #: core/classes/class.arforms_import_export.php:961
-#: core/controllers/arflitemaincontroller.php:2435
-#: core/controllers/arflitemaincontroller.php:3005
+#: core/controllers/arflitemaincontroller.php:2438
+#: core/controllers/arflitemaincontroller.php:3008
 #: core/controllers/arfliterecordcontroller.php:1627
 #: core/controllers/arfliterecordcontroller.php:1665
 #: core/controllers/arfliterecordcontroller.php:1893
 #: core/controllers/arfliterecordcontroller.php:2379
-#: core/controllers/arfliterecordcontroller.php:3121
-#: core/controllers/arfliterecordcontroller.php:3187
+#: core/controllers/arfliterecordcontroller.php:3123
+#: core/controllers/arfliterecordcontroller.php:3189
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:174
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:320
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:1176
@@ -6396,14 +6396,14 @@ msgstr "Leider konnte Ihre Anfrage aus Sicherheitsgründen nicht bearbeitet werd
 #: core/classes/class.arforms_divi_module.php:32
 #: core/classes/class.arforms_general_settings.php:292
 #: core/classes/class.arforms_import_export.php:967
-#: core/controllers/arflitemaincontroller.php:2437
-#: core/controllers/arflitemaincontroller.php:3024
-#: core/controllers/arflitemaincontroller.php:3044
+#: core/controllers/arflitemaincontroller.php:2440
+#: core/controllers/arflitemaincontroller.php:3027
+#: core/controllers/arflitemaincontroller.php:3047
 #: core/controllers/arfliterecordcontroller.php:1618
 #: core/controllers/arfliterecordcontroller.php:1879
 #: core/controllers/arfliterecordcontroller.php:2373
-#: core/controllers/arfliterecordcontroller.php:3107
-#: core/controllers/arfliterecordcontroller.php:3173
+#: core/controllers/arfliterecordcontroller.php:3109
+#: core/controllers/arfliterecordcontroller.php:3175
 #@ arforms-form-builder
 msgid "Sorry, your request could not be processed due to security reason."
 msgstr "Leider konnte Ihre Anfrage aus Sicherheitsgründen nicht bearbeitet werden."
@@ -6443,7 +6443,7 @@ msgid "Spain"
 msgstr "Spanien"
 
 #: core/controllers/arfliterecordcontroller.php:217
-#: core/controllers/arfliterecordcontroller.php:3264
+#: core/controllers/arfliterecordcontroller.php:3266
 #@ arforms-form-builder
 msgid "Spam Detected"
 msgstr "Spam erkannt"
@@ -6592,7 +6592,7 @@ msgstr "Tracking-Skript senden"
 msgid "Submit Wrapper"
 msgstr "Wrapper einreichen"
 
-#: core/controllers/arflitemaincontroller.php:1243
+#: core/controllers/arflitemaincontroller.php:1242
 #: core/controllers/arfliteprocontroller.php:265
 #@ arforms-form-builder
 msgid "Submitting form"
@@ -6628,7 +6628,7 @@ msgstr "Erfolgsmeldung Farben"
 msgid "Success/Error Message Position"
 msgstr "Position der Erfolgs-/Fehlermeldung"
 
-#: core/controllers/arflitemaincontroller.php:2325
+#: core/controllers/arflitemaincontroller.php:2328
 #@ arforms-form-builder
 msgid "Successfully removed file"
 msgstr "Datei erfolgreich entfernt"
@@ -6839,17 +6839,17 @@ msgstr "Das reCAPTCHA wurde nicht korrekt eingegeben"
 msgid "The SMTP debugging output is shown below:"
 msgstr "Die SMTP-Debugging-Ausgabe wird unten angezeigt:"
 
-#: core/controllers/arflitemaincontroller.php:2381
+#: core/controllers/arflitemaincontroller.php:2384
 #@ arforms-form-builder
 msgid "THEN"
 msgstr "DANN"
 
-#: core/controllers/arflitemaincontroller.php:2387
+#: core/controllers/arflitemaincontroller.php:2390
 #@ arforms-form-builder
 msgid "Then Mail Send To"
 msgstr "Dann Mail senden an"
 
-#: core/controllers/arflitemaincontroller.php:2389
+#: core/controllers/arflitemaincontroller.php:2392
 #@ arforms-form-builder
 msgid "Then Redirect to"
 msgstr "Dann Weiterleiten an"
@@ -6865,19 +6865,19 @@ msgid "There is an issue while uploading a file. Please try again"
 msgstr "Beim Hochladen einer Datei ist ein Problem aufgetreten. Bitte versuche es erneut"
 
 #: core/classes/class.arforms_form_builder.php:952
-#: core/controllers/arflitemaincontroller.php:2425
+#: core/controllers/arflitemaincontroller.php:2428
 #: integrations/Payments/PayPal/class.arforms_paypal_payment_gatway.php:722
 #@ arforms-form-builder
 msgid "There is no any form found"
 msgstr "Es wurde keine Form gefunden"
 
 #: core/classes/class.arforms_form_builder.php:983
-#: core/controllers/arflitemaincontroller.php:2413
+#: core/controllers/arflitemaincontroller.php:2416
 #@ arforms-form-builder
 msgid "There is no entry found"
 msgstr "Es wurde kein Eintrag gefunden"
 
-#: core/controllers/arflitemaincontroller.php:2407
+#: core/controllers/arflitemaincontroller.php:2410
 #@ arforms-form-builder
 msgid "There is something error while saving form"
 msgstr "Beim Speichern des Formulars ist ein Fehler aufgetreten"
@@ -6893,10 +6893,10 @@ msgid "This feature is only recommended when you have big amount of entries in t
 msgstr "Diese Funktion wird nur empfohlen, wenn das Formular eine große Anzahl von Einträgen enthält und Sie den jeweiligen Feldtyp ändern möchten, ohne die Eintragsdaten für dieses Feld zu verlieren."
 
 #: core/controllers/arfliteformcontroller.php:3356
-#: core/controllers/arflitemaincontroller.php:2370
+#: core/controllers/arflitemaincontroller.php:2373
 #: core/controllers/arfliterecordcontroller.php:536
 #: core/controllers/arfliterecordcontroller.php:602
-#: core/controllers/arfliterecordcontroller.php:2971
+#: core/controllers/arfliterecordcontroller.php:2973
 #: core/views/arflite_edit.php:4347
 #: core/views/arflite_edit.php:4736
 #: core/views/arflite_edit.php:4856
@@ -6907,12 +6907,12 @@ msgstr "Diese Funktion wird nur empfohlen, wenn das Formular eine große Anzahl 
 msgid "This field cannot be blank"
 msgstr "Dieses Feld darf nicht leer sein"
 
-#: core/controllers/arflitemaincontroller.php:2318
-#: core/controllers/arflitemaincontroller.php:2351
+#: core/controllers/arflitemaincontroller.php:2321
+#: core/controllers/arflitemaincontroller.php:2354
 #: core/helpers/arflitefieldhelper.php:800
 #: core/helpers/arflitefieldhelper.php:909
-#: core/helpers/arflitefieldhelper.php:2600
-#: core/helpers/arflitefieldhelper.php:2603
+#: core/helpers/arflitefieldhelper.php:2592
+#: core/helpers/arflitefieldhelper.php:2595
 #: core/models/arflitetemplate.php:1273
 #: core/models/arflitetemplate.php:1289
 #: core/models/arflitetemplate.php:1305
@@ -7063,7 +7063,7 @@ msgstr "Dies wird durch den Namen des Benutzerbrowsers ersetzt."
 msgid "Thursday"
 msgstr "Donnerstag"
 
-#: core/controllers/arflitemaincontroller.php:2276
+#: core/controllers/arflitemaincontroller.php:2279
 #: core/helpers/arflitefieldhelper.php:444
 #@ arforms-form-builder
 msgid "Time"
@@ -7125,12 +7125,12 @@ msgstr "Zu"
 msgid "to"
 msgstr "zu"
 
-#: core/controllers/arflitemaincontroller.php:2374
+#: core/controllers/arflitemaincontroller.php:2377
 #@ arforms-form-builder
 msgid "to change/delete image"
 msgstr "Bild ändern / löschen"
 
-#: core/controllers/arflitemaincontroller.php:2405
+#: core/controllers/arflitemaincontroller.php:2408
 #@ arforms-form-builder
 msgid "To export this form, first you need to save it"
 msgstr "Um dieses Formular zu exportieren, müssen Sie es zuerst speichern"
@@ -7239,19 +7239,19 @@ msgstr "Turks- und Caicosinseln"
 msgid "Tuvalu"
 msgstr "Tuvalu"
 
-#: core/controllers/arflitemaincontroller.php:2443
+#: core/controllers/arflitemaincontroller.php:2446
 #: core/views/arflite_edit.php:1335
 #@ arforms-form-builder
 msgid "Type"
 msgstr "Art"
 
-#: core/controllers/arflitemaincontroller.php:2445
-#: core/controllers/arflitemaincontroller.php:2447
+#: core/controllers/arflitemaincontroller.php:2448
+#: core/controllers/arflitemaincontroller.php:2450
 #@ arforms-form-builder
 msgid "type to"
 msgstr "tippen Sie auf"
 
-#: core/controllers/arflitemaincontroller.php:2446
+#: core/controllers/arflitemaincontroller.php:2449
 #@ arforms-form-builder
 msgid "type, field options will be different from"
 msgstr "Typ, Feldoptionen unterscheiden sich von"
@@ -7328,7 +7328,7 @@ msgstr "Vereinigte Staaten"
 msgid "Unsatisfied"
 msgstr "Nicht zufrieden"
 
-#: core/controllers/arflitemaincontroller.php:2391
+#: core/controllers/arflitemaincontroller.php:2394
 #: core/helpers/arflitefieldhelper.php:902
 #@ arforms-form-builder
 msgid "Untitled"
@@ -7589,7 +7589,7 @@ msgstr "Website-Elemente"
 msgid "Website is invalid"
 msgstr "Die Website ist ungültig"
 
-#: core/controllers/arflitemaincontroller.php:2277
+#: core/controllers/arflitemaincontroller.php:2280
 #: core/helpers/arflitefieldhelper.php:448
 #: core/views/arflite_field_type_conversion.php:130
 #@ arforms-form-builder
@@ -7622,29 +7622,29 @@ msgstr "Wochen"
 msgid "Western Sahara"
 msgstr "Westsahara"
 
-#: core/controllers/arflitemaincontroller.php:2168
+#: core/controllers/arflitemaincontroller.php:2171
 #: core/controllers/arfliteprocontroller.php:295
 #@ arforms-form-builder
 msgid "What can we describe more?"
 msgstr "Was können wir mehr beschreiben?"
 
-#: core/controllers/arflitemaincontroller.php:688
+#: core/controllers/arflitemaincontroller.php:687
 #@ arforms-form-builder
 msgid "What Personal Data we collect and why we collect it."
 msgstr "Welche personenbezogenen Daten wir sammeln und warum wir sie sammeln."
 
-#: core/controllers/arflitemaincontroller.php:2167
+#: core/controllers/arflitemaincontroller.php:2170
 #: core/controllers/arfliteprocontroller.php:294
 #@ arforms-form-builder
 msgid "What was the dificult part?"
 msgstr "Was war der schwierige Teil?"
 
-#: core/controllers/arflitemaincontroller.php:2868
+#: core/controllers/arflitemaincontroller.php:2871
 #@ arforms-form-builder
 msgid "What's New in ARForms Form Builder"
 msgstr "Was ist neu in ARForms Form Builder?"
 
-#: core/controllers/arflitemaincontroller.php:685
+#: core/controllers/arflitemaincontroller.php:684
 #@ arforms-form-builder
 msgid "Who we are?"
 msgstr "Wer wir sind?"
@@ -7660,7 +7660,7 @@ msgstr "Breite"
 msgid "Window Opacity"
 msgstr "Fensteropazität"
 
-#: core/controllers/arflitemaincontroller.php:2171
+#: core/controllers/arflitemaincontroller.php:2174
 #: core/controllers/arfliteprocontroller.php:298
 #@ arforms-form-builder
 msgid "With what plugin or theme is incompatible?"
@@ -7727,7 +7727,7 @@ msgstr "Jemen"
 msgid "YES"
 msgstr "JA"
 
-#: core/controllers/arflitemaincontroller.php:2395
+#: core/controllers/arflitemaincontroller.php:2398
 #: core/views/arflite_edit.php:1400
 #: core/views/arflite_edit.php:1895
 #: core/views/arflite_edit.php:2046
@@ -7750,12 +7750,12 @@ msgstr "JA"
 msgid "Yes"
 msgstr "Ja"
 
-#: core/controllers/arflitemaincontroller.php:2444
+#: core/controllers/arflitemaincontroller.php:2447
 #@ arforms-form-builder
 msgid "You are converting"
 msgstr "Sie konvertieren"
 
-#: core/controllers/arflitemaincontroller.php:1208
+#: core/controllers/arflitemaincontroller.php:1207
 #@ arforms-form-builder
 msgid "You are using ARForms Premium plugin on your website and it is an extension to ARForms Lite, so, If you deactivate ARForms Lite then it will automatically deactivate ARForms Premium and all the add-ons"
 msgstr "Sie verwenden das ARForms Premium-Plugin auf Ihrer Website und es ist eine Erweiterung von ARForms Lite. Wenn Sie also ARForms Lite deaktivieren, werden ARForms Premium und alle Add-ons automatisch deaktiviert"
@@ -7777,12 +7777,12 @@ msgstr "Sie haben unten erforderliche Felder erstellt, die möglicherweise nicht
 msgid "Your entry is successfully deleted"
 msgstr "Ihr Eintrag wurde erfolgreich gelöscht"
 
-#: core/controllers/arflitemaincontroller.php:2329
+#: core/controllers/arflitemaincontroller.php:2332
 #@ arforms-form-builder
 msgid "Your formula is invalid"
 msgstr "Ihre Formel ist ungültig"
 
-#: core/controllers/arflitemaincontroller.php:2331
+#: core/controllers/arflitemaincontroller.php:2334
 #@ arforms-form-builder
 msgid "Your formula is valid"
 msgstr "Ihre Formel ist gültig"
@@ -7906,8 +7906,8 @@ msgstr "Das Formular wurde erfolgreich übermittelt. Danke schön!"
 msgid "submit"
 msgstr "einreichen"
 
-#: core/controllers/arfliterecordcontroller.php:2936
-#: core/controllers/arfliterecordcontroller.php:2989
+#: core/controllers/arfliterecordcontroller.php:2938
+#: core/controllers/arfliterecordcontroller.php:2991
 #: core/helpers/arflitefieldhelper.php:639
 #@ arforms-form-builder
 msgid "Invalid reCaptcha. Please try again."
@@ -8042,7 +8042,7 @@ msgid "General"
 msgstr "Allgemein"
 
 #: core/classes/class.arf_debug_log.php:39
-#: core/controllers/arflitemaincontroller.php:3298
+#: core/controllers/arflitemaincontroller.php:3301
 #@ arforms-form-builder
 msgid "Sorry, you do not have permission to perform this action."
 msgstr "Leider haben Sie keine Berechtigung, diese Aktion auszuführen."
@@ -8110,9 +8110,9 @@ msgid "Accordion"
 msgstr "Akkordeon"
 
 #: core/classes/class.arforms_general_settings.php:179
-#: core/controllers/arflitemaincontroller.php:444
-#: core/controllers/arflitemaincontroller.php:2974
-#: core/controllers/arflitemaincontroller.php:3294
+#: core/controllers/arflitemaincontroller.php:443
+#: core/controllers/arflitemaincontroller.php:2977
+#: core/controllers/arflitemaincontroller.php:3297
 #: core/controllers/arfliterecordcontroller.php:1676
 #@ arforms-form-builder
 msgid "Sorry, your request cannot be processed due to security reason."
@@ -8168,24 +8168,24 @@ msgstr "Modul erfolgreich aktiviert"
 msgid "Module Deactivated Successfully"
 msgstr "Modul erfolgreich deaktiviert"
 
-#: core/controllers/arflitemaincontroller.php:314
+#: core/controllers/arflitemaincontroller.php:313
 #@ arforms-form-builder
 msgid "Contact us"
 msgstr "Kontaktieren Sie uns"
 
+#: core/controllers/arflitemaincontroller.php:313
 #: core/controllers/arflitemaincontroller.php:314
 #: core/controllers/arflitemaincontroller.php:315
-#: core/controllers/arflitemaincontroller.php:316
 #@ arforms-form-builder
 msgid "standard"
 msgstr "Standard"
 
-#: core/controllers/arflitemaincontroller.php:315
+#: core/controllers/arflitemaincontroller.php:314
 #@ arforms-form-builder
 msgid "Subscription Form"
 msgstr "Anmeldeformular"
 
-#: core/controllers/arflitemaincontroller.php:316
+#: core/controllers/arflitemaincontroller.php:315
 #@ arforms-form-builder
 msgid "Feedback Form"
 msgstr "Feedback-Formular"
@@ -9150,7 +9150,7 @@ msgstr "Fügen Sie das PayPal-Zahlungstor mit dem PayPal-Add-On von ARForms hinz
 msgid "Please select a form."
 msgstr "Bitte wählen Sie ein Formular."
 
-#: core/controllers/arflitemaincontroller.php:3276
+#: core/controllers/arflitemaincontroller.php:3279
 #@ arforms-form-builder
 msgid "No results found"
 msgstr "Keine Ergebnisse gefunden"
@@ -9168,6 +9168,6 @@ msgstr "Meldung, wenn keine Übereinstimmungen gefunden werden"
 #. translators: plugin header field 'Version'
 #: arforms-form-builder.php:0
 #@ arforms-form-builder
-msgid "1.8.5"
-msgstr "1.8.5"
+msgid "1.8.6"
+msgstr "1.8.6"
 

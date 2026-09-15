@@ -85,7 +85,7 @@ class arflitenotifymodel {
 		$arfblogname   = wp_specialchars_decode( get_option( 'blogname' ), ENT_QUOTES );
 		$entry         = $arflite_db_record->arflitegetOne( $entry_id );
 		$form          = $arfliteform->arflitegetOne( $form_id );
-		$form->options = maybe_unserialize( $form->options );
+		$form->options = arf_safe_maybe_unserialize( $form->options );
 		$values        = $arfliterecordmeta->arflitegetAll( "it.entry_id = $entry_id", ' ORDER BY fi.id' );
 		if ( isset( $form->options['notification'] ) ) {
 			$notification = reset( $form->options['notification'] );
@@ -107,7 +107,7 @@ class arflitenotifymodel {
 
 		foreach ( $values as $value ) {
 			$value = apply_filters( 'arflite_brfore_send_mail_change_value', $value, $entry_id, $form_id );
-			$val   = apply_filters( 'arfliteemailvalue', maybe_unserialize( $value->entry_value ), $value, $entry );
+			$val   = apply_filters( 'arfliteemailvalue', arf_safe_maybe_unserialize( $value->entry_value ), $value, $entry );
 
 			if ( is_array( $val ) ) {
 				$val = implode( ', ', $val );
@@ -159,7 +159,7 @@ class arflitenotifymodel {
 			}
 		}
 
-		$data = maybe_unserialize( $entry->description );
+		$data = arf_safe_maybe_unserialize( $entry->description );
 
 		$mail_body = $opener . $entry_data . "\r\n";
 
@@ -611,7 +611,7 @@ class arflitenotifymodel {
 			$form = $form_cache_obj;
 		}
 
-		$form_options = maybe_unserialize( $form->options );
+		$form_options = arf_safe_maybe_unserialize( $form->options );
 
 		$entry_cache_data = wp_cache_get( 'arfliteentry_created_get_one_entry_record_' . $entry_id );
 
@@ -651,7 +651,7 @@ class arflitenotifymodel {
 				if ( isset( $email_opt[1] ) ) {
 					if ( isset( $entry->metas[ $email_opt[0] ] ) ) {
 						$add_id = $entry->metas[ $email_opt[0] ];
-						$add_id = maybe_unserialize( $add_id );
+						$add_id = arf_safe_maybe_unserialize( $add_id );
 						if ( is_array( $add_id ) ) {
 							foreach ( $add_id as $add ) {
 								$entry_ids[] = $add;
@@ -778,15 +778,15 @@ class arflitenotifymodel {
 		foreach ( $values as $value ) {
 			$value = apply_filters( 'arflite_brfore_send_mail_change_value', $value, $entry_id, $form_id );
 
-			$val = apply_filters( 'arfliteemailvalue', maybe_unserialize( $value->entry_value ), $value, $entry );
+			$val = apply_filters( 'arfliteemailvalue', arf_safe_maybe_unserialize( $value->entry_value ), $value, $entry );
 
 			$arf_value = '';
 
 			if ( $value->field_type == 'checkbox' || $value->field_type == 'radio' || $value->field_type == 'select' ) {
 				if ( isset( $value->entry_value ) ) {
-					if ( is_array( maybe_unserialize( $value->entry_value ) ) ) {
-						$val = implode( ', ', maybe_unserialize( $value->entry_value ) );
-						$arf_value = implode( ', ', maybe_unserialize( $value->entry_value ) );
+					if ( is_array( arf_safe_maybe_unserialize( $value->entry_value ) ) ) {
+						$val = implode( ', ', arf_safe_maybe_unserialize( $value->entry_value ) );
+						$arf_value = implode( ', ', arf_safe_maybe_unserialize( $value->entry_value ) );
 					} else {
 						$val = $value->entry_value;
 						$arf_value = $value->entry_value;
@@ -826,7 +826,7 @@ class arflitenotifymodel {
 				global $wpdb,$ARFLiteMdlDb, $tbl_arf_entry_values;
 				$field_opts = $wpdb->get_row( $wpdb->prepare( 'SELECT entry_value FROM ' . $tbl_arf_entry_values . " WHERE field_id='%d' AND entry_id='%d'", '-' . $value->field_id, $entry->id ) ); //phpcs:ignore
 				if ( $field_opts ) {
-					$field_opts = maybe_unserialize( $field_opts->entry_value );
+					$field_opts = arf_safe_maybe_unserialize( $field_opts->entry_value );
 					if ( $value->field_type == 'checkbox' ) {
 						if ( $field_opts && count( $field_opts ) > 0 ) {
 							$temp_value = '';
@@ -860,7 +860,7 @@ class arflitenotifymodel {
 							$field_tmp      = $wpdb->get_row( $wpdb->prepare( 'SELECT * FROM ' . $tbl_arf_fields . " WHERE id = '%d'", $field_id ) ); //phpcs:ignore
 							$field_tmp_opts = json_decode( $field_tmp->field_options, true );
 							if ( json_last_error() != JSON_ERROR_NONE ) {
-								$field_tmp_opts = maybe_unserialize( $field_tmp->field_options );
+								$field_tmp_opts = arf_safe_maybe_unserialize( $field_tmp->field_options );
 							}
 							if ( $field_tmp_opts['separate_value'] ) {
 								$label_field_id  = ( $value->field_id * 100 );
@@ -1033,7 +1033,7 @@ class arflitenotifymodel {
 		$mail_body      = $arflitefieldhelper->arflitereplaceshortcodes( $mail_body, $entry, $shortcodes );
 		$mail_body      = $arflitefieldhelper->arflite_replace_shortcodes( $mail_body, $entry, true );
 		
-		$data           = maybe_unserialize( $entry->description );
+		$data           = arf_safe_maybe_unserialize( $entry->description );
 		$browser_info   = $this->arflitegetBrowser( $data['browser'] );
 		$browser_detail = $browser_info['name'] . ' (Version: ' . $browser_info['version'] . ')';
 		if ( preg_match( '/\[ARFLite_form_ipaddress\]/', $mail_body ) ) {
@@ -1064,7 +1064,7 @@ class arflitenotifymodel {
 			$mail_body = str_replace( '[ARFLite_current_useremail]', $arf_current_user->user_email, $mail_body );
 		}
 		if ( preg_match( '/\[ARFLite_page_url\]/', $mail_body ) ) {
-			$entry_desc = maybe_unserialize( $entry->description );
+			$entry_desc = arf_safe_maybe_unserialize( $entry->description );
 			$mail_body  = str_replace( '[ARFLite_page_url]', $entry_desc['page_url'], $mail_body );
 		}
 		$subject_n                             = $arflitemainhelper->arfliteget_shortcodes( $subject, $entry->form_id );
@@ -1130,7 +1130,7 @@ class arflitenotifymodel {
 			$form = $form_cache_data;
 		}
 
-		$form_options = maybe_unserialize( $form->options );
+		$form_options = arf_safe_maybe_unserialize( $form->options );
 		if ( ! isset( $form_options['auto_responder'] ) || ! $form_options['auto_responder'] || ! isset( $form_options['ar_email_message'] ) || $form_options['ar_email_message'] == '' ) {
 
 			return;
@@ -1151,7 +1151,7 @@ class arflitenotifymodel {
 			if ( isset( $email_fields[1] ) ) {
 				if ( isset( $entry->metas[ $email_fields[0] ] ) ) {
 					$add_id = $entry->metas[ $email_fields[0] ];
-					$add_id = maybe_unserialize( $add_id );
+					$add_id = arf_safe_maybe_unserialize( $add_id );
 					if ( is_array( $add_id ) ) {
 						foreach ( $add_id as $add ) {
 							$entry_ids[] = $add;
@@ -1237,7 +1237,7 @@ class arflitenotifymodel {
 		$to_email = '';
 		foreach ( $values as $value ) {
 			if ( (int) $email_field == $value->field_id ) {
-				$val = apply_filters( 'arfliteemailvalue', maybe_unserialize( $value->entry_value ), $value, $entry );
+				$val = apply_filters( 'arfliteemailvalue', arf_safe_maybe_unserialize( $value->entry_value ), $value, $entry );
 				if ( is_email( $val ) ) {
 					$to_email = $val;
 				}
@@ -1287,7 +1287,7 @@ class arflitenotifymodel {
 
 			$value = apply_filters( 'arflite_brfore_send_mail_change_value', $value, $entry_id, $form_id );
 
-			$val = apply_filters( 'arfliteemailvalue', maybe_unserialize( $value->entry_value ), $value, $entry );
+			$val = apply_filters( 'arfliteemailvalue', arf_safe_maybe_unserialize( $value->entry_value ), $value, $entry );
 
 			$arf_value = '';
 
@@ -1318,9 +1318,9 @@ class arflitenotifymodel {
 
 			if ( ( true == $use_alternate && $value->field_type == 'checkbox') || $value->field_type == 'radio' || $value->field_type == 'select' ) {
 				if ( isset( $value->entry_value ) ) {
-					if ( is_array( maybe_unserialize( $value->entry_value ) ) ) {
-						$val = implode( ', ', maybe_unserialize( $value->entry_value ) );
-						$arf_value = implode( ', ', maybe_unserialize( $value->entry_value ) );
+					if ( is_array( arf_safe_maybe_unserialize( $value->entry_value ) ) ) {
+						$val = implode( ', ', arf_safe_maybe_unserialize( $value->entry_value ) );
+						$arf_value = implode( ', ', arf_safe_maybe_unserialize( $value->entry_value ) );
 					} else {
 						$val = $value->entry_value;
 						$arf_value = $value->entry_value;
@@ -1333,7 +1333,7 @@ class arflitenotifymodel {
 				global $wpdb,$ARFLiteMdlDb, $tbl_arf_entry_values, $tbl_arf_fields;
 				$field_opts = $wpdb->get_row( $wpdb->prepare( 'SELECT entry_value FROM ' . $tbl_arf_entry_values . " WHERE field_id='%d' AND entry_id='%d'", '-' . $value->field_id, $entry->id ) ); //phpcs:ignore
 				if ( $field_opts ) {
-					$field_opts = maybe_unserialize( $field_opts->entry_value );
+					$field_opts = arf_safe_maybe_unserialize( $field_opts->entry_value );
 
 					if ( $value->field_type == 'checkbox' ) {
 						if ( $field_opts && count( $field_opts ) > 0 ) {
@@ -1368,7 +1368,7 @@ class arflitenotifymodel {
 							$field_tmp      = $wpdb->get_row( $wpdb->prepare( 'SELECT * FROM ' . $tbl_arf_fields . " WHERE id = '%d'", $field_id ) ); //phpcs:ignore
 							$field_tmp_opts = json_decode( $field_tmp->field_options, true );
 							if ( json_last_error() != JSON_ERROR_NONE ) {
-								$field_tmp_opts = maybe_unserialize( $field_tmp->field_options );
+								$field_tmp_opts = arf_safe_maybe_unserialize( $field_tmp->field_options );
 							}
 							if ( $field_tmp_opts['separate_value'] ) {
 								$label_field_id  = ( $value->field_id * 100 );
@@ -1492,7 +1492,7 @@ class arflitenotifymodel {
 		} elseif ( $get_default ) {
 			$mail_body = $default;
 		}
-		$data           = maybe_unserialize( $entry->description );
+		$data           = arf_safe_maybe_unserialize( $entry->description );
 		$browser_info   = $this->arflitegetBrowser( $data['browser'] );
 		$browser_detail = $browser_info['name'] . ' (Version: ' . $browser_info['version'] . ')';
 		if ( preg_match( '/\[ARFLite_form_ipaddress\]/', $mail_body ) ) {
@@ -1524,7 +1524,7 @@ class arflitenotifymodel {
 			$mail_body = str_replace( '[ARFLite_current_useremail]', $arf_current_user->user_email, $mail_body );
 		}
 		if ( preg_match( '/\[ARFLite_page_url\]/', $mail_body ) ) {
-			$entry_desc = maybe_unserialize( $entry->description );
+			$entry_desc = arf_safe_maybe_unserialize( $entry->description );
 			$mail_body  = str_replace( '[ARFLite_page_url]', $entry_desc['page_url'], $mail_body );
 		}
 

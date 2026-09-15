@@ -192,7 +192,7 @@ if ( isset( $form->id ) && ( $form->id != '-1' || $form->id != '' ) ) {
 	$columns_list_res = $wpdb->get_results( $wpdb->prepare( 'SELECT columns_list FROM ' . $tbl_arf_forms . ' WHERE id = %d', $form->id ), ARRAY_A ); //phpcs:ignore
 	$columns_list_res = $columns_list_res[0];
 
-	$columns_list   = ( ! empty( $columns_list_res['columns_list'] ) ) ? maybe_unserialize( $columns_list_res['columns_list'] ) : array();
+	$columns_list   = ( ! empty( $columns_list_res['columns_list'] ) ) ? arf_safe_maybe_unserialize( $columns_list_res['columns_list'] ) : array();
 	$is_colmn_array = is_array( $columns_list );
 
 	$exclude = '';

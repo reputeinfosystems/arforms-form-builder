@@ -58,7 +58,7 @@ if ( ! function_exists( 'arflite_get_form_builder_string' ) ) {
 			return $error_restrict_entry->message;
 		}
 
-		$form_css_submit = $form->form_css = maybe_unserialize( $form->form_css );
+		$form_css_submit = $form->form_css = arf_safe_maybe_unserialize( $form->form_css );
 
 		global $arformsmain;
 		$submit_value = $arformsmain->arforms_get_settings('submit_value','general_settings');
@@ -85,7 +85,7 @@ if ( ! function_exists( 'arflite_get_form_builder_string' ) ) {
 
 			$params = $arfliterecordcontroller->arflite_get_recordparams( $form );
 
-			$form_options = isset( $form->options ) ? maybe_unserialize( $form->options ) : '';
+			$form_options = isset( $form->options ) ? arf_safe_maybe_unserialize( $form->options ) : '';
 
 			$success_msg = $arformsmain->arforms_get_settings('success_msg','general_settings');
 			$success_msg = !empty( $success_msg ) ? $success_msg : esc_html__('Form is successfully submitted. Thank you!','arforms-form-builder');
@@ -269,7 +269,7 @@ if ( ! function_exists( 'arflite_get_form_builder_string' ) ) {
 										continue;
 									}
 
-									$temp_opts = maybe_unserialize( $temp_form_opts->form_css );
+									$temp_opts = arf_safe_maybe_unserialize( $temp_form_opts->form_css );
 
 									$inputStyle = isset( $temp_opts['arfinputstyle'] ) ? $temp_opts['arfinputstyle'] : 'material';
 
@@ -494,7 +494,7 @@ if ( ! function_exists( 'arflite_get_form_builder_string' ) ) {
 				$frm_css_arr = '';
 				$frm_css_arr = $form->form_css;
 
-				$arr = maybe_unserialize( $frm_css_arr );
+				$arr = arf_safe_maybe_unserialize( $frm_css_arr );
 
 				$newarr = array();
 				foreach ( $arr as $k => $v ) {

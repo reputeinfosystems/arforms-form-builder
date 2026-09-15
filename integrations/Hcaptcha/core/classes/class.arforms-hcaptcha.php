@@ -862,7 +862,7 @@ if ( ! class_exists( 'ARF_hcaptcha' ) ) {
 			$newarr         = array();
 
 			if ( '' != $aweber_arr ) {
-				$arr = maybe_unserialize( $aweber_arr );
+				$arr = arf_safe_maybe_unserialize( $aweber_arr );
 				foreach ( $arr as $k => $v ) {
 					$newarr[ $k ] = $v;
 				}
@@ -972,7 +972,7 @@ if ( ! class_exists( 'ARF_hcaptcha' ) ) {
 
 					$loaded_field = isset( $form->options['arf_loaded_field'] ) ? $form->options['arf_loaded_field'] : array();
 
-					$form->options = maybe_unserialize( $form->options );
+					$form->options = arf_safe_maybe_unserialize( $form->options );
 
 					if ( in_array( 'hcaptcha', $loaded_field ) ) {
 						if ( ! empty( $arflitesettings->hcaptcha_public_key ) && ! empty( $arflitesettings->hcaptcha_private_key ) ) {

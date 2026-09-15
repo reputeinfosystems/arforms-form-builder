@@ -104,7 +104,7 @@ class arforms_schedular{
 
                 foreach( $get_all_form_data as $key=>$val ){
 
-                    $field_options = maybe_unserialize($val->options);
+                    $field_options = arf_safe_maybe_unserialize($val->options);
                     $inner_field_data_order = $field_options['arf_field_order'];
                     $all_inner_field_data[ $val->id ] =  json_decode($inner_field_data_order, true);
                 }

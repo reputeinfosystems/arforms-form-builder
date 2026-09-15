@@ -440,7 +440,7 @@ unset($values);
 
 $field_options = $wpdb->get_results($wpdb->prepare("SELECT `options` FROM `" . $tbl_arf_forms . "` WHERE `id` = %d", $form_id)); //phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared -- Reason: $tbl_arf_forms is table name defined globally. False Positive alarm
 
-$form_opt = maybe_unserialize($field_options[0]->options);
+$form_opt = arf_safe_maybe_unserialize($field_options[0]->options);
 
 $form_opt['arf_field_order'] = wp_json_encode($field_order);
 $form_opt['arf_inner_field_order'] = wp_json_encode( $inner_field_order );
@@ -832,7 +832,7 @@ unset($values);
 
 $field_options = $wpdb->get_results($wpdb->prepare("SELECT `options` FROM `" . $tbl_arf_forms . "` WHERE `id` = %d", $form_id)); //phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared -- Reason: $tbl_arf_forms is table name defined globally. False Positive alarm 
 
-$form_opt = maybe_unserialize($field_options[0]->options);
+$form_opt = arf_safe_maybe_unserialize($field_options[0]->options);
 
 $form_opt['arf_field_order'] = wp_json_encode($field_order);
 $form_opt['arf_inner_field_order'] = wp_json_encode( $inner_field_order );
@@ -1395,7 +1395,7 @@ unset($values);
 
 $field_options = $wpdb->get_results($wpdb->prepare("SELECT `options` FROM `" . $tbl_arf_forms . "` WHERE `id` = %d", $form_id)); //phpcs:ignore WordPress.DB.PreparedSQL.NotPrepared -- Reason: $tbl_arf_forms is table name defined globally. False Positive alarm
 
-$form_opt = maybe_unserialize($field_options[0]->options);
+$form_opt = arf_safe_maybe_unserialize($field_options[0]->options);
 
 $form_opt['arf_field_order'] = wp_json_encode($field_order);
 $form_opt['arf_inner_field_order'] = wp_json_encode( $inner_field_order );

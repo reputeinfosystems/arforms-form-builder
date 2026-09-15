@@ -102,7 +102,7 @@ class arfliteformmodel {
 		$new_values['status']      = ( ! $template ) ? 'draft' : '';
 		if ( $blog_id ) {
 			$new_values['status']    = 'published';
-			$new_options             = maybe_unserialize( $values->options );
+			$new_options             = arf_safe_maybe_unserialize( $values->options );
 			$new_options['email_to'] = get_option( 'admin_email' );
 			$new_options['copy']     = false;
 			$new_values['options']   = $new_options;
@@ -139,7 +139,7 @@ class arfliteformmodel {
 			} else {
 				$arf_fields_mapping = $arflitefield->arfliteduplicate( $id, $form_id, $copy_keys, $blog_id, true );
 				$form_options_sql = $wpdb->get_results( $wpdb->prepare( 'SELECT options FROM `' . $tbl_arf_forms . '` WHERE id = %d', $form_id ) ); //phpcs:ignore
-				$form_options     = maybe_unserialize( $form_options_sql[0]->options );
+				$form_options     = arf_safe_maybe_unserialize( $form_options_sql[0]->options );
 
 				if ( $template < 100 ) {
 					global $arformsmain;
@@ -176,7 +176,7 @@ class arfliteformmodel {
 						if ( count( $fields_array ) > 0 ) {
 							foreach ( $fields_array as $new_field ) {
 
-								$arf_field_options = maybe_unserialize( $new_field->field_options );
+								$arf_field_options = arf_safe_maybe_unserialize( $new_field->field_options );
 								if ( count( $arf_field_options ) > 0 ) {
 									$new_field_options = array();
 									foreach ( $arf_field_options as $key_field_options => $value_field_options ) {
@@ -320,7 +320,7 @@ class arfliteformmodel {
 			if ( $cache ) {
 
 				if ( isset( $cache->options ) ) {
-					$cache->options = maybe_unserialize( $cache->options );
+					$cache->options = arf_safe_maybe_unserialize( $cache->options );
 				}
 			}
 		}
@@ -337,7 +337,7 @@ class arfliteformmodel {
 
 			wp_cache_set( $results->id, $results, 'arfform' );
 
-			$results->options = maybe_unserialize( $results->options );
+			$results->options = arf_safe_maybe_unserialize( $results->options );
 		}
 
 		return $results;
@@ -353,7 +353,7 @@ class arfliteformmodel {
 		if ( $cache ) {
 
 			if ( isset( $cache->options ) ) {
-				$cache->options = maybe_unserialize( $cache->options );
+				$cache->options = arf_safe_maybe_unserialize( $cache->options );
 			}
 
 			return stripslashes_deep( $cache );
@@ -371,7 +371,7 @@ class arfliteformmodel {
 
 			wp_cache_set( $results->id, $results, 'arfform' );
 
-			$results->options = maybe_unserialize( $results->options );
+			$results->options = arf_safe_maybe_unserialize( $results->options );
 		}
 
 		return stripslashes_deep( $results );
@@ -405,7 +405,7 @@ class arfliteformmodel {
 
 			if ( $results ) {
 				//wp_cache_set( $results->id, $results, 'arfform' ); */
-				$results->options = maybe_unserialize( $results->options );
+				$results->options = arf_safe_maybe_unserialize( $results->options );
 			}
 		} else {
 
@@ -422,7 +422,7 @@ class arfliteformmodel {
 			if ( $results ) {
 				foreach ( $results as $result ) {
 				//	wp_cache_set( $result->id, $result, 'arfform' );
-					$result->options = maybe_unserialize( $result->options );
+					$result->options = arf_safe_maybe_unserialize( $result->options );
 				}
 			}
 		}
@@ -464,7 +464,7 @@ class arfliteformmodel {
 				$form_options = $ARFLiteMdlDb->arfliteget_var( $tbl_arf_forms, array( 'id' => $form_id ), 'options' );
 			}
 
-			$form_options = maybe_unserialize( $form_options );
+			$form_options = arf_safe_maybe_unserialize( $form_options );
 
 			return ( isset( $form_options['post_type'] ) ) ? sanitize_text_field( $form_options['post_type'] ) : 'post';
 		} else {

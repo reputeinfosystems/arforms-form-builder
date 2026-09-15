@@ -365,7 +365,7 @@ class arforms_import_export_settings{
 
                                         $val_field_radio = json_decode( trim( $temp_radio_val ), true );
                                         if ( json_last_error() != JSON_ERROR_NONE ) {
-                                            $val_field_radio = maybe_unserialize( trim( $val_field ) );
+                                            $val_field_radio = arf_safe_maybe_unserialize( trim( $val_field ) );
                                         }
                                     }
 
@@ -617,9 +617,9 @@ class arforms_import_export_settings{
 
 
                         $getForm = $wpdb->get_results( $wpdb->prepare( 'SELECT options FROM `' . $tbl_arf_forms . '` WHERE id = %d', $form_id ) ); //phpcs:ignore
-                        $formOpt = maybe_unserialize( $getForm[0]->options );
+                        $formOpt = arf_safe_maybe_unserialize( $getForm[0]->options );
 
-                        $newOpt = maybe_unserialize( $general_option['options'] );
+                        $newOpt = arf_safe_maybe_unserialize( $general_option['options'] );
 
                         $newOpt['arf_field_order'] = wp_json_encode( $final_field_order );
 
@@ -629,7 +629,7 @@ class arforms_import_export_settings{
 
 
 
-                        foreach ( maybe_unserialize( $cssoptions ) as $k => $v ) {
+                        foreach ( arf_safe_maybe_unserialize( $cssoptions ) as $k => $v ) {
                             if ( ( preg_match( '/color/', $k ) || in_array( $k, array( 'arferrorbgsetting', 'arferrorbordersetting', 'arferrortextsetting' ) ) ) && ! in_array( $k, array( 'arfcheckradiocolor' ) ) ) {
                                 $new_values[ $k ] = str_replace( '#', '', $v );
                             } else {
@@ -761,7 +761,7 @@ class arforms_import_export_settings{
 
                         $form_custom_css = str_replace( '[ENTERKEY]', '<br>', $form_custom_css );
 
-                        $option_arr_new = maybe_unserialize( $opt );
+                        $option_arr_new = arf_safe_maybe_unserialize( $opt );
 
                         $option_arr_new['form_custom_css'] = $form_custom_css;
 
@@ -1048,7 +1048,7 @@ class arforms_import_export_settings{
                     foreach ( $result_array as $key => $value ) {
 
                         if ( $key == 'options' ) {
-                            foreach ( maybe_unserialize( $value ) as $ky => $vl ) {
+                            foreach ( arf_safe_maybe_unserialize( $value ) as $ky => $vl ) {
                                 if ( $ky != 'before_html' ) {
                                     if ( ! is_array( $vl ) ) {
                                         if ( $ky == 'success_url' ) {
@@ -1086,7 +1086,7 @@ class arforms_import_export_settings{
 
                         } elseif ( $key == 'form_css' ) {
 
-                            $form_css_arry = maybe_unserialize( $value );
+                            $form_css_arry = arf_safe_maybe_unserialize( $value );
 
                             foreach ( $form_css_arry as $form_css_key => $form_css_val ) {
 
@@ -1149,7 +1149,7 @@ class arforms_import_export_settings{
                                 if ( json_last_error() == JSON_ERROR_NONE ) {
 
                                 } else {
-                                    $field_options_array = maybe_unserialize( $value_field );
+                                    $field_options_array = arf_safe_maybe_unserialize( $value_field );
                                 }
 
                                 foreach ( $field_options_array as $ky => $vl ) {
@@ -1310,7 +1310,7 @@ class arforms_import_export_settings{
 
                                 if ( ! $field_value && $entry->attachment_id ) {
 
-                                    $col->field_options = maybe_unserialize( $col->field_options );
+                                    $col->field_options = arf_safe_maybe_unserialize( $col->field_options );
                                 }
 
                                 if ( $col->type == 'date' ) {
@@ -1318,7 +1318,7 @@ class arforms_import_export_settings{
                                     $field_value = $arflitefieldhelper->arfliteget_date( $field_value, $wp_date_format );
                                 } else {
 
-                                    $checked_values = maybe_unserialize( $field_value );
+                                    $checked_values = arf_safe_maybe_unserialize( $field_value );
 
                                     $checked_values = apply_filters( 'arflitecsvvalue', $checked_values, array( 'field' => $col ) );
 

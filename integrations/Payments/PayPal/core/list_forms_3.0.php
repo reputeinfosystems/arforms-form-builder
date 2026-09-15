@@ -95,7 +95,7 @@ if ( isset( $_GET['err'] ) && 1 == $_GET['err'] ) {
 								  			
 											if ( count( $forms ) > 0 ) {
 											foreach ( $forms as $form ) {
-												$options     = maybe_unserialize( $form->options );
+												$options     = arf_safe_maybe_unserialize( $form->options );
 												
 													$ord_details = $wpdb->get_results( $wpdb->prepare( 'SELECT count(*) AS record_count,SUM(mc_gross) AS total_amount FROM ' . $arf_paypal->db_paypal_order . ' WHERE form_id = %d', $form->form_id ) );//phpcs:ignore
 												

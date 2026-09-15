@@ -22,7 +22,7 @@
         "newsletter",
         "order form"
     ],
-    "version": "1.8.5",
+    "version": "1.8.6",
     "textdomain": "arforms-form-builder",
     "editorScript": "file:./index.js"
 }

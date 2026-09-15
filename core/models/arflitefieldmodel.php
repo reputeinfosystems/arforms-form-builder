@@ -48,7 +48,7 @@ class arflitefieldmodel {
 	function arfliteduplicate( $old_form_id, $form_id, $copy_keys = false, $blog_id = false, $template = false ) {
 		global $wpdb, $ARFLiteMdlDb, $arflitemainhelper, $tbl_arf_forms;
 		$form_options    = $wpdb->get_results( $wpdb->prepare( 'SELECT `options` FROM `' . $tbl_arf_forms . '` WHERE `id` = %d', $old_form_id ) ); //phpcs:ignore
-		$form_opts       = maybe_unserialize( $form_options[0]->options );
+		$form_opts       = arf_safe_maybe_unserialize( $form_options[0]->options );
 		$field_order     = isset( $form_opts['arf_field_order'] ) ? json_decode( $form_opts['arf_field_order'] ) : array();
 		$form_fields     = $this->arflitegetAll( "fi.form_id = $old_form_id", '', '', $blog_id );
 		$new_form_fields = array();
@@ -142,12 +142,12 @@ class arflitefieldmodel {
 			} else {
 				$results->field_options = json_decode( $results->field_options, true );
 				if ( json_last_error() != JSON_ERROR_NONE ) {
-					$results->field_options = maybe_unserialize( $results->field_options );
+					$results->field_options = arf_safe_maybe_unserialize( $results->field_options );
 				}
 			}
-			$results->options       = maybe_unserialize( $results->options );
-			$results->default_value = isset( $results->field_options['default_value'] ) ? maybe_unserialize( $results->field_options['default_value'] ) : '';
-			$results->option_order  = maybe_unserialize( $results->option_order );
+			$results->options       = arf_safe_maybe_unserialize( $results->options );
+			$results->default_value = isset( $results->field_options['default_value'] ) ? arf_safe_maybe_unserialize( $results->field_options['default_value'] ) : '';
+			$results->option_order  = arf_safe_maybe_unserialize( $results->option_order );
 		}
 		return stripslashes_deep( $results );
 	}
@@ -206,7 +206,7 @@ class arflitefieldmodel {
 					} else {
 						$results[ $r_key ]->field_options = json_decode( $result->field_options, true );
 						if ( json_last_error() != JSON_ERROR_NONE ) {
-							$results[ $r_key ]->field_options = maybe_unserialize( $result->field_options );
+							$results[ $r_key ]->field_options = arf_safe_maybe_unserialize( $result->field_options );
 						}
 					}
 					$results[ $r_key ]->field_options['arf_regular_expression'] = isset( $results[ $r_key ]->field_options['arf_regular_expression'] ) ? addslashes( $results[ $r_key ]->field_options['arf_regular_expression'] ) : '';
@@ -216,19 +216,19 @@ class arflitefieldmodel {
 					} else {
 						$results[ $r_key ]->options = !empty( $result->options ) ? json_decode( $result->options, true ) : array();
 						if ( json_last_error() != JSON_ERROR_NONE ) {
-							$results[ $r_key ]->options = maybe_unserialize( $result->options );
+							$results[ $r_key ]->options = arf_safe_maybe_unserialize( $result->options );
 						}
 					}
-					$results[ $r_key ]->default_value = isset( $result->field_options['default_value'] ) ? maybe_unserialize( $result->field_options['default_value'] ) : '';
-					$results[ $r_key ]->option_order  = maybe_unserialize( $result->option_order );
+					$results[ $r_key ]->default_value = isset( $result->field_options['default_value'] ) ? arf_safe_maybe_unserialize( $result->field_options['default_value'] ) : '';
+					$results[ $r_key ]->option_order  = arf_safe_maybe_unserialize( $result->option_order );
 				}
 			} else {
 				wp_cache_set( $results->id, $results, 'arf_field' );
 				wp_cache_set( $results->field_key, $results, 'arf_field' );
-				$results->field_options = maybe_unserialize( $results->field_options );
-				$results->options       = maybe_unserialize( $results->options );
+				$results->field_options = arf_safe_maybe_unserialize( $results->field_options );
+				$results->options       = arf_safe_maybe_unserialize( $results->options );
 				$results->default_value = $results->default_value;
-				$results->option_order  = maybe_unserialize( $results->option_order );
+				$results->option_order  = arf_safe_maybe_unserialize( $results->option_order );
 			}
 		}
 		return stripslashes_deep( $results );

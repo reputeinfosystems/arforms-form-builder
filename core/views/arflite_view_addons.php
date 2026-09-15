@@ -8,7 +8,7 @@ if ( $arf_addons == '' ) {
 
 } else {
 
-	//$arf_addons = maybe_unserialize( base64_decode( $arf_addons ) );
+	//$arf_addons = arf_safe_maybe_unserialize( base64_decode( $arf_addons ) );
 	$arf_addons = base64_decode( $arf_addons );
 	if( !empty( $arf_addons )){
 

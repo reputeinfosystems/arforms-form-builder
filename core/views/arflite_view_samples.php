@@ -8,7 +8,7 @@ if ( $arf_samples == '' ) {
 
 } else {
 
-	$arf_samples = maybe_unserialize( base64_decode( $arf_samples ) );
+	$arf_samples = arf_safe_maybe_unserialize( base64_decode( $arf_samples ) );
 
 
 	if ( is_array( $arf_samples ) && count( $arf_samples ) > 0 ) {

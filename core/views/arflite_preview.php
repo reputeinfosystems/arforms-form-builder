@@ -55,7 +55,7 @@ remove_action( 'get_the_generator_xhtml', 'wc_generator_tag' );
 
 		<style type="text/css" id='arf_form_<?php echo esc_attr( $form->id ); ?>'>
 		<?php
-		$form->form_css = isset( $form->form_css ) ? maybe_unserialize( $form->form_css ) : '';
+		$form->form_css = isset( $form->form_css ) ? arf_safe_maybe_unserialize( $form->form_css ) : '';
 		$loaded_field   = isset( $form->options['arf_loaded_field'] ) ? $form->options['arf_loaded_field'] : array();
 
 		global $arformsmain;
@@ -240,9 +240,9 @@ remove_action( 'get_the_generator_xhtml', 'wc_generator_tag' );
 
 		$res['options'] = isset( $res['options'] ) ? $res['options'] : '';
 
-		$values = ( $res['options'] != '' ) ? maybe_unserialize( $res['options'] ) : array();
+		$values = ( $res['options'] != '' ) ? arf_safe_maybe_unserialize( $res['options'] ) : array();
 
-		$form_style_css = maybe_unserialize( $form->form_css );
+		$form_style_css = arf_safe_maybe_unserialize( $form->form_css );
 
 		$form_style_css = $arfliteformcontroller->arfliteObjtoArray( $form_style_css );
 

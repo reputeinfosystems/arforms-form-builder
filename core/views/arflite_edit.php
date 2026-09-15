@@ -57,12 +57,12 @@ if ( ! empty( $all_fields ) ) {
 			if ( $k == 'options' ) {
 				$arf_all_fields[ $key ][ $k ] = !empty( $field_val ) ? json_decode( $field_val, true ) : array();
 				if ( json_last_error() != JSON_ERROR_NONE ) {
-					$arf_all_fields[ $key ][ $k ] = maybe_unserialize( $field_val );
+					$arf_all_fields[ $key ][ $k ] = arf_safe_maybe_unserialize( $field_val );
 				}
 			} elseif ( $k == 'field_options' ) {
 				$field_opts = json_decode( $field_val, true );
 				if ( json_last_error() != JSON_ERROR_NONE ) {
-					$field_opts = maybe_unserialize( $field_val );
+					$field_opts = arf_safe_maybe_unserialize( $field_val );
 				}
 				if ( isset( $field_opts ) && is_array( $field_opts ) ) {
 
@@ -84,13 +84,13 @@ if ( ! empty( $all_fields ) ) {
 				if ( $k == 'options' ) {
 					$fOpt = !empty( $field_val ) ? json_decode( $field_val, true ) : array();
 					if ( json_last_error() != JSON_ERROR_NONE ) {
-						$fOpt = maybe_unserialize( $field_val );
+						$fOpt = arf_safe_maybe_unserialize( $field_val );
 					}
 					$field_list[ $key ]->$k = $fOpt;
 				} elseif ( $k == 'field_options' ) {
 					$field_opts = json_decode( $field_val, true );
 					if ( json_last_error() != JSON_ERROR_NONE ) {
-						$field_opts = maybe_unserialize( $field_val );
+						$field_opts = arf_safe_maybe_unserialize( $field_val );
 					}
 					$field_list[ $key ]->$k = $field_opts;
 				} else {
@@ -105,7 +105,7 @@ if ( ! empty( $all_fields ) ) {
 $field_data = file_get_contents( ARFLITE_VIEWS_PATH . '/arflite_editor_data.json' );
 
 $field_data_obj = json_decode( $field_data );
-$form_opts      = ( isset( $record->options ) && $record->options != '' ) ? maybe_unserialize( $record->options ) : array();
+$form_opts      = ( isset( $record->options ) && $record->options != '' ) ? arf_safe_maybe_unserialize( $record->options ) : array();
 $form_opts      = $arfliteformcontroller->arflite_html_entity_decode( $form_opts );
 
 if ( is_array( $form_opts ) && ! empty( $form_opts ) ) {
@@ -186,10 +186,10 @@ $data       = $arfliteformcontroller->arfliteObjtoArray( $data );
 $aweber_arr = '';
 $aweber_arr = isset( $data['form_css'] ) ? $data['form_css'] : '';
 
-$values_nw = ( isset( $data['options'] ) && $data['options'] != '' ) ? maybe_unserialize( $data['options'] ) : array();
+$values_nw = ( isset( $data['options'] ) && $data['options'] != '' ) ? arf_safe_maybe_unserialize( $data['options'] ) : array();
 
 
-$arr = maybe_unserialize( $aweber_arr );
+$arr = arf_safe_maybe_unserialize( $aweber_arr );
 
 $newarr = array();
 if ( isset( $arr ) && ! empty( $arr ) && is_array( $arr ) ) {
@@ -477,7 +477,7 @@ if ( $new_values['arfinputstyle'] == 'standard' || $new_values['arfinputstyle'] 
 	} elseif ( $arfaction == 'duplicate' ) {
 
 		if ( $record->is_template ) {
-			$form_css    = maybe_unserialize( $record->form_css );
+			$form_css    = arf_safe_maybe_unserialize( $record->form_css );
 			$input_style = isset( $form_css['arfinputstyle'] ) ? $form_css['arfinputstyle'] : 'material';
 			if ( $input_style == 'material' ) {
 				if ( $new_values['arfinputstyle'] == 'rounded' ) {
@@ -511,7 +511,7 @@ if ( $new_values['arfinputstyle'] == 'standard' || $new_values['arfinputstyle'] 
 } elseif ( $new_values['arfinputstyle'] == 'material' ) {
 
 	if ( $arfaction == 'duplicate' && isset( $record ) && isset( $record->is_template ) && $record->is_template ) {
-		$form_css    = maybe_unserialize( $record->form_css );
+		$form_css    = arf_safe_maybe_unserialize( $record->form_css );
 		$input_style = isset( $form_css['arfinputstyle'] ) ? $form_css['arfinputstyle'] : 'material';
 		if ( $input_style != 'material' ) {
 			$new_values['arffieldinnermarginssetting_1'] = 0;
@@ -558,7 +558,7 @@ if ( $new_values['arfinputstyle'] == 'standard' || $new_values['arfinputstyle'] 
 	);
 
 
-	$form_options = isset( $record->options ) ? maybe_unserialize( $record->options ) : array();
+	$form_options = isset( $record->options ) ? arf_safe_maybe_unserialize( $record->options ) : array();
 
 	$arf_field_order = ( isset( $form_options['arf_field_order'] ) && $form_options['arf_field_order'] != '' ) ? $form_options['arf_field_order'] : '[]';
 
@@ -5001,7 +5001,7 @@ $arfliteaction = !empty( sanitize_text_field($_GET['arfaction'] )) ? esc_attr( s
 							foreach ( $all_hidden_fields as $hkey => $hd_field ) {
 								$field_opts = json_decode( $hd_field->field_options );
 								if ( json_last_error() != JSON_ERROR_NONE ) {
-									$field_opts = maybe_unserialize( $hd_field->field_options );
+									$field_opts = arf_safe_maybe_unserialize( $hd_field->field_options );
 								}
 								echo "<div class='arf_hidden_field_input_container' id='arf_hidden_field_input_container_'" . esc_attr( $counter ) . '>';
 								echo "<label class='arf_hidden_field_input_label' for='arf_hidden_field_input_'" . esc_attr( $counter ) . '>';

@@ -94,7 +94,7 @@ class ARFLITEwidgetForm extends WP_Widget {
 			$form_data = $wpdb->get_row( $wpdb->prepare( 'SELECT * FROM ' . $tbl_arf_forms . ' WHERE id = %d', $instance['form'] ) ); //phpcs:ignore
 		}
 		if ( $form_data ) {
-			$formoptions = maybe_unserialize( $form_data->options );
+			$formoptions = arf_safe_maybe_unserialize( $form_data->options );
 			if ( isset( $formoptions['display_title_form'] ) && $formoptions['display_title_form'] == '1' ) {
 				$is_title       = true;
 				$is_description = true;
@@ -127,7 +127,7 @@ class ARFLITEwidgetForm extends WP_Widget {
 		$is_material = false;
 		$handler     = '';
 		if ( isset( $form_data ) && is_array( $form_data ) && ! empty( $form_data ) && count( $form_data ) ) {
-			$form_css = maybe_unserialize( $form_data->form_css );
+			$form_css = arf_safe_maybe_unserialize( $form_data->form_css );
 			if ( isset( $form_css ) && is_array( $form_css ) && ! empty( $form_css ) ) {
 				$input_style = $form_css['arfinputstyle'];
 				if ( $input_style == 'material' ) {

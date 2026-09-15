@@ -475,7 +475,7 @@ class arfliterecordcontroller {
 
 				$print_script( 'bootstrap' );
 
-				$form->options = maybe_unserialize( $form->options );
+				$form->options = arf_safe_maybe_unserialize( $form->options );
 
 				if ( ( isset( $form->options['font_awesome_loaded'] ) && $form->options['font_awesome_loaded'] ) || in_array( 'fontawesome', $load_js_css ) ) {
 					$print_style( 'arflite-font-awesome' );
@@ -873,7 +873,7 @@ class arfliterecordcontroller {
 
 		global $arflite_db_record, $arflitesavedentries, $arflitecreatedentry, $arformsmain;
 
-		$form->options = stripslashes_deep( maybe_unserialize( $form->options ) );
+		$form->options = stripslashes_deep( arf_safe_maybe_unserialize( $form->options ) );
 
 		if ( $params['action'] == 'update' && in_array( (int) $params['id'], (array) $arflitesavedentries ) ) {
 			return;
@@ -1029,12 +1029,12 @@ class arfliterecordcontroller {
 			$form_options = $wpdb->get_row( $wpdb->prepare( 'SELECT `form_css`,`options` FROM `' . $tbl_arf_forms . '` WHERE `id` = %d', (int) $form->id ) ); //phpcs:ignore
 
 			if ( isset( $form_options->form_css ) && $form_options->form_css != '' ) {
-				$form_css = maybe_unserialize( $form_options->form_css );
+				$form_css = arf_safe_maybe_unserialize( $form_options->form_css );
 			}
 
 			if ( isset( $form_options->options ) && $form_options->options != '' ) {
 
-				$form_options = maybe_unserialize( $form_options->options );
+				$form_options = arf_safe_maybe_unserialize( $form_options->options );
 
 				if ( isset( $form_options['arf_field_order'] ) && $form_options['arf_field_order'] != '' ) {
 					$form_cols_order = json_decode( $form_options['arf_field_order'], true );
@@ -1209,7 +1209,7 @@ class arfliterecordcontroller {
 
 					foreach ( (array) $data_fields as $df ) {
 
-						$df->field_options = maybe_unserialize( $df->field_options );
+						$df->field_options = arf_safe_maybe_unserialize( $df->field_options );
 
 						if ( is_numeric( $df->field_options['form_select'] ) ) {
 							$df_form_ids[] = $df->field_options['form_select'];
@@ -1356,12 +1356,12 @@ class arfliterecordcontroller {
 	}
 
 	function &arflite_filter_entry_display_value( $value, $field, $atts = array() ) {
-		$field->field_options = maybe_unserialize( $field->field_options );
+		$field->field_options = arf_safe_maybe_unserialize( $field->field_options );
 		$saved_value          = ( isset( $atts['saved_value'] ) && $atts['saved_value'] ) ? true : false;
 		if ( ! in_array( $field->type, array( 'checkbox' ) ) || ! isset( $field->field_options['separate_value'] ) || ! $field->field_options['separate_value'] || $saved_value ) {
 			return $value;
 		}
-		$field->options = maybe_unserialize( $field->options );
+		$field->options = arf_safe_maybe_unserialize( $field->options );
 		$f_values       = array();
 		$f_labels       = array();
 		if ( is_array( $field->options ) ) {
@@ -1917,9 +1917,9 @@ class arfliterecordcontroller {
 
 		$form_name = $form_select->name;
 
-		$form_css = maybe_unserialize( $form_select->form_css );
+		$form_css = arf_safe_maybe_unserialize( $form_select->form_css );
 
-		$form_options = maybe_unserialize( $form_select->options );
+		$form_options = arf_safe_maybe_unserialize( $form_select->options );
 
 		$arffieldorder = array();
 
@@ -2150,7 +2150,7 @@ class arfliterecordcontroller {
 
 		$columns_list_res = $columns_list_res[0];
 
-		$columns_list = maybe_unserialize( $columns_list_res['columns_list'] );
+		$columns_list = arf_safe_maybe_unserialize( $columns_list_res['columns_list'] );
 
 		$is_colmn_array = is_array( $columns_list );
 
@@ -2301,7 +2301,7 @@ class arfliterecordcontroller {
 				$data[ $ai ][ $ni + 2 ] = $browser_info['name'] . ' (Version: ' . $browser_info['version'] . ')';
 				$data[ $ai ][ $ni + 3 ] = $item->ip_address;
 				$data[ $ai ][ $ni + 4 ] = $item->country;
-				$http_referrer          = maybe_unserialize( $item->description );
+				$http_referrer          = arf_safe_maybe_unserialize( $item->description );
 				$arfliteget_url = $wpdb->get_row( $wpdb->prepare( 'SELECT entry_value FROM ' . $tbl_arf_entry_values . " WHERE field_id='%d' AND entry_id='%d'", '-' . 0, $item->id ) ); //phpcs:ignore
 				if ( ! empty( $arfliteget_url ) ) {
 					$http_referrer_url = $arfliteget_url->entry_value;
@@ -2581,7 +2581,7 @@ class arfliterecordcontroller {
 
 		$entry = $arflite_db_record->arflitegetOne( $id, true );
 
-		$data = maybe_unserialize( $entry->description );
+		$data = arf_safe_maybe_unserialize( $entry->description );
 
 		if ( ! isset( $data['referrer'] ) or ! is_array( $data ) ) {
 			$data = array( 'referrer' => $data );
@@ -2682,7 +2682,7 @@ class arfliterecordcontroller {
 
 		$entry = $arflite_db_record->arflitegetOne( $id, true );
 
-		$data = maybe_unserialize( $entry->description );
+		$data = arf_safe_maybe_unserialize( $entry->description );
 
 		if ( ! isset( $data['referrer'] ) || ! is_array( $data ) ) {
 			$data = array( 'referrer' => $data );
@@ -2895,8 +2895,10 @@ class arfliterecordcontroller {
 				$newvalarr = array_unique( $newvalarr );
 				foreach ( $newvalarr as $newkey => $newval ) {
 					$fid1 = $upload_main_url . '/maincss_' . $newval . '.css';
+					$fid_dir = ARFLITE_UPLOAD_DIR . '/maincss/maincss_' . $newval . '.css';
+					$css_version = file_exists( $fid_dir ) ? filemtime( $fid_dir ) : $arflite_jscss_version;
 
-					wp_register_style( 'arfliteformscss_' . $newval, $upload_main_url . '/maincss_' . $newval . '.css', array(), $arflite_jscss_version );
+					wp_register_style( 'arfliteformscss_' . $newval, $upload_main_url . '/maincss_' . $newval . '.css', array(), $css_version );
 					wp_print_styles( 'arfliteformscss_' . $newval );
 				}
 			}

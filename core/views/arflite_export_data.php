@@ -147,7 +147,7 @@ foreach ( $entries as $entry ) {
 	global $wpdb, $tbl_arf_entries, $tbl_arf_entry_values;
 	echo "\"{$entry->id}\"$entry_separator";
 	$res_data    = $wpdb->get_results( $wpdb->prepare( 'SELECT description,country, browser_info FROM ' . $tbl_arf_entries . ' WHERE id = %d', $entry->id ), 'ARRAY_A' ); //phpcs:ignore
-	$description = maybe_unserialize( $res_data[0]['description'] );
+	$description = arf_safe_maybe_unserialize( $res_data[0]['description'] );
 	/* changes http_page_url start */
 	$arflite_page_url = $wpdb->get_row( $wpdb->prepare( 'SELECT entry_value FROM ' . $tbl_arf_entry_values . " WHERE field_id='%d' AND entry_id='%d'", '-' . 0, $entry->id ) ); //phpcs:ignore
 	if ( ! empty( $arflite_page_url ) ) {

@@ -110,9 +110,9 @@ if ( isset( $_GET['arfaction']) && (sanitize_text_field( $_GET['arfaction'] ) ==
 						$arf_fields = $wpdb->get_results( $wpdb->prepare( 'SELECT * FROM `' . $tbl_arf_fields . '` WHERE `form_id` = %d', $arflite_id ), ARRAY_A ); //phpcs:ignore
 					}
 
-					$frm_opts = ( isset( $data['options'] ) && $data['options'] != '' ) ? maybe_unserialize( $data['options'] ) : array();
+					$frm_opts = ( isset( $data['options'] ) && $data['options'] != '' ) ? arf_safe_maybe_unserialize( $data['options'] ) : array();
 
-					$frm_css = maybe_unserialize( $data['form_css'] );
+					$frm_css = arf_safe_maybe_unserialize( $data['form_css'] );
 
 					$field_order = isset( $frm_opts['arf_field_order'] ) ? $frm_opts['arf_field_order'] : '';
 
@@ -122,7 +122,7 @@ if ( isset( $_GET['arfaction']) && (sanitize_text_field( $_GET['arfaction'] ) ==
 
 					$inner_field_resize_width = isset( $frm_opts['arf_inner_field_resize_width'] ) ? $frm_opts['arf_inner_field_resize_width'] : '';
 
-					$field_temp_fields = maybe_unserialize( $data['temp_fields'] );
+					$field_temp_fields = arf_safe_maybe_unserialize( $data['temp_fields'] );
 
 					$arf_field_counter = 1;
 					if ( $field_resize_width != '' ) {
@@ -294,14 +294,14 @@ if ( isset( $_GET['arfaction']) && (sanitize_text_field( $_GET['arfaction'] ) ==
 								$has_field_opt    = true;
 								$field_options_db = json_decode( $field['options'], true );
 								if ( json_last_error() != JSON_ERROR_NONE ) {
-									$field_options_db = maybe_unserialize( $field['options'], true );
+									$field_options_db = arf_safe_maybe_unserialize( $field['options'], true );
 								}
 							}
 
 							$field_opt = json_decode( $field['field_options'], true );
 
 							if ( json_last_error() != JSON_ERROR_NONE ) {
-								$field_opt = maybe_unserialize( $field['field_options'] );
+								$field_opt = arf_safe_maybe_unserialize( $field['field_options'] );
 							}
 
 							$class             = ( isset( $field_opt['inner_class'] ) && $field_opt['inner_class'] ) ? $field_opt['inner_class'] : 'arf_1col';
